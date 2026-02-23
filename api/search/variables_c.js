@@ -6,7 +6,7 @@ var searchData=
   ['p_5ffsm_5fbutton_560',['p_fsm_button',['../structfsm__simone__t.html#a8f12e13f0b74446cbff83e016ffad311',1,'fsm_simone_t']]],
   ['p_5ffsm_5fkeyboard_561',['p_fsm_keyboard',['../structfsm__simone__t.html#a1185ef2a14c5f8aba556671679be4f42',1,'fsm_simone_t']]],
   ['p_5ffsm_5frgb_5flight_562',['p_fsm_rgb_light',['../structfsm__simone__t.html#a91e61ff128fba9110be950b07da25dba',1,'fsm_simone_t']]],
-  ['p_5flayout_563',['p_layout',['../structstm32f4__keyboard__hw__t.html#ac8c0f9c9a588cf25ead3488deee38bb3',1,'stm32f4_keyboard_hw_t']]],
+  ['p_5fkeyboard_563',['p_keyboard',['../structstm32f4__keyboard__hw__t.html#afe85407330ed76c2ac46ac3bfb10b1bf',1,'stm32f4_keyboard_hw_t']]],
   ['p_5fport_564',['p_port',['../structstm32f4__button__hw__t.html#a96246bee7f212e399873ade39af868b5',1,'stm32f4_button_hw_t']]],
   ['p_5fport_5fblue_565',['p_port_blue',['../structstm32f4__rgb__light__hw__t.html#a9fed7f2e8d53e6f33ace834a99c84a85',1,'stm32f4_rgb_light_hw_t']]],
   ['p_5fport_5fgreen_566',['p_port_green',['../structstm32f4__rgb__light__hw__t.html#aa129acd2c7a83b790f20b25cb9d26a6a',1,'stm32f4_rgb_light_hw_t']]],
