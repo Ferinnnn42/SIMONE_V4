@@ -227,7 +227,7 @@ void test_button_port_generalization(void)
 {
     // Change the GPIO and pin in the buttons_arr array to a different one
     GPIO_TypeDef *p_alt_gpio_port = GPIOB;
-    uint8_t alt_gpio_pin = 6;
+    uint8_t alt_gpio_pin = 11;
 
     buttons_arr[PORT_USER_BUTTON_ID].p_port = p_alt_gpio_port;
     buttons_arr[PORT_USER_BUTTON_ID].pin = alt_gpio_pin;
@@ -284,7 +284,7 @@ void test_button_port_generalization(void)
     uint32_t real_imr = EXTI->IMR;
 
     // Get NVIC priority of the EXTI line for the specific pin
-    NVIC_SetPriority(TEST_STM32F4_USER_BUTTON_EXTI_IRQn, 0);
+    NVIC_SetPriority(TEST_STM32F4_USER_BUTTON_EXTI_IRQn, 2);
     uint32_t real_priority = NVIC_GetPriority(TEST_STM32F4_USER_BUTTON_EXTI_IRQn);
 
     // Call configuration function
