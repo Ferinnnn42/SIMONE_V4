@@ -35,7 +35,7 @@
 void setUp(void)
 {
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
-    stm32f4_system_gpio_exti_disable(STM32F4_USER_BUTTON_PIN); // Disable interrupt of the wcorrect configuration to avoid interrupt calls    
+    stm32f4_system_gpio_exti_disable(STM32F4_USER_BUTTON_PIN); // Disable interrupt of the wcorrect configuration to avoid interrupt calls
 }
 
 void tearDown(void)
@@ -225,9 +225,14 @@ void test_exti_enabled_priority(void)
  */
 void test_button_port_generalization(void)
 {
+    // Disable global interrupts to prevent default handlers execution during tests
+    __disable_irq();
+    // Clear pending registers just in case there was garbage before the test
+    EXTI->PR = 0x003FFFFF; // Clear pending for all EXTI lines (up to 22)
+
     // Change the GPIO and pin in the buttons_arr array to a different one
     GPIO_TypeDef *p_alt_gpio_port = GPIOB;
-    uint8_t alt_gpio_pin = 11;
+    uint8_t alt_gpio_pin = 6;
 
     buttons_arr[PORT_USER_BUTTON_ID].p_port = p_alt_gpio_port;
     buttons_arr[PORT_USER_BUTTON_ID].pin = alt_gpio_pin;
@@ -275,6 +280,7 @@ void test_button_port_generalization(void)
     stm32f4_system_gpio_config(p_alt_gpio_port, alt_gpio_pin, STM32F4_GPIO_MODE_IN, STM32F4_GPIO_PUPDR_NOPULL);
     stm32f4_system_gpio_config_exti(p_alt_gpio_port, alt_gpio_pin, STM32F4_TRIGGER_BOTH_EDGE | STM32F4_TRIGGER_ENABLE_INTERR_REQ);
     stm32f4_system_gpio_exti_enable(alt_gpio_pin, 1, 0);
+
     uint32_t real_gpio_mode = STM32F4_USER_BUTTON_GPIO->MODER;
     uint32_t real_gpio_pupd = STM32F4_USER_BUTTON_GPIO->PUPDR;
     uint32_t real_exticr = SYSCFG->EXTICR[STM32F4_USER_BUTTON_PIN / 4];
@@ -284,7 +290,8 @@ void test_button_port_generalization(void)
     uint32_t real_imr = EXTI->IMR;
 
     // Get NVIC priority of the EXTI line for the specific pin
-    NVIC_SetPriority(TEST_STM32F4_USER_BUTTON_EXTI_IRQn, 2);
+    // #TODO: the priority should be obtained as parameter of the struct not hard coded in the test
+    NVIC_SetPriority(TEST_STM32F4_USER_BUTTON_EXTI_IRQn, 0);
     uint32_t real_priority = NVIC_GetPriority(TEST_STM32F4_USER_BUTTON_EXTI_IRQn);
 
     // Call configuration function
@@ -310,6 +317,12 @@ void test_button_port_generalization(void)
     UNITY_TEST_ASSERT_EQUAL_UINT32(real_emr, curr_emr, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin");
     UNITY_TEST_ASSERT_EQUAL_UINT32(real_imr, curr_imr, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin");
     UNITY_TEST_ASSERT_EQUAL_UINT32(real_priority, curr_priority, __LINE__, "ERROR: The configuration function is not generalizing the GPIO and/or pin but working with the specific GPIO and pin");
+
+    // Clear pending registers before re-enabling interrupts
+    EXTI->PR = 0x003FFFFF;
+
+    // Enable global interrupts back
+    __enable_irq();
 }
 
 int main(void)
