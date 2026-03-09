@@ -1,0 +1,55 @@
+/**
+ * @file stm32f4_simone.c
+ * @brief Portable functions to interact with the Simone FSM library. All portable functions must be implemented in this file.
+ * @author alumno1
+ * @author alumno2
+ * @date fecha
+ */
+
+/* Standard C includes */
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <math.h> // Used to compute the timer ARR and PSC values
+
+/* HW dependent includes */
+
+
+/* Microcontroller dependent includes */
+
+/* Global variables */
+stm32f4_simone_hw_t simone_hw;
+
+/* Private functions ----------------------------------------------------------*/
+static void _timer_simone_setup()
+{
+    /* TODO students: complete timer configuration */
+}
+
+void port_simone_set_timer_timeout(uint32_t duration_ms)
+{
+    /* TODO students: complete timer configuration to set the timeout duration */
+}
+
+void port_simone_stop_timer(void)
+{
+    TIM3->CR1 &= ~TIM_CR1_CEN;
+    TIM3->DIER &= ~TIM_DIER_UIE;
+}
+
+bool port_simone_get_timeout_status(void)
+{
+    return simone_hw.flag_timer_timeout;
+}
+
+void port_simone_set_timeout_status(bool status)
+{
+    simone_hw.flag_timer_timeout = status;
+}
+
+void port_simone_init(void)
+{
+    /* TODO students: */
+    // 1. Reset the flag of the timer timeout
+    // 2. Configure the timer that controls the duration of the different aspects of the game
+}
