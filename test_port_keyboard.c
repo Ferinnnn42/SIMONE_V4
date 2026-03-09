@@ -134,7 +134,7 @@ void setUp(void)
     }
 
     // Disable interrupts of the correct configuration to avoid interrupt calls
-    for (uint8_t col = 0; col < keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_layout->num_cols; col++)
+    for (uint8_t col = 0; col < keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_keyboard->num_cols; col++)
     {
         stm32f4_system_gpio_exti_disable(keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_col_pins[col]);
     }
@@ -172,12 +172,12 @@ void test_layout_and_nullkey(void)
     port_keyboard_init(TEST_PORT_MAIN_KEYBOARD_ID);
 
     UNITY_TEST_ASSERT_NOT_NULL(p_kb, __LINE__, "ERROR: Keyboard HW struct pointer is NULL");
-    UNITY_TEST_ASSERT_NOT_NULL(p_kb->p_layout, __LINE__, "ERROR: Keyboard layout pointer is NULL");
-    UNITY_TEST_ASSERT_EQUAL_PTR(&standard_keyboard, p_kb->p_layout, __LINE__, "ERROR: Keyboard layout pointer does not match standard_keyboard");
-    UNITY_TEST_ASSERT_EQUAL_UINT8(TEST_NUM_ROWS, p_kb->p_layout->num_rows, __LINE__, "ERROR: Keyboard does not have the right number of rows");
-    UNITY_TEST_ASSERT_EQUAL_UINT8(TEST_NUM_COLS, p_kb->p_layout->num_cols, __LINE__, "ERROR: Keyboard does not have the right number of columns");
-    UNITY_TEST_ASSERT_EQUAL_CHAR(TEST_NULL_KEY, p_kb->p_layout->null_key, __LINE__, "ERROR: Keyboard null_key is not configured correctly");
-    UNITY_TEST_ASSERT_EQUAL_CHAR(TEST_DEFAULT_KEY, p_kb->p_layout->null_key, __LINE__, "ERROR: Keyboard key_value is not configured correctly");
+    UNITY_TEST_ASSERT_NOT_NULL(p_kb->p_keyboard, __LINE__, "ERROR: Keyboard layout pointer is NULL");
+    UNITY_TEST_ASSERT_EQUAL_PTR(&standard_keyboard, p_kb->p_keyboard, __LINE__, "ERROR: Keyboard layout pointer does not match standard_keyboard");
+    UNITY_TEST_ASSERT_EQUAL_UINT8(TEST_NUM_ROWS, p_kb->p_keyboard->num_rows, __LINE__, "ERROR: Keyboard does not have the right number of rows");
+    UNITY_TEST_ASSERT_EQUAL_UINT8(TEST_NUM_COLS, p_kb->p_keyboard->num_cols, __LINE__, "ERROR: Keyboard does not have the right number of columns");
+    UNITY_TEST_ASSERT_EQUAL_CHAR(TEST_NULL_KEY, p_kb->p_keyboard->null_key, __LINE__, "ERROR: Keyboard null_key is not configured correctly");
+    UNITY_TEST_ASSERT_EQUAL_CHAR(TEST_DEFAULT_KEY, p_kb->p_keyboard->null_key, __LINE__, "ERROR: Keyboard key_value is not configured correctly");
     UNITY_TEST_ASSERT_EQUAL_UINT8(TEST_INIT_ROW, p_kb->current_excited_row, __LINE__, "ERROR: current_scanned_row is not initialized with the correct value");
     UNITY_TEST_ASSERT_EQUAL_UINT8(TEST_FLAG_ROW_TIMEOUT, p_kb->flag_row_timeout, __LINE__, "ERROR: flag_row_timeout is not initialized correctly");
     UNITY_TEST_ASSERT_EQUAL_UINT8(TEST_FLAG_KEY, p_kb->flag_key_pressed, __LINE__, "ERROR: flag_key_pressed is not initialized correctly");
@@ -212,7 +212,7 @@ static uint32_t _build_moder_mask_for_port(uint8_t keyboard_id, GPIO_TypeDef *po
     uint32_t mask = 0;
     const stm32f4_keyboard_hw_t *p_kb = &keyboards_arr[keyboard_id];
 
-    for (uint8_t r = 0; r < p_kb->p_layout->num_rows; ++r)
+    for (uint8_t r = 0; r < p_kb->p_keyboard->num_rows; ++r)
     {
         if (p_kb->p_row_ports[r] == port)
         {
@@ -220,7 +220,7 @@ static uint32_t _build_moder_mask_for_port(uint8_t keyboard_id, GPIO_TypeDef *po
         }
     }
 
-    for (uint8_t c = 0; c < p_kb->p_layout->num_cols; ++c)
+    for (uint8_t c = 0; c < p_kb->p_keyboard->num_cols; ++c)
     {
         if (p_kb->p_col_ports[c] == port)
         {
@@ -236,7 +236,7 @@ static uint32_t _build_pupd_mask_for_port(uint8_t keyboard_id, GPIO_TypeDef *por
     uint32_t mask = 0;
     const stm32f4_keyboard_hw_t *p_kb = &keyboards_arr[keyboard_id];
 
-    for (uint8_t r = 0; r < p_kb->p_layout->num_rows; ++r)
+    for (uint8_t r = 0; r < p_kb->p_keyboard->num_rows; ++r)
     {
         if (p_kb->p_row_ports[r] == port)
         {
@@ -244,7 +244,7 @@ static uint32_t _build_pupd_mask_for_port(uint8_t keyboard_id, GPIO_TypeDef *por
         }
     }
 
-    for (uint8_t c = 0; c < p_kb->p_layout->num_cols; ++c)
+    for (uint8_t c = 0; c < p_kb->p_keyboard->num_cols; ++c)
     {
         if (p_kb->p_col_ports[c] == port)
         {
@@ -975,12 +975,12 @@ void test_all_keys_press_simulation(void)
     // clear flags before start
     p_kb->flag_key_pressed = false;
 
-    for (uint8_t r = 0; r < p_kb->p_layout->num_rows; r++)
+    for (uint8_t r = 0; r < p_kb->p_keyboard->num_rows; r++)
     {
         // Emulate that the scanner is currently driving row r
         p_kb->current_excited_row = r;
 
-        for (uint8_t c = 0; c < p_kb->p_layout->num_cols; c++)
+        for (uint8_t c = 0; c < p_kb->p_keyboard->num_cols; c++)
         {
             uint8_t col_pin = p_kb->p_col_pins[c];
             uint32_t mask = (1U << col_pin);
@@ -992,7 +992,7 @@ void test_all_keys_press_simulation(void)
 
             // NOTE: We cannot read the IDR and thus the flag_key_pressed directly, as the GPIOs are not really connected. Instead, we check that the key_value variable has been set correctly in the keyboard
 
-            char key_expected = p_kb->p_layout->keys[r * TEST_NUM_COLS + c];
+            char key_expected = p_kb->p_keyboard->keys[r * TEST_NUM_COLS + c];
 
             printf("Testing key press at row %d, col %d...\n\tExpected key: '%c'\n\tDetected key: '%c'\n", r, c, key_expected, port_keyboard_get_key_value(TEST_PORT_MAIN_KEYBOARD_ID));
             sprintf(msg, "ERROR: key value not set correctly for row %d, col %d.", r, c);

@@ -54,7 +54,7 @@ void setUp(void)
     p_fsm_keyboard = fsm_keyboard_new(TEST_MAIN_KEYBOARD_DEBOUNCE_TIME_MS, TEST_PORT_MAIN_KEYBOARD_ID);
 
     // Disable interrupts of the correct configuration to avoid interrupt calls
-    for (uint8_t col = 0; col < keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_layout->num_cols; col++)
+    for (uint8_t col = 0; col < keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_keyboard->num_cols; col++)
     {
         stm32f4_system_gpio_exti_disable(keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_col_pins[col]);
     }
@@ -231,7 +231,7 @@ void test_keyboard_press(void)
             // Release the key
             keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].flag_key_pressed = false;
 
-            char expected_key_value = keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_layout->keys[r * TEST_NUM_COLS + c];
+            char expected_key_value = keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_keyboard->keys[r * TEST_NUM_COLS + c];
 
             fsm_keyboard_fire(p_fsm_keyboard);
             sprintf(msg, "The FSM did not change to KEYBOARD_RELEASED_WAIT after releasing the key for row %d, col %d.", r, c);
