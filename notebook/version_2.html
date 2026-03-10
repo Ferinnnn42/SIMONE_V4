@@ -665,9 +665,9 @@
 <p>La complejidad aquí reside en la gestión de múltiples pines y en la lógica de configuración de entrada/salida.</p>
 <ol>
 <li>Incluye las librerías necesarias.</li>
-<li>Verás que en la plantilla proporcionada se han definido 4 arrays que corresponden con laos puertos y pines de las filas y columnas del teclado. Estos arrays se usan para inicializar la estructura del teclado. Estos son los arrays de elementos <code>GPIO_TypeDef*</code> (y <code>uint8_t</code>) de los que hablabamos anteriormente y alos que apuntará la estructura <code>stm32f4_keyboard_hw_t</code> del teclado principal <code>KEYBOARD_MAIN</code>.</li>
+<li>Verás que en la plantilla proporcionada se han definido 4 arrays que corresponden con los puertos y pines de las filas y columnas del teclado. Estos arrays se usan para inicializar la estructura del teclado. Estos son los arrays de elementos <code>GPIO_TypeDef*</code> (y <code>uint8_t</code>) de los que hablábamos anteriormente y a los que apuntará la estructura <code>stm32f4_keyboard_hw_t</code> del teclado principal <code>KEYBOARD_MAIN</code>.</li>
 <li>
-<p>Define la <strong>variable global privada</strong> <code>stm32f4_keyboard_hw_t keyboards_arr</code> con la configuración física de nuestro teclado tal y como hicimos con el botón. Los campos <code>p_row_ports</code>, <code>p_row_pins</code>, <code>p_col_ports</code>, y <code>p_col_pins</code> deben apuntar a los arrays definidos en el paso anterior. El campo <code>p_keyboard</code> <strong>debe apuntar a la dirección de memoria</strong> del teclado estándar definido en <code>keyboards.c</code>. El resto de campos se inicializan en la función <code>port_keyboard_init()</code>.</p>
+<p>Define la <strong>variable global pública</strong> <code>stm32f4_keyboard_hw_t keyboards_arr</code> con la configuración física de nuestro teclado tal y como hicimos con el botón y que se declaró en el <code>.h</code>.. Los campos <code>p_row_ports</code>, <code>p_row_pins</code>, <code>p_col_ports</code>, y <code>p_col_pins</code> deben apuntar a los arrays definidos en el paso anterior. El campo <code>p_keyboard</code> <strong>debe apuntar a la dirección de memoria</strong> del teclado estándar definido en <code>keyboards.c</code>. El resto de campos se inicializan en la función <code>port_keyboard_init()</code>.</p>
 </li>
 <li>
 <p>Codifica la función <code>_stm32f4_keyboard_get()</code> para recuperar la configuración del hardware, de modo análogo a como se hizo para el botón.</p>
@@ -853,7 +853,7 @@
 </li>
 <li>
 <p>Codifica las funciones <code>check_row_timeout()</code>, <code>check_keyboard_pressed()</code>, <code>check_keyboard_released()</code>, y <code>check_timeout()</code> como se indica en la API.</p>
-<p>Puede ser buen momento ahora para documentar las funciones con Doxygen. En este caso, como las funciones no están declaradas en el encabezado, la documentación irá en el <code>.c</code>, encima del nombre de cada función.</p>
+<p>Puede ser buen momprivadento ahora para documentar las funciones con Doxygen. En este caso, como las funciones no están declaradas en el encabezado, la documentación irá en el <code>.c</code>, encima del nombre de cada función.</p>
 </li>
 <li>
 <p>Codifica las funciones <code>do_excite_next_row()</code>, <code>do_store_tick_pressed()</code>, y <code>do_set_key_value()</code> como se indica en la API.</p>
