@@ -334,7 +334,8 @@ An arbitrary example of C code: <div class="fragment"><div class="line"><span cl
 <blockquote class="doxtable">
 <p><b>TODO alumnos:</b></p>
 <p>✅ 1. Retrieve the keyboard configuration struct calling <code><a class="el" href="stm32f4__keyboard_8c.html#aa3330d22a2fcd66831baa9cdef648e48" title="Get the keyboard struct with the given ID.">_stm32f4_keyboard_get()</a></code> <br  />
-✅ 2. Iterate through all the rows indexes (you can get the number of rows from the keyboard's layout). In the iteration, if the row coincides with the row index, set it HIGH. Otherwise, set it to LOW to ensure that only one row is excited at the same time. <br  />
+✅ 2. Iterate through all the rows indexes (you can get the number of rows from the keyboard's layout) and set them to LOW to ensure that only one row is excited at the same time. <br  />
+✅ 3. Set the given row to HIGH. <br  />
 &#160;&#160;&#160;&#160;💡 You can use the <code>BSRR</code> or call the <code><a class="el" href="stm32f4__system_8h.html#af46cdd939024e157ed6f7468edaee4e3" title="Write a digital value in a GPIO atomically.">stm32f4_system_gpio_write()</a></code> function. <br  />
 </p>
 </blockquote>
