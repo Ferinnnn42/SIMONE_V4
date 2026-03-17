@@ -7,7 +7,6 @@ var fsm__keyboard_8h =
       [ "KEYBOARD_PRESSED", "fsm__keyboard_8h.html#acf461865490ce39e6365bfb5fab9a937acb8180f7cabb44148caeb1fa693157d5", null ],
       [ "KEYBOARD_PRESSED_WAIT", "fsm__keyboard_8h.html#acf461865490ce39e6365bfb5fab9a937a5fe83e036e67fad707dad4393894eae0", null ]
     ] ],
-    [ "fsm_get_row_timeout_status", "fsm__keyboard_8h.html#a28ed4c32e02c6b564e23caeda2fa706f", null ],
     [ "fsm_keyboard_check_activity", "fsm__keyboard_8h.html#a22bdb22f0e7fd5bc05b34c87ea7d65e5", null ],
     [ "fsm_keyboard_destroy", "fsm__keyboard_8h.html#afc7aff5223cfbb75cff915bdfd79d708", null ],
     [ "fsm_keyboard_fire", "fsm__keyboard_8h.html#afe0970ced1b57504ad5b12615739ef78", null ],

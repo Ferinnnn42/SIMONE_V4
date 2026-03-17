@@ -144,9 +144,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a38ecbf29d78b69cf47621bd74d521a38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__keyboard_8h.html#a38ecbf29d78b69cf47621bd74d521a38">fsm_keyboard_reset_key_value</a> (<a class="el" href="structfsm__keyboard__t.html">fsm_keyboard_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a38ecbf29d78b69cf47621bd74d521a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the key pressed of the last keyboard press.  <a href="fsm__keyboard_8h.html#a38ecbf29d78b69cf47621bd74d521a38">More...</a><br /></td></tr>
 <tr class="separator:a38ecbf29d78b69cf47621bd74d521a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28ed4c32e02c6b564e23caeda2fa706f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__keyboard_8h.html#a28ed4c32e02c6b564e23caeda2fa706f">fsm_get_row_timeout_status</a> (<a class="el" href="structfsm__keyboard__t.html">fsm_keyboard_t</a> *p_fsm)</td></tr>
-<tr class="memdesc:a28ed4c32e02c6b564e23caeda2fa706f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the status of the row timeout flag.  <a href="fsm__keyboard_8h.html#a28ed4c32e02c6b564e23caeda2fa706f">More...</a><br /></td></tr>
-<tr class="separator:a28ed4c32e02c6b564e23caeda2fa706f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22bdb22f0e7fd5bc05b34c87ea7d65e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm__keyboard_8h.html#a22bdb22f0e7fd5bc05b34c87ea7d65e5">fsm_keyboard_check_activity</a> (<a class="el" href="structfsm__keyboard__t.html">fsm_keyboard_t</a> *p_fsm)</td></tr>
 <tr class="memdesc:a22bdb22f0e7fd5bc05b34c87ea7d65e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the keyboard FSM is active, or not.  <a href="fsm__keyboard_8h.html#a22bdb22f0e7fd5bc05b34c87ea7d65e5">More...</a><br /></td></tr>
 <tr class="separator:a22bdb22f0e7fd5bc05b34c87ea7d65e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,40 +183,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a28ed4c32e02c6b564e23caeda2fa706f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28ed4c32e02c6b564e23caeda2fa706f">&#9670;&nbsp;</a></span>fsm_get_row_timeout_status()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool fsm_get_row_timeout_status </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structfsm__keyboard__t.html">fsm_keyboard_t</a> *&#160;</td>
-          <td class="paramname"><em>p_fsm</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the status of the row timeout flag. </p>
-<blockquote class="doxtable">
-<p><b>TODO alumnos:</b></p>
-<p>✅ 1. Return the value of the field <code>flag_row_timeout</code>. <br  />
-</p>
-</blockquote>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_fsm</td><td>Pointer to an <code><a class="el" href="structfsm__keyboard__t.html" title="Structure of the Keyboard FSM.">fsm_keyboard_t</a></code> struct. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true If the row timeout has occurred </dd>
-<dd>
-false If the row timeout has not occurred </dd></dl>
-
-</div>
-</div>
 <a id="a22bdb22f0e7fd5bc05b34c87ea7d65e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22bdb22f0e7fd5bc05b34c87ea7d65e5">&#9670;&nbsp;</a></span>fsm_keyboard_check_activity()</h2>
 
