@@ -509,6 +509,12 @@ void _test_exti(void)
 
 void test_exti(void)
 {
+    // Disable global interrupts to prevent default handlers execution during tests
+    __disable_irq();
+
+    // Clear pending registers just in case there was garbage before the test
+    EXTI->PR = 0x003FFFFF; // Clear pending for all EXTI lines (up to 22)
+
     for (uint8_t col = 0; col < TEST_NUM_COLS; col++)
     {
         uint8_t pin = test_cols_gpio_pins_arr[col];
@@ -531,6 +537,9 @@ void test_exti(void)
         SYSCFG->EXTICR[pin / 4] = 0U;
     }
     _test_exti();
+
+    // Re-enable global interrupts after tests
+    __enable_irq();
 }
 
 /**
@@ -590,6 +599,41 @@ void test_exti_enabled_priority(void)
 
         sprintf(msg, "ERROR: NVIC %s subpriority is not correct for keyboard columns", irqn_name);
         UNITY_TEST_ASSERT_EQUAL_UINT32(test_irq_subpriorities_array[col], pSubPriority, __LINE__, msg);
+    }
+}
+
+/**
+ * @brief Test that only one row is active at a time and others are deactivated.
+ */
+void test_port_keyboard_excite_row_exclusion(void)
+{    
+    // Checki it for more than 1 cycle
+    for (uint8_t i = 0; i < TEST_NUM_ROWS+1; i++)
+    {   
+        uint8_t idx = i % TEST_NUM_ROWS;
+        // Excite the current row i
+        port_keyboard_excite_row(TEST_PORT_MAIN_KEYBOARD_ID, idx);
+
+        for (uint8_t j = 0; j < TEST_NUM_ROWS; j++)
+        {
+            // Check the actual GPIO state. Read ODR.
+            GPIO_TypeDef *row_gpio = keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_row_ports[j];
+            uint8_t row_pin = keyboards_arr[TEST_PORT_MAIN_KEYBOARD_ID].p_row_pins[j];
+            uint32_t odr = (row_gpio->ODR >> row_pin) & 0x1;
+
+            if (idx == j)
+            {
+                // The excited row should be active
+                sprintf(msg, "Error: Row %d should be active but it is not", j);
+                UNITY_TEST_ASSERT_EQUAL_UINT8(1, odr, __LINE__, msg);
+            }
+            else
+            {
+                // The other rows should be inactive
+                sprintf(msg, "Error: Row %d should be inactive but it is active when row %d is excited", j, idx);
+                UNITY_TEST_ASSERT_EQUAL_UINT8(0, odr, __LINE__, msg);
+            }
+        }
     }
 }
 
@@ -1028,6 +1072,7 @@ int main(void)
     RUN_TEST(test_col_scan_timer_timeout);
 
     // Run simulation tests
+    RUN_TEST(test_port_keyboard_excite_row_exclusion);
     RUN_TEST(test_col_scan_timer_timeout_start_simulation);
     RUN_TEST(test_all_keys_press_simulation);
 
