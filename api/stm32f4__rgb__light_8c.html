@@ -180,7 +180,7 @@ NULL If the RGB light ID is not valid. </dd></dl>
 &#160;&#160;&#160;&#160;💡 To know if the source clock is <code>APB1</code> or <code>APB2</code>, check the clock tree in the user manual (<a href="https://www.st.com/en/microcontrollers-microprocessors/stm32f446re.html">Figure 3. STM32F446xC/E block diagram</a>) <br  />
 ✅ 2. Disable the counter (register <code>CR1</code>) and enable the autoreload preaload (bit <code>ARPE</code>) ✅ 3. Reset the counter (register <code>CNT</code>), set the autoreload value (register <code>ARR</code>) and the prescaler (register <code>PSC</code>) for a frequency of 50 Hz. <br  />
  <b>PWM mode configuration</b></p>
-<dl class="section note"><dt>Note</dt><dd>Check table "Table 11. Alternate function" in the datasheet to select the channel more alternate functions.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Check table "Table 11. Alternate function" in the datasheet to select the channel and the alternate functions.</dd></dl>
 <p>✅ 5. Disable the output compare (register <code>CCER</code>) <b>for each one</b> of the corresponding channels. Take into account the channel number (1, 2, 3, or 4) and the channel enable bit (CCxE) <br  />
 ✅ 6. Clear the P and NP bits (CCxP and CCxNP) of the output compare register (<code>CCER</code>) <b>for each one</b> of the corresponding channels . <br  />
 ✅ 7. Set both (i) mode PWM 1, and (ii) enable preload (register CCMRx) <b>for each one</b> of the corresponding channels. Where <code>x</code> is <code>1</code> for channels 1 and 2, and <code>2</code> for channels 3 and 4. <br  />
