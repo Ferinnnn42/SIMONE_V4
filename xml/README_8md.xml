@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Simone<sp/>Project</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>demonstrates<sp/>how<sp/>the<sp/>project<sp/>Simone<sp/>works<sp/>using<sp/>a<sp/>matrix<sp/>keyboard<sp/>and<sp/>an<sp/>RGB<sp/>LED<sp/>to<sp/>emulate<sp/>the<sp/>classic<sp/>game<sp/>Simon.<sp/>It<sp/>uses<sp/>a<sp/>finite<sp/>state<sp/>machine<sp/>(FSM)<sp/>to<sp/>control<sp/>the<sp/>keyboard,<sp/>an<sp/>RGB<sp/>light<sp/>(RGB<sp/>LED)<sp/>to<sp/>show<sp/>the<sp/>intensity,<sp/>and<sp/>a<sp/>button<sp/>to<sp/>interact<sp/>with<sp/>the<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>is<sp/>intended<sp/>to<sp/>be<sp/>used<sp/>with<sp/>the<sp/>MatrixMCU<sp/>toolkit.<sp/>The<sp/>toolkit<sp/>is<sp/>available<sp/>at<sp/>GitHub:<sp/>[MatrixMCU](https://github.com/sdg2DieUpm/MatrixMCU).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Click<sp/>on<sp/>the<sp/>image**<sp/>to<sp/>see<sp/>the<sp/>video<sp/>showing<sp/>the<sp/>Simone<sp/>demo<sp/>for<sp/>Nucleo<sp/>STM32:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Simone<sp/>Demo](docs/assets/code_imgs/fritzing_simone.png)](https://youtu.be/v-HXdcEtT_4<sp/>&quot;Simone<sp/>Demo.&quot;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>access<sp/>the<sp/>documentation<sp/>of<sp/>the<sp/>project<sp/>at:<sp/>[Simone<sp/>Documentation](https://sdg2dieupm.github.io/simone/).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Version<sp/>1</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>Version<sp/>1,<sp/>the<sp/>system<sp/>works<sp/>with<sp/>the<sp/>user<sp/>button<sp/>only.<sp/>The<sp/>user<sp/>button<sp/>is<sp/>connected<sp/>to<sp/>the<sp/>pin<sp/>PC13.<sp/>The<sp/>code<sp/>uses<sp/>the<sp/>EXTI13<sp/>interrupt<sp/>to<sp/>detect<sp/>the<sp/>button<sp/>press.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Parameter<sp/><sp/><sp/><sp/><sp/>|<sp/>Value<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>-------------<sp/>|<sp/>--------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PC13<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Mode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pull<sp/>up/<sp/>down<sp/>|<sp/>No<sp/>push<sp/>no<sp/>pull<sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>EXTI<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>EXTI13<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>ISR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>EXTI15_10_IRQHandler<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Priority<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Subpriority<sp/><sp/><sp/>|<sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Debounce<sp/>time<sp/>|<sp/>100-200<sp/>ms<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>start<sp/>from<sp/>the<sp/>[HW<sp/>dependent<sp/>part<sp/>of<sp/>Version<sp/>1](stm32f4__button_8c.html).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Here<sp/>you<sp/>can<sp/>find<sp/>the<sp/>**project**<sp/>with<sp/>the<sp/>basic<sp/>configuration:<sp/>[Simone<sp/>Project](https://github.com/sdg2DieUpm/simone).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Here<sp/>you<sp/>can<sp/>find<sp/>the<sp/>**test<sp/>files**<sp/>for<sp/>Version<sp/>1:<sp/>[V1<sp/>test<sp/>files](https://github.com/sdg2DieUpm/simone/tree/simone_v1_test)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>the<sp/>FSM<sp/>of<sp/>the<sp/>button:</highlight></codeline>
+<codeline><highlight class="normal">![FSM<sp/>of<sp/>the<sp/>button](docs/assets/code_imgs/fsm_v1.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Version<sp/>2</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>Version<sp/>2,<sp/>the<sp/>system<sp/>adds<sp/>the<sp/>keyboard<sp/>matrix<sp/>to<sp/>read<sp/>the<sp/>presses<sp/>of<sp/>the<sp/>player<sp/>in<sp/>the<sp/>game.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>connections<sp/>of<sp/>the<sp/>keyboard<sp/>are<sp/>shown<sp/>in<sp/>the<sp/>table<sp/>below:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Parameter<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Value<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>-------------------------<sp/>|<sp/>----------------------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin<sp/>row<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PA0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin<sp/>row<sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PA1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin<sp/>row<sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PA4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin<sp/>row<sp/>4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PB0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Mode<sp/>rows<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Output<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pull<sp/>up/<sp/>down<sp/>rows<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>No<sp/>push,<sp/>no<sp/>pull<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Timeout<sp/>excitation<sp/>rows<sp/><sp/><sp/>|<sp/>25<sp/>ms<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin/<sp/>EXTI/<sp/>ISR<sp/>column<sp/>1<sp/><sp/><sp/>|<sp/>PA8/<sp/>EXTI8/<sp/>EXTI9_5_IRQHandler<sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin/<sp/>EXTI/<sp/>ISR<sp/>column<sp/>2<sp/><sp/><sp/>|<sp/>PB10/<sp/>EXTI10/<sp/>EXTI15_10_IRQHandler<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin/<sp/>EXTI/<sp/>ISR<sp/>column<sp/>3<sp/><sp/><sp/>|<sp/>PB4/<sp/>EXTI4/<sp/>EXTI4_IRQHandler<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin/<sp/>EXTI/<sp/>ISR<sp/>column<sp/>4<sp/><sp/><sp/>|<sp/>PB5/<sp/>EXTI5/<sp/>EXTI9_5_IRQHandler<sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Mode<sp/>columns<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pull<sp/>up/<sp/>down<sp/>columns<sp/><sp/><sp/><sp/><sp/>|<sp/>Pull<sp/>down<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Priority<sp/>all<sp/>columns<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Subpriority<sp/>all<sp/>columns<sp/><sp/><sp/>|<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Debounce<sp/>time<sp/>all<sp/>columns<sp/>|<sp/>100-200<sp/>ms<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>system<sp/>uses<sp/>1<sp/>timer<sp/>to<sp/>control<sp/>the<sp/>duration<sp/>of<sp/>the<sp/>**excitation<sp/>of<sp/>each<sp/>row**<sp/>in<sp/>the<sp/>keyboard<sp/>matrix.<sp/>The<sp/>characteristics<sp/>of<sp/>this<sp/>timer<sp/>are<sp/>shown<sp/>in<sp/>the<sp/>table<sp/>below.<sp/>The<sp/>FSM<sp/>will<sp/>give<sp/>a<sp/>value<sp/>every<sp/>`PORT_KEYBOARDS_TIMEOUT_MS`<sp/>milliseconds.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Parameter<sp/><sp/><sp/>|<sp/>Value<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>-----------<sp/>|<sp/>------------------------------------------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Timer<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TIM5<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Prescaler<sp/><sp/><sp/>|<sp/>(to<sp/>be<sp/>calculated<sp/>for<sp/>`PORT_KEYBOARDS_TIMEOUT_MS`)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Period<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(to<sp/>be<sp/>calculated<sp/>for<sp/>`PORT_KEYBOARDS_TIMEOUT_MS`)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>ISR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TIM5_IRQHandler()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Priority<sp/><sp/><sp/><sp/>|<sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Subpriority<sp/>|<sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>start<sp/>from<sp/>the<sp/>[HW<sp/>dependent<sp/>part<sp/>of<sp/>Version<sp/>2](stm32f4__keyboard_8c.html).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Here<sp/>you<sp/>can<sp/>find<sp/>the<sp/>files<sp/>needed<sp/>for<sp/>the<sp/>control<sp/>of<sp/>the<sp/>**keyboard**:<sp/>[Keyboard](https://github.com/sdg2DieUpm/simone/tree/simone_v2).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Here<sp/>you<sp/>can<sp/>find<sp/>the<sp/>**test<sp/>files**<sp/>for<sp/>Version<sp/>2:<sp/>[V2<sp/>test<sp/>files](https://github.com/sdg2DieUpm/simone/tree/simone_v2_test)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>the<sp/>FSM<sp/>of<sp/>the<sp/>keyboard:</highlight></codeline>
+<codeline><highlight class="normal">![FSM<sp/>of<sp/>the<sp/>keyboard](docs/assets/code_imgs/fsm_v2.svg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Version<sp/>3</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>Version<sp/>3,<sp/>the<sp/>system<sp/>adds<sp/>the<sp/>RGB<sp/>light,<sp/>which<sp/>is<sp/>an<sp/>RGB<sp/>LED.<sp/>The<sp/>RGB<sp/>LED<sp/>is<sp/>connected<sp/>to<sp/>the<sp/>pins<sp/>PB6<sp/>(red),<sp/>PB8<sp/>(green),<sp/>and<sp/>PB9<sp/>(blue).<sp/>The<sp/>code<sp/>uses<sp/>the<sp/>TIM4<sp/>timer<sp/>to<sp/>control<sp/>the<sp/>frequency<sp/>of<sp/>the<sp/>**PWM**<sp/>signal<sp/>for<sp/>each<sp/>color.<sp/>The<sp/>RGB<sp/>LED<sp/>will<sp/>show<sp/>the<sp/>intensity<sp/>depending<sp/>on<sp/>the<sp/>difficulty<sp/>level.<sp/>The<sp/>characteristics<sp/>of<sp/>the<sp/>RGB<sp/>light<sp/>are<sp/>shown<sp/>in<sp/>the<sp/>table<sp/>below.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Parameter<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Value<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>--------------------<sp/>|<sp/>---------------------------------------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin<sp/>LED<sp/>red<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PB6<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin<sp/>LED<sp/>green<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PB8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pin<sp/>LED<sp/>blue<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PB9<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Mode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Alternative<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pull<sp/>up/<sp/>down<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>No<sp/>pull<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Timer<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TIM4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Channel<sp/>LED<sp/>red<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(see<sp/>the<sp/>Alternate<sp/>Function<sp/>table<sp/>in<sp/>the<sp/>datasheet)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Channel<sp/>LED<sp/>green<sp/><sp/><sp/><sp/>|<sp/>(see<sp/>the<sp/>Alternate<sp/>Function<sp/>table<sp/>in<sp/>the<sp/>datasheet)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Channel<sp/>LED<sp/>blue<sp/><sp/><sp/><sp/><sp/>|<sp/>(see<sp/>the<sp/>Alternate<sp/>Function<sp/>table<sp/>in<sp/>the<sp/>datasheet)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>PWM<sp/>mode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>PWM<sp/>mode<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Prescaler<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(to<sp/>be<sp/>calculated<sp/>for<sp/>a<sp/>frequency<sp/>of<sp/>50<sp/>Hz)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Period<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(to<sp/>be<sp/>calculated<sp/>for<sp/>a<sp/>frequency<sp/>of<sp/>50<sp/>Hz)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Duty<sp/>cycle<sp/>LED<sp/>red<sp/><sp/><sp/>|<sp/>(variable,<sp/>depends<sp/>on<sp/>the<sp/>color<sp/>to<sp/>show)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Duty<sp/>cycle<sp/>LED<sp/>green<sp/>|<sp/>(variable,<sp/>depends<sp/>on<sp/>the<sp/>color<sp/>to<sp/>show)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Duty<sp/>cycle<sp/>LED<sp/>blue<sp/><sp/>|<sp/>(variable,<sp/>depends<sp/>on<sp/>the<sp/>color<sp/>to<sp/>show)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>have<sp/>a<sp/>list<sp/>full<sp/>of<sp/>colors<sp/>in<sp/>[www.downtownuplighting.com](https://www.downtownuplighting.com/rgb-color-chart)<sp/>although<sp/>not<sp/>all<sp/>can<sp/>be<sp/>shown<sp/>on<sp/>an<sp/>RGB<sp/>LED.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>start<sp/>from<sp/>the<sp/>[HW<sp/>dependent<sp/>part<sp/>of<sp/>Version<sp/>3](stm32f4__rgb_light_8c.html).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Here<sp/>you<sp/>can<sp/>find<sp/>the<sp/>files<sp/>needed<sp/>for<sp/>the<sp/>control<sp/>of<sp/>the<sp/>**RGB<sp/>light**:<sp/>[RGB<sp/>light](https://github.com/sdg2DieUpm/simone/tree/simone_v3).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Here<sp/>you<sp/>can<sp/>find<sp/>the<sp/>**test<sp/>files**<sp/>for<sp/>Version<sp/>3:<sp/>[V3<sp/>test<sp/>files](https://github.com/sdg2DieUpm/simone/tree/simone_v3_test)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>the<sp/>FSM<sp/>of<sp/>the<sp/>RGB<sp/>light:</highlight></codeline>
+<codeline><highlight class="normal">![FSM<sp/>of<sp/>the<sp/>RGB<sp/>light](docs/assets/code_imgs/fsm_v3.svg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Version<sp/>4</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>Version<sp/>4<sp/>the<sp/>system<sp/>completes<sp/>its<sp/>FSM<sp/>to<sp/>interact<sp/>with<sp/>the<sp/>user<sp/>button,<sp/>the<sp/>keyboard,<sp/>and<sp/>the<sp/>RGB<sp/>light.<sp/>The<sp/>system<sp/>will<sp/>work<sp/>as<sp/>a<sp/>game<sp/>where<sp/>the<sp/>player<sp/>has<sp/>to<sp/>repeat<sp/>a<sp/>sequence<sp/>of<sp/>colors<sp/>shown<sp/>by<sp/>the<sp/>RGB<sp/>light<sp/>by<sp/>pressing<sp/>the<sp/>corresponding<sp/>keys<sp/>on<sp/>the<sp/>keyboard.<sp/>The<sp/>system<sp/>will<sp/>increase<sp/>the<sp/>length<sp/>of<sp/>the<sp/>sequence<sp/>with<sp/>each<sp/>successful<sp/>round,<sp/>and<sp/>it<sp/>will<sp/>provide<sp/>visual<sp/>feedback<sp/>through<sp/>the<sp/>RGB<sp/>light<sp/>for<sp/>correct<sp/>and<sp/>incorrect<sp/>inputs.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>no<sp/>files<sp/>documented<sp/>for<sp/>the<sp/>FSM<sp/>of<sp/>Version<sp/>4,<sp/>and<sp/>you<sp/>have<sp/>to<sp/>create<sp/>them<sp/>from<sp/>scratch<sp/>following<sp/>the<sp/>laboratory<sp/>notebook.<sp/>You<sp/>can<sp/>use<sp/>the<sp/>files<sp/>of<sp/>the<sp/>previous<sp/>versions<sp/>as<sp/>a<sp/>reference.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Check<sp/>the<sp/>[HW<sp/>dependent<sp/>part<sp/>of<sp/>Version<sp/>4](fsm__simone_8c.html).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">YOU<sp/>MUST<sp/>DRAW<sp/>THE<sp/>FSM<sp/>OF<sp/>THE<sp/>SYSTEM<sp/>BY<sp/>YOURSELF<sp/>AND<sp/>PUT<sp/>IT<sp/>HERE.</highlight></codeline>
+<codeline><highlight class="normal">![FSM<sp/>of<sp/>the<sp/>system](docs/assets/code_imgs/image.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Version<sp/>5</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>Version<sp/>5<sp/>the<sp/>user<sp/>adds<sp/>its<sp/>own<sp/>functions<sp/>to<sp/>the<sp/>system.<sp/>Check<sp/>the<sp/>manual<sp/>of<sp/>the<sp/>system<sp/>to<sp/>know<sp/>how<sp/>to<sp/>add<sp/>your<sp/>own<sp/>functions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Download<sp/>this<sp/>project<sp/>and<sp/>place<sp/>it<sp/>in<sp/>the<sp/>`projects`<sp/>folder<sp/>of<sp/>the<sp/>MatrixMCU<sp/>toolkit.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Prerequisites</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Be<sp/>sure<sp/>that<sp/>you<sp/>fulfill<sp/>the<sp/>prerequisites<sp/>of<sp/>the<sp/>MatrixMCU<sp/>toolkit<sp/>and<sp/>it<sp/>is<sp/>up<sp/>to<sp/>date.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Document<sp/>your<sp/>code</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Watch<sp/>this<sp/>video<sp/>to<sp/>better<sp/>understand<sp/>how<sp/>to<sp/>document<sp/>your<sp/>code<sp/>with<sp/>**Doxygen**:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Link<sp/>to<sp/>Doxygen<sp/>tutorial](docs/assets/code_imgs/doxygen_thumb.png)](https://youtu.be/VC7fExJJQSY?si=oIAZU_b2sRWhu3de<sp/>&quot;[MatrixMCU].<sp/>Documentación<sp/>de<sp/>código<sp/>con<sp/>Doxygen.&quot;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Authors</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Josué<sp/>Pagán**<sp/>-<sp/>email:<sp/>[j.pagan@upm.es](mailto:j.pagan@upm.es)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>is<sp/>licensed<sp/>under<sp/>the<sp/>MIT<sp/>License<sp/>-<sp/>see<sp/>the<sp/>LICENSE<sp/>file<sp/>for<sp/>details.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Acknowledgments</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Acknowledgments<sp/>to<sp/>all<sp/>professors<sp/>of<sp/>the<sp/>**SDG2**<sp/>subject.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**In<sp/>memory<sp/>of<sp/>Mario<sp/>Garrido<sp/>Gálvez<sp/>(1981-2025),<sp/>a<sp/>great<sp/>professor<sp/>and<sp/>colleague.<sp/>RIP.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>References</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**[1]**:<sp/>[Documentation<sp/>available<sp/>in<sp/>the<sp/>Moodle<sp/>of<sp/>the<sp/>course](https://moodle.upm.es/titulaciones/oficiales/course/view.php?id=785#section-0)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**[2]**:<sp/>[Embedded<sp/>Systems<sp/>with<sp/>ARM<sp/>Cortex-M<sp/>Microcontrollers<sp/>in<sp/>Assembly<sp/>Language<sp/>and<sp/>C<sp/>(Fourth<sp/>Edition)](https://web.eece.maine.edu/~zhu/book/index.php)<sp/>for<sp/>explanations<sp/>and<sp/>examples<sp/>of<sp/>use<sp/>of<sp/>the<sp/>ARM<sp/>Cortex-M<sp/>microcontrollers<sp/>in<sp/>C<sp/>with<sp/>CMSIS.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**[3]**:<sp/>[Programming<sp/>with<sp/>STM32:<sp/>Getting<sp/>Started<sp/>with<sp/>the<sp/>Nucleo<sp/>Board<sp/>and<sp/>C/C++](https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA51126621660004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;tab=tab1&amp;query=any,contains,Programming%20with%20STM32:%20Getting%20Started%20with%20the%20Nucleo%20Board%20and%20C%2FC%2B%2B&amp;offset=0)<sp/>for<sp/>examples<sp/>of<sp/>use<sp/>of<sp/>the<sp/>STM32<sp/>microcontrollers<sp/>with<sp/>the<sp/>HAL<sp/>of<sp/>ST.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**[4]**:<sp/>[The<sp/>C<sp/>Programming<sp/>Language](https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA2151866130004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;isFrbr=true&amp;tab=tab1&amp;query=any,contains,C%20Programming%20Language)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**[5]**:<sp/>[Aspectos<sp/>prácticos<sp/>de<sp/>diseño<sp/>y<sp/>medida<sp/>en<sp/>Laboratorios<sp/>de<sp/>Electrónica](https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA21107789140004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;isFrbr=true&amp;tab=tab1&amp;query=any,contains,Aspectos%20pr%C3%A1cticos%20de%20dise%C3%B1o%20y%20medida%20en%20Laboratorios%20de%20Electr%C3%B3nica&amp;offset=0)<sp/>for<sp/>the<sp/>use<sp/>of<sp/>the<sp/>oscilloscope<sp/>and<sp/>the<sp/>function<sp/>generator.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**[6]**:<sp/>[Nucleo<sp/>Boards<sp/>Programming<sp/>with<sp/>th<sp/>STM32CubeIDE](https://www.elektor.com/products/nucleo-boards-programming-with-the-stm32cubeide)<sp/>for<sp/>examples<sp/>of<sp/>use<sp/>of<sp/>the<sp/>STM32<sp/>microcontrollers<sp/>with<sp/>the<sp/>STM32CubeIDE.</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

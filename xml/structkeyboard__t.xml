@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structkeyboard__t" kind="struct" language="C++" prot="public">
+    <compoundname>keyboard_t</compoundname>
+    <includes local="no">keyboards.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkeyboard__t_1aef159540ca9b9ad3dd9b66133b9d948d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t keyboard_t::num_rows</definition>
+        <argsstring></argsstring>
+        <name>num_rows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of rows in the keyboard matrix </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/keyboards.h" line="21" column="13" bodyfile="common/include/keyboards.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeyboard__t_1af1cec842e8713aa0e65dadba12c04ae7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t keyboard_t::num_cols</definition>
+        <argsstring></argsstring>
+        <name>num_cols</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of columns in the keyboard matrix </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/keyboards.h" line="22" column="13" bodyfile="common/include/keyboards.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeyboard__t_1a09c406047a8d4c37720f5fed9372b532" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char keyboard_t::null_key</definition>
+        <argsstring></argsstring>
+        <name>null_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Character to represent no key pressed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/keyboards.h" line="23" column="10" bodyfile="common/include/keyboards.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeyboard__t_1ad64381dd8f3fe406705220f0feec2c3b" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* keyboard_t::keys</definition>
+        <argsstring></argsstring>
+        <name>keys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the keyboard layout matrix </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/keyboards.h" line="24" column="16" bodyfile="common/include/keyboards.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to define the keyboard key mapping and related information. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/include/keyboards.h" line="20" column="1" bodyfile="common/include/keyboards.h" bodystart="19" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structkeyboard__t_1ad64381dd8f3fe406705220f0feec2c3b" prot="public" virt="non-virtual"><scope>keyboard_t</scope><name>keys</name></member>
+      <member refid="structkeyboard__t_1a09c406047a8d4c37720f5fed9372b532" prot="public" virt="non-virtual"><scope>keyboard_t</scope><name>null_key</name></member>
+      <member refid="structkeyboard__t_1af1cec842e8713aa0e65dadba12c04ae7" prot="public" virt="non-virtual"><scope>keyboard_t</scope><name>num_cols</name></member>
+      <member refid="structkeyboard__t_1aef159540ca9b9ad3dd9b66133b9d948d" prot="public" virt="non-virtual"><scope>keyboard_t</scope><name>num_rows</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

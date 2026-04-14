@@ -785,7 +785,7 @@
 <p>Nuestra librería implementa la lógica de la <a href="acronimos.html#acro:FSM"><strong>FSM</strong></a> mostrada en la <a href="#fig:fsm_rgb_light">figura</a> y que llamaremos <code>fsm_rgb_light</code> (en los ficheros <code>.c</code> y <code>.h</code>). Tiene 2 estados en los que:</p>
 <ul>
 <li>
-<p><code>IDLE_RGB</code>: estado inicial de la FSM en el que espara a ser activada. Si se le activa se cambia al estado <code>SET_COLOR</code>. También se vuelve a este estado cuando el sistema no está activo (<code>status</code> es <code>false</code>).</p>
+<p><code>IDLE_RGB</code>: estado inicial de la FSM en el que espera a ser activada. Si se le activa se cambia al estado <code>SET_COLOR</code>. También se vuelve a este estado cuando el sistema no está activo (<code>status</code> es <code>false</code>). <span style="color: red; font-weight: bold;">¡OJO! El nombre de este estado puede ser confuso con el del <em>flag</em> <code>idle</code> de la estructura; pero no tiene nada que ver. Entiéndase como estado <code>OFF</code>.</span> No le cambies el nombre.</p>
 </li>
 <li>
 <p><code>SET_COLOR</code>: en este estado la FSM espera a que se le haya pasado un nuevo color base y/o una intensidad nueva. Tras poner el color, se activa el <em>flag</em> <code>idle</code> y se queda en este estado. El nuevo color se corrige modificando la intensidad del color base recibido según el porcentaje de intensidad indicado; esto se hace con la función privada <code>_correct_rgb_light_levels()</code> que deberá implementar. Si se le desactiva el sistema, vuelve al estado <code>IDLE_RGB</code>.</p>

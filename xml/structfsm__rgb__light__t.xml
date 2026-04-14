@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structfsm__rgb__light__t" kind="struct" language="C++" prot="public">
+    <compoundname>fsm_rgb_light_t</compoundname>
+    <includes local="no">fsm_rgb_light.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfsm__rgb__light__t_1aad98e51532af1327af60d9f6272f96b7" prot="public" static="no" mutable="no">
+        <type>fsm_t</type>
+        <definition>fsm_t fsm_rgb_light_t::f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RGB light system FSM <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_rgb_light.h" line="48" column="11" bodyfile="common/include/fsm_rgb_light.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" prot="public" static="no" mutable="no">
+        <type><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>rgb_color_t fsm_rgb_light_t::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RGB color </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_rgb_light.h" line="49" column="17" bodyfile="common/include/fsm_rgb_light.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__rgb__light__t_1aee27f84c86e0b207eb8cd6105e1d06cd" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_rgb_light_t::intensity_perc</definition>
+        <argsstring></argsstring>
+        <name>intensity_perc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Intensity in percentage </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_rgb_light.h" line="50" column="13" bodyfile="common/include/fsm_rgb_light.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__rgb__light__t_1a02c2edc48a05392c68079e5470c9d905" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fsm_rgb_light_t::new_color</definition>
+        <argsstring></argsstring>
+        <name>new_color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag to indicate if a new color has to be set </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_rgb_light.h" line="51" column="10" bodyfile="common/include/fsm_rgb_light.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__rgb__light__t_1add76316d0ac2388be498a18c7cf965bf" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fsm_rgb_light_t::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag to indicate if the RGB light is active </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_rgb_light.h" line="52" column="10" bodyfile="common/include/fsm_rgb_light.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__rgb__light__t_1ab817689a6281c9c471ffe2e8e4a1c788" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fsm_rgb_light_t::idle</definition>
+        <argsstring></argsstring>
+        <name>idle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag to indicate if the RGB light being active is idle, or not </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_rgb_light.h" line="53" column="10" bodyfile="common/include/fsm_rgb_light.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__rgb__light__t_1ab502ad4c68fa6cb633202dedb796f921" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_rgb_light_t::rgb_light_id</definition>
+        <argsstring></argsstring>
+        <name>rgb_light_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique RGB light system identifier number </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_rgb_light.h" line="54" column="13" bodyfile="common/include/fsm_rgb_light.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to define the FSM of the RGB light system. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Structure of the RGB light FSM. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>fsm_rgb_light_t</label>
+        <link refid="structfsm__rgb__light__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>rgb_color_t</label>
+        <link refid="structrgb__color__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/include/fsm_rgb_light.h" line="47" column="1" bodyfile="common/include/fsm_rgb_light.h" bodystart="46" bodyend="55"/>
+    <listofallmembers>
+      <member refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" prot="public" virt="non-virtual"><scope>fsm_rgb_light_t</scope><name>color</name></member>
+      <member refid="structfsm__rgb__light__t_1aad98e51532af1327af60d9f6272f96b7" prot="public" virt="non-virtual"><scope>fsm_rgb_light_t</scope><name>f</name></member>
+      <member refid="structfsm__rgb__light__t_1ab817689a6281c9c471ffe2e8e4a1c788" prot="public" virt="non-virtual"><scope>fsm_rgb_light_t</scope><name>idle</name></member>
+      <member refid="structfsm__rgb__light__t_1aee27f84c86e0b207eb8cd6105e1d06cd" prot="public" virt="non-virtual"><scope>fsm_rgb_light_t</scope><name>intensity_perc</name></member>
+      <member refid="structfsm__rgb__light__t_1a02c2edc48a05392c68079e5470c9d905" prot="public" virt="non-virtual"><scope>fsm_rgb_light_t</scope><name>new_color</name></member>
+      <member refid="structfsm__rgb__light__t_1ab502ad4c68fa6cb633202dedb796f921" prot="public" virt="non-virtual"><scope>fsm_rgb_light_t</scope><name>rgb_light_id</name></member>
+      <member refid="structfsm__rgb__light__t_1add76316d0ac2388be498a18c7cf965bf" prot="public" virt="non-virtual"><scope>fsm_rgb_light_t</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

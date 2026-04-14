@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="port__simone_8h" kind="file" language="C++">
+    <compoundname>port_simone.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includedby refid="fsm__simone_8c" local="yes">common/src/fsm_simone.c</includedby>
+    <includedby refid="interr_8c" local="yes">port/stm32f4/src/interr.c</includedby>
+    <includedby refid="stm32f4__simone_8c" local="yes">port/stm32f4/src/stm32f4_simone.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>port/include/port_simone.h</label>
+        <link refid="port__simone_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>port/include/port_simone.h</label>
+        <link refid="port__simone_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>port/stm32f4/src/interr.c</label>
+        <link refid="interr_8c"/>
+      </node>
+      <node id="2">
+        <label>common/src/fsm_simone.c</label>
+        <link refid="fsm__simone_8c"/>
+      </node>
+      <node id="4">
+        <label>port/stm32f4/src/stm32f4_simone.c</label>
+        <link refid="stm32f4__simone_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="port__simone_8h_1ab64b85753a685deb813ee00f18617d3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_simone_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_simone_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initialize the Simone game port. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function initializes the HW associated to the Simone game, such as the timer that controls the duration of the different events of the game. It is called from the <computeroutput><ref refid="fsm__simone_8c_1a4116d60a8cb018b1353a887153a32e9a" kindref="member">fsm_simone_init()</ref></computeroutput> function to initialize the HW dependencies of the Simone FSM.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Reset the flag of the <computeroutput>simone_hw</computeroutput> struct. <linebreak/>
+✅ 2. Configure the timer that controls the duration of the different events of the game by calling the <computeroutput><ref refid="stm32f4__simone_8c_1a7060497e77195bb15215cf7e069deba1" kindref="member">_timer_simone_setup()</ref></computeroutput> function. <linebreak/>
+</para>
+</blockquote></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_simone.h" line="26" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="133" bodyend="141" declfile="port/include/port_simone.h" declline="26" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__simone_8h_1aecf94fdc86b9a81d5b71a274e9ba0069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_simone_set_timer_timeout</definition>
+        <argsstring>(uint32_t duration_ms)</argsstring>
+        <name>port_simone_set_timer_timeout</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>duration_ms</declname>
+        </param>
+        <briefdescription>
+<para>Configure the timer timeout for the Simone game. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is called to configure the timer that controls the duration of the different events of the game. The duration of the timeout is received as a parameter in milliseconds. When the timer expires, an interrupt is generated and the flag of the <computeroutput>simone_hw</computeroutput> struct is set to indicate that the time has expired.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold> ✅ 1. Disable the timer by clearing the <computeroutput>CEN</computeroutput> bit in the <computeroutput>CR1</computeroutput> register. <linebreak/>
+✅ 2. Reset the counter by writing 0 to the <computeroutput>CNT</computeroutput> register. <linebreak/>
+✅ 3. Compute the values of the prescaler (PSC) and the auto-reload register (ARR) to match the duration in milliseconds. Use any of the two options explained in the <computeroutput><ref refid="stm32f4__keyboard_8c" kindref="compound">stm32f4_keyboard.c</ref></computeroutput> file to compute the values of the prescaler and the auto-reload register. <linebreak/>
+✅ 4. Load the values of the prescaler and the auto-reload register in the corresponding registers. <linebreak/>
+✅ 5. The values of the prescaler and the auto-reload register are currently in the preload registers. To load them into the active registers we need an update event. We can do this manually by setting the <computeroutput>UG</computeroutput> bit in the <computeroutput>EGR</computeroutput> register. <linebreak/>
+✅ 6. Clear the pending interrupt flag generated when doing the update event by clearing the <computeroutput>UIF</computeroutput> bit in the <computeroutput>SR</computeroutput> register. <linebreak/>
+✅ 7. Now enable the update interrupt by setting the <computeroutput>UIE</computeroutput> bit in the <computeroutput>DIER</computeroutput> register. <linebreak/>
+✅ 8. Reset the flag of the <computeroutput>simone_hw</computeroutput> struct to indicate that the time has not expired yet. <bold>Important! This must be done after enabling the interrupt to avoid a race condition.</bold> <linebreak/>
+✅ 9. Enable the timer by setting the <computeroutput>CEN</computeroutput> bit in the <computeroutput>CR1</computeroutput> register. <linebreak/>
+</para>
+</blockquote><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>duration_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_simone.h" line="45" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="72" bodyend="112" declfile="port/include/port_simone.h" declline="45" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__simone_8h_1af525b52313df726725a11d94f165fd7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_simone_stop_timer</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_simone_stop_timer</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Stop the timer of the Simone game. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is called to stop the timer of the Simone game when the game is over or when the player has won. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_simone.h" line="52" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="114" bodyend="121" declfile="port/include/port_simone.h" declline="52" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__simone_8h_1ab570111b9501fac8d037cebd8094d6c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool port_simone_get_timeout_status</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_simone_get_timeout_status</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the timer timeout status of the Simone game. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true </para>
+</simplesect>
+<simplesect kind="return"><para>false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_simone.h" line="60" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="123" bodyend="126" declfile="port/include/port_simone.h" declline="60" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__simone_8h_1aa335548d76b681efd177a32ab4c08aa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_simone_set_timeout_status</definition>
+        <argsstring>(bool status)</argsstring>
+        <name>port_simone_set_timeout_status</name>
+        <param>
+          <type>bool</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Set the status of the timer timeout status of the Simone game. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_simone.h" line="67" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="128" bodyend="131" declfile="port/include/port_simone.h" declline="67" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header for the portable functions os the Simone board game. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#ifndef<sp/>PORT_SIMONE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PORT_SIMONE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Function<sp/>prototypes<sp/>and<sp/>explanation<sp/>-------------------------------------------------*/</highlight></codeline>
+<codeline lineno="26"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__simone_8h_1ab64b85753a685deb813ee00f18617d3a" kindref="member">port_simone_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__simone_8h_1aecf94fdc86b9a81d5b71a274e9ba0069" kindref="member">port_simone_set_timer_timeout</ref>(uint32_t<sp/>duration_ms);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__simone_8h_1af525b52313df726725a11d94f165fd7e" kindref="member">port_simone_stop_timer</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="port__simone_8h_1ab570111b9501fac8d037cebd8094d6c0" kindref="member">port_simone_get_timeout_status</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__simone_8h_1aa335548d76b681efd177a32ab4c08aa2" kindref="member">port_simone_set_timeout_status</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>status);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>PORT_SIMONE_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="port/include/port_simone.h"/>
+  </compounddef>
+</doxygen>

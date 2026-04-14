@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="rgb__colors_8h" kind="file" language="C++">
+    <compoundname>rgb_colors.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="fsm__rgb__light_8h" local="yes">common/include/fsm_rgb_light.h</includedby>
+    <includedby refid="fsm__rgb__light_8c" local="yes">common/src/fsm_rgb_light.c</includedby>
+    <includedby refid="fsm__simone_8c" local="yes">common/src/fsm_simone.c</includedby>
+    <includedby refid="rgb__colors_8c" local="yes">common/src/rgb_colors.c</includedby>
+    <includedby refid="port__rgb__light_8h" local="yes">port/include/port_rgb_light.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>common/include/rgb_colors.h</label>
+        <link refid="rgb__colors_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>common/include/rgb_colors.h</label>
+        <link refid="rgb__colors_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>port/stm32f4/src/stm32f4_rgb_light.c</label>
+        <link refid="stm32f4__rgb__light_8c"/>
+      </node>
+      <node id="3">
+        <label>common/include/fsm_simone.h</label>
+        <link refid="fsm__simone_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>common/src/rgb_colors.c</label>
+        <link refid="rgb__colors_8c"/>
+      </node>
+      <node id="5">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="6">
+        <label>common/src/fsm_rgb_light.c</label>
+        <link refid="fsm__rgb__light_8c"/>
+      </node>
+      <node id="2">
+        <label>common/include/fsm_rgb_light.h</label>
+        <link refid="fsm__rgb__light_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>common/src/fsm_simone.c</label>
+        <link refid="fsm__simone_8c"/>
+      </node>
+      <node id="8">
+        <label>port/include/port_rgb_light.h</label>
+        <link refid="port__rgb__light_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrgb__color__t" prot="public">rgb_color_t</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" prot="public" static="no">
+        <name>COLOR_RGB_MAX_VALUE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum value for the RGB LED </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="17" column="9" bodyfile="common/include/rgb_colors.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="rgb__colors_8h_1ac1830590deccc1cced766dd388c5b2fb" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_red</definition>
+        <argsstring></argsstring>
+        <name>color_red</name>
+        <briefdescription>
+<para>Red color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="32" column="26" bodyfile="common/src/rgb_colors.c" bodystart="16" bodyend="-1" declfile="common/include/rgb_colors.h" declline="32" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8h_1a5e7578ed7ac65b7f947520608153dd2d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_green</definition>
+        <argsstring></argsstring>
+        <name>color_green</name>
+        <briefdescription>
+<para>Green color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="33" column="26" bodyfile="common/src/rgb_colors.c" bodystart="22" bodyend="-1" declfile="common/include/rgb_colors.h" declline="33" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8h_1ad7b6ffa61298d666a046f01657e1dd21" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_blue</definition>
+        <argsstring></argsstring>
+        <name>color_blue</name>
+        <briefdescription>
+<para>Blue color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="34" column="26" bodyfile="common/src/rgb_colors.c" bodystart="28" bodyend="-1" declfile="common/include/rgb_colors.h" declline="34" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8h_1ae64b2a4c4c08e81e3283c01933321d05" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_yellow</definition>
+        <argsstring></argsstring>
+        <name>color_yellow</name>
+        <briefdescription>
+<para>Yellow color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="35" column="26" bodyfile="common/src/rgb_colors.c" bodystart="34" bodyend="-1" declfile="common/include/rgb_colors.h" declline="35" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8h_1ab764bd1a23fadd2dd0e10fecdf420ee7" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_white</definition>
+        <argsstring></argsstring>
+        <name>color_white</name>
+        <briefdescription>
+<para>White color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="36" column="26" bodyfile="common/src/rgb_colors.c" bodystart="40" bodyend="-1" declfile="common/include/rgb_colors.h" declline="36" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8h_1aee6b022adce89dfe6886fba8593f671b" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_turquoise</definition>
+        <argsstring></argsstring>
+        <name>color_turquoise</name>
+        <briefdescription>
+<para>Turquoise color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="37" column="26" bodyfile="common/src/rgb_colors.c" bodystart="46" bodyend="-1" declfile="common/include/rgb_colors.h" declline="37" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8h_1aa9cafeaebaeef62f47b0d0a46643f9f3" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_off</definition>
+        <argsstring></argsstring>
+        <name>color_off</name>
+        <briefdescription>
+<para>Color OFF. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="38" column="26" bodyfile="common/src/rgb_colors.c" bodystart="52" bodyend="-1" declfile="common/include/rgb_colors.h" declline="38" declcolumn="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header to define RGB colors and related constants. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#ifndef<sp/>RGB_COLORS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RGB_COLORS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>and<sp/>enums<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COLOR_RGB_MAX_VALUE<sp/>255<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>Typedefs<sp/>--------------------------------------------------------------------*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structrgb__color__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>r;<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>g;<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>b;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}<sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Colors<sp/>must<sp/>be<sp/>defined<sp/>in<sp/>rgb_colors.c,<sp/>and<sp/>declared<sp/>here<sp/>as<sp/>extern</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Check<sp/>other<sp/>colors:<sp/>https://www.downtownuplighting.com/rgb-color-chart</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8h_1ac1830590deccc1cced766dd388c5b2fb" kindref="member">color_red</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8h_1a5e7578ed7ac65b7f947520608153dd2d" kindref="member">color_green</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8h_1ad7b6ffa61298d666a046f01657e1dd21" kindref="member">color_blue</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8h_1ae64b2a4c4c08e81e3283c01933321d05" kindref="member">color_yellow</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8h_1ab764bd1a23fadd2dd0e10fecdf420ee7" kindref="member">color_white</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8h_1aee6b022adce89dfe6886fba8593f671b" kindref="member">color_turquoise</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8h_1aa9cafeaebaeef62f47b0d0a46643f9f3" kindref="member">color_off</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>RGB_COLORS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="common/include/rgb_colors.h"/>
+  </compounddef>
+</doxygen>

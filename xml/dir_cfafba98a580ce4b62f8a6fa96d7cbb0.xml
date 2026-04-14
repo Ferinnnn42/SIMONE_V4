@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_cfafba98a580ce4b62f8a6fa96d7cbb0" kind="dir">
+    <compoundname>example</compoundname>
+    <innerfile refid="example__v1_8c">example_v1.c</innerfile>
+    <innerfile refid="example__v2_8c">example_v2.c</innerfile>
+    <innerfile refid="example__v3_8c">example_v3.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/"/>
+  </compounddef>
+</doxygen>

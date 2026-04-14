@@ -1,0 +1,899 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="stm32f4__system_8h" kind="file" language="C++">
+    <compoundname>stm32f4_system.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="yes">stm32f4xx.h</includes>
+    <includedby refid="example__v1_8c" local="yes">example/example_v1.c</includedby>
+    <includedby refid="example__v2_8c" local="yes">example/example_v2.c</includedby>
+    <includedby refid="example__v3_8c" local="yes">example/example_v3.c</includedby>
+    <includedby refid="interr_8c" local="yes">port/stm32f4/src/interr.c</includedby>
+    <includedby refid="stm32f4__button_8c" local="yes">port/stm32f4/src/stm32f4_button.c</includedby>
+    <includedby refid="stm32f4__keyboard_8c" local="yes">port/stm32f4/src/stm32f4_keyboard.c</includedby>
+    <includedby refid="stm32f4__rgb__light_8c" local="yes">port/stm32f4/src/stm32f4_rgb_light.c</includedby>
+    <includedby refid="stm32f4__simone_8c" local="yes">port/stm32f4/src/stm32f4_simone.c</includedby>
+    <includedby refid="stm32f4__system_8c" local="yes">port/stm32f4/src/stm32f4_system.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="1">
+        <label>port/stm32f4/include/stm32f4_system.h</label>
+        <link refid="stm32f4__system_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stm32f4xx.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>port/stm32f4/include/stm32f4_system.h</label>
+        <link refid="stm32f4__system_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>port/stm32f4/src/stm32f4_rgb_light.c</label>
+        <link refid="stm32f4__rgb__light_8c"/>
+      </node>
+      <node id="2">
+        <label>port/stm32f4/src/interr.c</label>
+        <link refid="interr_8c"/>
+      </node>
+      <node id="3">
+        <label>port/stm32f4/src/stm32f4_button.c</label>
+        <link refid="stm32f4__button_8c"/>
+      </node>
+      <node id="7">
+        <label>port/stm32f4/src/stm32f4_system.c</label>
+        <link refid="stm32f4__system_8c"/>
+      </node>
+      <node id="4">
+        <label>port/stm32f4/src/stm32f4_keyboard.c</label>
+        <link refid="stm32f4__keyboard_8c"/>
+      </node>
+      <node id="6">
+        <label>port/stm32f4/src/stm32f4_simone.c</label>
+        <link refid="stm32f4__simone_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" prot="public" static="no">
+        <name>BIT_POS_TO_MASK</name>
+        <param><defname>x</defname></param>
+        <initializer>(0x01 &lt;&lt; (x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Convert the index of a bit into a mask by left shifting </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="26" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1ab10023bfece24287e8d301c535c5eaca" prot="public" static="no">
+        <name>BASE_MASK_TO_POS</name>
+        <param><defname>m</defname></param>
+        <param><defname>p</defname></param>
+        <initializer>((m) &lt;&lt; (p))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Move a mask defined in the LSBs to upper positions by shifting left p bits </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="27" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a608fbf41a9ceb289d0a8052a7c715a57" prot="public" static="no">
+        <name>GET_PIN_IRQN</name>
+        <param><defname>pin</defname></param>
+        <initializer>((pin) &gt;= 10 ? EXTI15_10_IRQn : ((pin) &gt;= 5 ? EXTI9_5_IRQn : (EXTI0_IRQn + (pin))))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the IRQ number associated to a GPIO pin </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="28" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a3ff262e05c96d10578f948caf322f321" prot="public" static="no">
+        <name>STM32F4_GPIO_MODE_IN</name>
+        <initializer>0x00U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Input mode </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="31" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a743a26f4c01c009064f0e928bf14d232" prot="public" static="no">
+        <name>STM32F4_GPIO_MODE_OUT</name>
+        <initializer>0x01U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Output mode </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="32" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a4003a3d14efff411a229ec11e9ac38b4" prot="public" static="no">
+        <name>STM32F4_GPIO_MODE_AF</name>
+        <initializer>0x02U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Alternate function mode </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="33" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a1f76ef205f8a27c28b0c8d6b7cef1ec2" prot="public" static="no">
+        <name>STM32F4_GPIO_MODE_AN</name>
+        <initializer>0x03U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Analog mode </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="34" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a137bdfc6e1be3a728c27f4f8426bbde5" prot="public" static="no">
+        <name>STM32F4_GPIO_PUPDR_NOPULL</name>
+        <initializer>0x00U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>No pull-up, no pull-down </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="36" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a23dce6c3d171f96015510c47a068b8b6" prot="public" static="no">
+        <name>STM32F4_GPIO_PUPDR_PULLUP</name>
+        <initializer>0x01U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pull-up </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="37" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a6a2ccfd3445dd748b00d9691952b8d1e" prot="public" static="no">
+        <name>STM32F4_GPIO_PUPDR_PULLDOWN</name>
+        <initializer>0x02U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pull-down </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="38" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1af69e8cfa63dead9f0a5739476687f3c9" prot="public" static="no">
+        <name>STM32F4_TRIGGER_RISING_EDGE</name>
+        <initializer>0x01U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt mask for detecting rising edge </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="41" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a722551884cd7c4efe7205777c3c75cef" prot="public" static="no">
+        <name>STM32F4_TRIGGER_FALLING_EDGE</name>
+        <initializer>0x02U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt mask for detecting falling edge </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="42" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1af2c99879cd4076bc4b57915f7801fb72" prot="public" static="no">
+        <name>STM32F4_TRIGGER_BOTH_EDGE</name>
+        <initializer>(<ref refid="stm32f4__system_8h_1af69e8cfa63dead9f0a5739476687f3c9" kindref="member">STM32F4_TRIGGER_RISING_EDGE</ref> | <ref refid="stm32f4__system_8h_1a722551884cd7c4efe7205777c3c75cef" kindref="member">STM32F4_TRIGGER_FALLING_EDGE</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt mask for detecting both rising and falling edges </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="43" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1adfc5085a81fef522323d2ca774f861a2" prot="public" static="no">
+        <name>STM32F4_TRIGGER_ENABLE_EVENT_REQ</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt mask for enabling event request </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="44" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a1d3c73313e22ba12ba4602c58117e318" prot="public" static="no">
+        <name>STM32F4_TRIGGER_ENABLE_INTERR_REQ</name>
+        <initializer>0x08U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt mask for enabling interrupt request </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="45" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1ac2f80d8af6717fe55194f441cdfce98d" prot="public" static="no">
+        <name>STM32F4_AF1</name>
+        <initializer>0x01U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Alternate function 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="48" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="stm32f4__system_8h_1a7b0149d721c22b3f25381af2fabc2a5f" prot="public" static="no">
+        <name>STM32F4_AF2</name>
+        <initializer>0x02U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Alternate function 2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="49" column="9" bodyfile="port/stm32f4/include/stm32f4_system.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stm32f4_system_gpio_config</definition>
+        <argsstring>(GPIO_TypeDef *p_port, uint8_t pin, uint8_t mode, uint8_t pupd)</argsstring>
+        <name>stm32f4_system_gpio_config</name>
+        <param>
+          <type>GPIO_TypeDef *</type>
+          <declname>p_port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pupd</declname>
+        </param>
+        <briefdescription>
+<para>Configure the mode and pull of a GPIO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>  ==============================================================================
+                          ##### How to use GPIOs #####
+  ==============================================================================
+  [..]
+    (#) Enable the GPIO AHB clock using the RCC-&gt;AHB1ENR register.
+
+    (#) Configure the GPIO pin.
+        (++) Configure the IO mode.
+        (++) Activate Pull-up, Pull-down resistor.
+        (++) In case of Output or alternate function mode, configure the speed if needed.
+        (++) Configure digital or analog mode.
+        (++) In case of external interrupt/event select the type (interrupt or event) and
+             the corresponding trigger event (rising or falling or both).
+
+    (#) In case of external interrupt/event mode selection, configure NVIC IRQ priority
+        mapped to the EXTI line and enable it using.
+
+    (#) To get the level of a pin configured in input mode use the GPIOx_IDR register.
+
+    (#) To set/reset the level of a pin configured in output mode use the GPIOx_BSRR register
+        to SET (bits 0..15) or RESET (bits 16..31) the GPIO.</verbatim> <blockquote><para><orderedlist>
+<listitem><para>Enable GPIOx clock in AHB1ENR <linebreak/>
+</para>
+</listitem><listitem><para>Set mode in MODER <linebreak/>
+</para>
+</listitem><listitem><para>Set pull up/down configuration </para>
+</listitem></orderedlist>
+</para>
+</blockquote></para>
+<para><simplesect kind="note"><para>This function performs the GPIO Port Clock Enable. It may occur that a port clock is re-enabled, it does not matter if it was already enabled. * </para>
+</simplesect>
+<simplesect kind="note"><para>This function enables the AHB1 peripheral clock. After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port of the GPIO (CMSIS struct like) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin/line of the GPIO (index from 0 to 15) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input, output, alternate, or analog </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pupd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pull-up, pull-down, or no-pull</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="96" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="195" bodyend="216" declfile="port/stm32f4/include/stm32f4_system.h" declline="96" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__system_8h_1aa1e7f52e13f7ac3361326af3d8022e18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stm32f4_system_gpio_config_alternate</definition>
+        <argsstring>(GPIO_TypeDef *p_port, uint8_t pin, uint8_t alternate)</argsstring>
+        <name>stm32f4_system_gpio_config_alternate</name>
+        <param>
+          <type>GPIO_TypeDef *</type>
+          <declname>p_port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>alternate</declname>
+        </param>
+        <briefdescription>
+<para>Configure the alternate function of a GPIO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><orderedlist>
+<listitem><para><bold>Create a 4-bit base mask</bold>. <linebreak/>
+</para>
+</listitem><listitem><para>Shift left the mask depending on the value of the given **<computeroutput>pin</computeroutput> modulo 8.** <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 The value of <computeroutput>pin</computeroutput> ranges from 0 to 15. The registers GPIOx_AFRH and GPIOx_AFRL implement 8 groups of 4 bits each. In order to use the value of <computeroutput>pin</computeroutput> as index to select the corresponding group of bits, we can use the remainder of the division by 8. <linebreak/>
+</para>
+</listitem><listitem><para>Clean and set the bits <bold>as shown in the tutorial document</bold>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Clean the corresponding bit on element <computeroutput>0</computeroutput> or <computeroutput>1</computeroutput> of the AFR array (<emphasis>e.g</emphasis>, <computeroutput>GPIOA-&gt;AFR[0]</computeroutput> for GPIOx_AFRL) <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Set the given value (<computeroutput>alternate</computeroutput>) of the alternate function, using bit shifting, for example. <linebreak/>
+</para>
+</listitem></orderedlist>
+</para>
+</blockquote><linebreak/>
+<blockquote><para>💡 <bold>You can define your own masks for each alternate function (not recommended), or you can use the macro <computeroutput><ref refid="stm32f4__system_8h_1ab10023bfece24287e8d301c535c5eaca" kindref="member">BASE_MASK_TO_POS(m, p)</ref></computeroutput> to get the mask of a base mask. Example:</bold> <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>A base mask <computeroutput>m</computeroutput> equals <computeroutput>0x03</computeroutput> (<computeroutput>0b 0000 0011</computeroutput> in binary) can be shifted <computeroutput>p</computeroutput> equals <computeroutput>8</computeroutput> positions <computeroutput><ref refid="stm32f4__system_8h_1ab10023bfece24287e8d301c535c5eaca" kindref="member">BASE_MASK_TO_POS(0x03, 8)</ref></computeroutput> resulting in <computeroutput>0x300</computeroutput> (<computeroutput>0b 0011 0000 0000</computeroutput> in binary). <linebreak/>
+</para>
+</blockquote></para>
+<para><simplesect kind="note"><para>The AFR register is a 2-element array representing GPIO alternate function high an low registers (GPIOx_AFRH and GPIOx_AFRL) <linebreak/>
+AFRLy: Alternate function selection for port x pin y (y = 0..7) <linebreak/>
+AFRHy: Alternate function selection for port x pin y (y = 8..15)</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port of the GPIO (CMSIS struct like) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin/line of the GPIO (index from 0 to 15) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alternate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alternate function number (values from 0 to 15) according to table of the datasheet: &quot;Table 11. Alternate function&quot;.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="121" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="312" bodyend="319" declfile="port/stm32f4/include/stm32f4_system.h" declline="121" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__system_8h_1a98f4105a82f32c645f0b06424af5ef22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stm32f4_system_gpio_config_exti</definition>
+        <argsstring>(GPIO_TypeDef *p_port, uint8_t pin, uint32_t mode)</argsstring>
+        <name>stm32f4_system_gpio_config_exti</name>
+        <param>
+          <type>GPIO_TypeDef *</type>
+          <declname>p_port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Configure the external interruption or event of a GPIO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><orderedlist>
+<listitem><para><bold>Enable the System configuration controller clock (SYSCFG).</bold> Enable the SYSCFG by setting the bit SYSCFGEN of the peripheral clock enable register (RCC_APB2ENR). The system configuration controller is used here to manage the external interrupt line connection to the GPIOs. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 As usual, you can access to the register (<computeroutput>APB2ENR</computeroutput>) as element of the structure <computeroutput>RCC</computeroutput>. You can use the macro <computeroutput>RCC_APB2ENR_SYSCFGEN</computeroutput> defined in <computeroutput>stm32f446xx.h</computeroutput> to set the bit. Look for the &quot;RCC_APB2ENR&quot; register in the Reference Manual if you need more information. <linebreak/>
+<linebreak/>
+</para>
+</listitem><listitem><para><bold>Associate the external interruption line to the given port.</bold> Clean and set the bits <bold>as shown in the tutorial document</bold>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Depending on the pin number, use the register SYSCFG_EXTICR1, SYSCFG_EXTICR2, SYSCFG_EXTICR3, or SYSCFG_EXTICR4. The structure <computeroutput>SYSCFG</computeroutput> contains a 4-element array called <computeroutput>EXTICR</computeroutput>; the first element (<computeroutput>EXTICR[0]</computeroutput>) configures the register SYSCFG_EXTICR1, and so on. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 To clean the EXTIx bits, you can create a mask depending on the <computeroutput>pin</computeroutput> value. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 To associate the external interruption to the given port, <emphasis>i.e.</emphasis> to set the EXTIx bits, you can create another mask depending on the <computeroutput>port</computeroutput> value. <linebreak/>
+<linebreak/>
+</para>
+</listitem><listitem><para><bold>Select the direction of the trigger</bold>: rising edge, falling edge, or both, depending on the value of the given <computeroutput>mode</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 If <emphasis>rising edge</emphasis>: activate the corresponding bit on the EXTI_RTSR register (element <computeroutput>RTSR</computeroutput>) of the <computeroutput>EXTI</computeroutput> structure. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 If <emphasis>falling edge</emphasis>: activate the corresponding bit on the EXTI_FTSR register (element <computeroutput>FTSR</computeroutput>) of the <computeroutput>EXTI</computeroutput> structure. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 If <emphasis>both</emphasis>: activate the corresponding bit on both registers. <linebreak/>
+<linebreak/>
+</para>
+</listitem><listitem><para><bold>Select the interrupt and/or event request</bold>: depending on the value of the given <computeroutput>mode</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 If <emphasis>event request</emphasis> enable: activate the corresponding bit on the EXTI_EMR register (element <computeroutput>EMR</computeroutput>) of the <computeroutput>EXTI</computeroutput> structure. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 If <emphasis>interrupt request</emphasis> enable: activate the corresponding bit on the EXTI_IMR register (element <computeroutput>IMR</computeroutput>) of the <computeroutput>EXTI</computeroutput> structure. <linebreak/>
+</para>
+</listitem></orderedlist>
+</para>
+</blockquote><linebreak/>
+<blockquote><para>💡 <bold>You can define your own masks for each pin value (not recommended), or you can use the <computeroutput><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK(pin)</ref></computeroutput> macro to get the mask of a pin.</bold> </para>
+</blockquote></para>
+<para><simplesect kind="warning"><para>It is highly recommended to clean the corresponding bit of each register (<computeroutput>RSTR</computeroutput>, <computeroutput>FTSR</computeroutput>, <computeroutput>EMR</computeroutput>, <computeroutput>IMR</computeroutput>) before activating it.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port of the GPIO (CMSIS struct like) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin/line of the GPIO (index from 0 to 15) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Trigger mode can be a combination (OR) of: (i) direction: rising edge (0x01), falling edge (0x02), (ii) event request (0x04), or (iii) interrupt request (0x08). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="152" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="218" bodyend="273" declfile="port/stm32f4/include/stm32f4_system.h" declline="152" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__system_8h_1a03d8c69cd44964e3f1ff05a2c79626b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stm32f4_system_gpio_exti_enable</definition>
+        <argsstring>(uint8_t pin, uint8_t priority, uint8_t subpriority)</argsstring>
+        <name>stm32f4_system_gpio_exti_enable</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>subpriority</declname>
+        </param>
+        <briefdescription>
+<para>Enable interrupts of a GPIO line (pin). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin/line of the GPIO (index from 0 to 15) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Priority level (from highest priority: 0, to lowest priority: 15) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>subpriority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Subpriority level (from highest priority: 0, to lowest priority: 15)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="163" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="275" bodyend="279" declfile="port/stm32f4/include/stm32f4_system.h" declline="163" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__system_8h_1ac6621c40ccd6adad9de3f3644e3cdadf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stm32f4_system_gpio_exti_disable</definition>
+        <argsstring>(uint8_t pin)</argsstring>
+        <name>stm32f4_system_gpio_exti_disable</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Disable interrupts of a GPIO line (pin) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin/line of the GPIO (index from 0 to 15)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="172" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="281" bodyend="284" declfile="port/stm32f4/include/stm32f4_system.h" declline="172" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__system_8h_1a47b09fba35fdd4d084f678e58bdb8c4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool stm32f4_system_gpio_read</definition>
+        <argsstring>(GPIO_TypeDef *p_port, uint8_t pin)</argsstring>
+        <name>stm32f4_system_gpio_read</name>
+        <param>
+          <type>GPIO_TypeDef *</type>
+          <declname>p_port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Read the digital value of a GPIO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. <bold>Retrieve the value of the IDR register.</bold> <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You must cast the read value to return a <computeroutput>bool</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You might use the <computeroutput><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK(pin)</ref></computeroutput> macro. <linebreak/>
+<linebreak/>
+✅ 2. <bold>Return the value.</bold> </para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port of the GPIO (CMSIS struct like) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin/line of the GPIO (index from 0 to 15)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the GPIO was HIGH </para>
+</simplesect>
+<simplesect kind="return"><para><computeroutput>false</computeroutput> if the GPIO was LOW </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="191" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="286" bodyend="289" declfile="port/stm32f4/include/stm32f4_system.h" declline="191" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__system_8h_1a1ad2bb4fcd77aa93ccd27a0079ef2f2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stm32f4_system_gpio_toggle</definition>
+        <argsstring>(GPIO_TypeDef *p_port, uint8_t pin)</argsstring>
+        <name>stm32f4_system_gpio_toggle</name>
+        <param>
+          <type>GPIO_TypeDef *</type>
+          <declname>p_port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Toggle the value of a GPIO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. <bold>Read the value of the GPIO.</bold> <linebreak/>
+<linebreak/>
+✅ 2. <bold>Write the opposite value in the GPIO.</bold> <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You might use functions <computeroutput><ref refid="stm32f4__system_8h_1a47b09fba35fdd4d084f678e58bdb8c4d" kindref="member">stm32f4_system_gpio_read()</ref></computeroutput> and <computeroutput><ref refid="stm32f4__system_8h_1af46cdd939024e157ed6f7468edaee4e3" kindref="member">stm32f4_system_gpio_write()</ref></computeroutput> to help you. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You might use the macros <computeroutput>HIGH</computeroutput> and <computeroutput>LOW</computeroutput>. <linebreak/>
+</para>
+</blockquote><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port of the GPIO (CMSIS struct like) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin/line of the GPIO (index from 0 to 15)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="208" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="306" bodyend="310" declfile="port/stm32f4/include/stm32f4_system.h" declline="208" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__system_8h_1af46cdd939024e157ed6f7468edaee4e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stm32f4_system_gpio_write</definition>
+        <argsstring>(GPIO_TypeDef *p_port, uint8_t pin, bool value)</argsstring>
+        <name>stm32f4_system_gpio_write</name>
+        <param>
+          <type>GPIO_TypeDef *</type>
+          <declname>p_port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Write a digital value in a GPIO atomically. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. <bold>Set the corresponding bit value of the BSRR register</bold> to <emphasis>set</emphasis> or <emphasis>reset</emphasis> the output depending on the given <computeroutput>value</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You might use the macros <computeroutput>HIGH</computeroutput> and <computeroutput>LOW</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You might use the <computeroutput><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK(pin)</ref></computeroutput> macro. <linebreak/>
+</para>
+</blockquote></para>
+<para><simplesect kind="note"><para>You can use a +16 offset on the pin index and use the <computeroutput><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK(pin)</ref></computeroutput> macro to get the mask when you go to clear a GPIO. Otherwise, you can calculate the pin mask first and then use a 16-position left shift of the mask.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Port of the GPIO (CMSIS struct like) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin/line of the GPIO (index from 0 to 15) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean value to set the GPIO to HIGH (1, <computeroutput>true</computeroutput>) or LOW (0, <computeroutput>false</computeroutput>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_system.h" line="227" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="291" bodyend="304" declfile="port/stm32f4/include/stm32f4_system.h" declline="227" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>: Header for <ref refid="stm32f4__system_8c" kindref="compound">stm32f4_system.c</ref> file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="attention"><para></para>
+</simplesect>
+Josué Pagán Ortiz (<ulink url="mailto:j.pagan@upm.es">j.pagan@upm.es</ulink>) Sistemas Digitales II </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="14"><highlight class="preprocessor">#ifndef<sp/>STM32F4_SYSTEM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STM32F4_SYSTEM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>HW<sp/>dependent<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stm32f4xx.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>and<sp/>enums<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BIT_POS_TO_MASK(x)<sp/>(0x01<sp/>&lt;&lt;<sp/>(x))<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor">#define<sp/>BASE_MASK_TO_POS(m,<sp/>p)<sp/>((m)<sp/>&lt;&lt;<sp/>(p))<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor">#define<sp/>GET_PIN_IRQN(pin)<sp/>((pin)<sp/>&gt;=<sp/>10<sp/>?<sp/>EXTI15_10_IRQn<sp/>:<sp/>((pin)<sp/>&gt;=<sp/>5<sp/>?<sp/>EXTI9_5_IRQn<sp/>:<sp/>(EXTI0_IRQn<sp/>+<sp/>(pin))))<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>GPIOs<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STM32F4_GPIO_MODE_IN<sp/>0x00U<sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor">#define<sp/>STM32F4_GPIO_MODE_OUT<sp/>0x01U<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor">#define<sp/>STM32F4_GPIO_MODE_AF<sp/>0x02U<sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor">#define<sp/>STM32F4_GPIO_MODE_AN<sp/>0x03U<sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#define<sp/>STM32F4_GPIO_PUPDR_NOPULL<sp/>0x00U<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor">#define<sp/>STM32F4_GPIO_PUPDR_PULLUP<sp/>0x01U<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor">#define<sp/>STM32F4_GPIO_PUPDR_PULLDOWN<sp/>0x02U<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>External<sp/>interrupts<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STM32F4_TRIGGER_RISING_EDGE<sp/>0x01U<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor">#define<sp/>STM32F4_TRIGGER_FALLING_EDGE<sp/>0x02U<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor">#define<sp/>STM32F4_TRIGGER_BOTH_EDGE<sp/>(STM32F4_TRIGGER_RISING_EDGE<sp/>|<sp/>STM32F4_TRIGGER_FALLING_EDGE)<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor">#define<sp/>STM32F4_TRIGGER_ENABLE_EVENT_REQ<sp/>0x04<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor">#define<sp/>STM32F4_TRIGGER_ENABLE_INTERR_REQ<sp/>0x08U<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>Alternate<sp/>functions<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STM32F4_AF1<sp/>0x01U<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor">#define<sp/>STM32F4_AF2<sp/>0x02U<sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor">void<sp/>stm32f4_system_gpio_config(GPIO_TypeDef<sp/>*p_port,<sp/>uint8_t<sp/>pin,<sp/>uint8_t<sp/>mode,<sp/>uint8_t<sp/>pupd);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__system_8h_1aa1e7f52e13f7ac3361326af3d8022e18" kindref="member">stm32f4_system_gpio_config_alternate</ref>(GPIO_TypeDef<sp/>*p_port,<sp/>uint8_t<sp/>pin,<sp/>uint8_t<sp/>alternate);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__system_8h_1a98f4105a82f32c645f0b06424af5ef22" kindref="member">stm32f4_system_gpio_config_exti</ref>(GPIO_TypeDef<sp/>*p_port,<sp/>uint8_t<sp/>pin,<sp/>uint32_t<sp/>mode);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__system_8h_1a03d8c69cd44964e3f1ff05a2c79626b8" kindref="member">stm32f4_system_gpio_exti_enable</ref>(uint8_t<sp/>pin,<sp/>uint8_t<sp/>priority,<sp/>uint8_t<sp/>subpriority);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__system_8h_1ac6621c40ccd6adad9de3f3644e3cdadf" kindref="member">stm32f4_system_gpio_exti_disable</ref>(uint8_t<sp/>pin);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="stm32f4__system_8h_1a47b09fba35fdd4d084f678e58bdb8c4d" kindref="member">stm32f4_system_gpio_read</ref>(GPIO_TypeDef<sp/>*p_port,<sp/>uint8_t<sp/>pin);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__system_8h_1a1ad2bb4fcd77aa93ccd27a0079ef2f2d" kindref="member">stm32f4_system_gpio_toggle</ref>(GPIO_TypeDef<sp/>*p_port,<sp/>uint8_t<sp/>pin);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__system_8h_1af46cdd939024e157ed6f7468edaee4e3" kindref="member">stm32f4_system_gpio_write</ref>(GPIO_TypeDef<sp/>*p_port,<sp/>uint8_t<sp/>pin,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>STM32F4_SYSTEM_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="port/stm32f4/include/stm32f4_system.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structstm32f4__rgb__light__hw__t" kind="struct" language="C++" prot="public">
+    <compoundname>stm32f4_rgb_light_hw_t</compoundname>
+    <includes local="no">stm32f4_rgb_light.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstm32f4__rgb__light__hw__t_1aacef3e78bc275ba95e27a4d5e8387bc8" prot="public" static="no" mutable="no">
+        <type>GPIO_TypeDef *</type>
+        <definition>GPIO_TypeDef* stm32f4_rgb_light_hw_t::p_port_red</definition>
+        <argsstring></argsstring>
+        <name>p_port_red</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO where the RED LED is connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_rgb_light.h" line="33" column="18" bodyfile="port/stm32f4/include/stm32f4_rgb_light.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__rgb__light__hw__t_1a075f54583fc99cb0bd4fde1ebc25cef2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t stm32f4_rgb_light_hw_t::pin_red</definition>
+        <argsstring></argsstring>
+        <name>pin_red</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin/line where the RED LED is connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_rgb_light.h" line="34" column="13" bodyfile="port/stm32f4/include/stm32f4_rgb_light.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__rgb__light__hw__t_1aa129acd2c7a83b790f20b25cb9d26a6a" prot="public" static="no" mutable="no">
+        <type>GPIO_TypeDef *</type>
+        <definition>GPIO_TypeDef* stm32f4_rgb_light_hw_t::p_port_green</definition>
+        <argsstring></argsstring>
+        <name>p_port_green</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO where the GREEN LED is connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_rgb_light.h" line="35" column="18" bodyfile="port/stm32f4/include/stm32f4_rgb_light.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__rgb__light__hw__t_1a984cca26ee231a54d861bc35603d86a1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t stm32f4_rgb_light_hw_t::pin_green</definition>
+        <argsstring></argsstring>
+        <name>pin_green</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin/line where the GREEN LED is connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_rgb_light.h" line="36" column="13" bodyfile="port/stm32f4/include/stm32f4_rgb_light.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__rgb__light__hw__t_1a9fed7f2e8d53e6f33ace834a99c84a85" prot="public" static="no" mutable="no">
+        <type>GPIO_TypeDef *</type>
+        <definition>GPIO_TypeDef* stm32f4_rgb_light_hw_t::p_port_blue</definition>
+        <argsstring></argsstring>
+        <name>p_port_blue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO where the BLUE LED is connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_rgb_light.h" line="37" column="18" bodyfile="port/stm32f4/include/stm32f4_rgb_light.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__rgb__light__hw__t_1a21a93f5b6c850494c22c56800e05886c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t stm32f4_rgb_light_hw_t::pin_blue</definition>
+        <argsstring></argsstring>
+        <name>pin_blue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin/line where the BLUE LED is connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_rgb_light.h" line="38" column="13" bodyfile="port/stm32f4/include/stm32f4_rgb_light.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to define the HW dependencies of an RGB LED. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="port/stm32f4/include/stm32f4_rgb_light.h" line="32" column="1" bodyfile="port/stm32f4/include/stm32f4_rgb_light.h" bodystart="31" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structstm32f4__rgb__light__hw__t_1a9fed7f2e8d53e6f33ace834a99c84a85" prot="public" virt="non-virtual"><scope>stm32f4_rgb_light_hw_t</scope><name>p_port_blue</name></member>
+      <member refid="structstm32f4__rgb__light__hw__t_1aa129acd2c7a83b790f20b25cb9d26a6a" prot="public" virt="non-virtual"><scope>stm32f4_rgb_light_hw_t</scope><name>p_port_green</name></member>
+      <member refid="structstm32f4__rgb__light__hw__t_1aacef3e78bc275ba95e27a4d5e8387bc8" prot="public" virt="non-virtual"><scope>stm32f4_rgb_light_hw_t</scope><name>p_port_red</name></member>
+      <member refid="structstm32f4__rgb__light__hw__t_1a21a93f5b6c850494c22c56800e05886c" prot="public" virt="non-virtual"><scope>stm32f4_rgb_light_hw_t</scope><name>pin_blue</name></member>
+      <member refid="structstm32f4__rgb__light__hw__t_1a984cca26ee231a54d861bc35603d86a1" prot="public" virt="non-virtual"><scope>stm32f4_rgb_light_hw_t</scope><name>pin_green</name></member>
+      <member refid="structstm32f4__rgb__light__hw__t_1a075f54583fc99cb0bd4fde1ebc25cef2" prot="public" virt="non-virtual"><scope>stm32f4_rgb_light_hw_t</scope><name>pin_red</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

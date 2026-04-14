@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structrgb__color__t" kind="struct" language="C++" prot="public">
+    <compoundname>rgb_color_t</compoundname>
+    <includes local="no">rgb_colors.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_color_t::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Red color value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="25" column="13" bodyfile="common/include/rgb_colors.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrgb__color__t_1ae73935f5f2386b4c62fd24a8ec6d5512" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_color_t::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Green color value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="26" column="13" bodyfile="common/include/rgb_colors.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrgb__color__t_1a6e7156f19f70236f20113f612b7ea1d2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_color_t::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Blue color value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/rgb_colors.h" line="27" column="13" bodyfile="common/include/rgb_colors.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to define an RGB color. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/include/rgb_colors.h" line="24" column="1" bodyfile="common/include/rgb_colors.h" bodystart="23" bodyend="28"/>
+    <listofallmembers>
+      <member refid="structrgb__color__t_1a6e7156f19f70236f20113f612b7ea1d2" prot="public" virt="non-virtual"><scope>rgb_color_t</scope><name>b</name></member>
+      <member refid="structrgb__color__t_1ae73935f5f2386b4c62fd24a8ec6d5512" prot="public" virt="non-virtual"><scope>rgb_color_t</scope><name>g</name></member>
+      <member refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" prot="public" virt="non-virtual"><scope>rgb_color_t</scope><name>r</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,852 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="fsm__rgb__light_8c" kind="file" language="C++">
+    <compoundname>fsm_rgb_light.c</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes refid="port__rgb__light_8h" local="yes">port_rgb_light.h</includes>
+    <includes refid="port__system_8h" local="yes">port_system.h</includes>
+    <includes local="yes">fsm.h</includes>
+    <includes refid="fsm__rgb__light_8h" local="yes">fsm_rgb_light.h</includes>
+    <includes refid="rgb__colors_8h" local="yes">rgb_colors.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>rgb_colors.h</label>
+        <link refid="rgb__colors_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>fsm.h</label>
+      </node>
+      <node id="1">
+        <label>common/src/fsm_rgb_light.c</label>
+        <link refid="fsm__rgb__light_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>fsm_rgb_light.h</label>
+        <link refid="fsm__rgb__light_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>port_rgb_light.h</label>
+        <link refid="port__rgb__light_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="fsm__rgb__light_8c_1a09f3df97b79eb3f364263fdb4f3defbd" prot="public" static="yes" mutable="no">
+        <type>fsm_trans_t</type>
+        <definition>fsm_trans_t fsm_trans_rgb_light[]</definition>
+        <argsstring>[]</argsstring>
+        <name>fsm_trans_rgb_light</name>
+        <briefdescription>
+<para>Array representing the transitions table of the FSM RGB light. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><image type="html" name="fsm_v3.svg"></image>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="183" column="20" bodyfile="common/src/fsm_rgb_light.c" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a5fb4ea0ac3e3b2b5fed7e9f73eab2892" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _correct_rgb_light_levels</definition>
+        <argsstring>(rgb_color_t *p_color, uint8_t intensity_perc)</argsstring>
+        <name>_correct_rgb_light_levels</name>
+        <param>
+          <type><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref> *</type>
+          <declname>p_color</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>intensity_perc</declname>
+        </param>
+        <briefdescription>
+<para>Apply correction to an RGB color based on the intensity value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a regular color and applies a reduction based on the given intensity.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. For each channel of the RGB color, scale its value by the intensity given. Use float numbers to operate. ✅ 2. Save it in the color struct as an integer. To round it properly add 0.5 to the result. This 0.5 is used to round the floating-point result to the nearest integer instead of truncating, improving pwm accuracy especially at low brightness levels. Finally, cast it to <computeroutput>uint8_t</computeroutput> and overwrite the results into the color. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the color to be corrected. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>intensity_perc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Linear input intensity, in the range [0, 100]. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="41" column="6" bodyfile="common/src/fsm_rgb_light.c" bodystart="41" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1ae0fec900c7e47e8e2c1fc497e2aeb482" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool check_set_new_color</definition>
+        <argsstring>(fsm_t *p_this)</argsstring>
+        <name>check_set_new_color</name>
+        <param>
+          <type>fsm_t *</type>
+          <declname>p_this</declname>
+        </param>
+        <briefdescription>
+<para>Check if a new color has to be set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Return the flag <computeroutput>new_color</computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput>fsm_t</computeroutput> struct than contains an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true If a new color has to be set </para>
+</simplesect>
+<simplesect kind="return"><para>false If a new color does not have to be set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="67" column="13" bodyfile="common/src/fsm_rgb_light.c" bodystart="67" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a8e382225a9b12e32722e6d5c36dbea57" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool check_active</definition>
+        <argsstring>(fsm_t *p_this)</argsstring>
+        <name>check_active</name>
+        <param>
+          <type>fsm_t *</type>
+          <declname>p_this</declname>
+        </param>
+        <briefdescription>
+<para>Check if the RGB light is set to be active (ON), independently if it is idle or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Return the flag <computeroutput>status</computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput>fsm_t</computeroutput> struct than contains an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true If the RGB light system has been indicated to be active independently if it is idle or not. </para>
+</simplesect>
+<simplesect kind="return"><para>false If the RGB light system has been indicated to be inactive. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="84" column="13" bodyfile="common/src/fsm_rgb_light.c" bodystart="84" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a941bb12de41897bba2b612cc87b3164b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool check_off</definition>
+        <argsstring>(fsm_t *p_this)</argsstring>
+        <name>check_off</name>
+        <param>
+          <type>fsm_t *</type>
+          <declname>p_this</declname>
+        </param>
+        <briefdescription>
+<para>Check if the RGB light is set to be inactive (OFF). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Return the inverse of the flag <computeroutput>status</computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput>fsm_t</computeroutput> struct than contains an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true If the RGB light system has been indicated to be inactive. </para>
+</simplesect>
+<simplesect kind="return"><para>false If the RGB light system has been indicated to be active. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="101" column="13" bodyfile="common/src/fsm_rgb_light.c" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a183fea0e00eeb6bbf497bc44b0dac02e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void do_set_on</definition>
+        <argsstring>(fsm_t *p_this)</argsstring>
+        <name>do_set_on</name>
+        <param>
+          <type>fsm_t *</type>
+          <declname>p_this</declname>
+        </param>
+        <briefdescription>
+<para>Turn the RGB light system ON for the first time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>In this version the RGB light starts ON with no color. This is: the LED is turned ON but no color is set. In future versions you can set a default color at the beginning.</para>
+</simplesect>
+<blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Call function <computeroutput><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb()</ref></computeroutput> with the RGB LED ID with no color (all the duty cycles to 0). <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput>fsm_t</computeroutput> struct than contains an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="120" column="13" bodyfile="common/src/fsm_rgb_light.c" bodystart="120" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1ab3041b841563b8a02e45f0e7e3608b98" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void do_set_color</definition>
+        <argsstring>(fsm_t *p_this)</argsstring>
+        <name>do_set_color</name>
+        <param>
+          <type>fsm_t *</type>
+          <declname>p_this</declname>
+        </param>
+        <briefdescription>
+<para>Set the color of the RGB LED according to the intensity measured by the ultrasound sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Correct the levels of the RGB LEDs according to the intensity . Use the <computeroutput><ref refid="fsm__rgb__light_8c_1a5fb4ea0ac3e3b2b5fed7e9f73eab2892" kindref="member">_correct_rgb_light_levels()</ref></computeroutput>. <linebreak/>
+✅ 2. Call function <computeroutput><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb()</ref></computeroutput> with the RGB LED ID and the color <linebreak/>
+✅ 3. Reset the flag <computeroutput>new_color</computeroutput> to indicate that the color has been set <linebreak/>
+✅ 4. Set the RGB light system to idle. In this case, the RGB light system is active, but while the intensity is not changed, the RGB light system is idle and can enter in a low power mode <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput>fsm_t</computeroutput> struct than contains an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="140" column="13" bodyfile="common/src/fsm_rgb_light.c" bodystart="140" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a93a8745b455e90e7dd7093adf9d90a06" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void do_set_off</definition>
+        <argsstring>(fsm_t *p_this)</argsstring>
+        <name>do_set_off</name>
+        <param>
+          <type>fsm_t *</type>
+          <declname>p_this</declname>
+        </param>
+        <briefdescription>
+<para>Turn the RGB light system OFF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Call function <computeroutput><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb()</ref></computeroutput> with the RGB LED ID with no color (<computeroutput>COLOR_OFF</computeroutput>). <linebreak/>
+✅ 2. Reset the flag <computeroutput>idle</computeroutput> to indicate that the RGB light system is not idle <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_this</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput>fsm_t</computeroutput> struct than contains an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="166" column="13" bodyfile="common/src/fsm_rgb_light.c" bodystart="166" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1ae27b9412d65eaf469adfc5632281a580" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void fsm_rgb_light_init</definition>
+        <argsstring>(fsm_rgb_light_t *p_fsm_rgb_light, uint8_t rgb_light_id)</argsstring>
+        <name>fsm_rgb_light_init</name>
+        <param>
+          <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+          <declname>p_fsm_rgb_light</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>rgb_light_id</declname>
+        </param>
+        <briefdescription>
+<para>Initialize an RGB light system FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function initializes the default values of the FSM struct and calls to the <computeroutput>port</computeroutput> to initialize the associated HW given the ID.</para>
+<para>The FSM stores the RGB light level of the RGB light system. The user should set it using the function <computeroutput><ref refid="fsm__rgb__light_8c_1aaad4017694f046218f9e72d3d3e4c93a" kindref="member">fsm_rgb_light_set_color_intensity()</ref></computeroutput>.</para>
+<para><simplesect kind="attention"><para>This RGB light system is agnostic to the Simone game. It only shows the status of the RGB light system set by the user. It does not matter if the RGB light is for a game, a parking sensor, a door sensor, or any other device. The RGB light system only shows a status according to a level set by the user.</para>
+</simplesect>
+The FSM contains information of the RGB LED ID. This ID is a unique identifier that is managed by the user in the <computeroutput>port</computeroutput>. That is where the user provides identifiers and HW information for all the RGB LEDs on his system. The FSM does not have to know anything of the underlying HW.</para>
+<para><simplesect kind="note"><para>Both unit and integration tests (example) are provided for this ultrasound library are available in this GitHub repository: <ulink url="https://github.com/sdg2DieUpm/simone/tree/simone_v3_test">https://github.com/sdg2DieUpm/simone/tree/simone_v3_test</ulink></para>
+</simplesect>
+<blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Call the <computeroutput>fsm_init()</computeroutput> to initialize the FSM. Pass the address of the <computeroutput>fsm_t</computeroutput> struct and the transition table. <linebreak/>
+✅ 2. Initialize the <computeroutput>rgb_light_id</computeroutput>. <linebreak/>
+✅ 3. Set the <computeroutput>intensity_perc</computeroutput> to <computeroutput>MAX_LEVEL_INTENSITY</computeroutput>. Initialize the color to OFF. <linebreak/>
+✅ 4. Initialize the flags <computeroutput>new_color</computeroutput>, <computeroutput>status</computeroutput>, and <computeroutput>idle</computeroutput> to <computeroutput>false</computeroutput>. <linebreak/>
+✅ 5. Call function <computeroutput><ref refid="port__rgb__light_8h_1a1b04d2dd778bef7a90ee86ff7aadd83d" kindref="member">port_rgb_light_init()</ref></computeroutput> to initialize the HW. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm_rgb_light</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the RGB light FSM. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rgb_light_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique RGB light identifier number. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="215" column="13" bodyfile="common/src/fsm_rgb_light.c" bodystart="215" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a05c86fa3380f799664ebace02321e9de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+        <definition>fsm_rgb_light_t* fsm_rgb_light_new</definition>
+        <argsstring>(uint8_t rgb_light_id)</argsstring>
+        <name>fsm_rgb_light_new</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>rgb_light_id</declname>
+        </param>
+        <briefdescription>
+<para>Create a new RGB light FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new RGB light FSM with the given RGB light ID.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb_light_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB light ID. Must be unique. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>fsm_rgb_light_t* Pointer to the RGB light FSM. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="233" column="17" bodyfile="common/src/fsm_rgb_light.c" bodystart="233" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a9beddc19f8e1d3f4068b6e4b31ff26a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_rgb_light_destroy</definition>
+        <argsstring>(fsm_rgb_light_t *p_fsm)</argsstring>
+        <name>fsm_rgb_light_destroy</name>
+        <param>
+          <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Destroy an RGB light FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function destroys an RGB light FSM and frees the memory. <blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Implement this function analogously to the <computeroutput><ref refid="fsm__rgb__light_8h_1a9beddc19f8e1d3f4068b6e4b31ff26a9" kindref="member">fsm_rgb_light_destroy()</ref></computeroutput> function. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="243" column="6" bodyfile="common/src/fsm_rgb_light.c" bodystart="243" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a97388ea5425504a3b53aea540bb6b441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_rgb_light_fire</definition>
+        <argsstring>(fsm_rgb_light_t *p_fsm)</argsstring>
+        <name>fsm_rgb_light_fire</name>
+        <param>
+          <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Fire the RGB light FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to fire the RGB light FSM. It is used to check the transitions and execute the actions of the RGB light FSM.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Call the <computeroutput>fsm_fire()</computeroutput> function. Pass the address of the <computeroutput>fsm_t</computeroutput> struct. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="248" column="6" bodyfile="common/src/fsm_rgb_light.c" bodystart="248" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1aaad4017694f046218f9e72d3d3e4c93a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_rgb_light_set_color_intensity</definition>
+        <argsstring>(fsm_rgb_light_t *p_fsm, rgb_color_t color, uint8_t intensity_perc)</argsstring>
+        <name>fsm_rgb_light_set_color_intensity</name>
+        <param>
+          <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <param>
+          <type><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>intensity_perc</declname>
+        </param>
+        <briefdescription>
+<para>Set the color and intensity of the RGB light. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets the color and intensity of the RGB light.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold> ✅ 1. Set the <computeroutput>color</computeroutput> and <computeroutput>intensity_perc</computeroutput> fields of the RGB light system FSM. <linebreak/>
+✅ 2. Set the <computeroutput>new_color</computeroutput> field accordingly to indicate that a new color has to be set. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB color to set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>intensity_perc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Intensity in percentage to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="253" column="6" bodyfile="common/src/fsm_rgb_light.c" bodystart="253" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a59f03c669745ee42fdff8476db1358be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fsm_rgb_light_get_status</definition>
+        <argsstring>(fsm_rgb_light_t *p_fsm)</argsstring>
+        <name>fsm_rgb_light_get_status</name>
+        <param>
+          <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Get the status of the RGB light FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns the status of the RGB light system. This function might be used for testing and debugging purposes.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve and return the field <computeroutput>status</computeroutput>. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true If the RGB light system has been indicated to be active. </para>
+</simplesect>
+<simplesect kind="return"><para>false If the RGB light system has been indicated to be paused. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="260" column="6" bodyfile="common/src/fsm_rgb_light.c" bodystart="260" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1aca2790daf24016ae89a6ebe8bb14a533" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_rgb_light_set_status</definition>
+        <argsstring>(fsm_rgb_light_t *p_fsm, bool status)</argsstring>
+        <name>fsm_rgb_light_set_status</name>
+        <param>
+          <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>pause</declname>
+          <defname>status</defname>
+        </param>
+        <briefdescription>
+<para>Set the status of the RGB light FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to set the status of the RGB light system. Indicating if the RGB light system is active or paused.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Update the field <computeroutput>status</computeroutput> with the received value <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pause</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of the RGB light system. <computeroutput>true</computeroutput> if the RGB light system is paused, <computeroutput>false</computeroutput> if the RGB light system is active. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="265" column="6" bodyfile="common/src/fsm_rgb_light.c" bodystart="265" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__rgb__light_8c_1a9134fffe42b2bc6593e5acd5503ae7e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fsm_rgb_light_check_activity</definition>
+        <argsstring>(fsm_rgb_light_t *p_fsm)</argsstring>
+        <name>fsm_rgb_light_check_activity</name>
+        <param>
+          <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Check if the RGB light system is active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function checks if the RGB light system is active.</para>
+<para><blockquote><para><bold>TODO alumnos</bold></para>
+<para>✅ 1. Return <computeroutput>true</computeroutput> if the RGB light system is active and it is not idle. Otherwise, return <computeroutput>false</computeroutput>. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true If the RGB light system is active. </para>
+</simplesect>
+<simplesect kind="return"><para>false If the RGB light system is inactive. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/fsm_rgb_light.c" line="270" column="6" bodyfile="common/src/fsm_rgb_light.c" bodystart="270" bodyend="275"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>RGB light system FSM main file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>HW<sp/>dependent<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__rgb__light_8h" kindref="compound">port_rgb_light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__system_8h" kindref="compound">port_system.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Project<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fsm.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fsm__rgb__light_8h" kindref="compound">fsm_rgb_light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Other<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rgb__colors_8h" kindref="compound">rgb_colors.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>functions<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a5fb4ea0ac3e3b2b5fed7e9f73eab2892" kindref="member">_correct_rgb_light_levels</ref>(<ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/>*p_color,<sp/>uint8_t<sp/>intensity_perc)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Scale<sp/>the<sp/>values<sp/>to<sp/>the<sp/>given<sp/>intensity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>p_color-&gt;<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>*<sp/>(intensity_perc<sp/>/<sp/>(float)<ref refid="fsm__rgb__light_8h_1aaf6cf1e526be70f2db636fd9106e134b" kindref="member">MAX_LEVEL_INTENSITY</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>g<sp/>=<sp/>p_color-&gt;<ref refid="structrgb__color__t_1ae73935f5f2386b4c62fd24a8ec6d5512" kindref="member">g</ref><sp/>*<sp/>(intensity_perc<sp/>/<sp/>(float)<ref refid="fsm__rgb__light_8h_1aaf6cf1e526be70f2db636fd9106e134b" kindref="member">MAX_LEVEL_INTENSITY</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>p_color-&gt;<ref refid="structrgb__color__t_1a6e7156f19f70236f20113f612b7ea1d2" kindref="member">b</ref><sp/>*<sp/>(intensity_perc<sp/>/<sp/>(float)<ref refid="fsm__rgb__light_8h_1aaf6cf1e526be70f2db636fd9106e134b" kindref="member">MAX_LEVEL_INTENSITY</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Save<sp/>it<sp/>without<sp/>loosing<sp/>precision</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>p_color-&gt;<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/>(uint8_t)(r<sp/>+<sp/>0.5f);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>p_color-&gt;<ref refid="structrgb__color__t_1ae73935f5f2386b4c62fd24a8ec6d5512" kindref="member">g</ref><sp/>=<sp/>(uint8_t)(g<sp/>+<sp/>0.5f);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>p_color-&gt;<ref refid="structrgb__color__t_1a6e7156f19f70236f20113f612b7ea1d2" kindref="member">b</ref><sp/>=<sp/>(uint8_t)(b<sp/>+<sp/>0.5f);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>State<sp/>machine<sp/>input<sp/>or<sp/>transition<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1ae0fec900c7e47e8e2c1fc497e2aeb482" kindref="member">check_set_new_color</ref>(fsm_t<sp/>*p_this)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm<sp/>=<sp/>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*)(p_this);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1a02c2edc48a05392c68079e5470c9d905" kindref="member">new_color</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a8e382225a9b12e32722e6d5c36dbea57" kindref="member">check_active</ref>(fsm_t<sp/>*p_this)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm<sp/>=<sp/>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*)(p_this);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1add76316d0ac2388be498a18c7cf965bf" kindref="member">status</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a941bb12de41897bba2b612cc87b3164b" kindref="member">check_off</ref>(fsm_t<sp/>*p_this)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm<sp/>=<sp/>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*)(p_this);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1add76316d0ac2388be498a18c7cf965bf" kindref="member">status</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>State<sp/>machine<sp/>output<sp/>or<sp/>action<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a183fea0e00eeb6bbf497bc44b0dac02e" kindref="member">do_set_on</ref>(fsm_t<sp/>*p_this)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm<sp/>=<sp/>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*)(p_this);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>OFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb</ref>(p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1ab502ad4c68fa6cb633202dedb796f921" kindref="member">rgb_light_id</ref>,<sp/><ref refid="rgb__colors_8h_1aa9cafeaebaeef62f47b0d0a46643f9f3" kindref="member">color_off</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1ab3041b841563b8a02e45f0e7e3608b98" kindref="member">do_set_color</ref>(fsm_t<sp/>*p_this)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm<sp/>=<sp/>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*)(p_this);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Correct<sp/>the<sp/>levels<sp/>of<sp/>the<sp/>RGB<sp/>LEDs<sp/>according<sp/>to<sp/>the<sp/>intensity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8c_1a5fb4ea0ac3e3b2b5fed7e9f73eab2892" kindref="member">_correct_rgb_light_levels</ref>(&amp;p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>,<sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1aee27f84c86e0b207eb8cd6105e1d06cd" kindref="member">intensity_perc</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb</ref>(p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1ab502ad4c68fa6cb633202dedb796f921" kindref="member">rgb_light_id</ref>,<sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>);<sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>the<sp/>RGB<sp/>LED<sp/>color</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>flag<sp/>to<sp/>indicate<sp/>that<sp/>the<sp/>color<sp/>has<sp/>been<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1a02c2edc48a05392c68079e5470c9d905" kindref="member">new_color</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>RGB<sp/>light<sp/>system<sp/>to<sp/>idle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1ab817689a6281c9c471ffe2e8e4a1c788" kindref="member">idle</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a93a8745b455e90e7dd7093adf9d90a06" kindref="member">do_set_off</ref>(fsm_t<sp/>*p_this)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm<sp/>=<sp/>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*)(p_this);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>off<sp/>the<sp/>RGB<sp/>light<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb</ref>(p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1ab502ad4c68fa6cb633202dedb796f921" kindref="member">rgb_light_id</ref>,<sp/><ref refid="rgb__colors_8h_1aa9cafeaebaeef62f47b0d0a46643f9f3" kindref="member">color_off</ref>);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1ab817689a6281c9c471ffe2e8e4a1c788" kindref="member">idle</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Esto<sp/>tiene<sp/>que<sp/>estar<sp/>aquí<sp/>pq<sp/>las<sp/>funciones<sp/>de<sp/>la<sp/>FSM<sp/>son<sp/>internas<sp/>*/</highlight></codeline>
+<codeline lineno="183"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>fsm_trans_t<sp/><ref refid="fsm__rgb__light_8c_1a09f3df97b79eb3f364263fdb4f3defbd" kindref="member">fsm_trans_rgb_light</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>{<ref refid="fsm__rgb__light_8h_1a1dc5ae5f35c3d9ec809a22dba2e1221aa8bb86239972e62faad135f624626bf92" kindref="member">IDLE_RGB</ref>,<sp/><ref refid="fsm__rgb__light_8c_1a8e382225a9b12e32722e6d5c36dbea57" kindref="member">check_active</ref>,<sp/><ref refid="fsm__rgb__light_8h_1a1dc5ae5f35c3d9ec809a22dba2e1221aa8d46e0b018ffb47fa148cef97c3ba393" kindref="member">SET_COLOR</ref>,<sp/><ref refid="fsm__rgb__light_8c_1a183fea0e00eeb6bbf497bc44b0dac02e" kindref="member">do_set_on</ref>},</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>{<ref refid="fsm__rgb__light_8h_1a1dc5ae5f35c3d9ec809a22dba2e1221aa8d46e0b018ffb47fa148cef97c3ba393" kindref="member">SET_COLOR</ref>,<sp/><ref refid="fsm__rgb__light_8c_1ae0fec900c7e47e8e2c1fc497e2aeb482" kindref="member">check_set_new_color</ref>,<sp/><ref refid="fsm__rgb__light_8h_1a1dc5ae5f35c3d9ec809a22dba2e1221aa8d46e0b018ffb47fa148cef97c3ba393" kindref="member">SET_COLOR</ref>,<sp/><ref refid="fsm__rgb__light_8c_1ab3041b841563b8a02e45f0e7e3608b98" kindref="member">do_set_color</ref>},</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>{<ref refid="fsm__rgb__light_8h_1a1dc5ae5f35c3d9ec809a22dba2e1221aa8d46e0b018ffb47fa148cef97c3ba393" kindref="member">SET_COLOR</ref>,<sp/><ref refid="fsm__rgb__light_8c_1a941bb12de41897bba2b612cc87b3164b" kindref="member">check_off</ref>,<sp/><ref refid="fsm__rgb__light_8h_1a1dc5ae5f35c3d9ec809a22dba2e1221aa8bb86239972e62faad135f624626bf92" kindref="member">IDLE_RGB</ref>,<sp/><ref refid="fsm__rgb__light_8c_1a93a8745b455e90e7dd7093adf9d90a06" kindref="member">do_set_off</ref>},</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>{-1,<sp/>NULL,<sp/>-1,<sp/>NULL}};</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Other<sp/>auxiliary<sp/>functions<sp/>*/</highlight></codeline>
+<codeline lineno="215"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1ae27b9412d65eaf469adfc5632281a580" kindref="member">fsm_rgb_light_init</ref>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm_rgb_light,<sp/>uint8_t<sp/>rgb_light_id)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>fields</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>fsm_init(&amp;p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1aad98e51532af1327af60d9f6272f96b7" kindref="member">f</ref>,<sp/><ref refid="fsm__rgb__light_8c_1a09f3df97b79eb3f364263fdb4f3defbd" kindref="member">fsm_trans_rgb_light</ref>);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>alumnos:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1ab502ad4c68fa6cb633202dedb796f921" kindref="member">rgb_light_id</ref><sp/>=<sp/>rgb_light_id;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref><sp/>=<sp/><ref refid="rgb__colors_8h_1aa9cafeaebaeef62f47b0d0a46643f9f3" kindref="member">color_off</ref>;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1aee27f84c86e0b207eb8cd6105e1d06cd" kindref="member">intensity_perc</ref><sp/>=<sp/><ref refid="fsm__rgb__light_8h_1aaf6cf1e526be70f2db636fd9106e134b" kindref="member">MAX_LEVEL_INTENSITY</ref>;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a02c2edc48a05392c68079e5470c9d905" kindref="member">new_color</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1add76316d0ac2388be498a18c7cf965bf" kindref="member">status</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1ab817689a6281c9c471ffe2e8e4a1c788" kindref="member">idle</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="port__rgb__light_8h_1a1b04d2dd778bef7a90ee86ff7aadd83d" kindref="member">port_rgb_light_init</ref>(rgb_light_id);<sp/></highlight><highlight class="comment">/*<sp/><sp/>Inicializa<sp/>el<sp/>HW<sp/>de<sp/>la<sp/>RGB<sp/>light<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Public<sp/>functions<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Para<sp/>inicializar<sp/>la<sp/>FSM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*<ref refid="fsm__rgb__light_8c_1a05c86fa3380f799664ebace02321e9de" kindref="member">fsm_rgb_light_new</ref>(uint8_t<sp/>rgb_light_id)</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm_rgb_light<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref>));<sp/></highlight><highlight class="comment">/*<sp/>Hago<sp/>malloc<sp/>para<sp/>que<sp/>reserve<sp/>memoria<sp/>de<sp/>todo<sp/>resto<sp/>de<sp/>cosas<sp/>de<sp/>la<sp/>FSM,<sp/>aunque<sp/>lo<sp/>interpreto<sp/>como<sp/>fsm_t<sp/>(el<sp/>primer<sp/>elto<sp/>de<sp/>la<sp/>estructura)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>the<sp/>initialization<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8c_1ae27b9412d65eaf469adfc5632281a580" kindref="member">fsm_rgb_light_init</ref>(p_fsm_rgb_light,<sp/>rgb_light_id);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_fsm_rgb_light;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a9beddc19f8e1d3f4068b6e4b31ff26a9" kindref="member">fsm_rgb_light_destroy</ref>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>free(&amp;p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1aad98e51532af1327af60d9f6272f96b7" kindref="member">f</ref>);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a97388ea5425504a3b53aea540bb6b441" kindref="member">fsm_rgb_light_fire</ref>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>fsm_fire(&amp;p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1aad98e51532af1327af60d9f6272f96b7" kindref="member">f</ref>);<sp/></highlight><highlight class="comment">//<sp/>Is<sp/>it<sp/>also<sp/>possible<sp/>to<sp/>it<sp/>in<sp/>this<sp/>way:<sp/>fsm_fire((fsm_t<sp/>*)p_fsm);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1aaad4017694f046218f9e72d3d3e4c93a" kindref="member">fsm_rgb_light_set_color_intensity</ref>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm,<sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/>color,<sp/>uint8_t<sp/>intensity_perc)</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1aee27f84c86e0b207eb8cd6105e1d06cd" kindref="member">intensity_perc</ref><sp/>=<sp/>intensity_perc;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref><sp/>=<sp/>color;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1a02c2edc48a05392c68079e5470c9d905" kindref="member">new_color</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a59f03c669745ee42fdff8476db1358be" kindref="member">fsm_rgb_light_get_status</ref>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1add76316d0ac2388be498a18c7cf965bf" kindref="member">status</ref>;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1aca2790daf24016ae89a6ebe8bb14a533" kindref="member">fsm_rgb_light_set_status</ref>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1add76316d0ac2388be498a18c7cf965bf" kindref="member">status</ref><sp/>=<sp/>status;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="fsm__rgb__light_8c_1a9134fffe42b2bc6593e5acd5503ae7e0" kindref="member">fsm_rgb_light_check_activity</ref>(<ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm)</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_active<sp/>=<sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1add76316d0ac2388be498a18c7cf965bf" kindref="member">status</ref>;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_idle<sp/>=<sp/>p_fsm-&gt;<ref refid="structfsm__rgb__light__t_1ab817689a6281c9c471ffe2e8e4a1c788" kindref="member">idle</ref>;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is_active<sp/>&amp;&amp;<sp/>!is_idle;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="common/src/fsm_rgb_light.c"/>
+  </compounddef>
+</doxygen>

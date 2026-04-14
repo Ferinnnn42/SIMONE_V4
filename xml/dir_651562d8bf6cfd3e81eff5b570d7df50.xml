@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_651562d8bf6cfd3e81eff5b570d7df50" kind="dir">
+    <compoundname>port</compoundname>
+    <innerdir refid="dir_3b4aa3705552218a151a51dac694657d">port/include</innerdir>
+    <innerdir refid="dir_aff93352f483d815f4aad2ce8569e33b">port/stm32f4</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="port/"/>
+  </compounddef>
+</doxygen>

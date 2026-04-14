@@ -1,0 +1,580 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="fsm__simone_8h" kind="file" language="C++">
+    <compoundname>fsm_simone.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="fsm__button_8h" local="yes">fsm_button.h</includes>
+    <includes refid="fsm__keyboard_8h" local="yes">fsm_keyboard.h</includes>
+    <includes refid="fsm__rgb__light_8h" local="yes">fsm_rgb_light.h</includes>
+    <includedby refid="fsm__simone_8c" local="yes">common/src/fsm_simone.c</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>fsm_keyboard.h</label>
+        <link refid="fsm__keyboard_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="8">
+        <label>rgb_colors.h</label>
+        <link refid="rgb__colors_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>fsm.h</label>
+      </node>
+      <node id="1">
+        <label>common/include/fsm_simone.h</label>
+        <link refid="fsm__simone_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fsm_button.h</label>
+        <link refid="fsm__button_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>fsm_rgb_light.h</label>
+        <link refid="fsm__rgb__light_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>common/include/fsm_simone.h</label>
+        <link refid="fsm__simone_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="2">
+        <label>common/src/fsm_simone.c</label>
+        <link refid="fsm__simone_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structfsm__simone__t" prot="public">fsm_simone_t</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="fsm__simone_8h_1acfdd90b8fed5b8f51315b7cd765ff9c4" prot="public" static="no">
+        <name>KEY_RED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key for RED color </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="22" column="9" bodyfile="common/include/fsm_simone.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a0192353835c4f22c279c1474aa3e4986" prot="public" static="no">
+        <name>KEY_GREEN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key for GREEN color </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="23" column="9" bodyfile="common/include/fsm_simone.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a720978a6e08f3079fffccb5fb6f2fa02" prot="public" static="no">
+        <name>KEY_BLUE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key for BLUE color </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="24" column="9" bodyfile="common/include/fsm_simone.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a6f09a77f2fc77bbbbfaba092f39e8531" prot="public" static="no">
+        <name>KEY_YELLOW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key for YELLOW color </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="25" column="9" bodyfile="common/include/fsm_simone.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a974d16865dadcacaa7e15bbb77e06138" prot="public" static="no">
+        <name>KEY_TURQUOISE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key for TURQUOISE color </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="26" column="9" bodyfile="common/include/fsm_simone.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a5a00e61307b6dae651f45e4dc56a291d" prot="public" static="no">
+        <name>KEY_WHITE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key for WHITE color </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="27" column="9" bodyfile="common/include/fsm_simone.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a1044ff812d27350eb184512c5d51fc3f" prot="public" static="no">
+        <name>KEY_INVALID_COLOR</name>
+        <initializer>&apos; &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Invalid key </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="28" column="9" bodyfile="common/include/fsm_simone.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1ab562decce786419dba2bbaf93633bb20" prot="public" static="no">
+        <name>LEVEL_MAX_INTENSITY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Max intensity in % </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="31" column="9" bodyfile="common/include/fsm_simone.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1aa214915a9195ab2a62a01a4091226add" prot="public" static="no">
+        <name>LEVEL_EASY_MIN_INTENSITY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum intensity in % to play in the easy level of the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="32" column="9" bodyfile="common/include/fsm_simone.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1aa97a9121e98d9e64995ae68c038e765b" prot="public" static="no">
+        <name>LEVEL_MEDIUM_MIN_INTENSITY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum intensity in % to play the medium level of the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="33" column="9" bodyfile="common/include/fsm_simone.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a485a1feb28f9331b7249fba2b8d51765" prot="public" static="no">
+        <name>LEVEL_HARD_MIN_INTENSITY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum intensity in % to play the hard level of the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="34" column="9" bodyfile="common/include/fsm_simone.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1ae3f4615a20d2dae8c494a168778e790a" prot="public" static="no">
+        <name>SEQUENCE_LENGTH</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Length of the sequence of colors </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="37" column="9" bodyfile="common/include/fsm_simone.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a0d97c8adf760048a0bb2119664ec42cb" prot="public" static="no">
+        <name>NUMBER_OF_COLORS_GAME</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of colors in the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="40" column="9" bodyfile="common/include/fsm_simone.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1ac025027589ade7592ae2b3c0d1430004" prot="public" static="no">
+        <name>SIMONE_TIME_OFF_BETWEEN_COLORS_MS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time off between colors in the sequence </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="44" column="9" bodyfile="common/include/fsm_simone.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a80ba4172eb45aa7998af2d8052e577d9" prot="public" static="no">
+        <name>SIMONE_TIME_VISUAL_FEEDBACK_MS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time of the visual feedback when the player presses a key </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="45" column="9" bodyfile="common/include/fsm_simone.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a63204fe057af4b20cccc6aad4a5e655a" prot="public" static="no">
+        <name>SIMONE_TIME_ON_LEVEL_EASY_MS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time color on in easy level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="46" column="9" bodyfile="common/include/fsm_simone.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a5a1b361895e026f8dccdaaf6e4ed7042" prot="public" static="no">
+        <name>SIMONE_TIME_ON_LEVEL_MEDIUM_MS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time color on in medium level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="47" column="9" bodyfile="common/include/fsm_simone.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1ae8af6b6b8197f002f653a8dc9b04183a" prot="public" static="no">
+        <name>SIMONE_TIME_ON_LEVEL_HARD_MS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time color on in hard level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="48" column="9" bodyfile="common/include/fsm_simone.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fsm__simone_8h_1a49ac938dcebcf41084be6a344cf81ab2" prot="public" static="no">
+        <name>SIMONE_TIME_WAIT_INPUT_MS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time max between player key press </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="50" column="9" bodyfile="common/include/fsm_simone.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418" prot="public" static="no" strong="no">
+        <type></type>
+        <name>FSM_SIMONE</name>
+        <enumvalue id="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418afd6a0e4343048b10646dd2976cc5ad18" prot="public">
+          <name>IDLE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Starting state. Also comes here when no level has benne selected, the button has been pressed for the required time to turn IDLE the game. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418aabe5d72a00b2abc5d4f56c2af9ee1882" prot="public">
+          <name>ADD_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to add a color and intensity to the sequence. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418ad7b89910e75af4f6c3710d60105e42c4" prot="public">
+          <name>PLAYBACK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to play the sequence. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418a13c66635582e9c3e7f771a853a7e3705" prot="public">
+          <name>WAIT_KEY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to read the keys pressed by the player. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418aa9cdfa05c17164318febfb11917c43e2" prot="public">
+          <name>VERIFY_INPUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to verify the input key pressed by the player. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418a50becd973bf9b741f72833ed50ec9980" prot="public">
+          <name>SLEEP_WHILE_IDLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to start the low power mode while the Simone is IDLE </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418ab226c2b5622766a676992b28ec7d4ef0" prot="public">
+          <name>SLEEP_WHILE_PLAYBACK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to start the low power mode while the Simone is reproducing the sequence </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerator for the Simone finite state machine. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="61" column="1" bodyfile="common/include/fsm_simone.h" bodystart="60" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="enum" id="fsm__simone_8h_1a038b70583cd579808ddf1a88f8b7f13f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>LEVELS</name>
+        <enumvalue id="fsm__simone_8h_1a038b70583cd579808ddf1a88f8b7f13fa642b63fb61bba2e16236fc454fe12a1d" prot="public">
+          <name>LEVEL_EASY</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__simone_8h_1a038b70583cd579808ddf1a88f8b7f13fa5edf820f5c6debfa69bb152312510153" prot="public">
+          <name>LEVEL_MEDIUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__simone_8h_1a038b70583cd579808ddf1a88f8b7f13fa8d0702c4b1f07a6a94d765cee27b44ef" prot="public">
+          <name>LEVEL_HARD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerator to define the difficulty levels of the Simone game. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="77" column="1" bodyfile="common/include/fsm_simone.h" bodystart="76" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fsm__simone_8h_1a83eea382592fe9dedbcc435a9103a475" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structfsm__simone__t" kindref="compound">fsm_simone_t</ref> *</type>
+        <definition>fsm_simone_t* fsm_simone_new</definition>
+        <argsstring>(fsm_button_t *p_fsm_button, uint32_t on_off_press_time_ms, fsm_keyboard_t *p_fsm_keyboard, fsm_rgb_light_t *p_fsm_rgb_light, uint8_t level)</argsstring>
+        <name>fsm_simone_new</name>
+        <param>
+          <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+          <declname>p_fsm_button</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>on_off_press_time_ms</declname>
+        </param>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm_keyboard</declname>
+        </param>
+        <param>
+          <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+          <declname>p_fsm_rgb_light</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Create a new Simone FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="125" column="14" bodyfile="common/src/fsm_simone.c" bodystart="944" bodyend="950" declfile="common/include/fsm_simone.h" declline="125" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__simone_8h_1a41eb3276cc232db7c322c9e13aba4019" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_simone_fire</definition>
+        <argsstring>(fsm_simone_t *p_fsm)</argsstring>
+        <name>fsm_simone_fire</name>
+        <param>
+          <type><ref refid="structfsm__simone__t" kindref="compound">fsm_simone_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Fire the Simone FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="138" column="6" bodyfile="common/src/fsm_simone.c" bodystart="952" bodyend="955" declfile="common/include/fsm_simone.h" declline="138" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__simone_8h_1a8402d7d746f2196ebc1caf9b26362248" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_simone_destroy</definition>
+        <argsstring>(fsm_simone_t *p_fsm)</argsstring>
+        <name>fsm_simone_destroy</name>
+        <param>
+          <type><ref refid="structfsm__simone__t" kindref="compound">fsm_simone_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Destroy an Simone FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="151" column="6" bodyfile="common/src/fsm_simone.c" bodystart="957" bodyend="960" declfile="common/include/fsm_simone.h" declline="151" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header for <ref refid="fsm__simone_8c" kindref="compound">fsm_simone.c</ref> file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2025-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#ifndef<sp/>FSM_SIMONE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FSM_SIMONE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Project<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fsm__button_8h" kindref="compound">fsm_button.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fsm__keyboard_8h" kindref="compound">fsm_keyboard.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fsm__rgb__light_8h" kindref="compound">fsm_rgb_light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>and<sp/>enums<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Keys</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KEY_RED<sp/>&apos;1&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor">#define<sp/>KEY_GREEN<sp/>&apos;2&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor">#define<sp/>KEY_BLUE<sp/>&apos;3&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor">#define<sp/>KEY_YELLOW<sp/>&apos;5&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor">#define<sp/>KEY_TURQUOISE<sp/>&apos;8&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor">#define<sp/>KEY_WHITE<sp/>&apos;0&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor">#define<sp/>KEY_INVALID_COLOR<sp/>&apos;<sp/>&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor">//<sp/>Intensities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LEVEL_MAX_INTENSITY<sp/>100<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor">#define<sp/>LEVEL_EASY_MIN_INTENSITY<sp/>80<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor">#define<sp/>LEVEL_MEDIUM_MIN_INTENSITY<sp/>50<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor">#define<sp/>LEVEL_HARD_MIN_INTENSITY<sp/>20<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor">//<sp/>Sequence</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SEQUENCE_LENGTH<sp/>5<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor">//<sp/>Number<sp/>of<sp/>colors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUMBER_OF_COLORS_GAME<sp/>6<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor">//<sp/>Timeouts<sp/>of<sp/>the<sp/>game</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>here<sp/>all<sp/>the<sp/>simone<sp/>identifiers<sp/>that<sp/>are<sp/>used<sp/>in<sp/>the<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIMONE_TIME_OFF_BETWEEN_COLORS_MS<sp/>300<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor">#define<sp/>SIMONE_TIME_VISUAL_FEEDBACK_MS<sp/>300<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor">#define<sp/>SIMONE_TIME_ON_LEVEL_EASY_MS<sp/>3000<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor">#define<sp/>SIMONE_TIME_ON_LEVEL_MEDIUM_MS<sp/>2000<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor">#define<sp/>SIMONE_TIME_ON_LEVEL_HARD_MS<sp/>1000<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor">#define<sp/>SIMONE_TIME_WAIT_INPUT_MS<sp/>5000<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>Enums<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418" kindref="member">FSM_SIMONE</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418afd6a0e4343048b10646dd2976cc5ad18" kindref="member">IDLE</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418aabe5d72a00b2abc5d4f56c2af9ee1882" kindref="member">ADD_COLOR</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418ad7b89910e75af4f6c3710d60105e42c4" kindref="member">PLAYBACK</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418a13c66635582e9c3e7f771a853a7e3705" kindref="member">WAIT_KEY</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418aa9cdfa05c17164318febfb11917c43e2" kindref="member">VERIFY_INPUT</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418a50becd973bf9b741f72833ed50ec9980" kindref="member">SLEEP_WHILE_IDLE</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__simone_8h_1a97a22167e209bf206ee9b13664aed418ab226c2b5622766a676992b28ec7d4ef0" kindref="member">SLEEP_WHILE_PLAYBACK</ref>,<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fsm__simone_8h_1a038b70583cd579808ddf1a88f8b7f13f" kindref="member">LEVELS</ref></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>LEVEL_EASY<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>LEVEL_MEDIUM,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>LEVEL_HARD</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Typedefs<sp/>------------------------------------------------------------------*/</highlight></codeline>
+<codeline lineno="88" refid="structfsm__simone__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>fsm_t<sp/>f;<sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*p_fsm_button;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>on_off_press_time_ms;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>level;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm_keyboard;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm_rgb_light;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/>seq_colors[<ref refid="fsm__simone_8h_1ae3f4615a20d2dae8c494a168778e790a" kindref="member">SEQUENCE_LENGTH</ref>];<sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>seq_intensities[<ref refid="fsm__simone_8h_1ae3f4615a20d2dae8c494a168778e790a" kindref="member">SEQUENCE_LENGTH</ref>];<sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>seq_idx;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>playback_idx;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>playback_over;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>player_idx;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>player_key;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}<sp/><ref refid="structfsm__simone__t" kindref="compound">fsm_simone_t</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Function<sp/>prototypes<sp/>and<sp/>explanation<sp/>-------------------------------------------------*/</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><ref refid="structfsm__simone__t" kindref="compound">fsm_simone_t</ref><sp/>*<ref refid="fsm__simone_8h_1a83eea382592fe9dedbcc435a9103a475" kindref="member">fsm_simone_new</ref>(<ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*p_fsm_button,<sp/>uint32_t<sp/>on_off_press_time_ms,<sp/><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm_keyboard,<sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm_rgb_light,<sp/>uint8_t<sp/>level);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__simone_8h_1a41eb3276cc232db7c322c9e13aba4019" kindref="member">fsm_simone_fire</ref>(<ref refid="structfsm__simone__t" kindref="compound">fsm_simone_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__simone_8h_1a8402d7d746f2196ebc1caf9b26362248" kindref="member">fsm_simone_destroy</ref>(<ref refid="structfsm__simone__t" kindref="compound">fsm_simone_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>FSM_SIMONE_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="common/include/fsm_simone.h"/>
+  </compounddef>
+</doxygen>

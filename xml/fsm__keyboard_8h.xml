@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="fsm__keyboard_8h" kind="file" language="C++">
+    <compoundname>fsm_keyboard.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="yes">fsm.h</includes>
+    <includedby refid="fsm__simone_8h" local="yes">common/include/fsm_simone.h</includedby>
+    <includedby refid="fsm__keyboard_8c" local="yes">common/src/fsm_keyboard.c</includedby>
+    <includedby refid="example__v2_8c" local="yes">example/example_v2.c</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="1">
+        <label>common/include/fsm_keyboard.h</label>
+        <link refid="fsm__keyboard_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>fsm.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>common/include/fsm_keyboard.h</label>
+        <link refid="fsm__keyboard_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>common/include/fsm_simone.h</label>
+        <link refid="fsm__simone_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="5">
+        <label>common/src/fsm_keyboard.c</label>
+        <link refid="fsm__keyboard_8c"/>
+      </node>
+      <node id="3">
+        <label>common/src/fsm_simone.c</label>
+        <link refid="fsm__simone_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structfsm__keyboard__t" prot="public">fsm_keyboard_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937" prot="public" static="no" strong="no">
+        <type></type>
+        <name>FSM_KEYBOARD</name>
+        <enumvalue id="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937a2160e9759695041c7a836da95ce183ab" prot="public">
+          <name>KEYBOARD_RELEASED_WAIT_ROW</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Starting state. State to wait for the row scanning. Also comes here when the keyboard has been released </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937a5e768ff191981e7f7e3eeaa091146d6a" prot="public">
+          <name>KEYBOARD_RELEASED_WAIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to perform the anti-debounce mechanism for a rising edge <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937acb8180f7cabb44148caeb1fa693157d5" prot="public">
+          <name>KEYBOARD_PRESSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State while the keyboard is being pressed </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937a5fe83e036e67fad707dad4393894eae0" prot="public">
+          <name>KEYBOARD_PRESSED_WAIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to perform the anti-debounce mechanism for a falling edge <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerator for the keyboard finite state machine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This enumerator defines the different states that the keyboard finite state machine can be in. Each state represents a specific condition or step in the keyboard key identification process. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="29" column="1" bodyfile="common/include/fsm_keyboard.h" bodystart="28" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fsm__keyboard_8h_1afddaf9c48cba9e5137ab1aa8abd41e99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+        <definition>fsm_keyboard_t* fsm_keyboard_new</definition>
+        <argsstring>(uint32_t debounce_time_ms, uint8_t keyboard_id)</argsstring>
+        <name>fsm_keyboard_new</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>debounce_time_ms</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Create a new keyboard FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new keyboard FSM with the given debounce time for all keys and keyboard ID.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>debounce_time_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Debounce time in milliseconds for all keys. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. Must be unique. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>fsm_keyboard_t* Pointer to the keyboard FSM. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="65" column="16" bodyfile="common/src/fsm_keyboard.c" bodystart="230" bodyend="235" declfile="common/include/fsm_keyboard.h" declline="65" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__keyboard_8h_1afc7aff5223cfbb75cff915bdfd79d708" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_keyboard_destroy</definition>
+        <argsstring>(fsm_keyboard_t *p_fsm)</argsstring>
+        <name>fsm_keyboard_destroy</name>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Destroy a keyboard FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function destroys a keyboard FSM and frees the memory.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="74" column="6" bodyfile="common/src/fsm_keyboard.c" bodystart="237" bodyend="240" declfile="common/include/fsm_keyboard.h" declline="74" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__keyboard_8h_1afe0970ced1b57504ad5b12615739ef78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_keyboard_fire</definition>
+        <argsstring>(fsm_keyboard_t *p_fsm)</argsstring>
+        <name>fsm_keyboard_fire</name>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Fire the keyboard FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to fire the keyboard FSM. It is used to check the transitions and execute the actions of the keyboard FSM.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Call the <computeroutput>fsm_fire()</computeroutput> function. Pass the address of the <computeroutput>fsm_t</computeroutput> struct. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="88" column="6" bodyfile="common/src/fsm_keyboard.c" bodystart="243" bodyend="246" declfile="common/include/fsm_keyboard.h" declline="88" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__keyboard_8h_1aa3800f97988d6dcea1947029e18b1f6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_keyboard_start_scan</definition>
+        <argsstring>(fsm_keyboard_t *p_fsm)</argsstring>
+        <name>fsm_keyboard_start_scan</name>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Start the keyboard scanning. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function starts the keyboard scanning by calling the appropriate port function.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Call the appropriate port function passing the keyboard ID <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="101" column="6" bodyfile="common/src/fsm_keyboard.c" bodystart="248" bodyend="251" declfile="common/include/fsm_keyboard.h" declline="101" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__keyboard_8h_1a327ce7c81f8e434bf46c193bd9362096" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_keyboard_stop_scan</definition>
+        <argsstring>(fsm_keyboard_t *p_fsm)</argsstring>
+        <name>fsm_keyboard_stop_scan</name>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Stop the keyboard scanning. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function stops the keyboard scanning by calling the appropriate port function.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Call the appropriate port function passing the keyboard ID <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="114" column="6" bodyfile="common/src/fsm_keyboard.c" bodystart="253" bodyend="256" declfile="common/include/fsm_keyboard.h" declline="114" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__keyboard_8h_1a8538a0c128e72aab9b469ed0ace3ddf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char fsm_keyboard_get_key_value</definition>
+        <argsstring>(fsm_keyboard_t *p_fsm)</argsstring>
+        <name>fsm_keyboard_get_key_value</name>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Return the key pressed of the last keyboard press. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve and return the field <computeroutput>key_pressed</computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>char Key pressed of the last keyboard press. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="126" column="6" bodyfile="common/src/fsm_keyboard.c" bodystart="260" bodyend="264" declfile="common/include/fsm_keyboard.h" declline="126" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__keyboard_8h_1a2c5c963d23ba40e1e2e16349c90d90a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fsm_keyboard_get_is_valid_key</definition>
+        <argsstring>(fsm_keyboard_t *p_fsm)</argsstring>
+        <name>fsm_keyboard_get_is_valid_key</name>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Check if the last key pressed is valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function checks if the last key pressed is valid by comparing it with the invalid key value.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Return true if the field <computeroutput>key_pressed</computeroutput> is different from <computeroutput>invalid_key</computeroutput>, otherwise return false. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true </para>
+</simplesect>
+<simplesect kind="return"><para>false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="141" column="6" bodyfile="common/src/fsm_keyboard.c" bodystart="266" bodyend="269" declfile="common/include/fsm_keyboard.h" declline="141" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__keyboard_8h_1a38ecbf29d78b69cf47621bd74d521a38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_keyboard_reset_key_value</definition>
+        <argsstring>(fsm_keyboard_t *p_fsm)</argsstring>
+        <name>fsm_keyboard_reset_key_value</name>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Reset the key pressed of the last keyboard press. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Set the field <computeroutput>key_value</computeroutput> to <computeroutput>invalid_key</computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="152" column="6" bodyfile="common/src/fsm_keyboard.c" bodystart="272" bodyend="275" declfile="common/include/fsm_keyboard.h" declline="152" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__keyboard_8h_1a22bdb22f0e7fd5bc05b34c87ea7d65e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fsm_keyboard_check_activity</definition>
+        <argsstring>(fsm_keyboard_t *p_fsm)</argsstring>
+        <name>fsm_keyboard_check_activity</name>
+        <param>
+          <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Check if the keyboard FSM is active, or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The keyboard is always inactive because it works with events.</para>
+<para><blockquote><para><bold>TODO alumnos Version 4:</bold></para>
+<para>✅ 1. Return <computeroutput>false</computeroutput> always. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true </para>
+</simplesect>
+<simplesect kind="return"><para>false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="168" column="6" bodyfile="common/src/fsm_keyboard.c" bodystart="278" bodyend="281" declfile="common/include/fsm_keyboard.h" declline="168" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header for <ref refid="fsm__keyboard_8c" kindref="compound">fsm_keyboard.c</ref> file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#ifndef<sp/>FSM_KEYBOARD_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FSM_KEYBOARD_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Other<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fsm.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>and<sp/>enums<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Enums<sp/>*/</highlight></codeline>
+<codeline lineno="28"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937" kindref="member">FSM_KEYBOARD</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937a2160e9759695041c7a836da95ce183ab" kindref="member">KEYBOARD_RELEASED_WAIT_ROW</ref><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937a5e768ff191981e7f7e3eeaa091146d6a" kindref="member">KEYBOARD_RELEASED_WAIT</ref>,<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937acb8180f7cabb44148caeb1fa693157d5" kindref="member">KEYBOARD_PRESSED</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__keyboard_8h_1acf461865490ce39e6365bfb5fab9a937a5fe83e036e67fad707dad4393894eae0" kindref="member">KEYBOARD_PRESSED_WAIT</ref>,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Typedefs<sp/>--------------------------------------------------------------------*/</highlight></codeline>
+<codeline lineno="41" refid="structfsm__keyboard__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>fsm_t<sp/>f;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>debounce_time_ms;<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>next_timeout;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tick_pressed;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>key_value;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>keyboard_id;<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>invalid_key;<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}<sp/><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Function<sp/>prototypes<sp/>and<sp/>explanation<sp/>-------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*<ref refid="fsm__keyboard_8h_1afddaf9c48cba9e5137ab1aa8abd41e99" kindref="member">fsm_keyboard_new</ref>(uint32_t<sp/>debounce_time_ms,<sp/>uint8_t<sp/>keyboard_id);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1afc7aff5223cfbb75cff915bdfd79d708" kindref="member">fsm_keyboard_destroy</ref>(<ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>FSM-interface<sp/>functions.<sp/>These<sp/>functions<sp/>are<sp/>used<sp/>to<sp/>interact<sp/>with<sp/>the<sp/>FSM<sp/>*/</highlight></codeline>
+<codeline lineno="88"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1afe0970ced1b57504ad5b12615739ef78" kindref="member">fsm_keyboard_fire</ref>(<ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1aa3800f97988d6dcea1947029e18b1f6e" kindref="member">fsm_keyboard_start_scan</ref>(<ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1a327ce7c81f8e434bf46c193bd9362096" kindref="member">fsm_keyboard_stop_scan</ref>(<ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1a8538a0c128e72aab9b469ed0ace3ddf0" kindref="member">fsm_keyboard_get_key_value</ref>(<ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1a2c5c963d23ba40e1e2e16349c90d90a8" kindref="member">fsm_keyboard_get_is_valid_key</ref>(<ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1a38ecbf29d78b69cf47621bd74d521a38" kindref="member">fsm_keyboard_reset_key_value</ref>(<ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Version<sp/>4<sp/>*/</highlight></codeline>
+<codeline lineno="168"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="fsm__keyboard_8h_1a22bdb22f0e7fd5bc05b34c87ea7d65e5" kindref="member">fsm_keyboard_check_activity</ref>(<ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>FSM_KEYBOARD_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="common/include/fsm_keyboard.h"/>
+  </compounddef>
+</doxygen>

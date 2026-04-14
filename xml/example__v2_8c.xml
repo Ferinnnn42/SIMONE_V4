@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="example__v2_8c" kind="file" language="C++">
+    <compoundname>example_v2.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes refid="fsm__keyboard_8h" local="yes">fsm_keyboard.h</includes>
+    <includes refid="port__keyboard_8h" local="yes">port_keyboard.h</includes>
+    <includes refid="port__system_8h" local="yes">port_system.h</includes>
+    <includes refid="stm32f4__system_8h" local="yes">stm32f4_system.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>port_keyboard.h</label>
+        <link refid="port__keyboard_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fsm_keyboard.h</label>
+        <link refid="fsm__keyboard_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="9">
+        <label>stm32f4_system.h</label>
+        <link refid="stm32f4__system_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>example/example_v2.c</label>
+        <link refid="example__v2_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>fsm.h</label>
+      </node>
+      <node id="10">
+        <label>stm32f4xx.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="example__v2_8c_1a840291bc02cba5474a4cb46a9b9566fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(void)</argsstring>
+        <name>main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/example_v2.c" line="10" column="5" bodyfile="example/example_v2.c" bodystart="10" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fsm__keyboard_8h" kindref="compound">fsm_keyboard.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__keyboard_8h" kindref="compound">port_keyboard.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__system_8h" kindref="compound">port_system.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__system_8h" kindref="compound">stm32f4_system.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="port__system_8h_1a1befb05b8ffd1facb00ea3ada45de6c1" kindref="member">port_system_init</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>keyboard<sp/>FSM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reserve<sp/>space<sp/>memory<sp/>in<sp/>the<sp/>heap<sp/>for<sp/>the<sp/>FSM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref><sp/>*p_fsm_keyboard<sp/>=<sp/><ref refid="fsm__keyboard_8h_1afddaf9c48cba9e5137ab1aa8abd41e99" kindref="member">fsm_keyboard_new</ref>(<ref refid="port__keyboard_8h_1a4a47a30313faeed849b0b9022e903d49" kindref="member">PORT_KEYBOARD_MAIN_DEBOUNCE_TIME_MS</ref>,<sp/><ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__keyboard_8h_1aa3800f97988d6dcea1947029e18b1f6e" kindref="member">fsm_keyboard_start_scan</ref>(p_fsm_keyboard);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>null_key<sp/>=<sp/><ref refid="port__keyboard_8h_1a0c5d7b4fe5f2da20f60a2551c990fe17" kindref="member">port_keyboard_get_invalid_key_value</ref>(<ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>every<sp/>iteration,<sp/>we<sp/>fire<sp/>the<sp/>FSM<sp/>and<sp/>retrieve<sp/>the<sp/>key<sp/>pressed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__keyboard_8h_1afe0970ced1b57504ad5b12615739ef78" kindref="member">fsm_keyboard_fire</ref>(p_fsm_keyboard);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>key_value<sp/>=<sp/><ref refid="fsm__keyboard_8h_1a8538a0c128e72aab9b469ed0ace3ddf0" kindref="member">fsm_keyboard_get_key_value</ref>(p_fsm_keyboard);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(key_value<sp/>!=<sp/>null_key)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Keyboard&apos;s<sp/>%d<sp/>key<sp/>%c<sp/>pressed\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>,<sp/>key_value);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>always<sp/>reset<sp/>the<sp/>key<sp/>after<sp/>reading<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__keyboard_8h_1a38ecbf29d78b69cf47621bd74d521a38" kindref="member">fsm_keyboard_reset_key_value</ref>(p_fsm_keyboard);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="example/example_v2.c"/>
+  </compounddef>
+</doxygen>

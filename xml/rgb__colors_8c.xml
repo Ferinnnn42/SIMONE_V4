@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="rgb__colors_8c" kind="file" language="C++">
+    <compoundname>rgb_colors.c</compoundname>
+    <includes refid="rgb__colors_8h" local="yes">rgb_colors.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>rgb_colors.h</label>
+        <link refid="rgb__colors_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>common/src/rgb_colors.c</label>
+        <link refid="rgb__colors_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="rgb__colors_8c_1ac1830590deccc1cced766dd388c5b2fb" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_red</definition>
+        <argsstring></argsstring>
+        <name>color_red</name>
+        <briefdescription>
+<para>Red color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/rgb_colors.c" line="16" column="19" bodyfile="common/src/rgb_colors.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8c_1a5e7578ed7ac65b7f947520608153dd2d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_green</definition>
+        <argsstring></argsstring>
+        <name>color_green</name>
+        <briefdescription>
+<para>Green color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/rgb_colors.c" line="22" column="19" bodyfile="common/src/rgb_colors.c" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8c_1ad7b6ffa61298d666a046f01657e1dd21" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_blue</definition>
+        <argsstring></argsstring>
+        <name>color_blue</name>
+        <briefdescription>
+<para>Blue color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/rgb_colors.c" line="28" column="19" bodyfile="common/src/rgb_colors.c" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8c_1ae64b2a4c4c08e81e3283c01933321d05" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_yellow</definition>
+        <argsstring></argsstring>
+        <name>color_yellow</name>
+        <briefdescription>
+<para>Yellow color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/rgb_colors.c" line="34" column="19" bodyfile="common/src/rgb_colors.c" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8c_1ab764bd1a23fadd2dd0e10fecdf420ee7" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_white</definition>
+        <argsstring></argsstring>
+        <name>color_white</name>
+        <briefdescription>
+<para>White color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/rgb_colors.c" line="40" column="19" bodyfile="common/src/rgb_colors.c" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8c_1aee6b022adce89dfe6886fba8593f671b" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_turquoise</definition>
+        <argsstring></argsstring>
+        <name>color_turquoise</name>
+        <briefdescription>
+<para>Turquoise color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/rgb_colors.c" line="46" column="19" bodyfile="common/src/rgb_colors.c" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb__colors_8c_1aa9cafeaebaeef62f47b0d0a46643f9f3" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>const rgb_color_t color_off</definition>
+        <argsstring></argsstring>
+        <name>color_off</name>
+        <briefdescription>
+<para>Color OFF. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/rgb_colors.c" line="52" column="19" bodyfile="common/src/rgb_colors.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>RGB colors and related info. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rgb__colors_8h" kindref="compound">rgb_colors.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Colors<sp/>*/</highlight></codeline>
+<codeline lineno="16"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8c_1ac1830590deccc1cced766dd388c5b2fb" kindref="member">color_red</ref><sp/>=<sp/>{.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>,<sp/>.g<sp/>=<sp/>0,<sp/>.b<sp/>=<sp/>0};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8c_1a5e7578ed7ac65b7f947520608153dd2d" kindref="member">color_green</ref><sp/>=<sp/>{.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/>0,<sp/>.g<sp/>=<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>,<sp/>.b<sp/>=<sp/>0};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8c_1ad7b6ffa61298d666a046f01657e1dd21" kindref="member">color_blue</ref><sp/>=<sp/>{.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/>0,<sp/>.g<sp/>=<sp/>0,<sp/>.b<sp/>=<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8c_1ae64b2a4c4c08e81e3283c01933321d05" kindref="member">color_yellow</ref><sp/>=<sp/>{.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/>(uint8_t)((37<sp/>*<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>)<sp/>/<sp/>100),<sp/>.g<sp/>=<sp/>(uint8_t)((37<sp/>*<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>)<sp/>/<sp/>100),<sp/>.b<sp/>=<sp/>0};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8c_1ab764bd1a23fadd2dd0e10fecdf420ee7" kindref="member">color_white</ref><sp/>=<sp/>{.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>,<sp/>.g<sp/>=<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>,<sp/>.b<sp/>=<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8c_1aee6b022adce89dfe6886fba8593f671b" kindref="member">color_turquoise</ref><sp/>=<sp/>{.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/>(uint8_t)((10<sp/>*<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>)<sp/>/<sp/>100),<sp/>.g<sp/>=<sp/>(uint8_t)((35<sp/>*<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>)<sp/>/<sp/>100),<sp/>.b<sp/>=<sp/>(uint8_t)((32<sp/>*<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>)<sp/>/<sp/>100)};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/><ref refid="rgb__colors_8c_1aa9cafeaebaeef62f47b0d0a46643f9f3" kindref="member">color_off</ref><sp/>=<sp/>{.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/>0,<sp/>.g<sp/>=<sp/>0,<sp/>.b<sp/>=<sp/>0};</highlight></codeline>
+    </programlisting>
+    <location file="common/src/rgb_colors.c"/>
+  </compounddef>
+</doxygen>

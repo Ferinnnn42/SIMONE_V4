@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structstm32f4__keyboard__hw__t" kind="struct" language="C++" prot="public">
+    <compoundname>stm32f4_keyboard_hw_t</compoundname>
+    <includes local="no">stm32f4_keyboard.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structkeyboard__t" kindref="compound">keyboard_t</ref> *</type>
+        <definition>const keyboard_t* stm32f4_keyboard_hw_t::p_keyboard</definition>
+        <argsstring></argsstring>
+        <name>p_keyboard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the keyboard structure </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="50" column="22" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1ab9f29e892898619e71a449dfe04cd366" prot="public" static="no" mutable="no">
+        <type>GPIO_TypeDef **</type>
+        <definition>GPIO_TypeDef** stm32f4_keyboard_hw_t::p_row_ports</definition>
+        <argsstring></argsstring>
+        <name>p_row_ports</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to an array of GPIO ports where the keyboard rows are connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="53" column="18" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1ab4cd1b72e10347d38dda61d0759d825a" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* stm32f4_keyboard_hw_t::p_row_pins</definition>
+        <argsstring></argsstring>
+        <name>p_row_pins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to an array of pins/lines where the keyboard rows are connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="54" column="13" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1adc881a3a578666f3ba66cd83a9d1943e" prot="public" static="no" mutable="no">
+        <type>GPIO_TypeDef **</type>
+        <definition>GPIO_TypeDef** stm32f4_keyboard_hw_t::p_col_ports</definition>
+        <argsstring></argsstring>
+        <name>p_col_ports</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to an array of GPIO ports where the keyboard columns are connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="57" column="18" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1a0861cc44a9f21f2fe9201a8d6a6843e6" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* stm32f4_keyboard_hw_t::p_col_pins</definition>
+        <argsstring></argsstring>
+        <name>p_col_pins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to an array of pins/lines where the keyboard columns are connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="58" column="13" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1ac9e0a40e20e6c5cb2e35e74ab6b3c35c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool stm32f4_keyboard_hw_t::flag_key_pressed</definition>
+        <argsstring></argsstring>
+        <name>flag_key_pressed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag to indicate that a key has been pressed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="60" column="10" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1ac99ba60f61e44fd740e00605efa46eb4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool stm32f4_keyboard_hw_t::flag_row_timeout</definition>
+        <argsstring></argsstring>
+        <name>flag_row_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag to indicate that the column scanning timeout has occurred </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="61" column="10" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1a90923a33d3e61bb751f6a6474ad64191" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t stm32f4_keyboard_hw_t::col_idx_interrupt</definition>
+        <argsstring></argsstring>
+        <name>col_idx_interrupt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index of the column that provoked an interrupt </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="62" column="13" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstm32f4__keyboard__hw__t_1ae788b45edf20a86dcdf96ce657e7711d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t stm32f4_keyboard_hw_t::current_excited_row</definition>
+        <argsstring></argsstring>
+        <name>current_excited_row</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current row being excited </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_keyboard.h" line="63" column="13" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to define the HW dependencies of a keyboard status. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Because the rows and columns GPIO ports and pins are variable-length arrays depending on the keyboard layout, <bold>double pointers</bold> are used to define GPIOs (because GPIOs are defined as pointers of GPIO_TypeDef type) and <bold>pointers</bold> are used to define the arrays of rows and columns. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>keyboard_t</label>
+        <link refid="structkeyboard__t"/>
+      </node>
+      <node id="1">
+        <label>stm32f4_keyboard_hw_t</label>
+        <link refid="structstm32f4__keyboard__hw__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>p_keyboard</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="port/stm32f4/include/stm32f4_keyboard.h" line="48" column="1" bodyfile="port/stm32f4/include/stm32f4_keyboard.h" bodystart="47" bodyend="65"/>
+    <listofallmembers>
+      <member refid="structstm32f4__keyboard__hw__t_1a90923a33d3e61bb751f6a6474ad64191" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>col_idx_interrupt</name></member>
+      <member refid="structstm32f4__keyboard__hw__t_1ae788b45edf20a86dcdf96ce657e7711d" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>current_excited_row</name></member>
+      <member refid="structstm32f4__keyboard__hw__t_1ac9e0a40e20e6c5cb2e35e74ab6b3c35c" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>flag_key_pressed</name></member>
+      <member refid="structstm32f4__keyboard__hw__t_1ac99ba60f61e44fd740e00605efa46eb4" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>flag_row_timeout</name></member>
+      <member refid="structstm32f4__keyboard__hw__t_1a0861cc44a9f21f2fe9201a8d6a6843e6" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>p_col_pins</name></member>
+      <member refid="structstm32f4__keyboard__hw__t_1adc881a3a578666f3ba66cd83a9d1943e" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>p_col_ports</name></member>
+      <member refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>p_keyboard</name></member>
+      <member refid="structstm32f4__keyboard__hw__t_1ab4cd1b72e10347d38dda61d0759d825a" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>p_row_pins</name></member>
+      <member refid="structstm32f4__keyboard__hw__t_1ab9f29e892898619e71a449dfe04cd366" prot="public" virt="non-virtual"><scope>stm32f4_keyboard_hw_t</scope><name>p_row_ports</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

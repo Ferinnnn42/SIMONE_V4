@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="port__system_8h" kind="file" language="C++">
+    <compoundname>port_system.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="fsm__button_8c" local="yes">common/src/fsm_button.c</includedby>
+    <includedby refid="fsm__keyboard_8c" local="yes">common/src/fsm_keyboard.c</includedby>
+    <includedby refid="fsm__rgb__light_8c" local="yes">common/src/fsm_rgb_light.c</includedby>
+    <includedby refid="fsm__simone_8c" local="yes">common/src/fsm_simone.c</includedby>
+    <includedby refid="example__v1_8c" local="yes">example/example_v1.c</includedby>
+    <includedby refid="example__v2_8c" local="yes">example/example_v2.c</includedby>
+    <includedby refid="example__v3_8c" local="yes">example/example_v3.c</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <includedby refid="interr_8c" local="yes">port/stm32f4/src/interr.c</includedby>
+    <includedby refid="stm32f4__button_8c" local="yes">port/stm32f4/src/stm32f4_button.c</includedby>
+    <includedby refid="stm32f4__keyboard_8c" local="yes">port/stm32f4/src/stm32f4_keyboard.c</includedby>
+    <includedby refid="stm32f4__rgb__light_8c" local="yes">port/stm32f4/src/stm32f4_rgb_light.c</includedby>
+    <includedby refid="stm32f4__simone_8c" local="yes">port/stm32f4/src/stm32f4_simone.c</includedby>
+    <includedby refid="stm32f4__system_8c" local="yes">port/stm32f4/src/stm32f4_system.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>port/include/port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>common/src/fsm_button.c</label>
+        <link refid="fsm__button_8c"/>
+      </node>
+      <node id="1">
+        <label>port/include/port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>port/stm32f4/src/stm32f4_rgb_light.c</label>
+        <link refid="stm32f4__rgb__light_8c"/>
+      </node>
+      <node id="7">
+        <label>port/stm32f4/src/interr.c</label>
+        <link refid="interr_8c"/>
+      </node>
+      <node id="8">
+        <label>port/stm32f4/src/stm32f4_button.c</label>
+        <link refid="stm32f4__button_8c"/>
+      </node>
+      <node id="6">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="12">
+        <label>port/stm32f4/src/stm32f4_system.c</label>
+        <link refid="stm32f4__system_8c"/>
+      </node>
+      <node id="4">
+        <label>common/src/fsm_rgb_light.c</label>
+        <link refid="fsm__rgb__light_8c"/>
+      </node>
+      <node id="9">
+        <label>port/stm32f4/src/stm32f4_keyboard.c</label>
+        <link refid="stm32f4__keyboard_8c"/>
+      </node>
+      <node id="3">
+        <label>common/src/fsm_keyboard.c</label>
+        <link refid="fsm__keyboard_8c"/>
+      </node>
+      <node id="5">
+        <label>common/src/fsm_simone.c</label>
+        <link refid="fsm__simone_8c"/>
+      </node>
+      <node id="11">
+        <label>port/stm32f4/src/stm32f4_simone.c</label>
+        <link refid="stm32f4__simone_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="port__system_8h_1a1befb05b8ffd1facb00ea3ada45de6c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t port_system_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_system_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="23" column="10" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="119" bodyend="155" declfile="port/include/port_system.h" declline="23" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1ab415270cfcefc90ed8b8842da4e3d4c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t port_system_get_millis</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_system_get_millis</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Returns the number of milliseconds since the system started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of milliseconds since the system started. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="30" column="10" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="177" bodyend="180" declfile="port/include/port_system.h" declline="30" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1abb94f01f1901334f3df650392be23009" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_system_set_millis</definition>
+        <argsstring>(uint32_t ms)</argsstring>
+        <name>port_system_set_millis</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>ms</declname>
+        </param>
+        <briefdescription>
+<para>Sets the number of milliseconds since the system started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New number of milliseconds since the system started. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="37" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="182" bodyend="185" declfile="port/include/port_system.h" declline="37" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1ae6ca17ba9c9d055d442cf1e4a73be046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_system_delay_ms</definition>
+        <argsstring>(uint32_t ms)</argsstring>
+        <name>port_system_delay_ms</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>ms</declname>
+        </param>
+        <briefdescription>
+<para>Delays the program execution for the specified number of milliseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of milliseconds to delay. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="44" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="157" bodyend="164" declfile="port/include/port_system.h" declline="44" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1aeec35c6e2723b5c804b9d81840c5c5a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_system_delay_until_ms</definition>
+        <argsstring>(uint32_t *t, uint32_t ms)</argsstring>
+        <name>port_system_delay_until_ms</name>
+        <param>
+          <type>uint32_t *</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ms</declname>
+        </param>
+        <briefdescription>
+<para>Delays the program execution until the specified number of milliseconds since the system started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the variable that stores the number of milliseconds to delay until. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of milliseconds to delay until.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This function modifies the value of the variable pointed by t to the number of milliseconds to delay until. </para>
+</simplesect>
+<simplesect kind="note"><para>This function is useful to implement periodic tasks. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="55" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="166" bodyend="175" declfile="port/include/port_system.h" declline="55" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1a9ba4258bf8d3fa567f2bb0d6c43029a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_system_power_stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_system_power_stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Set the system in <bold>stop mode</bold> for low power consumption. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The function sets the state of the power regulator in <bold>stop mode</bold>. <linebreak/>
+After that, the function sets the system mode in sleep mode, to enter in <bold>stop mode</bold> when calling <computeroutput>__WFI()</computeroutput> (wait for interruption). <linebreak/>
+The system remains in this line until an external interruption or timer interruption occurs. <linebreak/>
+If an interruption occurs the system wakes up and resets the system mode.</para>
+<para><blockquote><para><bold>TODO alumnos Version 4:</bold></para>
+<para>✅ 1. Copy the following code in the file <ref refid="stm32f4__system_8c" kindref="compound">stm32f4_system.c</ref>. <linebreak/>
+</para>
+</blockquote></para>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1a9ba4258bf8d3fa567f2bb0d6c43029a2" kindref="member">port_system_power_stop</ref>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/>MODIFY_REG(PWR-&gt;CR,<sp/>(PWR_CR_PDDS<sp/>|<sp/>PWR_CR_LPDS),<sp/>PWR_CR_LPDS);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Select<sp/>the<sp/>regulator<sp/>state<sp/>in<sp/>Stop<sp/>mode:<sp/>Set<sp/>PDDS<sp/>and<sp/>LPDS<sp/>bits<sp/>according<sp/>to<sp/>PWR_Regulator<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>SCB-&gt;SCR<sp/>|=<sp/>((uint32_t)SCB_SCR_SLEEPDEEP_Msk);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>SLEEPDEEP<sp/>bit<sp/>of<sp/>Cortex<sp/>System<sp/>Control<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>__WFI();<sp/></highlight><highlight class="comment">//<sp/>Select<sp/>Stop<sp/>mode<sp/>entry<sp/>:<sp/>Request<sp/>Wait<sp/>For<sp/>Interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>SCB-&gt;SCR<sp/>&amp;=<sp/>~((uint32_t)SCB_SCR_SLEEPDEEP_Msk);<sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>SLEEPDEEP<sp/>bit<sp/>of<sp/>Cortex<sp/>System<sp/>Control<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="79" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="336" bodyend="349" declfile="port/include/port_system.h" declline="79" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1a5dcdf1cde8372fa1893e1c8f2baf6e55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_system_power_sleep</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_system_power_sleep</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Set the system in <bold>sleep mode</bold> for low power consumption. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The function sets the state of the power regulator in <bold>sleep mode</bold>. <linebreak/>
+After that, the function sets the system mode in sleep mode, to enter in <bold>sleep mode</bold> when calling <computeroutput>__WFI()</computeroutput> (wait for interruption). <linebreak/>
+The system remains in this line until an external interruption or timer interruption occurs. <linebreak/>
+ <blockquote><para><bold>ONLY IF YOU NEED IT! TODO alumnos Version 4:</bold></para>
+<para>✅ 1. Copy the following code in the file <ref refid="stm32f4__system_8c" kindref="compound">stm32f4_system.c</ref>. <linebreak/>
+</para>
+</blockquote></para>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1a5dcdf1cde8372fa1893e1c8f2baf6e55" kindref="member">port_system_power_sleep</ref>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/>MODIFY_REG(PWR-&gt;CR,<sp/>(PWR_CR_PDDS<sp/>|<sp/>PWR_CR_LPDS),<sp/>PWR_CR_LPDS);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Select<sp/>the<sp/>regulator<sp/>state<sp/>in<sp/>Stop<sp/>mode:<sp/>Set<sp/>PDDS<sp/>and<sp/>LPDS<sp/>bits<sp/>according<sp/>to<sp/>PWR_Regulator<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>SCB-&gt;SCR<sp/>&amp;=<sp/>~((uint32_t)SCB_SCR_SLEEPDEEP_Msk);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>SLEEPDEEP<sp/>bit<sp/>of<sp/>Cortex<sp/>System<sp/>Control<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>__WFI();<sp/></highlight><highlight class="comment">//<sp/>Select<sp/>Sleep<sp/>mode<sp/>entry<sp/>:<sp/>Request<sp/>Wait<sp/>For<sp/>Interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="101" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="351" bodyend="361" declfile="port/include/port_system.h" declline="101" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1ae3c6ff19d65f5cdeb1e1b556b0823b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_system_sleep</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_system_sleep</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Enable low power consumption in sleep mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos Version 4:</bold></para>
+<para>✅ 1. Call function <computeroutput><ref refid="port__system_8h_1af3c45ccd0a549c3d753b752b726a795f" kindref="member">port_system_systick_suspend()</ref></computeroutput> to suspend the count of the SysTick. <linebreak/>
+✅ 2. Call function <computeroutput><ref refid="port__system_8h_1a5dcdf1cde8372fa1893e1c8f2baf6e55" kindref="member">port_system_power_sleep()</ref></computeroutput> to enter sleep in <bold>sleep mode</bold>. <linebreak/>
+</para>
+</blockquote></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="112" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="363" bodyend="368" declfile="port/include/port_system.h" declline="112" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_system_systick_resume</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_system_systick_resume</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Resume Tick increment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The SysTick timer is the source of time base. It is used to generate interrupts at regular time intervals. Once this function is called, the SysTick interrupt will be enabled and so Tick increment is resumed.</para>
+<para><blockquote><para><bold>TODO alumnos Version 4:</bold></para>
+<para>✅ 1. Copy the following code in the file <ref refid="stm32f4__system_8c" kindref="compound">stm32f4_system.c</ref>. <linebreak/>
+</para>
+</blockquote></para>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" kindref="member">port_system_systick_resume</ref>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>SysTick-&gt;CTRL<sp/>|=<sp/>SysTick_CTRL_TICKINT_Msk;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="130" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="324" bodyend="328" declfile="port/include/port_system.h" declline="130" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__system_8h_1af3c45ccd0a549c3d753b752b726a795f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_system_systick_suspend</definition>
+        <argsstring>(void)</argsstring>
+        <name>port_system_systick_suspend</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Suspend Tick increment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The SysTick timer is the source of time base. It is used to generate interrupts at regular time intervals. Once this function is called, the SysTick interrupt will be disabled so it saves more energy and it does not generate any interruption.</para>
+<para><blockquote><para><bold>TODO alumnos Version 4:</bold></para>
+<para>✅ 1. Copy the following code in the file <ref refid="stm32f4__system_8c" kindref="compound">stm32f4_system.c</ref>. <linebreak/>
+</para>
+</blockquote></para>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1af3c45ccd0a549c3d753b752b726a795f" kindref="member">port_system_systick_suspend</ref>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/>SysTick-&gt;CTRL<sp/>&amp;=<sp/>~SysTick_CTRL_TICKINT_Msk;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_system.h" line="148" column="6" bodyfile="port/stm32f4/src/stm32f4_system.c" bodystart="330" bodyend="334" declfile="port/include/port_system.h" declline="148" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>: Header for port_system.c file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="attention"><para></para>
+</simplesect>
+Josué Pagán Ortiz (<ulink url="mailto:j.pagan@upm.es">j.pagan@upm.es</ulink>) Sistemas Digitales II </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="14"><highlight class="preprocessor">#ifndef<sp/>PORT_SYSTEM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PORT_SYSTEM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>del<sp/>sistema<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">uint32_t<sp/><ref refid="port__system_8h_1a1befb05b8ffd1facb00ea3ada45de6c1" kindref="member">port_system_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">uint32_t<sp/><ref refid="port__system_8h_1ab415270cfcefc90ed8b8842da4e3d4c6" kindref="member">port_system_get_millis</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1abb94f01f1901334f3df650392be23009" kindref="member">port_system_set_millis</ref>(uint32_t<sp/>ms);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1ae6ca17ba9c9d055d442cf1e4a73be046" kindref="member">port_system_delay_ms</ref>(uint32_t<sp/>ms);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1aeec35c6e2723b5c804b9d81840c5c5a4" kindref="member">port_system_delay_until_ms</ref>(uint32_t<sp/>*t,<sp/>uint32_t<sp/>ms);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1a9ba4258bf8d3fa567f2bb0d6c43029a2" kindref="member">port_system_power_stop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1a5dcdf1cde8372fa1893e1c8f2baf6e55" kindref="member">port_system_power_sleep</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1ae3c6ff19d65f5cdeb1e1b556b0823b40" kindref="member">port_system_sleep</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" kindref="member">port_system_systick_resume</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__system_8h_1af3c45ccd0a549c3d753b752b726a795f" kindref="member">port_system_systick_suspend</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>PORT_SYSTEM_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="port/include/port_system.h"/>
+  </compounddef>
+</doxygen>

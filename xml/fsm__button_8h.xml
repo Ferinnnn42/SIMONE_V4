@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="fsm__button_8h" kind="file" language="C++">
+    <compoundname>fsm_button.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="yes">fsm.h</includes>
+    <includedby refid="fsm__simone_8h" local="yes">common/include/fsm_simone.h</includedby>
+    <includedby refid="fsm__button_8c" local="yes">common/src/fsm_button.c</includedby>
+    <includedby refid="example__v1_8c" local="yes">example/example_v1.c</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>fsm.h</label>
+      </node>
+      <node id="1">
+        <label>common/include/fsm_button.h</label>
+        <link refid="fsm__button_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>common/src/fsm_button.c</label>
+        <link refid="fsm__button_8c"/>
+      </node>
+      <node id="2">
+        <label>common/include/fsm_simone.h</label>
+        <link refid="fsm__simone_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="1">
+        <label>common/include/fsm_button.h</label>
+        <link refid="fsm__button_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>common/src/fsm_simone.c</label>
+        <link refid="fsm__simone_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structfsm__button__t" prot="public">fsm_button_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6" prot="public" static="no" strong="no">
+        <type></type>
+        <name>FSM_BUTTON</name>
+        <enumvalue id="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6a666f5349284be6384467ac357ec7d461" prot="public">
+          <name>BUTTON_RELEASED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Starting state. Also comes here when the button has been released </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6a9a80c0309c6a131641f74f0dea282ddf" prot="public">
+          <name>BUTTON_RELEASED_WAIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to perform the anti-debounce mechanism for a falling edge <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6abd19dea9e19d02d7d39464dfdde1e48b" prot="public">
+          <name>BUTTON_PRESSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State while the button is being pressed </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6a4145383ff5556588d3da0b1ae267f1c7" prot="public">
+          <name>BUTTON_PRESSED_WAIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>State to perform the anti-debounce mechanism for a rising edge <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerator for the button finite state machine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This enumerator defines the different states that the button finite state machine can be in. Each state represents a specific condition or step in the button press process. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="29" column="1" bodyfile="common/include/fsm_button.h" bodystart="28" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fsm__button_8h_1a13c9224071da6ca62a2a52840b0894c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+        <definition>fsm_button_t* fsm_button_new</definition>
+        <argsstring>(uint32_t debounce_time_ms, uint8_t button_id)</argsstring>
+        <name>fsm_button_new</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>debounce_time_ms</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>button_id</declname>
+        </param>
+        <briefdescription>
+<para>Create a new button FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new button FSM with the given debounce time and button ID.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>debounce_time_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Debounce time in milliseconds. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>button_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Button ID. Must be unique. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>fsm_button_t* Pointer to the button FSM. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="61" column="14" bodyfile="common/src/fsm_button.c" bodystart="182" bodyend="187" declfile="common/include/fsm_button.h" declline="61" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__button_8h_1ace4aa8054f212e21a1e517faebe27126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_button_destroy</definition>
+        <argsstring>(fsm_button_t *p_fsm)</argsstring>
+        <name>fsm_button_destroy</name>
+        <param>
+          <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Destroy a button FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function destroys a button FSM and frees the memory.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="70" column="6" bodyfile="common/src/fsm_button.c" bodystart="189" bodyend="192" declfile="common/include/fsm_button.h" declline="70" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__button_8h_1a7ab2d6c73b1f2e7ffe2913a956f1580f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_button_fire</definition>
+        <argsstring>(fsm_button_t *p_fsm)</argsstring>
+        <name>fsm_button_fire</name>
+        <param>
+          <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Fire the button FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to fire the button FSM. It is used to check the transitions and execute the actions of the button FSM.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Call the <computeroutput>fsm_fire()</computeroutput> function. Pass the address of the <computeroutput>fsm_t</computeroutput> struct. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="84" column="6" bodyfile="common/src/fsm_button.c" bodystart="195" bodyend="198" declfile="common/include/fsm_button.h" declline="84" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__button_8h_1a8ceba02b9a4674bb307147638a4cf3fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_button_get_duration</definition>
+        <argsstring>(fsm_button_t *p_fsm)</argsstring>
+        <name>fsm_button_get_duration</name>
+        <param>
+          <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Return the duration of the last button press. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve and return the field <computeroutput>duration</computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32_t Duration of the last button press in milliseconds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="96" column="10" bodyfile="common/src/fsm_button.c" bodystart="202" bodyend="206" declfile="common/include/fsm_button.h" declline="96" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__button_8h_1a911736d0a80d826cf083b94d049aacee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fsm_button_reset_duration</definition>
+        <argsstring>(fsm_button_t *p_fsm)</argsstring>
+        <name>fsm_button_reset_duration</name>
+        <param>
+          <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Reset the duration of the last button press. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Set to 0 the field <computeroutput>duration</computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="107" column="6" bodyfile="common/src/fsm_button.c" bodystart="209" bodyend="212" declfile="common/include/fsm_button.h" declline="107" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__button_8h_1a8b24e1fd24d9b84dd59ccea801d79b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_button_get_debounce_time_ms</definition>
+        <argsstring>(fsm_button_t *p_fsm)</argsstring>
+        <name>fsm_button_get_debounce_time_ms</name>
+        <param>
+          <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Get the debounce time of the button FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns the debounce time of the button FSM.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve and return the field <computeroutput>debounce_time_ms</computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32_t Debounce time in milliseconds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="121" column="10" bodyfile="common/src/fsm_button.c" bodystart="214" bodyend="217" declfile="common/include/fsm_button.h" declline="121" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="fsm__button_8h_1a9b5728721dbfc410b27b4a5af1da1bb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fsm_button_check_activity</definition>
+        <argsstring>(fsm_button_t *p_fsm)</argsstring>
+        <name>fsm_button_check_activity</name>
+        <param>
+          <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+          <declname>p_fsm</declname>
+        </param>
+        <briefdescription>
+<para>Check if the button FSM is active, or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The button is inactive when it is in the status <computeroutput>BUTTON_RELEASED</computeroutput>.</para>
+<para><blockquote><para><bold>TODO alumnos Version 4:</bold></para>
+<para>✅ 1. Get the field <computeroutput>current_state</computeroutput> of the FSM (field <computeroutput>f</computeroutput> of the struct). <linebreak/>
+✅ 2. Return <computeroutput>false</computeroutput> if the current state is <computeroutput>BUTTON_RELEASED</computeroutput>. Otherwise, return <computeroutput>true</computeroutput>. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_fsm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <computeroutput><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref></computeroutput> struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true </para>
+</simplesect>
+<simplesect kind="return"><para>false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="138" column="6" bodyfile="common/src/fsm_button.c" bodystart="220" bodyend="223" declfile="common/include/fsm_button.h" declline="138" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header for <ref refid="fsm__button_8c" kindref="compound">fsm_button.c</ref> file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#ifndef<sp/>FSM_BUTTON_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FSM_BUTTON_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Other<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fsm.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>and<sp/>enums<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Enums<sp/>*/</highlight></codeline>
+<codeline lineno="28"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6" kindref="member">FSM_BUTTON</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6a666f5349284be6384467ac357ec7d461" kindref="member">BUTTON_RELEASED</ref><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6a9a80c0309c6a131641f74f0dea282ddf" kindref="member">BUTTON_RELEASED_WAIT</ref>,<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6abd19dea9e19d02d7d39464dfdde1e48b" kindref="member">BUTTON_PRESSED</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fsm__button_8h_1acd7caaebd935f2c31359e79110f682b6a4145383ff5556588d3da0b1ae267f1c7" kindref="member">BUTTON_PRESSED_WAIT</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Typedefs<sp/>--------------------------------------------------------------------*/</highlight></codeline>
+<codeline lineno="40" refid="structfsm__button__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>fsm_t<sp/>f;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>debounce_time_ms;<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>next_timeout;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tick_pressed;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>duration;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>button_id;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}<sp/><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Function<sp/>prototypes<sp/>and<sp/>explanation<sp/>-------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*<ref refid="fsm__button_8h_1a13c9224071da6ca62a2a52840b0894c9" kindref="member">fsm_button_new</ref>(uint32_t<sp/>debounce_time_ms,<sp/>uint8_t<sp/>button_id);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__button_8h_1ace4aa8054f212e21a1e517faebe27126" kindref="member">fsm_button_destroy</ref>(<ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>FSM-interface<sp/>functions.<sp/>These<sp/>functions<sp/>are<sp/>used<sp/>to<sp/>interact<sp/>with<sp/>the<sp/>FSM<sp/>*/</highlight></codeline>
+<codeline lineno="84"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__button_8h_1a7ab2d6c73b1f2e7ffe2913a956f1580f" kindref="member">fsm_button_fire</ref>(<ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">uint32_t<sp/><ref refid="fsm__button_8h_1a8ceba02b9a4674bb307147638a4cf3fc" kindref="member">fsm_button_get_duration</ref>(<ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fsm__button_8h_1a911736d0a80d826cf083b94d049aacee" kindref="member">fsm_button_reset_duration</ref>(<ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">uint32_t<sp/><ref refid="fsm__button_8h_1a8b24e1fd24d9b84dd59ccea801d79b58" kindref="member">fsm_button_get_debounce_time_ms</ref>(<ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Version<sp/>4<sp/>*/</highlight></codeline>
+<codeline lineno="138"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="fsm__button_8h_1a9b5728721dbfc410b27b4a5af1da1bb8" kindref="member">fsm_button_check_activity</ref>(<ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref><sp/>*p_fsm);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>FSM_BUTTON_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="common/include/fsm_button.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structfsm__button__t" kind="struct" language="C++" prot="public">
+    <compoundname>fsm_button_t</compoundname>
+    <includes local="no">fsm_button.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfsm__button__t_1aa0240ddd45d2861c0aaf0e0a4df3bb7e" prot="public" static="no" mutable="no">
+        <type>fsm_t</type>
+        <definition>fsm_t fsm_button_t::f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Button FSM <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="42" column="11" bodyfile="common/include/fsm_button.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__button__t_1adad3a7ca35447bdb21bde2f964389ea1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_button_t::debounce_time_ms</definition>
+        <argsstring></argsstring>
+        <name>debounce_time_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Button debounce time in ms </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="43" column="14" bodyfile="common/include/fsm_button.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__button__t_1a2cb938cc094cc3668b120954f69dcaab" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_button_t::next_timeout</definition>
+        <argsstring></argsstring>
+        <name>next_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Next timeout for the anti-debounce in ms </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="44" column="14" bodyfile="common/include/fsm_button.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__button__t_1aafa5c3aa3c9af09aa7d0c8e32db6102f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_button_t::tick_pressed</definition>
+        <argsstring></argsstring>
+        <name>tick_pressed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of ticks when the button was pressed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="45" column="14" bodyfile="common/include/fsm_button.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__button__t_1a1e5344fc8cb65595a3723a3e85d12618" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_button_t::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>How much time the button has been pressed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="46" column="14" bodyfile="common/include/fsm_button.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__button__t_1aca1d43d165c3ec5307406d02502ad507" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_button_t::button_id</definition>
+        <argsstring></argsstring>
+        <name>button_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Button ID. Must be unique. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_button.h" line="47" column="13" bodyfile="common/include/fsm_button.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure of the Button FSM. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/include/fsm_button.h" line="41" column="1" bodyfile="common/include/fsm_button.h" bodystart="40" bodyend="48"/>
+    <listofallmembers>
+      <member refid="structfsm__button__t_1aca1d43d165c3ec5307406d02502ad507" prot="public" virt="non-virtual"><scope>fsm_button_t</scope><name>button_id</name></member>
+      <member refid="structfsm__button__t_1adad3a7ca35447bdb21bde2f964389ea1" prot="public" virt="non-virtual"><scope>fsm_button_t</scope><name>debounce_time_ms</name></member>
+      <member refid="structfsm__button__t_1a1e5344fc8cb65595a3723a3e85d12618" prot="public" virt="non-virtual"><scope>fsm_button_t</scope><name>duration</name></member>
+      <member refid="structfsm__button__t_1aa0240ddd45d2861c0aaf0e0a4df3bb7e" prot="public" virt="non-virtual"><scope>fsm_button_t</scope><name>f</name></member>
+      <member refid="structfsm__button__t_1a2cb938cc094cc3668b120954f69dcaab" prot="public" virt="non-virtual"><scope>fsm_button_t</scope><name>next_timeout</name></member>
+      <member refid="structfsm__button__t_1aafa5c3aa3c9af09aa7d0c8e32db6102f" prot="public" virt="non-virtual"><scope>fsm_button_t</scope><name>tick_pressed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

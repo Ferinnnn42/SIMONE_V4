@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structstm32f4__simone__hw__t" kind="struct" language="C++" prot="public">
+    <compoundname>stm32f4_simone_hw_t</compoundname>
+    <includes local="no">stm32f4_simone.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool stm32f4_simone_hw_t::flag_timer_timeout</definition>
+        <argsstring></argsstring>
+        <name>flag_timer_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag to indicate that the timer passed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/include/stm32f4_simone.h" line="22" column="10" bodyfile="port/stm32f4/include/stm32f4_simone.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to define the HW dependencies of a Simone&apos;s timer status. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="port/stm32f4/include/stm32f4_simone.h" line="21" column="1" bodyfile="port/stm32f4/include/stm32f4_simone.h" bodystart="20" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" prot="public" virt="non-virtual"><scope>stm32f4_simone_hw_t</scope><name>flag_timer_timeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

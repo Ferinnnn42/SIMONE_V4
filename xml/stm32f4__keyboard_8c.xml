@@ -1,0 +1,999 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="stm32f4__keyboard_8c" kind="file" language="C++">
+    <compoundname>stm32f4_keyboard.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">math.h</includes>
+    <includes refid="port__keyboard_8h" local="yes">port_keyboard.h</includes>
+    <includes refid="port__system_8h" local="yes">port_system.h</includes>
+    <includes refid="stm32f4__system_8h" local="yes">stm32f4_system.h</includes>
+    <includes refid="stm32f4__keyboard_8h" local="yes">stm32f4_keyboard.h</includes>
+    <includes refid="keyboards_8h" local="yes">keyboards.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>port_keyboard.h</label>
+        <link refid="port__keyboard_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="8">
+        <label>stm32f4_system.h</label>
+        <link refid="stm32f4__system_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>keyboards.h</label>
+        <link refid="keyboards_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>stm32f4xx.h</label>
+      </node>
+      <node id="1">
+        <label>port/stm32f4/src/stm32f4_keyboard.c</label>
+        <link refid="stm32f4__keyboard_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>math.h</label>
+      </node>
+      <node id="10">
+        <label>stm32f4_keyboard.h</label>
+        <link refid="stm32f4__keyboard_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="stm32f4__keyboard_8c_1a867391d4d1c6c3697569da3747946124" prot="public" static="yes" mutable="no">
+        <type>GPIO_TypeDef *</type>
+        <definition>GPIO_TypeDef* keyboard_main_row_ports[]</definition>
+        <argsstring>[]</argsstring>
+        <name>keyboard_main_row_ports</name>
+        <initializer>= {
+    <ref refid="stm32f4__keyboard_8h_1aaae86db53324491f20e653c9c5acf360" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_0_GPIO</ref>,
+    <ref refid="stm32f4__keyboard_8h_1af9abbd76c67f29af39b4d73ed6521411" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_1_GPIO</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a75431188721594178ae08f8c1f4ea653" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_2_GPIO</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a194c7817867399ac8a6803147da6cfec" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_3_GPIO</ref>}</initializer>
+        <briefdescription>
+<para>Array of GPIO ports for the rows of the main keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="32" column="21" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stm32f4__keyboard_8c_1a6d090c1fbaca817b4239e812a2cb6e8f" prot="public" static="yes" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t keyboard_main_row_pins[]</definition>
+        <argsstring>[]</argsstring>
+        <name>keyboard_main_row_pins</name>
+        <initializer>= {
+    <ref refid="stm32f4__keyboard_8h_1a84fcb94f5d767a0b7fd845c21c7216ef" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_0_PIN</ref>,
+    <ref refid="stm32f4__keyboard_8h_1ab154fd20cfa77e41761799138b0c6658" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_1_PIN</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a5ddb2b1941518216b16ab05f9ca00349" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_2_PIN</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a2d5de9853e674201e15f1bd5271daa6a" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_3_PIN</ref>}</initializer>
+        <briefdescription>
+<para>Array of GPIO pins for the rows of the main keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="42" column="16" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stm32f4__keyboard_8c_1a28e31f51852dd555058ff9af04a7a111" prot="public" static="yes" mutable="no">
+        <type>GPIO_TypeDef *</type>
+        <definition>GPIO_TypeDef* keyboard_main_col_ports[]</definition>
+        <argsstring>[]</argsstring>
+        <name>keyboard_main_col_ports</name>
+        <initializer>= {
+    <ref refid="stm32f4__keyboard_8h_1a5fa1fb8626dde306d79c143d23c1089e" kindref="member">STM32F4_KEYBOARD_MAIN_COL_0_GPIO</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a055991203fdd12c2924eec68c9e27c23" kindref="member">STM32F4_KEYBOARD_MAIN_COL_1_GPIO</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a2c9d1e2b8b2c2cc6547e72945b2ca946" kindref="member">STM32F4_KEYBOARD_MAIN_COL_2_GPIO</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a2d0e96f7db06fbc300556a8a587eebae" kindref="member">STM32F4_KEYBOARD_MAIN_COL_3_GPIO</ref>}</initializer>
+        <briefdescription>
+<para>Array of GPIO ports for the columns of the main keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="52" column="21" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stm32f4__keyboard_8c_1a1258e7b149c14a7c7b4202a2f6a55f4d" prot="public" static="yes" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t keyboard_main_col_pins[]</definition>
+        <argsstring>[]</argsstring>
+        <name>keyboard_main_col_pins</name>
+        <initializer>= {
+    <ref refid="stm32f4__keyboard_8h_1a470a8700cbdd9473ded8b453e125454d" kindref="member">STM32F4_KEYBOARD_MAIN_COL_0_PIN</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a932e8e15c376a3ecc765445ebc3c26ab" kindref="member">STM32F4_KEYBOARD_MAIN_COL_1_PIN</ref>,
+    <ref refid="stm32f4__keyboard_8h_1aac5c2666d1dc0895ccbc019e23ebaebd" kindref="member">STM32F4_KEYBOARD_MAIN_COL_2_PIN</ref>,
+    <ref refid="stm32f4__keyboard_8h_1a1056c8cbb8728b7dba2416a6b2154ad3" kindref="member">STM32F4_KEYBOARD_MAIN_COL_3_PIN</ref>}</initializer>
+        <briefdescription>
+<para>Array of GPIO pins for the columns of the main keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="62" column="16" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stm32f4__keyboard_8c_1ae69e26c4c86714f594c74601b4133ae8" prot="public" static="no" mutable="no">
+        <type><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref></type>
+        <definition>stm32f4_keyboard_hw_t keyboards_arr[]</definition>
+        <argsstring>[]</argsstring>
+        <name>keyboards_arr</name>
+        <briefdescription>
+<para>Array of elements that represents the HW characteristics of the keyboards connected to the STM32F4 platform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Array of elements that represents the HW characteristics of the keyboards.</para>
+<para>This is an <bold>extern</bold> variable that is declared in <computeroutput><ref refid="stm32f4__keyboard_8h" kindref="compound">stm32f4_keyboard.h</ref></computeroutput>. It represents an array of hardware keyboards. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="75" column="23" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref> *</type>
+        <definition>stm32f4_keyboard_hw_t* _stm32f4_keyboard_get</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>_stm32f4_keyboard_get</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Get the keyboard struct with the given ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the keyboard struct. </para>
+</simplesect>
+<simplesect kind="return"><para>NULL If the keyboard ID is not valid. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="93" column="23" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="93" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1a02d1f396d821890ec121fde3292f3ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _timer_scan_column_config</definition>
+        <argsstring>(void)</argsstring>
+        <name>_timer_scan_column_config</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Configure the timer that controls the duration of the column scanning. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function configures the timer to generate an internal interrupt to control the duration of a column scanning. The duration of the column scanning is defined in the <computeroutput>PORT_KEYBOARDS_TIMEOUT_MS</computeroutput> macro. This function is called by the <computeroutput><ref refid="stm32f4__keyboard_8c_1ab6d73a385387a3fc0d0a2d2ded42e5d8" kindref="member">port_keyboard_init()</ref></computeroutput> public function to configure the timer that controls the column scanning.</para>
+<para><bold>Use the timer indicated in the <ulink url="index.html">main page</ulink>.</bold></para>
+<para><bold>There are 2 ways to calculate the <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput> values.</bold> You can implement any of them to configure the timer duration according to the <computeroutput>PORT_KEYBOARDS_TIMEOUT_MS</computeroutput> macro. <bold>Do not set the values directly!</bold></para>
+<para><bold>Option 1. Efficient algorithm.</bold> <linebreak/>
+This option is the most efficient way to calculate the <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput> values. It is based on the fact that the <computeroutput>ARR</computeroutput> value is near or equal to its maximum value (65535.0). And only one update of the <computeroutput>PSC</computeroutput> is needed. This eliminates the need for a loop, which could be slow if <computeroutput>ARR</computeroutput> is much larger than 0xFFFF. <linebreak/>
+<linebreak/>
+<bold>Option 2. Iterative algorithm.</bold> <linebreak/>
+This option, on the other hand, starts with <computeroutput>PSC</computeroutput> equals <computeroutput>0</computeroutput> and re-computes in an iterative loop the values of <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput>. ⚠️ <bold>WARNING! This option is not recommended. You should consider that this option is much slower than the efficient algorithm and this option will make the <computeroutput>test_port_keyboard</computeroutput> take a long time to execute (several seconds up to few minutes).</bold> <linebreak/>
+ <simplesect kind="warning"><para>It is important to <bold>work with double type numbers to avoid the loss of precision</bold> when computing the temporary values of the <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput> registers. The <computeroutput>math.h</computeroutput> library is included to use the <computeroutput>round()</computeroutput> function. <linebreak/>
+To store the temporary values of the <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput> registers, <bold>cast the result of the <computeroutput>round()</computeroutput> function to <computeroutput>uint32_t</computeroutput></bold>. <linebreak/>
+<bold>All the values must be represented as double in the formulas.</bold> <linebreak/>
+An arbitrary example of C code: <programlisting filename=".c"><codeline><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">double<sp/>sysclk_as_double<sp/>=<sp/>(double)<ref refid="stm32f4__system_8c_1aa3cd3e43291e81e795d642b79b6088e6" kindref="member">SystemCoreClock</ref>;<sp/></highlight><highlight class="comment">//<sp/>Important<sp/>to<sp/>cast<sp/>to<sp/>double</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ms_as_double<sp/>=<sp/>(double)duration_ms;<sp/></highlight><highlight class="comment">//<sp/>Important<sp/>to<sp/>cast<sp/>to<sp/>double</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>what_ever_value<sp/>=<sp/>(sysclk_as_double<sp/>/<sp/>ms_as_double)<sp/>+<sp/>1.0;<sp/></highlight><highlight class="comment">//<sp/>Important<sp/>to<sp/>use<sp/>1.0<sp/>instead<sp/>of<sp/>1!!!<sp/>This<sp/>formula<sp/>is<sp/>just<sp/>an<sp/>example!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">TIMx-&gt;ARR<sp/>=<sp/>(uint32_t)(round(what_ever_value));<sp/></highlight><highlight class="comment">//<sp/>Important<sp/>to<sp/>round<sp/>before<sp/>casting<sp/>to<sp/>uint32_t</highlight></codeline>
+</programlisting></para>
+</simplesect>
+<blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Enable the clock of the timer that controls the column scanning. Check the reference manual of the STM32F4 to know if the timer is connected to the APB1 or APB2 bus (i.e. <computeroutput>RCC-&gt;APB1ENR</computeroutput> or <computeroutput>RCC-&gt;APB2ENR</computeroutput>). <linebreak/>
+✅ 2. Disable the counter of the timer (register <computeroutput>CR1</computeroutput> of the timer) because we want to configure it. <linebreak/>
+✅ 3. Enable the autoreload preload (bit <computeroutput>ARPE</computeroutput> of the register <computeroutput>CR1</computeroutput>) to enable the autoreload register. <linebreak/>
+✅ 4. Set the counter of the timer to 0 (register <computeroutput>CNT</computeroutput>) to start counting from 0. <linebreak/>
+✅ 5. Compute the prescaler and the auto-reload register to set the duration of the timer interrupt. The duration is defined in the <computeroutput>PORT_KEYBOARDS_TIMEOUT_MS</computeroutput> macro. Use any of the two options to calculate the <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput> values:</para>
+<para><bold>Option 1. Efficient algorithm.</bold> <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6a</bold>. Convert <computeroutput>SystemCoreClock</computeroutput> to double and store them in local variables. This is to ensure that the subsequent calculations are performed in floating-point arithmetic. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6b</bold>. Compute an initial value for the <computeroutput>PSC</computeroutput> register considering the maximum value of <computeroutput>ARR</computeroutput> (65535.0). Store it in a local variable of type <computeroutput>double</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Use all variable and numbers as <computeroutput>double</computeroutput> (i.e., use 1.0 instead of 1). <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Use the function <computeroutput>round()</computeroutput> from the <computeroutput>math.h</computeroutput> library to round the value of the <computeroutput>PSC</computeroutput>. Use round instead of casting to <computeroutput>double</computeroutput>, because casting trunks the decimal value. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6c</bold>. Re-compute the value of the <computeroutput>ARR</computeroutput> register with the previously computed <computeroutput>PSC</computeroutput> value. Store it in a local variable of type <computeroutput>double</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 This would make <computeroutput>ARR</computeroutput> less than or equal to 65535.0, and we will adjust <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput> if necessary. This eliminates the need for a loop, which could be slow if <computeroutput>ARR</computeroutput> is much larger than 0xFFFF. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Use the function <computeroutput>round()</computeroutput> to round the value of the <computeroutput>ARR</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6d</bold>. Check if the new value of <computeroutput>ARR</computeroutput> is greater than 0xFFFF (or 65535.0). If it is, increment <computeroutput>PSC</computeroutput> by 1.0 and recalculate <computeroutput>ARR</computeroutput>. This is to ensure that <computeroutput>ARR</computeroutput> does not exceed 0xFFFF. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Because the re-computed value of <computeroutput>ARR</computeroutput> will be close to its maximum, adding 1.0 to the <computeroutput>PSC</computeroutput> is enough to ensure that the <computeroutput>ARR</computeroutput> does not exceeds it maximum value and we do not need to iterate over it, making this algorithm faster than using a <computeroutput>while(){}</computeroutput> loop. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6e</bold>. Continue in ✅ 7. <linebreak/>
+<linebreak/>
+<linebreak/>
+<bold>Option 2. Iterative algorithm.</bold> <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6a</bold>. Convert <computeroutput>SystemCoreClock</computeroutput> to double and store them in local variables. This is to ensure that the subsequent calculations are performed in floating-point arithmetic. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6b</bold>. Compute an initial value for the <computeroutput>ARR</computeroutput> register considering a minimum value of <computeroutput>PSC</computeroutput> (0.0). Store it in a local variable of type <computeroutput>double</computeroutput>. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Use all variable and numbers as <computeroutput>double</computeroutput> (i.e., use 1.0 instead of 1). <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Use the function <computeroutput>round()</computeroutput> from the <computeroutput>math.h</computeroutput> library to round the value of the <computeroutput>ARR</computeroutput>. Use round instead of casting to <computeroutput>double</computeroutput>, because casting trunks the decimal value. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6c</bold>. If the value of <computeroutput>ARR</computeroutput> is greater than 0xFFFF (or 65535.0), increment the <computeroutput>PSC</computeroutput> by 1.0 and recalculate <computeroutput>ARR</computeroutput>. This is to ensure that <computeroutput>ARR</computeroutput> does not exceed 0xFFFF. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6d</bold>. Do this in an iterative <computeroutput>while(){}</computeroutput> loop. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/> ➡️ <bold>6e</bold>. Continue in ✅ 7. <linebreak/>
+<linebreak/>
+✅ 6. Load the values computed for <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput> into the corresponding registers of the timer. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Ensure that values are rounded before casting. <linebreak/>
+✅ 7. The <computeroutput>PSC</computeroutput> and <computeroutput>ARR</computeroutput> values are currently in the preload registers. To load them into the active registers we need an update event. We achieve this by setting the <computeroutput>UG</computeroutput> bit of the <computeroutput>EGR</computeroutput> register. It is important to do this at the end of the configuration of the timer. <linebreak/>
+✅ 8. Clear the update interrupt flag (bit <computeroutput>UIF</computeroutput> of the register <computeroutput>SR</computeroutput>) to avoid an unwanted interrupt. <linebreak/>
+✅ 9. Enable the interrupts of the timer by setting the <computeroutput>UIE</computeroutput> bit of the <computeroutput>DIER</computeroutput> register. <linebreak/>
+✅ 10. Set the priority of the timer interrupt in the NVIC using the <computeroutput>NVIC_SetPriority()</computeroutput> function and the <computeroutput>TIMx_IRQn</computeroutput> interrupt with the level of priority and sub-priority shown in the <ulink url="index.html">main page</ulink>. <linebreak/>
+</para>
+</blockquote></para>
+<para><simplesect kind="note"><para>Do not enable the timer yet. This will be done when the column scanning must start. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="173" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="173" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1ab6d73a385387a3fc0d0a2d2ded42e5d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_keyboard_init</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>port_keyboard_init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Configure the HW specifications of a given keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assuming we are using an STM32F4-based platform, this function must call the following functions:</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve the keyboard configuration struct calling <computeroutput><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get()</ref></computeroutput> <linebreak/>
+✅ 2. Call function <computeroutput><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config()</ref></computeroutput> with the right arguments to configure the rows as outputs with no pull up neither pull down connections (you can get the number of rows from the keyboard&apos;s layout). <linebreak/>
+✅ 3. Call function <computeroutput><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config()</ref></computeroutput> with the right arguments to configure the columns as inputs with pull down connections. Call also function <computeroutput><ref refid="stm32f4__system_8h_1a98f4105a82f32c645f0b06424af5ef22" kindref="member">stm32f4_system_gpio_config_exti()</ref></computeroutput> with the right parameters to to configure interruption mode in rising and falling edges and enabling the interrupt line for each column. Finally, call function <computeroutput><ref refid="stm32f4__system_8h_1a03d8c69cd44964e3f1ff05a2c79626b8" kindref="member">stm32f4_system_gpio_exti_enable()</ref></computeroutput> with priority level to <computeroutput>1</computeroutput> and the subpriority level to <computeroutput>1</computeroutput> for all columns. All keyboards will have the same priority levels for their columns in the basic implementation. You can get the number of columns from the keyboard&apos;s layout. <linebreak/>
+✅ 4. Clean/set all the fields of the keyboard struct to their initial values. Set the value of <computeroutput>current_excited_row</computeroutput> to <computeroutput>-1</computeroutput> to indicate that no row is being excited at the beginning. <linebreak/>
+✅ 5. Configure the timer that controls the duration of the column scanning by calling the function <computeroutput><ref refid="stm32f4__keyboard_8c_1a02d1f396d821890ec121fde3292f3ed4" kindref="member">_timer_scan_column_config()</ref></computeroutput> <linebreak/>
+</para>
+</blockquote></para>
+<para><blockquote><para><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 If any of the IRQs associated with the EXTI lines of the columns coincides with other IRQs in the system, the priority levels of this IRQ will be equal to the priority levels of the other peripheral. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. This index is used to select the element of the <computeroutput>keyboards_arr[]</computeroutput> array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="222" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="222" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1a1ca9463c0c87fa80c6a08c5d71d23d4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_keyboard_excite_row</definition>
+        <argsstring>(uint8_t keyboard_id, uint8_t row_idx)</argsstring>
+        <name>port_keyboard_excite_row</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>row_idx</declname>
+        </param>
+        <briefdescription>
+<para>Set the given row to high and lower the others. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve the keyboard configuration struct calling <computeroutput><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get()</ref></computeroutput> <linebreak/>
+✅ 2. Iterate through all the rows indexes (you can get the number of rows from the keyboard&apos;s layout) and set them to LOW to ensure that only one row is excited at the same time. <linebreak/>
+✅ 3. Set the given row to HIGH. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You can use the <computeroutput>BSRR</computeroutput> or call the <computeroutput><ref refid="stm32f4__system_8h_1af46cdd939024e157ed6f7468edaee4e3" kindref="member">stm32f4_system_gpio_write()</ref></computeroutput> function. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the keyboard to be scanned. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>row_idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the row to be excited. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="257" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="257" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1a1320216867d7f6b27a77b4a597243b95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_keyboard_start_scan</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>port_keyboard_start_scan</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Start the scanning of a keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function starts the scanning of a keyboard by enabling the timer that controls the duration of the column scanning and setting the first row to HIGH.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Reset the <computeroutput>flag_row_timeout</computeroutput> to indicate that a new scan is starting. <linebreak/>
+✅ 2. Reset the counter (<computeroutput>CNT</computeroutput>) of the timer. <linebreak/>
+✅ 3. Set the first row to be excited to HIGH and the others to LOW. You must use the appropiate function to do it. <linebreak/>
+✅ 4. Enable the timer interrupt in the NVIC using the <computeroutput>NVIC_EnableIRQ()</computeroutput> function and the <computeroutput>TIMx_IRQn</computeroutput> interrupt. ✅ 5. Enable the counter of the timer (register <computeroutput>CR1</computeroutput> of the timer) to start the column scanning. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. This index is used to get the correct keyboard status struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="275" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="275" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1ad52eeaf12ebfbd2faf6c944fc4f69600" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_keyboard_stop_scan</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>port_keyboard_stop_scan</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Stop the scanning of a keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Disable the counter of the timer (register <computeroutput>CR1</computeroutput> of the timer) to stop the column scanning. <linebreak/>
+✅ 2. Disable the timer interrupt in the NVIC using the <computeroutput>NVIC_DisableIRQ()</computeroutput> function and the <computeroutput>TIMx_IRQn</computeroutput> interrupt. <linebreak/>
+✅ 3. Set all rows to LOW. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. This index is used to get the correct keyboard status struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="293" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="293" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1a76ff0a28d6cad5c0b67c4bc2f37cc2d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_keyboard_excite_next_row</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>port_keyboard_excite_next_row</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Update the row to be excited. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para>✅ 1. Update the <computeroutput>current_excited_row</computeroutput> to move to the next row. If the index equals or greater than the number of rows <bold>indicated in the layout</bold>, move to the first row. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You can use the <computeroutput>%</computeroutput> (modulo) operator to get the remainder of the division <linebreak/>
+✅ 2. Call the function <computeroutput><ref refid="port__keyboard_8h_1a1ca9463c0c87fa80c6a08c5d71d23d4f" kindref="member">port_keyboard_excite_row()</ref></computeroutput> to excite the new row. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. This index is used to get the correct keyboard status struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="313" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="313" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1ad9d95c098d9ce87863ae191c65246830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool port_keyboard_get_key_pressed_status</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>port_keyboard_get_key_pressed_status</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Return the status of the keyboard (pressed or not). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Return the value of the field <computeroutput>flag_key_pressed</computeroutput>. Call the function <computeroutput><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get()</ref></computeroutput> to get the keyboard struct. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. This index is used to get the correct keyboard status struct.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true If the keyboard has been pressed </para>
+</simplesect>
+<simplesect kind="return"><para>false If the keyboard has not been pressed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="324" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="324" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1ac0f06120b963a9aeda74ee26f3595478" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_keyboard_set_key_pressed_status</definition>
+        <argsstring>(uint8_t keyboard_id, bool status)</argsstring>
+        <name>port_keyboard_set_key_pressed_status</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Set the status of the keyboard (pressed or not). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to update the status of the keyboard when a key press is detected or cleared.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Set the value of the field <computeroutput>flag_key_pressed</computeroutput> to the given status. Call the function <computeroutput><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get()</ref></computeroutput> to get the keyboard struct. <linebreak/>
+ </para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="330" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="330" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1a82b195430e43df585ddebe86f06a2cdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool port_keyboard_get_row_timeout_status</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>port_keyboard_get_row_timeout_status</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Return the status of the column timeout flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Return the value of the field <computeroutput>flag_row_timeout</computeroutput>. Call the function <computeroutput><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get()</ref></computeroutput> to get the keyboard struct. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. This index is used to get the correct keyboard status struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true If the column timeout has occurred </para>
+</simplesect>
+<simplesect kind="return"><para>false If the column timeout has not occurred </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="336" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="336" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1ae652d3e4324278a555817e5cdfc128a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_keyboard_set_row_timeout_status</definition>
+        <argsstring>(uint8_t keyboard_id, bool status)</argsstring>
+        <name>port_keyboard_set_row_timeout_status</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Set the status of the row timeout flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to update the status of the row timeout flag when a timeout occurs or is cleared.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Set the value of the field <computeroutput>flag_row_timeout</computeroutput> to the given status. Call the function <computeroutput><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get()</ref></computeroutput> to get the keyboard struct. <linebreak/>
+ </para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. This index is used to get the correct keyboard status struct. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New status of the row timeout flag. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="342" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="342" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1a5e84e1f30a5de2c507f98f9a9972a8d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char port_keyboard_get_key_value</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>port_keyboard_get_key_value</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Return the char representing the key pressed of a given keyboard based on its row that is being excited. This assumes that the matrix of chars is flattened (i.e., it is not a 2D array, but all rows are in a single array), thus it is necessary to calculate only one index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para>✅ 1. Determine the value (char) of the key pressed based on the index of the current scanned row and the index of the column that provoked the interrupt, and return it. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 You can calculate the key index as: <computeroutput>key index = (excited row * num columns) + column interrupting</computeroutput>. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Keyboard ID. This index is used to get the correct keyboard status struct. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>char Key value of the key pressed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="348" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="348" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__keyboard_8c_1a0c5d7b4fe5f2da20f60a2551c990fe17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char port_keyboard_get_invalid_key_value</definition>
+        <argsstring>(uint8_t keyboard_id)</argsstring>
+        <name>port_keyboard_get_invalid_key_value</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>keyboard_id</declname>
+        </param>
+        <briefdescription>
+<para>Return the null key value of a given keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function retrieves the null key value defined in the keyboard layout.</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve and return the <computeroutput>null_key</computeroutput> field from the keyboard layout. Call the function <computeroutput><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get()</ref></computeroutput> to get the keyboard struct. <linebreak/>
+ </para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyboard_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>char </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_keyboard.c" line="368" column="6" bodyfile="port/stm32f4/src/stm32f4_keyboard.c" bodystart="368" bodyend="372"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Portable functions to interact with the keyboard FSM library. All portable functions must be implemented in this file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>compute<sp/>the<sp/>timer<sp/>ARR<sp/>and<sp/>PSC<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>HW<sp/>dependent<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__keyboard_8h" kindref="compound">port_keyboard.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>general<sp/>information<sp/>about<sp/>the<sp/>keyboards<sp/>(ID,<sp/>etc.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__system_8h" kindref="compound">port_system.h</ref>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>the<sp/>system<sp/>tick</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Microcontroller<sp/>dependent<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__system_8h" kindref="compound">stm32f4_system.h</ref>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>the<sp/>system<sp/>tick<sp/>and<sp/>to<sp/>configure<sp/>the<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__keyboard_8h" kindref="compound">stm32f4_keyboard.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>specific<sp/>information<sp/>about<sp/>the<sp/>HW<sp/>keyboards<sp/>(GPIO<sp/>port,<sp/>pin,<sp/>array<sp/>of<sp/>keyboards,<sp/>etc.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Other<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="keyboards_8h" kindref="compound">keyboards.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>the<sp/>standard<sp/>keyboard<sp/>layout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Global<sp/>variables<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Static<sp/>arrays<sp/>for<sp/>main<sp/>keyboard<sp/>(pointed<sp/>by<sp/>the<sp/>double<sp/>pointers<sp/>in<sp/>the<sp/>struct)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>GPIO_TypeDef<sp/>*<ref refid="stm32f4__keyboard_8c_1a867391d4d1c6c3697569da3747946124" kindref="member">keyboard_main_row_ports</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1aaae86db53324491f20e653c9c5acf360" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_0_GPIO</ref>,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1af9abbd76c67f29af39b4d73ed6521411" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_1_GPIO</ref>,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a75431188721594178ae08f8c1f4ea653" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_2_GPIO</ref>,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a194c7817867399ac8a6803147da6cfec" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_3_GPIO</ref>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="stm32f4__keyboard_8c_1a6d090c1fbaca817b4239e812a2cb6e8f" kindref="member">keyboard_main_row_pins</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a84fcb94f5d767a0b7fd845c21c7216ef" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_0_PIN</ref>,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1ab154fd20cfa77e41761799138b0c6658" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_1_PIN</ref>,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a5ddb2b1941518216b16ab05f9ca00349" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_2_PIN</ref>,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a2d5de9853e674201e15f1bd5271daa6a" kindref="member">STM32F4_KEYBOARD_MAIN_ROW_3_PIN</ref>};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>GPIO_TypeDef<sp/>*<ref refid="stm32f4__keyboard_8c_1a28e31f51852dd555058ff9af04a7a111" kindref="member">keyboard_main_col_ports</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a5fa1fb8626dde306d79c143d23c1089e" kindref="member">STM32F4_KEYBOARD_MAIN_COL_0_GPIO</ref>,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a055991203fdd12c2924eec68c9e27c23" kindref="member">STM32F4_KEYBOARD_MAIN_COL_1_GPIO</ref>,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a2c9d1e2b8b2c2cc6547e72945b2ca946" kindref="member">STM32F4_KEYBOARD_MAIN_COL_2_GPIO</ref>,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a2d0e96f7db06fbc300556a8a587eebae" kindref="member">STM32F4_KEYBOARD_MAIN_COL_3_GPIO</ref>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="stm32f4__keyboard_8c_1a1258e7b149c14a7c7b4202a2f6a55f4d" kindref="member">keyboard_main_col_pins</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a470a8700cbdd9473ded8b453e125454d" kindref="member">STM32F4_KEYBOARD_MAIN_COL_0_PIN</ref>,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a932e8e15c376a3ecc765445ebc3c26ab" kindref="member">STM32F4_KEYBOARD_MAIN_COL_1_PIN</ref>,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1aac5c2666d1dc0895ccbc019e23ebaebd" kindref="member">STM32F4_KEYBOARD_MAIN_COL_2_PIN</ref>,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8h_1a1056c8cbb8728b7dba2416a6b2154ad3" kindref="member">STM32F4_KEYBOARD_MAIN_COL_3_PIN</ref>};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/><ref refid="stm32f4__keyboard_8c_1ae69e26c4c86714f594c74601b4133ae8" kindref="member">keyboards_arr</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structstm32f4__keyboard__hw__t_1ab9f29e892898619e71a449dfe04cd366" kindref="member">p_row_ports</ref><sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1a867391d4d1c6c3697569da3747946124" kindref="member">keyboard_main_row_ports</ref>,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.p_row_pins<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1a6d090c1fbaca817b4239e812a2cb6e8f" kindref="member">keyboard_main_row_pins</ref>,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.p_col_ports<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1a28e31f51852dd555058ff9af04a7a111" kindref="member">keyboard_main_col_ports</ref>,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.p_col_pins<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1a1258e7b149c14a7c7b4202a2f6a55f4d" kindref="member">keyboard_main_col_pins</ref>,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.p_keyboard<sp/>=<sp/>&amp;<ref refid="keyboards_8h_1ad113882f1c33eaecafcbf7651aaaadd9" kindref="member">standard_keyboard</ref>,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>functions<sp/>----------------------------------------------------------*/</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*<ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>pointer<sp/>to<sp/>the<sp/>keyboard<sp/>with<sp/>the<sp/>given<sp/>ID.<sp/>If<sp/>the<sp/>ID<sp/>is<sp/>not<sp/>valid,<sp/>return<sp/>NULL.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keyboard_id<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="stm32f4__keyboard_8c_1ae69e26c4c86714f594c74601b4133ae8" kindref="member">keyboards_arr</ref>)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="stm32f4__keyboard_8c_1ae69e26c4c86714f594c74601b4133ae8" kindref="member">keyboards_arr</ref>[0]))</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;<ref refid="stm32f4__keyboard_8c_1ae69e26c4c86714f594c74601b4133ae8" kindref="member">keyboards_arr</ref>[keyboard_id];</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1a02d1f396d821890ec121fde3292f3ed4" kindref="member">_timer_scan_column_config</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>RCC-&gt;APB1ENR<sp/>|=<sp/>RCC_APB1ENR_TIM5EN;<sp/></highlight><highlight class="comment">//<sp/>1)<sp/>Hay<sp/>que<sp/>habilitar<sp/>la<sp/>fuente<sp/>de<sp/>reloj.<sp/>IMPORTANTE<sp/>que<sp/>esté<sp/>lo<sp/>primero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Por<sp/>defecto<sp/>la<sp/>fuente<sp/>es<sp/>interna<sp/>(bits<sp/>CKD=00<sp/>in<sp/>TIM3-&gt;CR1<sp/>register)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;<sp/></highlight><highlight class="comment">//<sp/>2)<sp/><sp/>Disable<sp/>counter.<sp/>(no<sp/>es<sp/>indispensable).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;CR1<sp/>|=<sp/>TIM_CR1_ARPE;<sp/></highlight><highlight class="comment">//<sp/>Autoreload<sp/>preload<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;CNT<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>ARR<sp/>and<sp/>PSC<sp/>to<sp/>match<sp/>the<sp/>duration<sp/>in<sp/>milliseconds.<sp/>Check<sp/>if<sp/>the<sp/>duration<sp/>is<sp/>too<sp/>long<sp/>and<sp/>adapt<sp/>prescaler<sp/>and<sp/>ARR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ms<sp/>=<sp/>(double)<ref refid="port__keyboard_8h_1a0fcd1b610a11ecd4d7a82d9861a3f7c9" kindref="member">PORT_KEYBOARDS_TIMEOUT_MS</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scc<sp/>=<sp/>(double)<ref refid="stm32f4__system_8c_1aa3cd3e43291e81e795d642b79b6088e6" kindref="member">SystemCoreClock</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>psc<sp/>=<sp/>round((((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(65535.0<sp/>+<sp/>1.0))<sp/>-<sp/>1.0);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>arr<sp/>=<sp/>round((((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(psc<sp/>+<sp/>1.0))<sp/>-<sp/>1.0);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Adjust<sp/>psc<sp/>and<sp/>arr<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(arr<sp/>&gt;<sp/>0xFFFF)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psc<sp/>+=<sp/>1.0;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr<sp/>=<sp/>round(((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(psc<sp/>+<sp/>1.0)<sp/>-<sp/>1.0);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>the<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;ARR<sp/>=<sp/>(uint32_t)(round(arr));</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;PSC<sp/>=<sp/>(uint32_t)(round(psc));</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>PSC<sp/>and<sp/>ARR<sp/>values<sp/>are<sp/>currently<sp/>in<sp/>the<sp/>preload<sp/>registers.<sp/>To<sp/>load<sp/>them<sp/>into<sp/>the<sp/>active<sp/>registers<sp/>we</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>need<sp/>an<sp/>update<sp/>event.<sp/>We<sp/>can<sp/>do<sp/>this<sp/>manually<sp/>as<sp/>follows<sp/>(or<sp/>we<sp/>could<sp/>wait<sp/>for<sp/>the<sp/>timer<sp/>to<sp/>expire).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;DIER<sp/>|=<sp/>TIM_DIER_UIE;<sp/></highlight><highlight class="comment">//<sp/>Habilita<sp/>las<sp/>interrupciones<sp/>en<sp/>el<sp/>registro</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;EGR<sp/>|=<sp/>TIM_EGR_UG;<sp/></highlight><highlight class="comment">//<sp/>6)<sp/>Update<sp/>generation:<sp/>Re-inicializa<sp/>el<sp/>contador<sp/>y<sp/>actualiza<sp/>los<sp/>registros.<sp/>IMPORTANTE<sp/>que<sp/>esté<sp/>lo<sp/>último</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;SR<sp/>&amp;=<sp/>~TIM_SR_UIF;<sp/></highlight><highlight class="comment">//<sp/>Limpiamos<sp/>interrupciones<sp/>pendientes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Elegimos<sp/>prioridad<sp/>de<sp/>interrupciones<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Configure<sp/>interruptions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>NVIC_SetPriority(TIM5_IRQn,<sp/>NVIC_EncodePriority(NVIC_GetPriorityGrouping(),<sp/>2,<sp/>0));<sp/></highlight><highlight class="comment">/*<sp/>Priority<sp/>2,<sp/>sub-priority<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>enable<sp/>the<sp/>timer<sp/>yet.<sp/>This<sp/>will<sp/>be<sp/>done<sp/>when<sp/>the<sp/>column<sp/>scanning<sp/>must<sp/>start.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NVIC_EnableIRQ(TIM5_IRQn);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TIM5-&gt;CR1<sp/>|=<sp/>TIM_CR1_CEN;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Public<sp/>functions<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1ab6d73a385387a3fc0d0a2d2ded42e5d8" kindref="member">port_keyboard_init</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>alumnos:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Retrieve<sp/>the<sp/>keyboard<sp/>rows<sp/>and<sp/>columns<sp/>configuration<sp/>from<sp/>the<sp/>keyboard<sp/>struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num_rows<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" kindref="member">p_keyboard</ref>-&gt;<ref refid="structkeyboard__t_1aef159540ca9b9ad3dd9b66133b9d948d" kindref="member">num_rows</ref>;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num_cols<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" kindref="member">p_keyboard</ref>-&gt;<ref refid="structkeyboard__t_1af1cec842e8713aa0e65dadba12c04ae7" kindref="member">num_cols</ref>;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configure<sp/>rows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>row<sp/>=<sp/>0;<sp/>row<sp/>&lt;<sp/>num_rows;<sp/>row++)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIO_TypeDef<sp/>*p_port<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ab9f29e892898619e71a449dfe04cd366" kindref="member">p_row_ports</ref>[row];</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>pin<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ab4cd1b72e10347d38dda61d0759d825a" kindref="member">p_row_pins</ref>[row];</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config</ref>(p_port,<sp/>pin,<sp/><ref refid="stm32f4__system_8h_1a743a26f4c01c009064f0e928bf14d232" kindref="member">STM32F4_GPIO_MODE_OUT</ref>,<sp/><ref refid="stm32f4__system_8h_1a137bdfc6e1be3a728c27f4f8426bbde5" kindref="member">STM32F4_GPIO_PUPDR_NOPULL</ref>);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configure<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>col<sp/>=<sp/>0;<sp/>col<sp/>&lt;<sp/>num_cols;<sp/>col++)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config</ref>(p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1adc881a3a578666f3ba66cd83a9d1943e" kindref="member">p_col_ports</ref>[col],<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1a0861cc44a9f21f2fe9201a8d6a6843e6" kindref="member">p_col_pins</ref>[col],<sp/><ref refid="stm32f4__system_8h_1a3ff262e05c96d10578f948caf322f321" kindref="member">STM32F4_GPIO_MODE_IN</ref>,<sp/><ref refid="stm32f4__system_8h_1a6a2ccfd3445dd748b00d9691952b8d1e" kindref="member">STM32F4_GPIO_PUPDR_PULLDOWN</ref>);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1a98f4105a82f32c645f0b06424af5ef22" kindref="member">stm32f4_system_gpio_config_exti</ref>(p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1adc881a3a578666f3ba66cd83a9d1943e" kindref="member">p_col_ports</ref>[col],<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1a0861cc44a9f21f2fe9201a8d6a6843e6" kindref="member">p_col_pins</ref>[col],<sp/><ref refid="stm32f4__system_8h_1af2c99879cd4076bc4b57915f7801fb72" kindref="member">STM32F4_TRIGGER_BOTH_EDGE</ref><sp/>|<sp/><ref refid="stm32f4__system_8h_1a1d3c73313e22ba12ba4602c58117e318" kindref="member">STM32F4_TRIGGER_ENABLE_INTERR_REQ</ref>);<sp/></highlight><highlight class="comment">/*<sp/>EXTI<sp/>rising<sp/>edge<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1a03d8c69cd44964e3f1ff05a2c79626b8" kindref="member">stm32f4_system_gpio_exti_enable</ref>(p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1a0861cc44a9f21f2fe9201a8d6a6843e6" kindref="member">p_col_pins</ref>[col],<sp/>1,<sp/>1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Priority<sp/>1,<sp/>sub-priority<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clean/set<sp/>all<sp/>configurations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ac99ba60f61e44fd740e00605efa46eb4" kindref="member">flag_row_timeout</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ac9e0a40e20e6c5cb2e35e74ab6b3c35c" kindref="member">flag_key_pressed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1a90923a33d3e61bb751f6a6474ad64191" kindref="member">col_idx_interrupt</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ae788b45edf20a86dcdf96ce657e7711d" kindref="member">current_excited_row</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configure<sp/>the<sp/>timer<sp/>that<sp/>controls<sp/>the<sp/>duration<sp/>of<sp/>the<sp/>column<sp/>scanning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8c_1a02d1f396d821890ec121fde3292f3ed4" kindref="member">_timer_scan_column_config</ref>();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1a1ca9463c0c87fa80c6a08c5d71d23d4f" kindref="member">port_keyboard_excite_row</ref>(uint8_t<sp/>keyboard_id,<sp/>uint8_t<sp/>row_idx)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>number<sp/>of<sp/>rows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num_rows<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" kindref="member">p_keyboard</ref>-&gt;<ref refid="structkeyboard__t_1aef159540ca9b9ad3dd9b66133b9d948d" kindref="member">num_rows</ref>;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>r<sp/>=<sp/>0;<sp/>r<sp/>&lt;<sp/>num_rows;<sp/>r++)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>port<sp/>and<sp/>pin<sp/>of<sp/>the<sp/>given<sp/>row<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIO_TypeDef<sp/>*p_row_port<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ab9f29e892898619e71a449dfe04cd366" kindref="member">p_row_ports</ref>[r];</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>row_pin<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ab4cd1b72e10347d38dda61d0759d825a" kindref="member">p_row_pins</ref>[r];</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1af46cdd939024e157ed6f7468edaee4e3" kindref="member">stm32f4_system_gpio_write</ref>(p_row_port,<sp/>row_pin,<sp/>0);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1af46cdd939024e157ed6f7468edaee4e3" kindref="member">stm32f4_system_gpio_write</ref>(p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ab9f29e892898619e71a449dfe04cd366" kindref="member">p_row_ports</ref>[row_idx],<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ab4cd1b72e10347d38dda61d0759d825a" kindref="member">p_row_pins</ref>[row_idx],<sp/>1);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1a1320216867d7f6b27a77b4a597243b95" kindref="member">port_keyboard_start_scan</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_keyboard<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>p_keyboard-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ac99ba60f61e44fd740e00605efa46eb4" kindref="member">flag_row_timeout</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>flag<sp/>to<sp/>indicate<sp/>that<sp/>a<sp/>new<sp/>scan<sp/>is<sp/>starting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>counters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;CNT<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>counter<sp/>of<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>first<sp/>row<sp/>to<sp/>be<sp/>scanned<sp/>to<sp/>HIGH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8c_1a1ca9463c0c87fa80c6a08c5d71d23d4f" kindref="member">port_keyboard_excite_row</ref>(keyboard_id,<sp/>0);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>interrupts</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>NVIC_EnableIRQ(TIM5_IRQn);<sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>interrupt<sp/>of<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;CR1<sp/>|=<sp/>TIM_CR1_CEN;<sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>counter<sp/>of<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1ad52eeaf12ebfbd2faf6c944fc4f69600" kindref="member">port_keyboard_stop_scan</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_keyboard<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM5-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>counter<sp/>of<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>interrupts</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>NVIC_DisableIRQ(TIM5_IRQn);<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>interrupt<sp/>of<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Lower<sp/>all<sp/>rows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num_rows<sp/>=<sp/>p_keyboard-&gt;<ref refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" kindref="member">p_keyboard</ref>-&gt;<ref refid="structkeyboard__t_1aef159540ca9b9ad3dd9b66133b9d948d" kindref="member">num_rows</ref>;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>r<sp/>=<sp/>0;<sp/>r<sp/>&lt;<sp/>num_rows;<sp/>r++)</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIO_TypeDef<sp/>*p_row_port<sp/>=<sp/>p_keyboard-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ab9f29e892898619e71a449dfe04cd366" kindref="member">p_row_ports</ref>[r];</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>row_pin<sp/>=<sp/>p_keyboard-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ab4cd1b72e10347d38dda61d0759d825a" kindref="member">p_row_pins</ref>[r];</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1af46cdd939024e157ed6f7468edaee4e3" kindref="member">stm32f4_system_gpio_write</ref>(p_row_port,<sp/>row_pin,<sp/>0);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1a76ff0a28d6cad5c0b67c4bc2f37cc2d2" kindref="member">port_keyboard_excite_next_row</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>the<sp/>row<sp/>to<sp/>be<sp/>excited</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ae788b45edf20a86dcdf96ce657e7711d" kindref="member">current_excited_row</ref><sp/>=<sp/>(p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ae788b45edf20a86dcdf96ce657e7711d" kindref="member">current_excited_row</ref><sp/>+<sp/>1)<sp/>%<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" kindref="member">p_keyboard</ref>-&gt;<ref refid="structkeyboard__t_1aef159540ca9b9ad3dd9b66133b9d948d" kindref="member">num_rows</ref>;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Excite<sp/>the<sp/>row</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__keyboard_8c_1a1ca9463c0c87fa80c6a08c5d71d23d4f" kindref="member">port_keyboard_excite_row</ref>(keyboard_id,<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ae788b45edf20a86dcdf96ce657e7711d" kindref="member">current_excited_row</ref>);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1ad9d95c098d9ce87863ae191c65246830" kindref="member">port_keyboard_get_key_pressed_status</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="325"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ac9e0a40e20e6c5cb2e35e74ab6b3c35c" kindref="member">flag_key_pressed</ref>;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1ac0f06120b963a9aeda74ee26f3595478" kindref="member">port_keyboard_set_key_pressed_status</ref>(uint8_t<sp/>keyboard_id,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="331"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ac9e0a40e20e6c5cb2e35e74ab6b3c35c" kindref="member">flag_key_pressed</ref><sp/>=<sp/>status;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1a82b195430e43df585ddebe86f06a2cdc" kindref="member">port_keyboard_get_row_timeout_status</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ac99ba60f61e44fd740e00605efa46eb4" kindref="member">flag_row_timeout</ref>;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1ae652d3e4324278a555817e5cdfc128a5" kindref="member">port_keyboard_set_row_timeout_status</ref>(uint8_t<sp/>keyboard_id,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="343"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ac99ba60f61e44fd740e00605efa46eb4" kindref="member">flag_row_timeout</ref><sp/>=<sp/>status;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1a5e84e1f30a5de2c507f98f9a9972a8d0" kindref="member">port_keyboard_get_key_value</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="349"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>number<sp/>of<sp/>cols</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num_cols<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" kindref="member">p_keyboard</ref>-&gt;<ref refid="structkeyboard__t_1af1cec842e8713aa0e65dadba12c04ae7" kindref="member">num_cols</ref>;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>value<sp/>of<sp/>the<sp/>column<sp/>that<sp/>provoked<sp/>the<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>col_idx<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1a90923a33d3e61bb751f6a6474ad64191" kindref="member">col_idx_interrupt</ref>;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>index<sp/>of<sp/>the<sp/>current<sp/>row<sp/>being<sp/>excited</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>row_idx<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1ae788b45edf20a86dcdf96ce657e7711d" kindref="member">current_excited_row</ref>;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Determine<sp/>the<sp/>key<sp/>value<sp/>based<sp/>on<sp/>the<sp/>current<sp/>scanned<sp/>row<sp/>and<sp/>column<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>key_index<sp/>=<sp/>(row_idx<sp/>*<sp/>num_cols)<sp/>+<sp/>col_idx;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>key_value<sp/>=<sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" kindref="member">p_keyboard</ref>-&gt;<ref refid="structkeyboard__t_1ad64381dd8f3fe406705220f0feec2c3b" kindref="member">keys</ref>[key_index];</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>key_value;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="stm32f4__keyboard_8c_1a0c5d7b4fe5f2da20f60a2551c990fe17" kindref="member">port_keyboard_get_invalid_key_value</ref>(uint8_t<sp/>keyboard_id)</highlight></codeline>
+<codeline lineno="369"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_kb<sp/>=<sp/><ref refid="stm32f4__keyboard_8c_1aa3330d22a2fcd66831baa9cdef648e48" kindref="member">_stm32f4_keyboard_get</ref>(keyboard_id);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p_kb-&gt;<ref refid="structstm32f4__keyboard__hw__t_1afe85407330ed76c2ac46ac3bfb10b1bf" kindref="member">p_keyboard</ref>-&gt;<ref refid="structkeyboard__t_1a09c406047a8d4c37720f5fed9372b532" kindref="member">null_key</ref>;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="port/stm32f4/src/stm32f4_keyboard.c"/>
+  </compounddef>
+</doxygen>

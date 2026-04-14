@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structfsm__simone__t" kind="struct" language="C++" prot="public">
+    <compoundname>fsm_simone_t</compoundname>
+    <includes local="no">fsm_simone.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfsm__simone__t_1a05450e8d5ad603a6ea271936b63d23fb" prot="public" static="no" mutable="no">
+        <type>fsm_t</type>
+        <definition>fsm_t fsm_simone_t::f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Simone FSM <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="90" column="11" bodyfile="common/include/fsm_simone.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a8f12e13f0b74446cbff83e016ffad311" prot="public" static="no" mutable="no">
+        <type><ref refid="structfsm__button__t" kindref="compound">fsm_button_t</ref> *</type>
+        <definition>fsm_button_t* fsm_simone_t::p_fsm_button</definition>
+        <argsstring></argsstring>
+        <name>p_fsm_button</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the button FSM </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="92" column="18" bodyfile="common/include/fsm_simone.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a788b1061f56340a496bf0287371717da" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_simone_t::on_off_press_time_ms</definition>
+        <argsstring></argsstring>
+        <name>on_off_press_time_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time in ms to consider ON/IDLE </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="93" column="14" bodyfile="common/include/fsm_simone.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1aad5ea21c250394cd1894b40f326723c1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_simone_t::level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Difficulty level of the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="94" column="13" bodyfile="common/include/fsm_simone.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a1185ef2a14c5f8aba556671679be4f42" prot="public" static="no" mutable="no">
+        <type><ref refid="structfsm__keyboard__t" kindref="compound">fsm_keyboard_t</ref> *</type>
+        <definition>fsm_keyboard_t* fsm_simone_t::p_fsm_keyboard</definition>
+        <argsstring></argsstring>
+        <name>p_fsm_keyboard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the keyboard FSM </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="95" column="20" bodyfile="common/include/fsm_simone.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a91e61ff128fba9110be950b07da25dba" prot="public" static="no" mutable="no">
+        <type><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref> *</type>
+        <definition>fsm_rgb_light_t* fsm_simone_t::p_fsm_rgb_light</definition>
+        <argsstring></argsstring>
+        <name>p_fsm_rgb_light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the RGB light FSM </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="96" column="21" bodyfile="common/include/fsm_simone.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a30e3ad9569216eb2625cf06f6e609ade" prot="public" static="no" mutable="no">
+        <type><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+        <definition>rgb_color_t fsm_simone_t::seq_colors[SEQUENCE_LENGTH]</definition>
+        <argsstring>[SEQUENCE_LENGTH]</argsstring>
+        <name>seq_colors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sequence of colors </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="97" column="17" bodyfile="common/include/fsm_simone.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a35461167e08bf818e8d74c213d2eab3a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_simone_t::seq_intensities[SEQUENCE_LENGTH]</definition>
+        <argsstring>[SEQUENCE_LENGTH]</argsstring>
+        <name>seq_intensities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sequence of intensities </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="98" column="13" bodyfile="common/include/fsm_simone.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1afd3460f67dea6ee4872c402c8d41ae57" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_simone_t::seq_idx</definition>
+        <argsstring></argsstring>
+        <name>seq_idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index of the element of the sequence </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="99" column="13" bodyfile="common/include/fsm_simone.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a00ca59e122d9f359be00353ed7d536a3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_simone_t::playback_idx</definition>
+        <argsstring></argsstring>
+        <name>playback_idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index of the element of the sequence being played back </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="100" column="13" bodyfile="common/include/fsm_simone.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a4e3826e85da54ce4cc1b42abaaac3211" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fsm_simone_t::playback_over</definition>
+        <argsstring></argsstring>
+        <name>playback_over</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Indicate if the playback is over </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="101" column="10" bodyfile="common/include/fsm_simone.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a3e35cf4f212e301c430971af91232be6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_simone_t::player_idx</definition>
+        <argsstring></argsstring>
+        <name>player_idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index of the element of the sequence that the player has to input </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="102" column="13" bodyfile="common/include/fsm_simone.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__simone__t_1a4f2321c74497561ca10e44d641a2f40c" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char fsm_simone_t::player_key</definition>
+        <argsstring></argsstring>
+        <name>player_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key pressed by the player </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_simone.h" line="103" column="10" bodyfile="common/include/fsm_simone.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure that contains the information of the Simone FSM. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>fsm_rgb_light_t</label>
+        <link refid="structfsm__rgb__light__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>fsm_simone_t</label>
+        <link refid="structfsm__simone__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>p_fsm_keyboard</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>seq_colors</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>p_fsm_button</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>p_fsm_rgb_light</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>fsm_button_t</label>
+        <link refid="structfsm__button__t"/>
+      </node>
+      <node id="3">
+        <label>rgb_color_t</label>
+        <link refid="structrgb__color__t"/>
+      </node>
+      <node id="2">
+        <label>fsm_keyboard_t</label>
+        <link refid="structfsm__keyboard__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="common/include/fsm_simone.h" line="89" column="1" bodyfile="common/include/fsm_simone.h" bodystart="88" bodyend="104"/>
+    <listofallmembers>
+      <member refid="structfsm__simone__t_1a05450e8d5ad603a6ea271936b63d23fb" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>f</name></member>
+      <member refid="structfsm__simone__t_1aad5ea21c250394cd1894b40f326723c1" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>level</name></member>
+      <member refid="structfsm__simone__t_1a788b1061f56340a496bf0287371717da" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>on_off_press_time_ms</name></member>
+      <member refid="structfsm__simone__t_1a8f12e13f0b74446cbff83e016ffad311" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>p_fsm_button</name></member>
+      <member refid="structfsm__simone__t_1a1185ef2a14c5f8aba556671679be4f42" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>p_fsm_keyboard</name></member>
+      <member refid="structfsm__simone__t_1a91e61ff128fba9110be950b07da25dba" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>p_fsm_rgb_light</name></member>
+      <member refid="structfsm__simone__t_1a00ca59e122d9f359be00353ed7d536a3" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>playback_idx</name></member>
+      <member refid="structfsm__simone__t_1a4e3826e85da54ce4cc1b42abaaac3211" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>playback_over</name></member>
+      <member refid="structfsm__simone__t_1a3e35cf4f212e301c430971af91232be6" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>player_idx</name></member>
+      <member refid="structfsm__simone__t_1a4f2321c74497561ca10e44d641a2f40c" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>player_key</name></member>
+      <member refid="structfsm__simone__t_1a30e3ad9569216eb2625cf06f6e609ade" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>seq_colors</name></member>
+      <member refid="structfsm__simone__t_1afd3460f67dea6ee4872c402c8d41ae57" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>seq_idx</name></member>
+      <member refid="structfsm__simone__t_1a35461167e08bf818e8d74c213d2eab3a" prot="public" virt="non-virtual"><scope>fsm_simone_t</scope><name>seq_intensities</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

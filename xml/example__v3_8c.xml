@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="example__v3_8c" kind="file" language="C++">
+    <compoundname>example_v3.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">time.h</includes>
+    <includes refid="fsm__rgb__light_8h" local="yes">fsm_rgb_light.h</includes>
+    <includes refid="port__rgb__light_8h" local="yes">port_rgb_light.h</includes>
+    <includes refid="port__system_8h" local="yes">port_system.h</includes>
+    <includes refid="stm32f4__system_8h" local="yes">stm32f4_system.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>stdbool.h</label>
+      </node>
+      <node id="11">
+        <label>port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="9">
+        <label>rgb_colors.h</label>
+        <link refid="rgb__colors_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>stm32f4_system.h</label>
+        <link refid="stm32f4__system_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>fsm.h</label>
+      </node>
+      <node id="13">
+        <label>stm32f4xx.h</label>
+      </node>
+      <node id="4">
+        <label>time.h</label>
+      </node>
+      <node id="5">
+        <label>fsm_rgb_light.h</label>
+        <link refid="fsm__rgb__light_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>port_rgb_light.h</label>
+        <link refid="port__rgb__light_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="1">
+        <label>example/example_v3.c</label>
+        <link refid="example__v3_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="example__v3_8c_1aecab0eed2e6dad9f1d3c9504bd18a7d3" prot="public" static="no">
+        <name>PORT_RGB_LIGHT_ID</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ultrasound sensor identifier </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/example_v3.c" line="11" column="9" bodyfile="example/example_v3.c" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="example__v3_8c_1a840291bc02cba5474a4cb46a9b9566fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(void)</argsstring>
+        <name>main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/example_v3.c" line="13" column="5" bodyfile="example/example_v3.c" bodystart="13" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fsm__rgb__light_8h" kindref="compound">fsm_rgb_light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__rgb__light_8h" kindref="compound">port_rgb_light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__system_8h" kindref="compound">port_system.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__system_8h" kindref="compound">stm32f4_system.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PORT_RGB_LIGHT_ID<sp/>0<sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor">int<sp/>main(void)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="port__system_8h_1a1befb05b8ffd1facb00ea3ada45de6c1" kindref="member">port_system_init</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>button<sp/>FSM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reserve<sp/>space<sp/>memory<sp/>in<sp/>the<sp/>heap<sp/>for<sp/>the<sp/>FSM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfsm__rgb__light__t" kindref="compound">fsm_rgb_light_t</ref><sp/>*p_fsm_rgb_light<sp/>=<sp/><ref refid="fsm__rgb__light_8h_1a05c86fa3380f799664ebace02321e9de" kindref="member">fsm_rgb_light_new</ref>(<ref refid="port__rgb__light_8h_1aecab0eed2e6dad9f1d3c9504bd18a7d3" kindref="member">PORT_RGB_LIGHT_ID</ref>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>srand(time(NULL));<sp/></highlight><highlight class="comment">//<sp/>Random<sp/>seed<sp/>using<sp/>time<sp/>lib</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>every<sp/>iteration,<sp/>we<sp/>activate<sp/>the<sp/>rgb<sp/>light<sp/>and<sp/>fire<sp/>the<sp/>FSM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8h_1aea8d405fb2473238fcb893ad3e4e455d" kindref="member">fsm_rgb_light_set_status</ref>(p_fsm_rgb_light,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>an<sp/>arbitrary<sp/>color</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>r<sp/>=<sp/>(uint8_t)(rand()<sp/>%<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>g<sp/>=<sp/>(uint8_t)(rand()<sp/>%<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>b<sp/>=<sp/>(uint8_t)(rand()<sp/>%<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/>color_test<sp/>=<sp/>{.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>=<sp/>r,<sp/>.g<sp/>=<sp/>g,<sp/>.b<sp/>=<sp/>b};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>a<sp/>new<sp/>color<sp/>and<sp/>intensity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Testing<sp/>color<sp/>[R,<sp/>G,<sp/>B]<sp/>=<sp/>[%d,<sp/>%d,<sp/>%d]\n&quot;</highlight><highlight class="normal">,<sp/>r,<sp/>g,<sp/>b);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>intensity_perc<sp/>=<sp/><ref refid="fsm__rgb__light_8h_1aaf6cf1e526be70f2db636fd9106e134b" kindref="member">MAX_LEVEL_INTENSITY</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8h_1aaad4017694f046218f9e72d3d3e4c93a" kindref="member">fsm_rgb_light_set_color_intensity</ref>(p_fsm_rgb_light,<sp/>color_test,<sp/>intensity_perc);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8h_1a97388ea5425504a3b53aea540bb6b441" kindref="member">fsm_rgb_light_fire</ref>(p_fsm_rgb_light);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>While<sp/>there<sp/>is<sp/>something<sp/>visible</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref><sp/>&gt;<sp/>1)<sp/>&amp;&amp;<sp/>(p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>.<ref refid="structrgb__color__t_1ae73935f5f2386b4c62fd24a8ec6d5512" kindref="member">g</ref><sp/>&gt;<sp/>1)<sp/>&amp;&amp;<sp/>(p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>.<ref refid="structrgb__color__t_1a6e7156f19f70236f20113f612b7ea1d2" kindref="member">b</ref><sp/>&gt;<sp/>1))</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;[%ld]<sp/>Display<sp/>color<sp/>at<sp/>intensity<sp/>of<sp/>%d<sp/>percentage:<sp/>[R,<sp/>G,<sp/>B]<sp/>=<sp/>[%d,<sp/>%d,<sp/>%d]\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="port__system_8h_1ab415270cfcefc90ed8b8842da4e3d4c6" kindref="member">port_system_get_millis</ref>(),<sp/>intensity_perc,<sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref>,<sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>.<ref refid="structrgb__color__t_1ae73935f5f2386b4c62fd24a8ec6d5512" kindref="member">g</ref>,<sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>.<ref refid="structrgb__color__t_1a6e7156f19f70236f20113f612b7ea1d2" kindref="member">b</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8h_1aaad4017694f046218f9e72d3d3e4c93a" kindref="member">fsm_rgb_light_set_color_intensity</ref>(p_fsm_rgb_light,<sp/>p_fsm_rgb_light-&gt;<ref refid="structfsm__rgb__light__t_1a8104dc7d607314741b7c8928ae297f4c" kindref="member">color</ref>,<sp/>intensity_perc);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8h_1a97388ea5425504a3b53aea540bb6b441" kindref="member">fsm_rgb_light_fire</ref>(p_fsm_rgb_light);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="port__system_8h_1ae6ca17ba9c9d055d442cf1e4a73be046" kindref="member">port_system_delay_ms</ref>(10);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intensity_perc<sp/>-=<sp/>1;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>the<sp/>rgb<sp/>light<sp/>to<sp/>ensure<sp/>that<sp/>the<sp/>RGB<sp/>LED<sp/>is<sp/>turned<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8h_1aea8d405fb2473238fcb893ad3e4e455d" kindref="member">fsm_rgb_light_set_status</ref>(p_fsm_rgb_light,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fsm__rgb__light_8h_1a97388ea5425504a3b53aea540bb6b441" kindref="member">fsm_rgb_light_fire</ref>(p_fsm_rgb_light);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="example/example_v3.c"/>
+  </compounddef>
+</doxygen>

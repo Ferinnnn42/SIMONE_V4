@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_96ea3e7ce74ccff9e7229beeb516906f" kind="dir">
+    <compoundname>port/stm32f4/src</compoundname>
+    <innerfile refid="interr_8c">interr.c</innerfile>
+    <innerfile refid="stm32f4__button_8c">stm32f4_button.c</innerfile>
+    <innerfile refid="stm32f4__keyboard_8c">stm32f4_keyboard.c</innerfile>
+    <innerfile refid="stm32f4__rgb__light_8c">stm32f4_rgb_light.c</innerfile>
+    <innerfile refid="stm32f4__simone_8c">stm32f4_simone.c</innerfile>
+    <innerfile refid="stm32f4__system_8c">stm32f4_system.c</innerfile>
+    <innerfile refid="syscalls_8c">syscalls.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="port/stm32f4/src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_11fbc4217d50ab21044e5ad6614aede5" kind="dir">
+    <compoundname>common/include</compoundname>
+    <innerfile refid="fsm__button_8h">fsm_button.h</innerfile>
+    <innerfile refid="fsm__keyboard_8h">fsm_keyboard.h</innerfile>
+    <innerfile refid="fsm__rgb__light_8h">fsm_rgb_light.h</innerfile>
+    <innerfile refid="fsm__simone_8h">fsm_simone.h</innerfile>
+    <innerfile refid="keyboards_8h">keyboards.h</innerfile>
+    <innerfile refid="rgb__colors_8h">rgb_colors.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/include/"/>
+  </compounddef>
+</doxygen>

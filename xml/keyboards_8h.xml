@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="keyboards_8h" kind="file" language="C++">
+    <compoundname>keyboards.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="fsm__keyboard_8c" local="yes">common/src/fsm_keyboard.c</includedby>
+    <includedby refid="keyboards_8c" local="yes">common/src/keyboards.c</includedby>
+    <includedby refid="stm32f4__keyboard_8h" local="yes">port/stm32f4/include/stm32f4_keyboard.h</includedby>
+    <includedby refid="stm32f4__keyboard_8c" local="yes">port/stm32f4/src/stm32f4_keyboard.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>common/include/keyboards.h</label>
+        <link refid="keyboards_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>port/stm32f4/src/interr.c</label>
+        <link refid="interr_8c"/>
+      </node>
+      <node id="1">
+        <label>common/include/keyboards.h</label>
+        <link refid="keyboards_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>common/src/keyboards.c</label>
+        <link refid="keyboards_8c"/>
+      </node>
+      <node id="6">
+        <label>port/stm32f4/src/stm32f4_keyboard.c</label>
+        <link refid="stm32f4__keyboard_8c"/>
+      </node>
+      <node id="2">
+        <label>common/src/fsm_keyboard.c</label>
+        <link refid="fsm__keyboard_8c"/>
+      </node>
+      <node id="4">
+        <label>port/stm32f4/include/stm32f4_keyboard.h</label>
+        <link refid="stm32f4__keyboard_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structkeyboard__t" prot="public">keyboard_t</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="keyboards_8h_1ad113882f1c33eaecafcbf7651aaaadd9" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structkeyboard__t" kindref="compound">keyboard_t</ref></type>
+        <definition>const keyboard_t standard_keyboard</definition>
+        <argsstring></argsstring>
+        <name>standard_keyboard</name>
+        <briefdescription>
+<para>Standard 4x4 keyboard layout with number and letters, hash and star keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/keyboards.h" line="33" column="25" bodyfile="common/src/keyboards.c" bodystart="32" bodyend="-1" declfile="common/include/keyboards.h" declline="33" declcolumn="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header to define keyboard layouts and related constants. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#ifndef<sp/>KEYBOARDS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KEYBOARDS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Typedefs<sp/>--------------------------------------------------------------------*/</highlight></codeline>
+<codeline lineno="19" refid="structkeyboard__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num_rows;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num_cols;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>null_key;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*keys;<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}<sp/><ref refid="structkeyboard__t" kindref="compound">keyboard_t</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Keyboards<sp/>must<sp/>be<sp/>defined<sp/>in<sp/>keyboards.c,<sp/>and<sp/>declared<sp/>here<sp/>as<sp/>extern</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structkeyboard__t" kindref="compound">keyboard_t</ref><sp/><ref refid="keyboards_8h_1ad113882f1c33eaecafcbf7651aaaadd9" kindref="member">standard_keyboard</ref>;<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>KEYBOARDS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="common/include/keyboards.h"/>
+  </compounddef>
+</doxygen>

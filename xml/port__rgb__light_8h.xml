@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="port__rgb__light_8h" kind="file" language="C++">
+    <compoundname>port_rgb_light.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="rgb__colors_8h" local="yes">rgb_colors.h</includes>
+    <includedby refid="fsm__rgb__light_8c" local="yes">common/src/fsm_rgb_light.c</includedby>
+    <includedby refid="example__v3_8c" local="yes">example/example_v3.c</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <includedby refid="stm32f4__rgb__light_8c" local="yes">port/stm32f4/src/stm32f4_rgb_light.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>rgb_colors.h</label>
+        <link refid="rgb__colors_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>port/include/port_rgb_light.h</label>
+        <link refid="port__rgb__light_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>port/stm32f4/src/stm32f4_rgb_light.c</label>
+        <link refid="stm32f4__rgb__light_8c"/>
+      </node>
+      <node id="3">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="2">
+        <label>common/src/fsm_rgb_light.c</label>
+        <link refid="fsm__rgb__light_8c"/>
+      </node>
+      <node id="1">
+        <label>port/include/port_rgb_light.h</label>
+        <link refid="port__rgb__light_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="port__rgb__light_8h_1aecab0eed2e6dad9f1d3c9504bd18a7d3" prot="public" static="no">
+        <name>PORT_RGB_LIGHT_ID</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RGB light system identifier of Simone </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_rgb_light.h" line="20" column="9" bodyfile="port/include/port_rgb_light.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="port__rgb__light_8h_1a1b04d2dd778bef7a90ee86ff7aadd83d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_rgb_light_init</definition>
+        <argsstring>(uint8_t rgb_light_id)</argsstring>
+        <name>port_rgb_light_init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>rgb_light_id</declname>
+        </param>
+        <briefdescription>
+<para>Configure the HW specifications of a given RGB light. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assuming we are using an STM32F4-based platform, this function must call the following functions:</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve the RGB light configuration struct calling <computeroutput><ref refid="stm32f4__rgb__light_8c_1a71c2ea7dd05c1b483d57e4b313d66c73" kindref="member">_stm32f4_rgb_light_get()</ref></computeroutput>. <linebreak/>
+✅ 2. Call function <computeroutput><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config()</ref></computeroutput> with the right arguments to configure each RGB LED as in alternate mode and no pull up neither pull down connection. <linebreak/>
+✅ 3. Call function <computeroutput><ref refid="stm32f4__system_8h_1aa1e7f52e13f7ac3361326af3d8022e18" kindref="member">stm32f4_system_gpio_config_alternate()</ref></computeroutput> with the right arguments to configure the alternate function of the each RGB LED. <linebreak/>
+✅ 4. Call function <computeroutput><ref refid="stm32f4__rgb__light_8c_1ad15bd82329b542c72155e9ff53502e90" kindref="member">_timer_pwm_config()</ref></computeroutput> to configure the timer and the PWM signal of the RGB light. <linebreak/>
+✅ 5. Call function <computeroutput><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb()</ref></computeroutput> to set the RGB LED to off. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb_light_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB light ID. This index is used to select the element of the <computeroutput>rgb_lights_arr[]</computeroutput> array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_rgb_light.h" line="39" column="6" bodyfile="port/stm32f4/src/stm32f4_rgb_light.c" bodystart="141" bodyend="160" declfile="port/include/port_rgb_light.h" declline="39" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_rgb_light_set_rgb</definition>
+        <argsstring>(uint8_t rgb_light_id, rgb_color_t color)</argsstring>
+        <name>port_rgb_light_set_rgb</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>rgb_light_id</declname>
+        </param>
+        <param>
+          <type><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Set the Capture/Compare register values for each channel of the RGB LED given a color. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function disables the timer associated to the RGB LEDs, sets the Capture/Compare register values for each channel of the RGB LED, and enables the timer.</para>
+<para><simplesect kind="warning"><para>This function is valid for any given RGB LED, however, each RGB LED has its own timer. Write the code in a conditional statement to check the rgb_light_id.</para>
+</simplesect>
+<blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve the individual RGB values from the <computeroutput>color</computeroutput> parameter and follow the flowchart given in the lab notebook to set the RGB LED color by configuring the PWM signals appropriately. </para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb_light_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB light system identifier number. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB color to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/include/port_rgb_light.h" line="55" column="6" bodyfile="port/stm32f4/src/stm32f4_rgb_light.c" bodystart="162" bodyend="223" declfile="port/include/port_rgb_light.h" declline="55" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header for the portable functions to interact with the HW of the RGB light system. The functions must be implemented in the platform-specific code. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#ifndef<sp/>PORT_RGB_LIGHT_SYSTEM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PORT_RGB_LIGHT_SYSTEM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Other<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rgb__colors_8h" kindref="compound">rgb_colors.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>and<sp/>enums<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>here<sp/>all<sp/>the<sp/>RGB<sp/>light<sp/>system<sp/>identifiers<sp/>that<sp/>are<sp/>used<sp/>in<sp/>the<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PORT_RGB_LIGHT_ID<sp/>0<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>Function<sp/>prototypes<sp/>and<sp/>explanation<sp/>-------------------------------------------------*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__rgb__light_8h_1a1b04d2dd778bef7a90ee86ff7aadd83d" kindref="member">port_rgb_light_init</ref>(uint8_t<sp/>rgb_light_id);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb</ref>(uint8_t<sp/>rgb_light_id,<sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/>color);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>PORT_RGB_LIGHT_SYSTEM_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="port/include/port_rgb_light.h"/>
+  </compounddef>
+</doxygen>

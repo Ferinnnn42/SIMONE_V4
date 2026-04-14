@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structfsm__keyboard__t" kind="struct" language="C++" prot="public">
+    <compoundname>fsm_keyboard_t</compoundname>
+    <includes local="no">fsm_keyboard.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfsm__keyboard__t_1a5d979615169a15d3625d502bd6a72bc4" prot="public" static="no" mutable="no">
+        <type>fsm_t</type>
+        <definition>fsm_t fsm_keyboard_t::f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Keyboard FSM <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="43" column="11" bodyfile="common/include/fsm_keyboard.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__keyboard__t_1a87adc5ff67d2c6e57b242d9bfce05848" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_keyboard_t::debounce_time_ms</definition>
+        <argsstring></argsstring>
+        <name>debounce_time_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Keyboard debounce time in ms </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="44" column="14" bodyfile="common/include/fsm_keyboard.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__keyboard__t_1a2807fedceaba89ae28c89937d9ad824f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_keyboard_t::next_timeout</definition>
+        <argsstring></argsstring>
+        <name>next_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Next timeout for the anti-debounce in ms </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="45" column="14" bodyfile="common/include/fsm_keyboard.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__keyboard__t_1a038b9aad2c8fc1af4a411d2aa6c886cc" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fsm_keyboard_t::tick_pressed</definition>
+        <argsstring></argsstring>
+        <name>tick_pressed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of ticks when the keyboard was pressed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="46" column="14" bodyfile="common/include/fsm_keyboard.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__keyboard__t_1ab0ffc0a792d7140a42afc4bdfc6b9962" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char fsm_keyboard_t::key_value</definition>
+        <argsstring></argsstring>
+        <name>key_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key pressed of the last keyboard press </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="48" column="10" bodyfile="common/include/fsm_keyboard.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__keyboard__t_1a474146179ec082a33c5f61757e6227ab" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t fsm_keyboard_t::keyboard_id</definition>
+        <argsstring></argsstring>
+        <name>keyboard_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Keyboard ID. Must be unique. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="49" column="13" bodyfile="common/include/fsm_keyboard.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfsm__keyboard__t_1acb0b0c7b933519493af0106acf25017b" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char fsm_keyboard_t::invalid_key</definition>
+        <argsstring></argsstring>
+        <name>invalid_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Value to indicate an invalid key </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/include/fsm_keyboard.h" line="50" column="10" bodyfile="common/include/fsm_keyboard.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure of the Keyboard FSM. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="common/include/fsm_keyboard.h" line="42" column="1" bodyfile="common/include/fsm_keyboard.h" bodystart="41" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structfsm__keyboard__t_1a87adc5ff67d2c6e57b242d9bfce05848" prot="public" virt="non-virtual"><scope>fsm_keyboard_t</scope><name>debounce_time_ms</name></member>
+      <member refid="structfsm__keyboard__t_1a5d979615169a15d3625d502bd6a72bc4" prot="public" virt="non-virtual"><scope>fsm_keyboard_t</scope><name>f</name></member>
+      <member refid="structfsm__keyboard__t_1acb0b0c7b933519493af0106acf25017b" prot="public" virt="non-virtual"><scope>fsm_keyboard_t</scope><name>invalid_key</name></member>
+      <member refid="structfsm__keyboard__t_1ab0ffc0a792d7140a42afc4bdfc6b9962" prot="public" virt="non-virtual"><scope>fsm_keyboard_t</scope><name>key_value</name></member>
+      <member refid="structfsm__keyboard__t_1a474146179ec082a33c5f61757e6227ab" prot="public" virt="non-virtual"><scope>fsm_keyboard_t</scope><name>keyboard_id</name></member>
+      <member refid="structfsm__keyboard__t_1a2807fedceaba89ae28c89937d9ad824f" prot="public" virt="non-virtual"><scope>fsm_keyboard_t</scope><name>next_timeout</name></member>
+      <member refid="structfsm__keyboard__t_1a038b9aad2c8fc1af4a411d2aa6c886cc" prot="public" virt="non-virtual"><scope>fsm_keyboard_t</scope><name>tick_pressed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="stm32f4__button_8c" kind="file" language="C++">
+    <compoundname>stm32f4_button.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes refid="port__button_8h" local="yes">port_button.h</includes>
+    <includes refid="port__system_8h" local="yes">port_system.h</includes>
+    <includes refid="stm32f4__system_8h" local="yes">stm32f4_system.h</includes>
+    <includes refid="stm32f4__button_8h" local="yes">stm32f4_button.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="7">
+        <label>stm32f4_system.h</label>
+        <link refid="stm32f4__system_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>stm32f4_button.h</label>
+        <link refid="stm32f4__button_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>port/stm32f4/src/stm32f4_button.c</label>
+        <link refid="stm32f4__button_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>port_button.h</label>
+        <link refid="port__button_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>stm32f4xx.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="stm32f4__button_8c_1a8ba28194477d2757430d0039b9580905" prot="public" static="no" mutable="no">
+        <type><ref refid="structstm32f4__button__hw__t" kindref="compound">stm32f4_button_hw_t</ref></type>
+        <definition>stm32f4_button_hw_t buttons_arr[]</definition>
+        <argsstring>[]</argsstring>
+        <name>buttons_arr</name>
+        <briefdescription>
+<para>Array of elements that represents the HW characteristics of the buttons connected to the STM32F4 platform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Array of elements that represents the HW characteristics of the buttons.</para>
+<para>This is an <bold>extern</bold> variable that is declared in <computeroutput><ref refid="stm32f4__button_8h" kindref="compound">stm32f4_button.h</ref></computeroutput>. It represents an array of hardware buttons. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_button.c" line="27" column="21" bodyfile="port/stm32f4/src/stm32f4_button.c" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stm32f4__button_8c_1ad71ae6d66617d620e1d83a18328e2044" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstm32f4__button__hw__t" kindref="compound">stm32f4_button_hw_t</ref> *</type>
+        <definition>stm32f4_button_hw_t* _stm32f4_button_get</definition>
+        <argsstring>(uint8_t button_id)</argsstring>
+        <name>_stm32f4_button_get</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>button_id</declname>
+        </param>
+        <briefdescription>
+<para>Get the button struct with the given ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Button ID.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the button struct. </para>
+</simplesect>
+<simplesect kind="return"><para>NULL If the button ID is not valid. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_button.c" line="40" column="21" bodyfile="port/stm32f4/src/stm32f4_button.c" bodystart="40" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__button_8c_1adb8e85d383dd44cb43782530bfa1bb56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_button_init</definition>
+        <argsstring>(uint8_t button_id)</argsstring>
+        <name>port_button_init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>button_id</declname>
+        </param>
+        <briefdescription>
+<para>Configure the HW specifications of a given button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assuming we are using an STM32F4-based platform, this function must call the following functions:</para>
+<para><blockquote><para><bold>TODO alumnos:</bold> ✅ 1. Retrieve the button configuration struct calling <computeroutput><ref refid="stm32f4__button_8c_1ad71ae6d66617d620e1d83a18328e2044" kindref="member">_stm32f4_button_get()</ref></computeroutput> <linebreak/>
+✅ 2. Call function <computeroutput><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config()</ref></computeroutput> with the right arguments to configure the button as input and no pull up neither pull down connection <linebreak/>
+✅ 3. Call function <computeroutput><ref refid="stm32f4__system_8h_1a98f4105a82f32c645f0b06424af5ef22" kindref="member">stm32f4_system_gpio_config_exti()</ref></computeroutput> with the right arguments to configure interruption mode in both rising and falling edges, and enable the interrupt request <linebreak/>
+✅ 4. Call function <computeroutput><ref refid="stm32f4__system_8h_1a03d8c69cd44964e3f1ff05a2c79626b8" kindref="member">stm32f4_system_gpio_exti_enable()</ref></computeroutput> with the right parameters to enable the interrupt line and set the priority level to <computeroutput>1</computeroutput> and the subpriority level to <computeroutput>0</computeroutput> </para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Button ID. This index is used to select the element of the <computeroutput>buttons_arr[]</computeroutput> array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_button.c" line="54" column="6" bodyfile="port/stm32f4/src/stm32f4_button.c" bodystart="54" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__button_8c_1a8cc540a984b39d49d94ab8da317c1e46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool port_button_get_pressed</definition>
+        <argsstring>(uint8_t button_id)</argsstring>
+        <name>port_button_get_pressed</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>button_id</declname>
+        </param>
+        <briefdescription>
+<para>Return the status of the button (pressed or not). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Return the value of the field <computeroutput>flag_pressed</computeroutput>. Call the function <computeroutput><ref refid="stm32f4__button_8c_1ad71ae6d66617d620e1d83a18328e2044" kindref="member">_stm32f4_button_get()</ref></computeroutput> to get the button struct. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Button ID. This index is used to get the correct button status struct.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true If the button has been pressed </para>
+</simplesect>
+<simplesect kind="return"><para>false If the button has not been pressed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_button.c" line="68" column="6" bodyfile="port/stm32f4/src/stm32f4_button.c" bodystart="68" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Portable functions to interact with the button FSM library. All portable functions must be implemented in this file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>HW<sp/>dependent<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__button_8h" kindref="compound">port_button.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>general<sp/>information<sp/>about<sp/>the<sp/>buttons<sp/>(ID,<sp/>etc.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__system_8h" kindref="compound">port_system.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>the<sp/>system<sp/>tick</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Microcontroller<sp/>dependent<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__system_8h" kindref="compound">stm32f4_system.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>the<sp/>system<sp/>tick<sp/>and<sp/>to<sp/>configure<sp/>the<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__button_8h" kindref="compound">stm32f4_button.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>specific<sp/>information<sp/>about<sp/>the<sp/>HW<sp/>buttons<sp/>(GPIO<sp/>port,<sp/>pin,<sp/>array<sp/>of<sp/>buttons,<sp/>etc.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Global<sp/>variables<sp/>*/</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="structstm32f4__button__hw__t" kindref="compound">stm32f4_button_hw_t</ref><sp/><ref refid="stm32f4__button_8c_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="port__button_8h_1a9dea052c6ba3a808824929fd5cb47f90" kindref="member">PORT_USER_BUTTON_ID</ref>]<sp/>=<sp/>{.<ref refid="structstm32f4__button__hw__t_1a96246bee7f212e399873ade39af868b5" kindref="member">p_port</ref><sp/>=<sp/><ref refid="stm32f4__button_8h_1a196effd2c68f7be7caebbf16a26852cf" kindref="member">STM32F4_USER_BUTTON_GPIO</ref>,<sp/>.pin<sp/>=<sp/><ref refid="stm32f4__button_8h_1ae4f582f0ef6b416a74db8e00d299045e" kindref="member">STM32F4_USER_BUTTON_PIN</ref>,<sp/>.pupd_mode<sp/>=<sp/><ref refid="stm32f4__system_8h_1a137bdfc6e1be3a728c27f4f8426bbde5" kindref="member">STM32F4_GPIO_PUPDR_NOPULL</ref>},</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>functions<sp/>----------------------------------------------------------*/</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><ref refid="structstm32f4__button__hw__t" kindref="compound">stm32f4_button_hw_t</ref><sp/>*<ref refid="stm32f4__button_8c_1ad71ae6d66617d620e1d83a18328e2044" kindref="member">_stm32f4_button_get</ref>(uint8_t<sp/>button_id)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>pointer<sp/>to<sp/>the<sp/>button<sp/>with<sp/>the<sp/>given<sp/>ID.<sp/>If<sp/>the<sp/>ID<sp/>is<sp/>not<sp/>valid,<sp/>return<sp/>NULL.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(button_id<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="stm32f4__button_8c_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="stm32f4__button_8c_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[0]))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;<ref refid="stm32f4__button_8c_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[button_id];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Public<sp/>functions<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__button_8c_1adb8e85d383dd44cb43782530bfa1bb56" kindref="member">port_button_init</ref>(uint8_t<sp/>button_id)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>alumnos:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__button__hw__t" kindref="compound">stm32f4_button_hw_t</ref><sp/>*p_button<sp/>=<sp/><ref refid="stm32f4__button_8c_1ad71ae6d66617d620e1d83a18328e2044" kindref="member">_stm32f4_button_get</ref>(button_id);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config</ref>(p_button-&gt;<ref refid="structstm32f4__button__hw__t_1a96246bee7f212e399873ade39af868b5" kindref="member">p_port</ref>,<sp/>p_button-&gt;<ref refid="structstm32f4__button__hw__t_1a4bc887d1a141353115f5d6a1d9d16b52" kindref="member">pin</ref>,<sp/><ref refid="stm32f4__system_8h_1a3ff262e05c96d10578f948caf322f321" kindref="member">STM32F4_GPIO_MODE_IN</ref>,<sp/><ref refid="stm32f4__system_8h_1a137bdfc6e1be3a728c27f4f8426bbde5" kindref="member">STM32F4_GPIO_PUPDR_NOPULL</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1a98f4105a82f32c645f0b06424af5ef22" kindref="member">stm32f4_system_gpio_config_exti</ref>(p_button-&gt;<ref refid="structstm32f4__button__hw__t_1a96246bee7f212e399873ade39af868b5" kindref="member">p_port</ref>,<sp/>p_button-&gt;<ref refid="structstm32f4__button__hw__t_1a4bc887d1a141353115f5d6a1d9d16b52" kindref="member">pin</ref>,<sp/><ref refid="stm32f4__system_8h_1af2c99879cd4076bc4b57915f7801fb72" kindref="member">STM32F4_TRIGGER_BOTH_EDGE</ref><sp/>|<sp/><ref refid="stm32f4__system_8h_1a1d3c73313e22ba12ba4602c58117e318" kindref="member">STM32F4_TRIGGER_ENABLE_INTERR_REQ</ref>);<sp/></highlight><highlight class="comment">/*<sp/>EXTI<sp/>both<sp/>edges<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1a03d8c69cd44964e3f1ff05a2c79626b8" kindref="member">stm32f4_system_gpio_exti_enable</ref>(p_button-&gt;<ref refid="structstm32f4__button__hw__t_1a4bc887d1a141353115f5d6a1d9d16b52" kindref="member">pin</ref>,<sp/>1,<sp/>0);<sp/></highlight><highlight class="comment">/*<sp/>Le<sp/>paso<sp/>la<sp/>linea<sp/>(pin)<sp/>de<sp/>interrupcion<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clean/set<sp/>all<sp/>configurations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>p_button-&gt;<ref refid="structstm32f4__button__hw__t_1a71b5377630fd4caac186c168d92fcfce" kindref="member">flag_pressed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="stm32f4__button_8c_1a8cc540a984b39d49d94ab8da317c1e46" kindref="member">port_button_get_pressed</ref>(uint8_t<sp/>button_id)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__button__hw__t" kindref="compound">stm32f4_button_hw_t</ref><sp/>*button<sp/>=<sp/><ref refid="stm32f4__button_8c_1ad71ae6d66617d620e1d83a18328e2044" kindref="member">_stm32f4_button_get</ref>(button_id);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>button-&gt;<ref refid="structstm32f4__button__hw__t_1a71b5377630fd4caac186c168d92fcfce" kindref="member">flag_pressed</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="port/stm32f4/src/stm32f4_button.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_aff93352f483d815f4aad2ce8569e33b" kind="dir">
+    <compoundname>port/stm32f4</compoundname>
+    <innerdir refid="dir_8338216af5b9c682f75cf365d3e92719">port/stm32f4/include</innerdir>
+    <innerdir refid="dir_96ea3e7ce74ccff9e7229beeb516906f">port/stm32f4/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="port/stm32f4/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,332 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Simone Project</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This project demonstrates how the project Simone works using a matrix keyboard and an RGB LED to emulate the classic game Simon. It uses a finite state machine (FSM) to control the keyboard, an RGB light (RGB LED) to show the intensity, and a button to interact with the system.</para>
+<para>This project is intended to be used with the MatrixMCU toolkit. The toolkit is available at GitHub: <ulink url="https://github.com/sdg2DieUpm/MatrixMCU">MatrixMCU</ulink>.</para>
+<para><bold>Click on the image</bold> to see the video showing the Simone demo for Nucleo STM32:</para>
+<para><ulink url="https://youtu.be/v-HXdcEtT_4"><image type="html" name="fritzing_simone.png">Simone Demo</image>
+ <image type="latex" name="fritzing_simone.png">Simone Demo</image>
+ <image type="rtf" name="fritzing_simone.png">Simone Demo</image>
+ <image type="docbook" name="fritzing_simone.png">Simone Demo</image>
+ </ulink></para>
+<para>You can access the documentation of the project at: <ulink url="https://sdg2dieupm.github.io/simone/">Simone Documentation</ulink>.</para>
+<sect1 id="index_1autotoc_md1">
+<title>Version 1</title>
+<para>In Version 1, the system works with the user button only. The user button is connected to the pin PC13. The code uses the EXTI13 interrupt to detect the button press.</para>
+<para><table rows="9" cols="2"><row>
+<entry thead="yes"><para>Parameter </para>
+</entry><entry thead="yes"><para>Value  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin </para>
+</entry><entry thead="no"><para>PC13  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Mode </para>
+</entry><entry thead="no"><para>Input  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pull up/ down </para>
+</entry><entry thead="no"><para>No push no pull  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>EXTI </para>
+</entry><entry thead="no"><para>EXTI13  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>ISR </para>
+</entry><entry thead="no"><para>EXTI15_10_IRQHandler  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Priority </para>
+</entry><entry thead="no"><para>1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Subpriority </para>
+</entry><entry thead="no"><para>0  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Debounce time </para>
+</entry><entry thead="no"><para>100-200 ms  </para>
+</entry></row>
+</table>
+</para>
+<para>You can start from the <ulink url="stm32f4__button_8c.html">HW dependent part of Version 1</ulink>.</para>
+<para><itemizedlist>
+<listitem><para>Here you can find the <bold>project</bold> with the basic configuration: <ulink url="https://github.com/sdg2DieUpm/simone">Simone Project</ulink>.</para>
+</listitem><listitem><para>Here you can find the <bold>test files</bold> for Version 1: <ulink url="https://github.com/sdg2DieUpm/simone/tree/simone_v1_test">V1 test files</ulink></para>
+</listitem></itemizedlist>
+</para>
+<para>This is the FSM of the button: <image type="html" name="fsm_v1.png">FSM of the button</image>
+ <image type="latex" name="fsm_v1.png">FSM of the button</image>
+ <image type="rtf" name="fsm_v1.png">FSM of the button</image>
+ <image type="docbook" name="fsm_v1.png">FSM of the button</image>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md2">
+<title>Version 2</title>
+<para>In Version 2, the system adds the keyboard matrix to read the presses of the player in the game.</para>
+<para>The connections of the keyboard are shown in the table below:</para>
+<para><table rows="17" cols="2"><row>
+<entry thead="yes"><para>Parameter </para>
+</entry><entry thead="yes"><para>Value  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin row 1 </para>
+</entry><entry thead="no"><para>PA0  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin row 2 </para>
+</entry><entry thead="no"><para>PA1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin row 3 </para>
+</entry><entry thead="no"><para>PA4  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin row 4 </para>
+</entry><entry thead="no"><para>PB0  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Mode rows </para>
+</entry><entry thead="no"><para>Output  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pull up/ down rows </para>
+</entry><entry thead="no"><para>No push, no pull  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Timeout excitation rows </para>
+</entry><entry thead="no"><para>25 ms  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin/ EXTI/ ISR column 1 </para>
+</entry><entry thead="no"><para>PA8/ EXTI8/ EXTI9_5_IRQHandler  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin/ EXTI/ ISR column 2 </para>
+</entry><entry thead="no"><para>PB10/ EXTI10/ EXTI15_10_IRQHandler  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin/ EXTI/ ISR column 3 </para>
+</entry><entry thead="no"><para>PB4/ EXTI4/ EXTI4_IRQHandler  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin/ EXTI/ ISR column 4 </para>
+</entry><entry thead="no"><para>PB5/ EXTI5/ EXTI9_5_IRQHandler  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Mode columns </para>
+</entry><entry thead="no"><para>Input  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pull up/ down columns </para>
+</entry><entry thead="no"><para>Pull down  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Priority all columns </para>
+</entry><entry thead="no"><para>1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Subpriority all columns </para>
+</entry><entry thead="no"><para>1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Debounce time all columns </para>
+</entry><entry thead="no"><para>100-200 ms  </para>
+</entry></row>
+</table>
+</para>
+<para>The system uses 1 timer to control the duration of the <bold>excitation of each row</bold> in the keyboard matrix. The characteristics of this timer are shown in the table below. The FSM will give a value every <computeroutput>PORT_KEYBOARDS_TIMEOUT_MS</computeroutput> milliseconds.</para>
+<para><table rows="7" cols="2"><row>
+<entry thead="yes"><para>Parameter </para>
+</entry><entry thead="yes"><para>Value  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Timer </para>
+</entry><entry thead="no"><para>TIM5  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Prescaler </para>
+</entry><entry thead="no"><para>(to be calculated for <computeroutput>PORT_KEYBOARDS_TIMEOUT_MS</computeroutput>)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Period </para>
+</entry><entry thead="no"><para>(to be calculated for <computeroutput>PORT_KEYBOARDS_TIMEOUT_MS</computeroutput>)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>ISR </para>
+</entry><entry thead="no"><para><ref refid="interr_8c_1a5e66446caf21dd90191dc07a13ce2378" kindref="member">TIM5_IRQHandler()</ref>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Priority </para>
+</entry><entry thead="no"><para>2  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Subpriority </para>
+</entry><entry thead="no"><para>0  </para>
+</entry></row>
+</table>
+</para>
+<para>You can start from the <ulink url="stm32f4__keyboard_8c.html">HW dependent part of Version 2</ulink>.</para>
+<para><itemizedlist>
+<listitem><para>Here you can find the files needed for the control of the <bold>keyboard</bold>: <ulink url="https://github.com/sdg2DieUpm/simone/tree/simone_v2">Keyboard</ulink>.</para>
+</listitem><listitem><para>Here you can find the <bold>test files</bold> for Version 2: <ulink url="https://github.com/sdg2DieUpm/simone/tree/simone_v2_test">V2 test files</ulink></para>
+</listitem></itemizedlist>
+</para>
+<para>This is the FSM of the keyboard: <image type="html" name="fsm_v2.svg">FSM of the keyboard</image>
+ <image type="latex" name="fsm_v2.svg">FSM of the keyboard</image>
+ <image type="rtf" name="fsm_v2.svg">FSM of the keyboard</image>
+ <image type="docbook" name="fsm_v2.svg">FSM of the keyboard</image>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md3">
+<title>Version 3</title>
+<para>In Version 3, the system adds the RGB light, which is an RGB LED. The RGB LED is connected to the pins PB6 (red), PB8 (green), and PB9 (blue). The code uses the TIM4 timer to control the frequency of the <bold>PWM</bold> signal for each color. The RGB LED will show the intensity depending on the difficulty level. The characteristics of the RGB light are shown in the table below.</para>
+<para><table rows="16" cols="2"><row>
+<entry thead="yes"><para>Parameter </para>
+</entry><entry thead="yes"><para>Value  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin LED red </para>
+</entry><entry thead="no"><para>PB6  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin LED green </para>
+</entry><entry thead="no"><para>PB8  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pin LED blue </para>
+</entry><entry thead="no"><para>PB9  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Mode </para>
+</entry><entry thead="no"><para>Alternative  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pull up/ down </para>
+</entry><entry thead="no"><para>No pull  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Timer </para>
+</entry><entry thead="no"><para>TIM4  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Channel LED red </para>
+</entry><entry thead="no"><para>(see the Alternate Function table in the datasheet)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Channel LED green </para>
+</entry><entry thead="no"><para>(see the Alternate Function table in the datasheet)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Channel LED blue </para>
+</entry><entry thead="no"><para>(see the Alternate Function table in the datasheet)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>PWM mode </para>
+</entry><entry thead="no"><para>PWM mode 1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Prescaler </para>
+</entry><entry thead="no"><para>(to be calculated for a frequency of 50 Hz)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Period </para>
+</entry><entry thead="no"><para>(to be calculated for a frequency of 50 Hz)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Duty cycle LED red </para>
+</entry><entry thead="no"><para>(variable, depends on the color to show)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Duty cycle LED green </para>
+</entry><entry thead="no"><para>(variable, depends on the color to show)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Duty cycle LED blue </para>
+</entry><entry thead="no"><para>(variable, depends on the color to show)  </para>
+</entry></row>
+</table>
+</para>
+<para>You have a list full of colors in <ulink url="https://www.downtownuplighting.com/rgb-color-chart">www.downtownuplighting.com</ulink> although not all can be shown on an RGB LED.</para>
+<para>You can start from the <ulink url="stm32f4__rgb_light_8c.html">HW dependent part of Version 3</ulink>.</para>
+<para><itemizedlist>
+<listitem><para>Here you can find the files needed for the control of the <bold>RGB light</bold>: <ulink url="https://github.com/sdg2DieUpm/simone/tree/simone_v3">RGB light</ulink>.</para>
+</listitem><listitem><para>Here you can find the <bold>test files</bold> for Version 3: <ulink url="https://github.com/sdg2DieUpm/simone/tree/simone_v3_test">V3 test files</ulink></para>
+</listitem></itemizedlist>
+</para>
+<para>This is the FSM of the RGB light: <image type="html" name="fsm_v3.svg">FSM of the RGB light</image>
+ <image type="latex" name="fsm_v3.svg">FSM of the RGB light</image>
+ <image type="rtf" name="fsm_v3.svg">FSM of the RGB light</image>
+ <image type="docbook" name="fsm_v3.svg">FSM of the RGB light</image>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md4">
+<title>Version 4</title>
+<para>In Version 4 the system completes its FSM to interact with the user button, the keyboard, and the RGB light. The system will work as a game where the player has to repeat a sequence of colors shown by the RGB light by pressing the corresponding keys on the keyboard. The system will increase the length of the sequence with each successful round, and it will provide visual feedback through the RGB light for correct and incorrect inputs.</para>
+<para>There are no files documented for the FSM of Version 4, and you have to create them from scratch following the laboratory notebook. You can use the files of the previous versions as a reference.</para>
+<para>Check the <ulink url="fsm__simone_8c.html">HW dependent part of Version 4</ulink>.</para>
+<para>YOU MUST DRAW THE FSM OF THE SYSTEM BY YOURSELF AND PUT IT HERE. <image type="html" name="image.png">FSM of the system</image>
+ <image type="latex" name="image.png">FSM of the system</image>
+ <image type="rtf" name="image.png">FSM of the system</image>
+ <image type="docbook" name="image.png">FSM of the system</image>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md5">
+<title>Version 5</title>
+<para>In Version 5 the user adds its own functions to the system. Check the manual of the system to know how to add your own functions.</para>
+</sect1>
+<sect1 id="index_1autotoc_md6">
+<title>Getting Started</title>
+<para>Download this project and place it in the <computeroutput>projects</computeroutput> folder of the MatrixMCU toolkit.</para>
+<sect2 id="index_1autotoc_md7">
+<title>Prerequisites</title>
+<para>Be sure that you fulfill the prerequisites of the MatrixMCU toolkit and it is up to date.</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md8">
+<title>Document your code</title>
+<para>Watch this video to better understand how to document your code with <bold>Doxygen</bold>:</para>
+<para><ulink url="https://youtu.be/VC7fExJJQSY?si=oIAZU_b2sRWhu3de"><image type="html" name="doxygen_thumb.png">Link to Doxygen tutorial</image>
+ <image type="latex" name="doxygen_thumb.png">Link to Doxygen tutorial</image>
+ <image type="rtf" name="doxygen_thumb.png">Link to Doxygen tutorial</image>
+ <image type="docbook" name="doxygen_thumb.png">Link to Doxygen tutorial</image>
+ </ulink></para>
+</sect1>
+<sect1 id="index_1autotoc_md9">
+<title>Authors</title>
+<para><itemizedlist>
+<listitem><para><bold>Josué Pagán</bold> - email: <ulink url="mailto:j.pagan@upm.es">j.pagan@upm.es</ulink></para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md10">
+<title>License</title>
+<para>This project is licensed under the MIT License - see the LICENSE file for details.</para>
+</sect1>
+<sect1 id="index_1autotoc_md11">
+<title>Acknowledgments</title>
+<para>Acknowledgments to all professors of the <bold>SDG2</bold> subject.</para>
+<para><bold>In memory of Mario Garrido Gálvez (1981-2025), a great professor and colleague. RIP.</bold></para>
+</sect1>
+<sect1 id="index_1autotoc_md12">
+<title>References</title>
+<para><itemizedlist>
+<listitem><para><bold>[1]</bold>: <ulink url="https://moodle.upm.es/titulaciones/oficiales/course/view.php?id=785#section-0">Documentation available in the Moodle of the course</ulink></para>
+</listitem><listitem><para><bold>[2]</bold>: <ulink url="https://web.eece.maine.edu/~zhu/book/index.php">Embedded Systems with ARM Cortex-M Microcontrollers in Assembly Language and C (Fourth Edition)</ulink> for explanations and examples of use of the ARM Cortex-M microcontrollers in C with CMSIS.</para>
+</listitem><listitem><para><bold>[3]</bold>: <ulink url="https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA51126621660004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;tab=tab1&amp;query=any,contains,Programming%20with%20STM32:%20Getting%20Started%20with%20the%20Nucleo%20Board%20and%20C%2FC%2B%2B&amp;offset=0">Programming with STM32: Getting Started with the Nucleo Board and C/C++</ulink> for examples of use of the STM32 microcontrollers with the HAL of ST.</para>
+</listitem><listitem><para><bold>[4]</bold>: <ulink url="https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA2151866130004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;isFrbr=true&amp;tab=tab1&amp;query=any,contains,C%20Programming%20Language">The C Programming Language</ulink></para>
+</listitem><listitem><para><bold>[5]</bold>: <ulink url="https://ingenio.upm.es/primo-explore/fulldisplay?docid=34UPM_ALMA21107789140004212&amp;context=L&amp;vid=34UPM_VU1&amp;lang=es_ES&amp;search_scope=TAB1_SCOPE1&amp;adaptor=Local%20Search%20Engine&amp;isFrbr=true&amp;tab=tab1&amp;query=any,contains,Aspectos%20pr%C3%A1cticos%20de%20dise%C3%B1o%20y%20medida%20en%20Laboratorios%20de%20Electr%C3%B3nica&amp;offset=0">Aspectos prácticos de diseño y medida en Laboratorios de Electrónica</ulink> for the use of the oscilloscope and the function generator.</para>
+</listitem><listitem><para><bold>[6]</bold>: <ulink url="https://www.elektor.com/products/nucleo-boards-programming-with-the-stm32cubeide">Nucleo Boards Programming with th STM32CubeIDE</ulink> for examples of use of the STM32 microcontrollers with the STM32CubeIDE. </para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

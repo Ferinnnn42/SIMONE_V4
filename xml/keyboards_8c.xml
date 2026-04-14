@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="keyboards_8c" kind="file" language="C++">
+    <compoundname>keyboards.c</compoundname>
+    <includes refid="keyboards_8h" local="yes">keyboards.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>keyboards.h</label>
+        <link refid="keyboards_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>common/src/keyboards.c</label>
+        <link refid="keyboards_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="keyboards_8c_1a2fce6fe98c46f395ebb7790e26cc0fbb" prot="public" static="no">
+        <name>STANDARD_KEYBOARD_NUM_ROWS</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of rows in the standard keyboard matrix </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/keyboards.c" line="14" column="9" bodyfile="common/src/keyboards.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="keyboards_8c_1aac70ce3e8fb4ba19acb3bc97947573f7" prot="public" static="no">
+        <name>STANDARD_KEYBOARD_NUM_COLS</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of columns in the standard keyboard matrix </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/keyboards.c" line="15" column="9" bodyfile="common/src/keyboards.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="keyboards_8c_1a592e2e8406cf31650041c530ea4faa5e" prot="public" static="no">
+        <name>STANDARD_NULL_KEY</name>
+        <initializer>&apos;\0&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Null character to represent no key pressed in the standard keyboard </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/keyboards.c" line="16" column="9" bodyfile="common/src/keyboards.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="keyboards_8c_1ad0e250222cb6bd1b118cb291a5c150dd" prot="public" static="yes" mutable="no">
+        <type>const char</type>
+        <definition>const char standard_keyboard_layout[STANDARD_KEYBOARD_NUM_ROWS][STANDARD_KEYBOARD_NUM_COLS]</definition>
+        <argsstring>[STANDARD_KEYBOARD_NUM_ROWS][STANDARD_KEYBOARD_NUM_COLS]</argsstring>
+        <name>standard_keyboard_layout</name>
+        <initializer>= {
+    {&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;A&apos;},
+    {&apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;B&apos;},
+    {&apos;7&apos;, &apos;8&apos;, &apos;9&apos;, &apos;C&apos;},
+    {&apos;*&apos;, &apos;0&apos;, &apos;#&apos;, &apos;D&apos;}}</initializer>
+        <briefdescription>
+<para>Standard 4x4 keyboard layout with number and letters, hash and star keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/keyboards.c" line="22" column="19" bodyfile="common/src/keyboards.c" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="keyboards_8c_1ad113882f1c33eaecafcbf7651aaaadd9" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structkeyboard__t" kindref="compound">keyboard_t</ref></type>
+        <definition>const keyboard_t standard_keyboard</definition>
+        <argsstring></argsstring>
+        <name>standard_keyboard</name>
+        <initializer>= {
+    .num_rows = <ref refid="keyboards_8c_1a2fce6fe98c46f395ebb7790e26cc0fbb" kindref="member">STANDARD_KEYBOARD_NUM_ROWS</ref>,
+    .num_cols = <ref refid="keyboards_8c_1aac70ce3e8fb4ba19acb3bc97947573f7" kindref="member">STANDARD_KEYBOARD_NUM_COLS</ref>,
+    .null_key = <ref refid="keyboards_8c_1a592e2e8406cf31650041c530ea4faa5e" kindref="member">STANDARD_NULL_KEY</ref>,
+    .keys = (const char *)<ref refid="keyboards_8c_1ad0e250222cb6bd1b118cb291a5c150dd" kindref="member">standard_keyboard_layout</ref>}</initializer>
+        <briefdescription>
+<para>Standard 4x4 keyboard layout with number and letters, hash and star keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="common/src/keyboards.c" line="32" column="18" bodyfile="common/src/keyboards.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Keyboard layouts and related functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="keyboards_8h" kindref="compound">keyboards.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Keyboard<sp/>layouts<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Standard<sp/>4x4<sp/>keyboard<sp/>layout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STANDARD_KEYBOARD_NUM_ROWS<sp/>4<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor">#define<sp/>STANDARD_KEYBOARD_NUM_COLS<sp/>4<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor">#define<sp/>STANDARD_NULL_KEY<sp/>&apos;\0&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor">static<sp/>const<sp/>char<sp/>standard_keyboard_layout[STANDARD_KEYBOARD_NUM_ROWS][STANDARD_KEYBOARD_NUM_COLS]<sp/>=<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;2&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;3&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="charliteral">&apos;4&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;5&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;6&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="charliteral">&apos;7&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;8&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;#&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;D&apos;</highlight><highlight class="normal">}};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structkeyboard__t" kindref="compound">keyboard_t</ref><sp/><ref refid="keyboards_8c_1ad113882f1c33eaecafcbf7651aaaadd9" kindref="member">standard_keyboard</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="structkeyboard__t_1aef159540ca9b9ad3dd9b66133b9d948d" kindref="member">num_rows</ref><sp/>=<sp/><ref refid="keyboards_8c_1a2fce6fe98c46f395ebb7790e26cc0fbb" kindref="member">STANDARD_KEYBOARD_NUM_ROWS</ref>,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>.num_cols<sp/>=<sp/><ref refid="keyboards_8c_1aac70ce3e8fb4ba19acb3bc97947573f7" kindref="member">STANDARD_KEYBOARD_NUM_COLS</ref>,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>.null_key<sp/>=<sp/><ref refid="keyboards_8c_1a592e2e8406cf31650041c530ea4faa5e" kindref="member">STANDARD_NULL_KEY</ref>,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>.keys<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="keyboards_8c_1ad0e250222cb6bd1b118cb291a5c150dd" kindref="member">standard_keyboard_layout</ref>};</highlight></codeline>
+    </programlisting>
+    <location file="common/src/keyboards.c"/>
+  </compounddef>
+</doxygen>

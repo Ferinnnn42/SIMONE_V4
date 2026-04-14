@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="stm32f4__rgb__light_8c" kind="file" language="C++">
+    <compoundname>stm32f4_rgb_light.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes refid="port__rgb__light_8h" local="yes">port_rgb_light.h</includes>
+    <includes refid="port__system_8h" local="yes">port_system.h</includes>
+    <includes refid="stm32f4__system_8h" local="yes">stm32f4_system.h</includes>
+    <includes refid="stm32f4__rgb__light_8h" local="yes">stm32f4_rgb_light.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>rgb_colors.h</label>
+        <link refid="rgb__colors_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stm32f4_system.h</label>
+        <link refid="stm32f4__system_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>port/stm32f4/src/stm32f4_rgb_light.c</label>
+        <link refid="stm32f4__rgb__light_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>stm32f4_rgb_light.h</label>
+        <link refid="stm32f4__rgb__light_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>stm32f4xx.h</label>
+      </node>
+      <node id="3">
+        <label>port_rgb_light.h</label>
+        <link refid="port__rgb__light_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="stm32f4__rgb__light_8c_1ac640175ba12876ed25537c114720c695" prot="public" static="no" mutable="no">
+        <type><ref refid="structstm32f4__rgb__light__hw__t" kindref="compound">stm32f4_rgb_light_hw_t</ref></type>
+        <definition>stm32f4_rgb_light_hw_t rgb_lights_arr[]</definition>
+        <argsstring>[]</argsstring>
+        <name>rgb_lights_arr</name>
+        <briefdescription>
+<para>Array of elements that represents the HW characteristics of the RGB LED of the RGB light systems connected to the STM32F4 platform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>This is an <bold>extern</bold> variable that is declared in <computeroutput><ref refid="stm32f4__rgb__light_8h" kindref="compound">stm32f4_rgb_light.h</ref></computeroutput>. It represents an array of RGB lights. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_rgb_light.c" line="27" column="24" bodyfile="port/stm32f4/src/stm32f4_rgb_light.c" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stm32f4__rgb__light_8c_1a71c2ea7dd05c1b483d57e4b313d66c73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structstm32f4__rgb__light__hw__t" kindref="compound">stm32f4_rgb_light_hw_t</ref> *</type>
+        <definition>stm32f4_rgb_light_hw_t* _stm32f4_rgb_light_get</definition>
+        <argsstring>(uint8_t rgb_light_id)</argsstring>
+        <name>_stm32f4_rgb_light_get</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>rgb_light_id</declname>
+        </param>
+        <briefdescription>
+<para>Get the RGB light struct with the given ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb_light_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Button ID.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the RGB light struct. </para>
+</simplesect>
+<simplesect kind="return"><para>NULL If the RGB light ID is not valid. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_rgb_light.c" line="39" column="24" bodyfile="port/stm32f4/src/stm32f4_rgb_light.c" bodystart="39" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__rgb__light_8c_1ad15bd82329b542c72155e9ff53502e90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _timer_pwm_config</definition>
+        <argsstring>(uint8_t rgb_light_id)</argsstring>
+        <name>_timer_pwm_config</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>rgb_light_id</declname>
+        </param>
+        <briefdescription>
+<para>Configure the timer that controls the PWM of <bold>each one</bold> of the RGB LEDs of the RGB light system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is called by the <computeroutput><ref refid="stm32f4__rgb__light_8c_1a1b04d2dd778bef7a90ee86ff7aadd83d" kindref="member">port_rgb_light_init()</ref></computeroutput> public function to configure the timer that controls the PWM of the RGB LEDs of the RGB light.</para>
+<para><simplesect kind="warning"><para>The timer is common for all the RGB LEDs of one RGB RGB light despite each one has its own channel. If you introduce more RGB rgb_lights, you must configure a new timer for each one. Because of this, you **must encapsulate the configuration of the timer in a <computeroutput>switch</computeroutput> or <computeroutput>if</computeroutput> statement.*</para>
+</simplesect>
+<simplesect kind="note"><para>This function does not set the duty cycle of the PWM signal. This is done in the <computeroutput><ref refid="stm32f4__rgb__light_8c_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb()</ref></computeroutput> function where the color is set.</para>
+</simplesect>
+<blockquote><para><bold>TODO alumnos:</bold></para>
+<para><bold>PWM timer setup</bold></para>
+<para>✅ 1. Enable the clock source of the timer <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 To know if the source clock is <computeroutput>APB1</computeroutput> or <computeroutput>APB2</computeroutput>, check the clock tree in the user manual (<ulink url="https://www.st.com/en/microcontrollers-microprocessors/stm32f446re.html">Figure 3. STM32F446xC/E block diagram</ulink>) <linebreak/>
+✅ 2. Disable the counter (register <computeroutput>CR1</computeroutput>) and enable the autoreload preaload (bit <computeroutput>ARPE</computeroutput>) ✅ 3. Reset the counter (register <computeroutput>CNT</computeroutput>), set the autoreload value (register <computeroutput>ARR</computeroutput>) and the prescaler (register <computeroutput>PSC</computeroutput>) for a frequency of 50 Hz. <linebreak/>
+ <bold>PWM mode configuration</bold></para>
+<para><simplesect kind="note"><para>Check table &quot;Table 11. Alternate function&quot; in the datasheet to select the channel and the alternate functions.</para>
+</simplesect>
+✅ 5. Disable the output compare (register <computeroutput>CCER</computeroutput>) <bold>for each one</bold> of the corresponding channels. Take into account the channel number (1, 2, 3, or 4) and the channel enable bit (CCxE) <linebreak/>
+✅ 6. Clear the P and NP bits (CCxP and CCxNP) of the output compare register (<computeroutput>CCER</computeroutput>) <bold>for each one</bold> of the corresponding channels . <linebreak/>
+✅ 7. Set both (i) mode PWM 1, and (ii) enable preload (register CCMRx) <bold>for each one</bold> of the corresponding channels. Where <computeroutput>x</computeroutput> is <computeroutput>1</computeroutput> for channels 1 and 2, and <computeroutput>2</computeroutput> for channels 3 and 4. <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 To set the mode PWM to <computeroutput>mode 1</computeroutput> you must set the bits <computeroutput>OCxM</computeroutput> in the <computeroutput>CCMRx</computeroutput> register to the corresponding values according to the explanations of the manufacturer. You can find it in the explanations for the TIMx_CCMRx register for timers TIM2-TIM5 in <ulink url="https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">Sections 17.4.7 and 17.4.8 in the reference manual</ulink> <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 To enable the preload you must set the bit <computeroutput>OCxPE</computeroutput> to <computeroutput>1</computeroutput> in the same register. ✅ 8. Generate an update event (register <computeroutput>EGR</computeroutput>) by setting the <computeroutput>UG</computeroutput> bit. This will load the values of the <computeroutput>ARR</computeroutput> and <computeroutput>PSC</computeroutput> registers into the active registers. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb_light_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB light system identifier number. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_rgb_light.c" line="83" column="6" bodyfile="port/stm32f4/src/stm32f4_rgb_light.c" bodystart="83" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__rgb__light_8c_1a1b04d2dd778bef7a90ee86ff7aadd83d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_rgb_light_init</definition>
+        <argsstring>(uint8_t rgb_light_id)</argsstring>
+        <name>port_rgb_light_init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>rgb_light_id</declname>
+        </param>
+        <briefdescription>
+<para>Configure the HW specifications of a given RGB light. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assuming we are using an STM32F4-based platform, this function must call the following functions:</para>
+<para><blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve the RGB light configuration struct calling <computeroutput><ref refid="stm32f4__rgb__light_8c_1a71c2ea7dd05c1b483d57e4b313d66c73" kindref="member">_stm32f4_rgb_light_get()</ref></computeroutput>. <linebreak/>
+✅ 2. Call function <computeroutput><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config()</ref></computeroutput> with the right arguments to configure each RGB LED as in alternate mode and no pull up neither pull down connection. <linebreak/>
+✅ 3. Call function <computeroutput><ref refid="stm32f4__system_8h_1aa1e7f52e13f7ac3361326af3d8022e18" kindref="member">stm32f4_system_gpio_config_alternate()</ref></computeroutput> with the right arguments to configure the alternate function of the each RGB LED. <linebreak/>
+✅ 4. Call function <computeroutput><ref refid="stm32f4__rgb__light_8c_1ad15bd82329b542c72155e9ff53502e90" kindref="member">_timer_pwm_config()</ref></computeroutput> to configure the timer and the PWM signal of the RGB light. <linebreak/>
+✅ 5. Call function <computeroutput><ref refid="port__rgb__light_8h_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb()</ref></computeroutput> to set the RGB LED to off. <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb_light_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB light ID. This index is used to select the element of the <computeroutput>rgb_lights_arr[]</computeroutput> array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_rgb_light.c" line="141" column="6" bodyfile="port/stm32f4/src/stm32f4_rgb_light.c" bodystart="141" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4__rgb__light_8c_1a326965ec22f24d8ed258d8e288ab6c3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void port_rgb_light_set_rgb</definition>
+        <argsstring>(uint8_t rgb_light_id, rgb_color_t color)</argsstring>
+        <name>port_rgb_light_set_rgb</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>rgb_light_id</declname>
+        </param>
+        <param>
+          <type><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Set the Capture/Compare register values for each channel of the RGB LED given a color. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function disables the timer associated to the RGB LEDs, sets the Capture/Compare register values for each channel of the RGB LED, and enables the timer.</para>
+<para><simplesect kind="warning"><para>This function is valid for any given RGB LED, however, each RGB LED has its own timer. Write the code in a conditional statement to check the rgb_light_id.</para>
+</simplesect>
+<blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. Retrieve the individual RGB values from the <computeroutput>color</computeroutput> parameter and follow the flowchart given in the lab notebook to set the RGB LED color by configuring the PWM signals appropriately. </para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb_light_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB light system identifier number. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RGB color to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/stm32f4_rgb_light.c" line="162" column="6" bodyfile="port/stm32f4/src/stm32f4_rgb_light.c" bodystart="162" bodyend="223"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Portable functions to interact with the RGB light system FSM library. All portable functions must be implemented in this file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Sistemas Digitales II </para>
+</simplesect>
+<simplesect kind="date"><para>2026-01-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="comment">/*<sp/>Standard<sp/>C<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>HW<sp/>dependent<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__rgb__light_8h" kindref="compound">port_rgb_light.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>general<sp/>information<sp/>about<sp/>the<sp/>RGB<sp/>light<sp/>system<sp/>(ID,<sp/>etc.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__system_8h" kindref="compound">port_system.h</ref>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>the<sp/>system<sp/>tick</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Microcontroller<sp/>dependent<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__system_8h" kindref="compound">stm32f4_system.h</ref>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>the<sp/>system<sp/>tick<sp/>and<sp/>to<sp/>configure<sp/>the<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__rgb__light_8h" kindref="compound">stm32f4_rgb_light.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>get<sp/>specific<sp/>information<sp/>about<sp/>the<sp/>HW<sp/>of<sp/>the<sp/>RGB<sp/>light<sp/>systems<sp/>(GPIO<sp/>port,<sp/>pin,<sp/>array<sp/>of<sp/>RGB,<sp/>etc.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Global<sp/>variables<sp/>*/</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="structstm32f4__rgb__light__hw__t" kindref="compound">stm32f4_rgb_light_hw_t</ref><sp/><ref refid="stm32f4__rgb__light_8c_1ac640175ba12876ed25537c114720c695" kindref="member">rgb_lights_arr</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="port__rgb__light_8h_1aecab0eed2e6dad9f1d3c9504bd18a7d3" kindref="member">PORT_RGB_LIGHT_ID</ref>]<sp/>=<sp/>{.<ref refid="structstm32f4__rgb__light__hw__t_1aacef3e78bc275ba95e27a4d5e8387bc8" kindref="member">p_port_red</ref><sp/>=<sp/><ref refid="stm32f4__rgb__light_8h_1a105af85259b3aa1f2dd481c261954c93" kindref="member">STM32F4_RGB_LIGHT_R_GPIO</ref>,<sp/>.pin_red<sp/>=<sp/><ref refid="stm32f4__rgb__light_8h_1ac381ad69cbebe133c073a285555cfc63" kindref="member">STM32F4_RGB_LIGHT_R_PIN</ref>,<sp/>.p_port_green<sp/>=<sp/><ref refid="stm32f4__rgb__light_8h_1a768762acd0eba4d080b19dbd739163d7" kindref="member">STM32F4_RGB_LIGHT_G_GPIO</ref>,<sp/>.pin_green<sp/>=<sp/><ref refid="stm32f4__rgb__light_8h_1a337f9af1d1f6d5b9a3a85c9aaf9accf7" kindref="member">STM32F4_RGB_LIGHT_G_PIN</ref>,<sp/>.p_port_blue<sp/>=<sp/><ref refid="stm32f4__rgb__light_8h_1a398960f9c57369ed57ce5180513e0f8f" kindref="member">STM32F4_RGB_LIGHT_B_GPIO</ref>,<sp/>.pin_blue<sp/>=<sp/><ref refid="stm32f4__rgb__light_8h_1a2efa5382da90495d5995ec12bf52b9fd" kindref="member">STM32F4_RGB_LIGHT_B_PIN</ref>},</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>functions<sp/>-----------------------------------------------------------*/</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="structstm32f4__rgb__light__hw__t" kindref="compound">stm32f4_rgb_light_hw_t</ref><sp/>*<ref refid="stm32f4__rgb__light_8c_1a71c2ea7dd05c1b483d57e4b313d66c73" kindref="member">_stm32f4_rgb_light_get</ref>(uint8_t<sp/>rgb_light_id)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>pointer<sp/>to<sp/>the<sp/>RGB<sp/>light<sp/>with<sp/>the<sp/>given<sp/>ID.<sp/>If<sp/>the<sp/>ID<sp/>is<sp/>not<sp/>valid,<sp/>return<sp/>NULL.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rgb_light_id<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="stm32f4__rgb__light_8c_1ac640175ba12876ed25537c114720c695" kindref="member">rgb_lights_arr</ref>)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="stm32f4__rgb__light_8c_1ac640175ba12876ed25537c114720c695" kindref="member">rgb_lights_arr</ref>[0]))</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;<ref refid="stm32f4__rgb__light_8c_1ac640175ba12876ed25537c114720c695" kindref="member">rgb_lights_arr</ref>[rgb_light_id];</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__rgb__light_8c_1ad15bd82329b542c72155e9ff53502e90" kindref="member">_timer_pwm_config</ref>(uint8_t<sp/>rgb_light_id)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rgb_light_id<sp/>==<sp/><ref refid="port__rgb__light_8h_1aecab0eed2e6dad9f1d3c9504bd18a7d3" kindref="member">PORT_RGB_LIGHT_ID</ref>)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TIMER<sp/>PWM:<sp/>TIM4<sp/>and<sp/>CHANNEL1<sp/>(red),<sp/>CHANNEL2<sp/>(green),<sp/>CHANNEL3<sp/>(blue)<sp/>(we<sp/>must<sp/>change<sp/>5<sp/>registers)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>alumnos<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RCC-&gt;APB1ENR<sp/>|=<sp/>RCC_APB1ENR_TIM4EN;<sp/></highlight><highlight class="comment">//<sp/>1)<sp/>First!<sp/>Enable<sp/>the<sp/>peripheral<sp/>clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2)<sp/><sp/>Disable<sp/>counter<sp/>(optional).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CR1<sp/>|=<sp/>TIM_CR1_ARPE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Autoreload<sp/>preload<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CNT<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3)<sp/>Reset<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;ARR<sp/>=<sp/>63999;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>4)<sp/>Load<sp/>the<sp/>autoreload<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;PSC<sp/>=<sp/>4;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>5)<sp/>Load<sp/>the<sp/>prescaler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PWM<sp/>(hay<sp/>que<sp/>tocar<sp/>5<sp/>registros)</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PWM<sp/>--&gt;<sp/>miramos<sp/>en<sp/>el<sp/>pinout<sp/>o<sp/>la<sp/>&quot;Table<sp/>11.<sp/>Alternate<sp/>function&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Deshabilitar<sp/>el<sp/>bit<sp/>TIM_CCER_CC1E<sp/>del<sp/>registro<sp/>CCER<sp/>antes<sp/>de<sp/>hacer<sp/>modificaciones<sp/>(no<sp/>es<sp/>indispensable).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>*<sp/>Deshabilita<sp/>el<sp/>Output<sp/>Compare<sp/>--&gt;<sp/>CCER<sp/>&amp;=<sp/>~TIM_CCER_CC1E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Output<sp/>compare<sp/>1<sp/>--&gt;<sp/>tenemos<sp/>que<sp/>mirar<sp/>registro<sp/>TIMx_CCMR1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>*<sp/>Por<sp/>defecto<sp/>es<sp/>salida,<sp/>si<sp/>no,<sp/>deberíamos<sp/>poner<sp/>--&gt;<sp/>CCxS<sp/>=<sp/>0x0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>*<sp/>Modo<sp/>PWM1<sp/>--&gt;<sp/>OCxM<sp/>=<sp/>6<sp/>//<sp/>0b0110</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>*<sp/>Habilitamos<sp/>el<sp/>preload<sp/>--&gt;<sp/>OCxPE<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cargamos<sp/>el<sp/>valor<sp/>del<sp/>ancho<sp/>del<sp/>pulso<sp/>en<sp/>los<sp/>bits<sp/>CCR1<sp/>del<sp/>registro<sp/>TIMx_CCR1<sp/>(canales<sp/>1<sp/>y<sp/>2)<sp/>o<sp/>TIMx_CCR2<sp/>(canales<sp/>3<sp/>y<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>*<sp/>DC<sp/>(%)<sp/>=<sp/>CCRx/ARR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>--&gt;<sp/>donde<sp/>CCRx<sp/>es<sp/>CCR1<sp/>(canal<sp/>1),<sp/>y<sp/>ARR<sp/>es<sp/>el<sp/>valor<sp/>del<sp/>registro<sp/>TIMx_ARR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>--&gt;<sp/>para<sp/>un<sp/>ciclo<sp/>de<sp/>trabajo<sp/>del<sp/>50%<sp/>--&gt;<sp/>CCR1<sp/>=<sp/>(ARR<sp/>+<sp/>1)<sp/>*<sp/>0.5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rojo:<sp/>TIM4_CH1,<sp/>Verde:<sp/>TIM4_CH3,<sp/>Azul:<sp/>TIM4_CH4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1)<sp/>Disable<sp/>Output<sp/>Compare<sp/>for<sp/>channel<sp/>1,<sp/>3<sp/>and<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC1E;<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC3E;<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC4E;<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1)<sp/>Set<sp/>non<sp/>inverted<sp/>PWM<sp/>mode<sp/>1<sp/>for<sp/>channel<sp/>1,<sp/>3<sp/>and<sp/>4<sp/>(P<sp/>and<sp/>NP<sp/>bits<sp/>are<sp/>cleared)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~(TIM_CCER_CC1P<sp/>|<sp/>TIM_CCER_CC1NP);<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~(TIM_CCER_CC3P<sp/>|<sp/>TIM_CCER_CC3NP);<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~(TIM_CCER_CC4P<sp/>|<sp/>TIM_CCER_CC4NP);<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>It<sp/>is<sp/>also<sp/>possible<sp/>to<sp/>use<sp/>the<sp/>following<sp/>line<sp/>to<sp/>clear<sp/>the<sp/>bits:<sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~(TIM_CCER_CC1E<sp/>|<sp/>TIM_CCER_CC1P<sp/>|<sp/>TIM_CCER_CC1NP);<sp/>or<sp/>TIM4-&gt;CCER<sp/>=<sp/>0;<sp/>//<sp/>Clear<sp/>all<sp/>bits<sp/>of<sp/>the<sp/>register<sp/>considering<sp/>that<sp/>Channel<sp/>2<sp/>is<sp/>not<sp/>used<sp/>and<sp/>does<sp/>not<sp/>care</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2)<sp/>Set<sp/>mode<sp/>for<sp/>channel<sp/>1,<sp/>3<sp/>and<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCMR1<sp/>|=<sp/>(TIM_CCMR1_OC1M_2<sp/>|<sp/>TIM_CCMR1_OC1M_1);<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCMR2<sp/>|=<sp/>(TIM_CCMR2_OC3M_2<sp/>|<sp/>TIM_CCMR2_OC3M_1);<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCMR2<sp/>|=<sp/>(TIM_CCMR2_OC4M_2<sp/>|<sp/>TIM_CCMR2_OC4M_1);<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3)<sp/>Enable<sp/>preload<sp/>for<sp/>channel<sp/>1,<sp/>3<sp/>and<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCMR1<sp/>|=<sp/>TIM_CCMR1_OC1PE;<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCMR2<sp/>|=<sp/>TIM_CCMR2_OC3PE;<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCMR2<sp/>|=<sp/>TIM_CCMR2_OC4PE;<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;EGR<sp/>|=<sp/>TIM_EGR_UG;<sp/></highlight><highlight class="comment">//<sp/>6)<sp/>Update<sp/>generation:<sp/>Re-inicializa<sp/>el<sp/>contador<sp/>y<sp/>actualiza<sp/>los<sp/>registros.<sp/>IMPORTANTE<sp/>que<sp/>esté<sp/>lo<sp/>último</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>El<sp/>CCRx<sp/>adapta<sp/>el<sp/>ciclo<sp/>de<sp/>trabajo.<sp/>Esta<sp/>parte<sp/>del<sp/>duty<sp/>cycle<sp/>la<sp/>rehacemos<sp/>cada<sp/>vez<sp/>que<sp/>se<sp/>cambia<sp/>de<sp/>rgb_lighta<sp/>no<sp/>aquí</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Public<sp/>functions<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__rgb__light_8c_1a1b04d2dd778bef7a90ee86ff7aadd83d" kindref="member">port_rgb_light_init</ref>(uint8_t<sp/>rgb_light_id)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Retrieve<sp/>the<sp/>RGB<sp/>light<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstm32f4__rgb__light__hw__t" kindref="compound">stm32f4_rgb_light_hw_t</ref><sp/>*p_rgb_light<sp/>=<sp/><ref refid="stm32f4__rgb__light_8c_1a71c2ea7dd05c1b483d57e4b313d66c73" kindref="member">_stm32f4_rgb_light_get</ref>(rgb_light_id);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Configure<sp/>GPIO<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config</ref>(p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1aacef3e78bc275ba95e27a4d5e8387bc8" kindref="member">p_port_red</ref>,<sp/>p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1a075f54583fc99cb0bd4fde1ebc25cef2" kindref="member">pin_red</ref>,<sp/><ref refid="stm32f4__system_8h_1a4003a3d14efff411a229ec11e9ac38b4" kindref="member">STM32F4_GPIO_MODE_AF</ref>,<sp/><ref refid="stm32f4__system_8h_1a137bdfc6e1be3a728c27f4f8426bbde5" kindref="member">STM32F4_GPIO_PUPDR_NOPULL</ref>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config</ref>(p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1aa129acd2c7a83b790f20b25cb9d26a6a" kindref="member">p_port_green</ref>,<sp/>p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1a984cca26ee231a54d861bc35603d86a1" kindref="member">pin_green</ref>,<sp/><ref refid="stm32f4__system_8h_1a4003a3d14efff411a229ec11e9ac38b4" kindref="member">STM32F4_GPIO_MODE_AF</ref>,<sp/><ref refid="stm32f4__system_8h_1a137bdfc6e1be3a728c27f4f8426bbde5" kindref="member">STM32F4_GPIO_PUPDR_NOPULL</ref>);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aca348a9998b93751c1440d62050b7d79" kindref="member">stm32f4_system_gpio_config</ref>(p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1a9fed7f2e8d53e6f33ace834a99c84a85" kindref="member">p_port_blue</ref>,<sp/>p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1a21a93f5b6c850494c22c56800e05886c" kindref="member">pin_blue</ref>,<sp/><ref refid="stm32f4__system_8h_1a4003a3d14efff411a229ec11e9ac38b4" kindref="member">STM32F4_GPIO_MODE_AF</ref>,<sp/><ref refid="stm32f4__system_8h_1a137bdfc6e1be3a728c27f4f8426bbde5" kindref="member">STM32F4_GPIO_PUPDR_NOPULL</ref>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aa1e7f52e13f7ac3361326af3d8022e18" kindref="member">stm32f4_system_gpio_config_alternate</ref>(p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1aacef3e78bc275ba95e27a4d5e8387bc8" kindref="member">p_port_red</ref>,<sp/>p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1a075f54583fc99cb0bd4fde1ebc25cef2" kindref="member">pin_red</ref>,<sp/><ref refid="stm32f4__system_8h_1a7b0149d721c22b3f25381af2fabc2a5f" kindref="member">STM32F4_AF2</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aa1e7f52e13f7ac3361326af3d8022e18" kindref="member">stm32f4_system_gpio_config_alternate</ref>(p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1aa129acd2c7a83b790f20b25cb9d26a6a" kindref="member">p_port_green</ref>,<sp/>p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1a984cca26ee231a54d861bc35603d86a1" kindref="member">pin_green</ref>,<sp/><ref refid="stm32f4__system_8h_1a7b0149d721c22b3f25381af2fabc2a5f" kindref="member">STM32F4_AF2</ref>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__system_8h_1aa1e7f52e13f7ac3361326af3d8022e18" kindref="member">stm32f4_system_gpio_config_alternate</ref>(p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1a9fed7f2e8d53e6f33ace834a99c84a85" kindref="member">p_port_blue</ref>,<sp/>p_rgb_light-&gt;<ref refid="structstm32f4__rgb__light__hw__t_1a21a93f5b6c850494c22c56800e05886c" kindref="member">pin_blue</ref>,<sp/><ref refid="stm32f4__system_8h_1a7b0149d721c22b3f25381af2fabc2a5f" kindref="member">STM32F4_AF2</ref>);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Configure<sp/>TIMER<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__rgb__light_8c_1ad15bd82329b542c72155e9ff53502e90" kindref="member">_timer_pwm_config</ref>(rgb_light_id);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>RGB<sp/>LED<sp/>to<sp/>off<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__rgb__light_8c_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb</ref>(rgb_light_id,<sp/><ref refid="rgb__colors_8h_1aa9cafeaebaeef62f47b0d0a46643f9f3" kindref="member">color_off</ref>);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__rgb__light_8c_1a326965ec22f24d8ed258d8e288ab6c3f" kindref="member">port_rgb_light_set_rgb</ref>(uint8_t<sp/>rgb_light_id,<sp/><ref refid="structrgb__color__t" kindref="compound">rgb_color_t</ref><sp/>color)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>the<sp/>color<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>r<sp/>=<sp/>color.<ref refid="structrgb__color__t_1a43cb2f2dc1e60fa14bf93d90f9d7015e" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>g<sp/>=<sp/>color.<ref refid="structrgb__color__t_1ae73935f5f2386b4c62fd24a8ec6d5512" kindref="member">g</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>b<sp/>=<sp/>color.<ref refid="structrgb__color__t_1a6e7156f19f70236f20113f612b7ea1d2" kindref="member">b</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>El<sp/>CCRx<sp/>adapta<sp/>el<sp/>ciclo<sp/>de<sp/>trabajo.<sp/>Esta<sp/>parte<sp/>del<sp/>duty<sp/>cycle<sp/>la<sp/>rehacemos<sp/>cada<sp/>vez<sp/>que<sp/>se<sp/>cambia<sp/>de<sp/>RGB<sp/>light<sp/>aquí</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rgb_light_id<sp/>==<sp/><ref refid="port__rgb__light_8h_1aecab0eed2e6dad9f1d3c9504bd18a7d3" kindref="member">PORT_RGB_LIGHT_ID</ref>)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CNT<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>g<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>b<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC1E;<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC3E;<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC4E;<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC1E;<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Habilitamos<sp/>el<sp/>output<sp/>compare<sp/>en<sp/>el<sp/>registro<sp/>CCER<sp/>--&gt;<sp/>CCxE<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>4)<sp/>PWM<sp/>pulse<sp/>width</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCR1<sp/>=<sp/>(uint32_t)((((TIM4-&gt;ARR<sp/>+<sp/>1)<sp/>*<sp/>r)<sp/>/<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>)<sp/>-<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>Red<sp/>led<sp/>(channel<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>|=<sp/>TIM_CCER_CC1E;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC3E;<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCR3<sp/>=<sp/>(uint32_t)((((TIM4-&gt;ARR<sp/>+<sp/>1)<sp/>*<sp/>g)<sp/>/<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>)<sp/>-<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>Green<sp/>led<sp/>(channel<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>|=<sp/>TIM_CCER_CC3E;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>&amp;=<sp/>~TIM_CCER_CC4E;<sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCR4<sp/>=<sp/>(uint32_t)((((TIM4-&gt;ARR<sp/>+<sp/>1)<sp/>*<sp/>b)<sp/>/<sp/><ref refid="rgb__colors_8h_1a496b5cfd127db56a7a5191adf687cc8e" kindref="member">COLOR_RGB_MAX_VALUE</ref>)<sp/>-<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>Blue<sp/>led<sp/>(channel<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CCER<sp/>|=<sp/>TIM_CCER_CC4E;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>output<sp/>compare<sp/>for<sp/>channel<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>PSC<sp/>and<sp/>ARR<sp/>values<sp/>are<sp/>currently<sp/>in<sp/>the<sp/>preload<sp/>registers.<sp/>To<sp/>load<sp/>them<sp/>into<sp/>the<sp/>active<sp/>registers<sp/>we</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>need<sp/>an<sp/>update<sp/>event.<sp/>We<sp/>can<sp/>do<sp/>this<sp/>manually<sp/>as<sp/>follows<sp/>(or<sp/>we<sp/>could<sp/>wait<sp/>for<sp/>the<sp/>timer<sp/>to<sp/>expire).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;EGR<sp/>|=<sp/>TIM_EGR_UG;<sp/></highlight><highlight class="comment">//<sp/>6)<sp/>Update<sp/>generation:<sp/>Re-inicializa<sp/>el<sp/>contador<sp/>y<sp/>actualiza<sp/>los<sp/>registros.<sp/>IMPORTANTE<sp/>que<sp/>esté<sp/>lo<sp/>último</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIM4-&gt;CR1<sp/>|=<sp/>TIM_CR1_CEN;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="port/stm32f4/src/stm32f4_rgb_light.c"/>
+  </compounddef>
+</doxygen>

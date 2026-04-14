@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="interr_8c" kind="file" language="C++">
+    <compoundname>interr.c</compoundname>
+    <includes refid="port__system_8h" local="yes">port_system.h</includes>
+    <includes refid="stm32f4__system_8h" local="yes">stm32f4_system.h</includes>
+    <includes refid="port__button_8h" local="yes">port_button.h</includes>
+    <includes refid="stm32f4__button_8h" local="yes">stm32f4_button.h</includes>
+    <includes refid="port__keyboard_8h" local="yes">port_keyboard.h</includes>
+    <includes refid="stm32f4__keyboard_8h" local="yes">stm32f4_keyboard.h</includes>
+    <includes refid="port__simone_8h" local="yes">port_simone.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="9">
+        <label>port_keyboard.h</label>
+        <link refid="port__keyboard_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>port_system.h</label>
+        <link refid="port__system_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stm32f4_system.h</label>
+        <link refid="stm32f4__system_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>stm32f4_button.h</label>
+        <link refid="stm32f4__button_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>port_simone.h</label>
+        <link refid="port__simone_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>port/stm32f4/src/interr.c</label>
+        <link refid="interr_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>keyboards.h</label>
+        <link refid="keyboards_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>port_button.h</label>
+        <link refid="port__button_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stm32f4xx.h</label>
+      </node>
+      <node id="10">
+        <label>stm32f4_keyboard.h</label>
+        <link refid="stm32f4__keyboard_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _check_column_interrupt</definition>
+        <argsstring>(uint8_t column_index)</argsstring>
+        <name>_check_column_interrupt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>column_index</declname>
+        </param>
+        <briefdescription>
+<para>Check and handle the column interrupt for a given column index. This function is called from the EXTI IRQHandlers for each column. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><bold>TODO alumnos</bold> ✅ 1. Get the GPIO port and pin for the given column index from the keyboard struct <linebreak/>
+✅ 2. Read the GPIO pin state using the <computeroutput><ref refid="stm32f4__system_8h_1a47b09fba35fdd4d084f678e58bdb8c4d" kindref="member">stm32f4_system_gpio_read()</ref></computeroutput> function <linebreak/>
+✅ 3. If the pin state is HIGH, it means a key in that column has been pressed. In this case, set the <computeroutput>flag_key_pressed</computeroutput> field to <computeroutput>true</computeroutput>. Otherwise, the key has been released and thus, set it to <computeroutput>false</computeroutput> and store the index of the column that provoked the interrupt in the <computeroutput>col_idx_interrupt</computeroutput>. <linebreak/>
+✅ 4. Clear the interrupt pending flag for the column pin by writing &apos;1&apos; to the corresponding bit in the <computeroutput>PR</computeroutput> register <linebreak/>
+</para>
+</blockquote></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>column_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the column to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/interr.c" line="30" column="6" bodyfile="port/stm32f4/src/interr.c" bodystart="30" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="interr_8c_1ab5e09814056d617c521549e542639b7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SysTick_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>SysTick_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt service routine for the System tick timer (SysTick). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This ISR is called when the SysTick timer generates an interrupt. The program flow jumps to this ISR and increments the tick counter by one millisecond.</para>
+</simplesect>
+<blockquote><para><bold>TODO alumnos:</bold></para>
+<para>✅ 1. <bold>Increment the System tick counter <computeroutput>msTicks</computeroutput> in 1 count.</bold> To do so, use the function <computeroutput><ref refid="port__system_8h_1ab415270cfcefc90ed8b8842da4e3d4c6" kindref="member">port_system_get_millis()</ref></computeroutput> and <computeroutput><ref refid="port__system_8h_1abb94f01f1901334f3df650392be23009" kindref="member">port_system_set_millis()</ref></computeroutput>. </para>
+</blockquote></para>
+<para><simplesect kind="warning"><para><bold>The variable <computeroutput>msTicks</computeroutput> must be declared volatile!</bold> Just because it is modified by a call of an ISR, in order to avoid <ulink url="https://en.wikipedia.org/wiki/Race_condition"><emphasis>race conditions</emphasis></ulink> . <bold>Added to the definition</bold> after <emphasis>static</emphasis>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/interr.c" line="63" column="6" bodyfile="port/stm32f4/src/interr.c" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="interr_8c_1a738473a5b43f6c92b80ce1d3d6f77ed9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXTI15_10_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>EXTI15_10_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles Px10-Px15 global interrupts. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>First, this function identifies the line/ pin which has raised the interruption. Then, perform the desired action. Before leaving it cleans the interrupt pending register.</para>
+<para><blockquote><para><bold>TODO alumnos VERSION 1</bold></para>
+<para>✅ 1. Retrieve the values of the GPIO of the user button. Use the <ref refid="port__button_8h_1a9dea052c6ba3a808824929fd5cb47f90" kindref="member">PORT_USER_BUTTON_ID</ref> index to get the port and pin from the <computeroutput>buttons_arr</computeroutput> <linebreak/>
+✅ 2. If the value is HIGH means that the button as been released, therefore set the field <computeroutput>flag_pressed</computeroutput> to <computeroutput>false</computeroutput> <linebreak/>
+✅ 3. If the value is LOW means that the button as been pressed, therefore set the field <computeroutput>flag_pressed</computeroutput> to <computeroutput>true</computeroutput> <linebreak/>
+✅ 4. Clean the corresponding bit of the <computeroutput>PR</computeroutput> register <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 Recommendation: use the macro <ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK</ref> <linebreak/>
+<nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 <bold>To clean an interrupt in the <emphasis>Pending Register</emphasis> (<computeroutput>PR</computeroutput>) we must write &apos;1&apos; in the corresponding bit</bold>. <emphasis>Look at the example in section &quot;Ejemplo de interrupción externa&quot; of the reference book.</emphasis> You can also find this out by consulting the <emphasis>reference manual</emphasis> <ulink url="https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">STM32F446xx Advanced ARM-based 32-bit MCUs</ulink> (See section &quot;10.3.6 Pending register (EXTI_PR)&quot;) <linebreak/>
+</para>
+</blockquote></para>
+<para><blockquote><para><bold>TODO alumnos VERSION 2</bold></para>
+<para>✅ 1. Check if the interrupt has been generated by the column (column <ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aafd97501e44653025ddba88f1d6ffaefb" kindref="member">PORT_KEYBOARD_COL_1</ref>) of the keyboard. To do so, call the function <computeroutput><ref refid="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" kindref="member">_check_column_interrupt()</ref></computeroutput> with the right column index parameter <linebreak/>
+ * </para>
+</blockquote></para>
+<para><blockquote><para><bold>TODO alumnos VERSION 4</bold></para>
+<para>✅ 1. Call the function <computeroutput><ref refid="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" kindref="member">port_system_systick_resume()</ref></computeroutput> to resume the systick timer at the beginning of the ISR <linebreak/>
+</para>
+</blockquote></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/interr.c" line="91" column="6" bodyfile="port/stm32f4/src/interr.c" bodystart="91" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="interr_8c_1a290cb997018c8d85d4b965b4a242842f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXTI4_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>EXTI4_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles EXTI line 4 interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is called when a column line (column <ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aa05eb7989252414d8d081f51b18ab7178" kindref="member">PORT_KEYBOARD_COL_2</ref>) generates an interrupt. It checks if the corresponding GPIO pin is high, indicating that a key in that column has been pressed and released. If a key press is detected, it updates the keyboard state accordingly.</para>
+<para><blockquote><para><bold>TODO alumnos</bold></para>
+<para>✅ 1. Call the function <computeroutput><ref refid="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" kindref="member">_check_column_interrupt()</ref></computeroutput> with the right column index parameter for this ISR (i.e., <ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aa05eb7989252414d8d081f51b18ab7178" kindref="member">PORT_KEYBOARD_COL_2</ref>) <linebreak/>
+</para>
+</blockquote></para>
+<para><blockquote><para><bold>TODO alumnos VERSION 4</bold></para>
+<para>✅ 1. Call the function <computeroutput><ref refid="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" kindref="member">port_system_systick_resume()</ref></computeroutput> to resume the systick timer at the beginning of the ISR <linebreak/>
+</para>
+</blockquote></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/interr.c" line="134" column="6" bodyfile="port/stm32f4/src/interr.c" bodystart="134" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="interr_8c_1a7b2096b8b2643286dc3a7e5110e5ae85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXTI9_5_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>EXTI9_5_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles EXTI lines [9:5] interrupts. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is called when column lines (columns <ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aad7745c0c6559e84374ceb2d98ebbb47a" kindref="member">PORT_KEYBOARD_COL_0</ref> and <ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aa5aed44997b69e11f9b097ec51bff5c5e" kindref="member">PORT_KEYBOARD_COL_3</ref>) generate interrupts. It checks which GPIO pin triggered the interrupt and calls the corresponding handler to process the key press event.</para>
+<para><blockquote><para><bold>TODO alumnos</bold></para>
+<para>✅ 1. For each column (i.e., <ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aad7745c0c6559e84374ceb2d98ebbb47a" kindref="member">PORT_KEYBOARD_COL_0</ref> and <ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aa5aed44997b69e11f9b097ec51bff5c5e" kindref="member">PORT_KEYBOARD_COL_3</ref>), check if the corresponding EXTI line triggered the interrupt by checking the <computeroutput>PR</computeroutput> register. If it did, call the function <computeroutput><ref refid="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" kindref="member">_check_column_interrupt()</ref></computeroutput> with the right column index parameter <linebreak/>
+</para>
+</blockquote></para>
+<para><blockquote><para><bold>TODO alumnos VERSION 4</bold></para>
+<para>✅ 1. Call the function <computeroutput><ref refid="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" kindref="member">port_system_systick_resume()</ref></computeroutput> to resume the systick timer at the beginning of the ISR <linebreak/>
+</para>
+</blockquote></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/interr.c" line="157" column="6" bodyfile="port/stm32f4/src/interr.c" bodystart="157" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="interr_8c_1a5e66446caf21dd90191dc07a13ce2378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TIM5_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>TIM5_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt service routine for the TIM5 timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This timer controls the duration of the row excitation in the keyboard. When the timer interrupt occurs, it indicates that the duration of the row excitation has expired and a new row can be excited.</para>
+<para><blockquote><para><bold>TODO alumnos</bold></para>
+<para>✅ 1. Clear the interrupt flag <bold>UIF</bold> in the status register <bold>SR</bold>. <linebreak/>
+✅ 2. Set the flag that indicates that the row timeout has occurred. <linebreak/>
+</para>
+</blockquote></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/interr.c" line="188" column="6" bodyfile="port/stm32f4/src/interr.c" bodystart="188" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="interr_8c_1ac8e51d2183b5230cbd5481f8867adce9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TIM3_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>TIM3_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt service routine for the TIM3 timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This timer controls the different timing events of the Simone game. When the interrupt occurs it means that: a) the time of a color ON has passed, b) the time of the color OFF has passed, c) the time of waiting to a player keyboard pressed has passed.</para>
+<para><blockquote><para><bold>TODO alumnos</bold></para>
+<para>✅ 1. Clear the interrupt flag <bold>UIF</bold> in the status register <bold>SR</bold>. <linebreak/>
+✅ 2. Call the function <computeroutput>port_simone_set_timer_status()</computeroutput> to set the flag that indicates that the time has expired. </para>
+</blockquote></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="port/stm32f4/src/interr.c" line="210" column="6" bodyfile="port/stm32f4/src/interr.c" bodystart="210" bodyend="216"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interrupt service routines for the STM32F4 platform. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>SDG2. Román Cárdenas (<ulink url="mailto:r.cardenas@upm.es">r.cardenas@upm.es</ulink>) and Josué Pagán (<ulink url="mailto:j.pagan@upm.es">j.pagan@upm.es</ulink>) </para>
+</simplesect>
+<simplesect kind="date"><para>2026-12-01 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="comment">//<sp/>Include<sp/>HW<sp/>dependencies:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__system_8h" kindref="compound">port_system.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__system_8h" kindref="compound">stm32f4_system.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Include<sp/>headers<sp/>of<sp/>different<sp/>port<sp/>elements:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__button_8h" kindref="compound">port_button.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__button_8h" kindref="compound">stm32f4_button.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__keyboard_8h" kindref="compound">port_keyboard.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4__keyboard_8h" kindref="compound">stm32f4_keyboard.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="port__simone_8h" kindref="compound">port_simone.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>functions<sp/><sp/>-----------------------------------------------*/</highlight></codeline>
+<codeline lineno="30"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" kindref="member">_check_column_interrupt</ref>(uint8_t<sp/>column_index)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="structstm32f4__keyboard__hw__t" kindref="compound">stm32f4_keyboard_hw_t</ref><sp/>*p_keyboard<sp/>=<sp/>&amp;<ref refid="stm32f4__keyboard_8h_1ae69e26c4c86714f594c74601b4133ae8" kindref="member">keyboards_arr</ref>[<ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>the<sp/>column<sp/>GPIO<sp/>and<sp/>pin<sp/>for<sp/>clarity<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>GPIO_TypeDef<sp/>*col_port<sp/>=<sp/>p_keyboard-&gt;<ref refid="structstm32f4__keyboard__hw__t_1adc881a3a578666f3ba66cd83a9d1943e" kindref="member">p_col_ports</ref>[column_index];</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>uint8_t<sp/>col_pin<sp/>=<sp/>p_keyboard-&gt;<ref refid="structstm32f4__keyboard__hw__t_1a0861cc44a9f21f2fe9201a8d6a6843e6" kindref="member">p_col_pins</ref>[column_index];</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>GPIO<sp/>pin<sp/>state<sp/>and<sp/>update<sp/>the<sp/>key<sp/>pressed<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><ref refid="port__keyboard_8h_1ac0f06120b963a9aeda74ee26f3595478" kindref="member">port_keyboard_set_key_pressed_status</ref>(<ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>,<sp/><ref refid="stm32f4__system_8h_1a47b09fba35fdd4d084f678e58bdb8c4d" kindref="member">stm32f4_system_gpio_read</ref>(col_port,<sp/>col_pin));</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>p_keyboard-&gt;<ref refid="structstm32f4__keyboard__hw__t_1a90923a33d3e61bb751f6a6474ad64191" kindref="member">col_idx_interrupt</ref><sp/>=<sp/>column_index;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>the<sp/>interrupt<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>EXTI-&gt;PR<sp/>=<sp/><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK</ref>(col_pin);<sp/></highlight><highlight class="comment">//<sp/>Para<sp/>limpiar<sp/>el<sp/>flag<sp/>que<sp/>se<sp/>encuentre<sp/>a<sp/>‘1’<sp/>hay<sp/>que<sp/>escribir<sp/>un<sp/>‘1’<sp/>en<sp/>dicho<sp/>bit.<sp/>Escribir<sp/>‘0’<sp/>no<sp/>afecta<sp/>al<sp/>estado<sp/>del<sp/>bit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERRUPT<sp/>SERVICE<sp/>ROUTINES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interr_8c_1ab5e09814056d617c521549e542639b7e" kindref="member">SysTick_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><ref refid="port__system_8h_1abb94f01f1901334f3df650392be23009" kindref="member">port_system_set_millis</ref>(<ref refid="port__system_8h_1ab415270cfcefc90ed8b8842da4e3d4c6" kindref="member">port_system_get_millis</ref>()<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interr_8c_1a738473a5b43f6c92b80ce1d3d6f77ed9" kindref="member">EXTI15_10_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Version<sp/>4.<sp/>Enable<sp/>the<sp/>systick<sp/>after<sp/>an<sp/>interruption<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><ref refid="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" kindref="member">port_system_systick_resume</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>ISR<sp/>user<sp/>button<sp/>in<sp/>PC13<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(EXTI-&gt;PR<sp/>&amp;<sp/><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK</ref>(<ref refid="stm32f4__button_8h_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[<ref refid="port__button_8h_1a9dea052c6ba3a808824929fd5cb47f90" kindref="member">PORT_USER_BUTTON_ID</ref>].pin))</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>pin_value<sp/>=<sp/><ref refid="stm32f4__system_8h_1a47b09fba35fdd4d084f678e58bdb8c4d" kindref="member">stm32f4_system_gpio_read</ref>(<ref refid="stm32f4__button_8h_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[<ref refid="port__button_8h_1a9dea052c6ba3a808824929fd5cb47f90" kindref="member">PORT_USER_BUTTON_ID</ref>].p_port,<sp/><ref refid="stm32f4__button_8h_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[<ref refid="port__button_8h_1a9dea052c6ba3a808824929fd5cb47f90" kindref="member">PORT_USER_BUTTON_ID</ref>].pin);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pin_value)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stm32f4__button_8h_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[<ref refid="port__button_8h_1a9dea052c6ba3a808824929fd5cb47f90" kindref="member">PORT_USER_BUTTON_ID</ref>].<ref refid="structstm32f4__button__hw__t_1a71b5377630fd4caac186c168d92fcfce" kindref="member">flag_pressed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stm32f4__button_8h_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[<ref refid="port__button_8h_1a9dea052c6ba3a808824929fd5cb47f90" kindref="member">PORT_USER_BUTTON_ID</ref>].<ref refid="structstm32f4__button__hw__t_1a71b5377630fd4caac186c168d92fcfce" kindref="member">flag_pressed</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTI-&gt;PR<sp/>=<sp/><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK</ref>(<ref refid="stm32f4__button_8h_1a8ba28194477d2757430d0039b9580905" kindref="member">buttons_arr</ref>[<ref refid="port__button_8h_1a9dea052c6ba3a808824929fd5cb47f90" kindref="member">PORT_USER_BUTTON_ID</ref>].pin);<sp/></highlight><highlight class="comment">//<sp/>Para<sp/>limpiar<sp/>el<sp/>flag<sp/>que<sp/>se<sp/>encuentre<sp/>a<sp/>‘1’<sp/>hay<sp/>que<sp/>escribir<sp/>un<sp/>‘1’<sp/>en<sp/>dicho<sp/>bit.<sp/>Escribir<sp/>‘0’<sp/>no<sp/>afecta<sp/>al<sp/>estado<sp/>del<sp/>bit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ISR<sp/>column<sp/>1<sp/>of<sp/>the<sp/>keyboard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(EXTI-&gt;PR<sp/>&amp;<sp/><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK</ref>(<ref refid="stm32f4__keyboard_8h_1ae69e26c4c86714f594c74601b4133ae8" kindref="member">keyboards_arr</ref>[<ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>].p_col_pins[<ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aafd97501e44653025ddba88f1d6ffaefb" kindref="member">PORT_KEYBOARD_COL_1</ref>]))</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" kindref="member">_check_column_interrupt</ref>(<ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aafd97501e44653025ddba88f1d6ffaefb" kindref="member">PORT_KEYBOARD_COL_1</ref>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interr_8c_1a290cb997018c8d85d4b965b4a242842f" kindref="member">EXTI4_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Version<sp/>4.<sp/>Enable<sp/>the<sp/>systick<sp/>after<sp/>an<sp/>interruption<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><ref refid="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" kindref="member">port_system_systick_resume</ref>();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><ref refid="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" kindref="member">_check_column_interrupt</ref>(<ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aa05eb7989252414d8d081f51b18ab7178" kindref="member">PORT_KEYBOARD_COL_2</ref>);<sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interr_8c_1a7b2096b8b2643286dc3a7e5110e5ae85" kindref="member">EXTI9_5_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Version<sp/>4.<sp/>Enable<sp/>the<sp/>systick<sp/>after<sp/>an<sp/>interruption<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><ref refid="port__system_8h_1a2dca6b2c8ee48c36828b323f42c47fc8" kindref="member">port_system_systick_resume</ref>();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Check<sp/>which<sp/>EXTI<sp/>line<sp/>triggered<sp/>the<sp/>interrupt.<sp/>If<sp/>it<sp/>has<sp/>been<sp/>for<sp/>any<sp/>of<sp/>the<sp/>columns,<sp/>call<sp/>the<sp/>corresponding<sp/>handler<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(EXTI-&gt;PR<sp/>&amp;<sp/><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK</ref>(<ref refid="stm32f4__keyboard_8h_1ae69e26c4c86714f594c74601b4133ae8" kindref="member">keyboards_arr</ref>[<ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>].p_col_pins[<ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aad7745c0c6559e84374ceb2d98ebbb47a" kindref="member">PORT_KEYBOARD_COL_0</ref>]))</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" kindref="member">_check_column_interrupt</ref>(<ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aad7745c0c6559e84374ceb2d98ebbb47a" kindref="member">PORT_KEYBOARD_COL_0</ref>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(EXTI-&gt;PR<sp/>&amp;<sp/><ref refid="stm32f4__system_8h_1ad8e7767483a0c8f878cab29ad46ec656" kindref="member">BIT_POS_TO_MASK</ref>(<ref refid="stm32f4__keyboard_8h_1ae69e26c4c86714f594c74601b4133ae8" kindref="member">keyboards_arr</ref>[<ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>].p_col_pins[<ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aa5aed44997b69e11f9b097ec51bff5c5e" kindref="member">PORT_KEYBOARD_COL_3</ref>]))</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interr_8c_1ae4c79b53301f3eab9953e4dc8a89ba39" kindref="member">_check_column_interrupt</ref>(<ref refid="port__keyboard_8h_1aaeaf41c11383f114a0cb1ecdaaafaf2aa5aed44997b69e11f9b097ec51bff5c5e" kindref="member">PORT_KEYBOARD_COL_3</ref>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Row<sp/>excitation<sp/>timer<sp/>interrupt</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interr_8c_1a5e66446caf21dd90191dc07a13ce2378" kindref="member">TIM5_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>alumnos<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>TIM5-&gt;SR<sp/>&amp;=<sp/>~TIM_SR_UIF;<sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>the<sp/>interrupt<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>flag<sp/>to<sp/>notify<sp/>the<sp/>FSM<sp/>that<sp/>the<sp/>duration<sp/>has<sp/>expired,<sp/>and<sp/>a<sp/>new<sp/>row<sp/>can<sp/>be<sp/>excited</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><ref refid="port__keyboard_8h_1ae652d3e4324278a555817e5cdfc128a5" kindref="member">port_keyboard_set_row_timeout_status</ref>(<ref refid="port__keyboard_8h_1a8bfef2249dc4b02bcc1642e845181764" kindref="member">PORT_KEYBOARD_MAIN_ID</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Simone<sp/>timer</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interr_8c_1ac8e51d2183b5230cbd5481f8867adce9" kindref="member">TIM3_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>alumnos<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>TIM3-&gt;SR<sp/>&amp;=<sp/>~TIM_SR_UIF;<sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>the<sp/>interrupt<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><ref refid="port__simone_8h_1aa335548d76b681efd177a32ab4c08aa2" kindref="member">port_simone_set_timeout_status</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>flag<sp/>to<sp/>notify<sp/>the<sp/>FSM<sp/>that<sp/>the<sp/>timeout<sp/>has<sp/>expired</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="port/stm32f4/src/interr.c"/>
+  </compounddef>
+</doxygen>
