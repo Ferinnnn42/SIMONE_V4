@@ -636,7 +636,7 @@
 <p>Descarga del repositorio de la asignatura los ficheros correspondientes <strong>a la parte PORT y COMMON</strong> de la librería de <em>Simone</em> correspondientes a la versión <code>V4</code>: <a href="https://github.com/sdg2DieUpm/simone/tree/simone_v4">https://github.com/sdg2DieUpm/simone/tree/simone_v4</a> y colócalos en las carpetas correspondientes de tu proyecto.</p>
 <p><span style="color: Red"><strong>Comprobad los ficheros .h y .c de <code>PORT</code> y completad las funciones que no estén hechas. De igual modo, comprobad que estén todos los <code>#include</code> necesarios.</strong></span> En particular:</p>
 <ul>
-<li>las funciones <code>_timer_simone_setup()</code> y <code>port_simone_set_timer_timeout()</code> de <code>port_simone.c</code> debéis implementarlas, para lo que os podéis basar en el código del temporizador del teclado matricial.</li>
+<li>las funciones <code>_timer_simone_setup()</code> y <code>port_simone_set_timer_timeout()</code> de <code>port_simone.c</code> debéis implementarlas, para lo que os podéis basar en el código del temporizador del teclado matricial. La prioridad de esta interrupción deber ser <code>3</code> y la subprioridad <code>0</code>.</li>
 <li>La ISR <code>TIM3_IRQHandler()</code> de <code>interr.c</code> debe gestionar la interrupción del temporizador de <em>Simone</em> para controlar los tiempos de reproducción y de espera del usuario.</li>
 </ul>
 <h2 id="sec:fsm_simone_spec"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.5</span> FSM Simone. Especificación detallada<a class="headerlink" href="#sec:fsm_simone_spec" title="Permanent link">¶</a></h2>
@@ -728,7 +728,7 @@
 </table>
 <h5 id="cond:simone_idle_on"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.5.2.1.1</span> Transición (1): Por encendido del usuario<a class="headerlink" href="#cond:simone_idle_on" title="Permanent link">¶</a></h5>
 <p>La <strong>función de comprobación</strong> <code>check_on()</code> debe detectar si el jugador ha pulsado el botón de usuario durante el tiempo definido en <code>main.c</code> (<code>SIMONE_ON_OFF_PRESS_TIME_MS</code>). Si esto sucede, pasará al estado <a href="#sec:estado-add_color"><code>ADD_COLOR</code></a> para iniciar la partida.</p>
-<p>La <strong>función de acción</strong> <code>do_init_game()</code> inicializa las variables del juego. Debe resetear la duración del botón de usuario, la tecla del teclado matricial, los índices de control (<code>seq_idx</code>, <code>playback_idx</code>, <code>player_idx</code>), y las variables <code>playback_over</code>, y <code>player_key</code> (esta última al carácter definido en <code>KEY_NO_KEY_PRESSED</code>).</p>
+<p>La <strong>función de acción</strong> <code>do_init_game()</code> inicializa las variables del juego. Debe resetear la duración del botón de usuario, la tecla del teclado matricial, los índices de control (<code>seq_idx</code>, <code>playback_idx</code>, <code>player_idx</code>), y las variables <code>playback_over</code>, y <code>player_key</code> (esta última al carácter <code>invalid_key</code> del teclado matricial).</p>
 <p>El nivel de dificultad lo inicializa a <code>LEVEL_EASY</code>. Inicializa cada elemento del array de secuencia de colores al color <code>color_off</code> (ver colores en <code>rgb_colors.c</code>), y cada elemento del array de las intensidades a <code>0</code>.</p>
 <p>Llama a una <strong>función privada auxiliar</strong> (<code>_add_color()</code>) pasándole un puntero a la máquina de estados de Simone <strong>para añadir un color e intensidad aleatorios a la secuencia</strong>. Será el primer color de la ronda 1.</p>
 <p>Para que el LED RGB muestre el color, esta función debe activar el <em>status</em> de la FSM RGB light llamando a la función apropiada de dicha FSM.</p>
@@ -894,7 +894,7 @@
 <p>La <strong>función de acción</strong> <code>do_add_color()</code> prepara el sistema para el siguiente nivel o secuencia. Puedes ver su lógica detallada en el <a href="#fig:flowchart_do_add_color">flujograma</a>.</p>
 <figure><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/notebook_imgs/pr_chapters/version_4/flowchart_do_add_color.png"><img alt="Diagrama de flujo de la función `do_add_color()`." id="fig:flowchart_do_add_color" src="../assets/notebook_imgs/pr_chapters/version_4/flowchart_do_add_color.png" style="width:70.0%"/></a><figcaption aria-hidden="true">Diagrama de flujo de la función `do_add_color()`.</figcaption></figure>
 <h5 id="cond:simone_wait_any_key"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.5.2.4.5</span> Transición (5): Pulsación de una tecla<a class="headerlink" href="#cond:simone_wait_any_key" title="Permanent link">¶</a></h5>
-<p>La <strong>función de comprobación</strong> <code>check_any_key_pressed()</code> utiliza el driver del teclado para detectar si hay alguna tecla disponible en el buffer. Devuelve <code>true</code> si el usuario ha pulsado algo (valor de tecla leída es distinto de <code>KEY_NO_KEY_PRESSED</code>). En tal caso, el sistema transiciona al estado intermedio <a href="#sec:estado-verify_input"><code>VERIFY_INPUT</code></a> para validar la pulsación.</p>
+<p>La <strong>función de comprobación</strong> <code>check_any_key_pressed()</code> utiliza el driver del teclado para detectar si hay alguna tecla disponible en el buffer. Devuelve <code>true</code> si el usuario ha pulsado algo (valor de tecla leída es distinto de <code>invalid_key</code>). En tal caso, el sistema transiciona al estado intermedio <a href="#sec:estado-verify_input"><code>VERIFY_INPUT</code></a> para validar la pulsación.</p>
 <p>La <strong>función de acción</strong> <code>do_capture_input()</code> realiza de nuevo la lectura de la tecla pulsada y proporciona <em>feedback</em> visual inmediato al usuario del color de la tecla que haya pulsado (sea correcta, o no). Debe:</p>
 <ol>
 <li><strong>Obtiene la tecla del teclado</strong> y la guarda en la variable <code>player_key</code>. Luego, <strong>resetea el valor de la tecla</strong> del teclado para evitar lecturas repetidas usando la función correspondiente de la FSM del teclado.</li>
@@ -931,7 +931,7 @@
 <ol>
 <li><strong>Apagar</strong> el LED con el color <code>color_off</code>.</li>
 <li><strong>Aumentar</strong> el índice del jugador.</li>
-<li><strong>Reiniciar la tecla</strong> guardada en la estructura a <code>KEY_NO_KEY_PRESSED</code>.</li>
+<li><strong>Reiniciar la tecla</strong> guardada en la estructura a <code>invalid_key</code> del teclado matricial.</li>
 <li><strong>Reiniciar el temporizador</strong> (<code>port_simone_set_timer_timeout()</code>) para dar tiempo al usuario a pulsar la siguiente tecla.</li>
 </ol>
 <h5 id="cond:simone_verify_invalid"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.5.2.5.2</span> Transición (2): Tecla incorrecta<a class="headerlink" href="#cond:simone_verify_invalid" title="Permanent link">¶</a></h5>
