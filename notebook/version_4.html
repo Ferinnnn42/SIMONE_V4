@@ -636,7 +636,7 @@
 <p>Descarga del repositorio de la asignatura los ficheros correspondientes <strong>a la parte PORT y COMMON</strong> de la librería de <em>Simone</em> correspondientes a la versión <code>V4</code>: <a href="https://github.com/sdg2DieUpm/simone/tree/simone_v4">https://github.com/sdg2DieUpm/simone/tree/simone_v4</a> y colócalos en las carpetas correspondientes de tu proyecto.</p>
 <p><span style="color: Red"><strong>Comprobad los ficheros .h y .c de <code>PORT</code> y completad las funciones que no estén hechas. De igual modo, comprobad que estén todos los <code>#include</code> necesarios.</strong></span> En particular:</p>
 <ul>
-<li>las funciones <code>_timer_simone_setup()</code> y <code>port_simone_set_timer_timeout()</code> de <code>port_simone.c</code> debéis implementarlas, para lo que os podéis basar en el código del temporizador del teclado matricial. La prioridad de esta interrupción deber ser <code>3</code> y la subprioridad <code>0</code>.</li>
+<li>las funciones <code>_timer_simone_setup()</code> y <code>port_simone_set_timer_timeout()</code> de <code>stm32f4_simone.c</code> debéis implementarlas, para lo que os podéis basar en el código del temporizador del teclado matricial. La prioridad de esta interrupción deber ser <code>3</code> y la subprioridad <code>0</code>.</li>
 <li>La ISR <code>TIM3_IRQHandler()</code> de <code>interr.c</code> debe gestionar la interrupción del temporizador de <em>Simone</em> para controlar los tiempos de reproducción y de espera del usuario.</li>
 </ul>
 <h2 id="sec:fsm_simone_spec"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.5</span> FSM Simone. Especificación detallada<a class="headerlink" href="#sec:fsm_simone_spec" title="Permanent link">¶</a></h2>
