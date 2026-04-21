@@ -287,7 +287,7 @@
 <para>This timer controls the different timing events of the Simone game. When the interrupt occurs it means that: a) the time of a color ON has passed, b) the time of the color OFF has passed, c) the time of waiting to a player keyboard pressed has passed.</para>
 <para><blockquote><para><bold>TODO alumnos</bold></para>
 <para>✅ 1. Clear the interrupt flag <bold>UIF</bold> in the status register <bold>SR</bold>. <linebreak/>
-✅ 2. Call the function <computeroutput>port_simone_set_timer_status()</computeroutput> to set the flag that indicates that the time has expired. </para>
+✅ 2. Call the function <computeroutput><ref refid="port__simone_8h_1aa335548d76b681efd177a32ab4c08aa2" kindref="member">port_simone_set_timeout_status()</ref></computeroutput> to set the flag that indicates that the time has expired. </para>
 </blockquote></para>
         </detaileddescription>
         <inbodydescription>
