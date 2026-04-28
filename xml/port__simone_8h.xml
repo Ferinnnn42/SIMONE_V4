@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/include/port_simone.h" line="26" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="132" bodyend="140" declfile="port/include/port_simone.h" declline="26" declcolumn="6"/>
+        <location file="port/include/port_simone.h" line="26" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="131" bodyend="139" declfile="port/include/port_simone.h" declline="26" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="port__simone_8h_1aecf94fdc86b9a81d5b71a274e9ba0069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/include/port_simone.h" line="45" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="71" bodyend="111" declfile="port/include/port_simone.h" declline="45" declcolumn="6"/>
+        <location file="port/include/port_simone.h" line="45" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="70" bodyend="110" declfile="port/include/port_simone.h" declline="45" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="port__simone_8h_1af525b52313df726725a11d94f165fd7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -126,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/include/port_simone.h" line="52" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="113" bodyend="120" declfile="port/include/port_simone.h" declline="52" declcolumn="6"/>
+        <location file="port/include/port_simone.h" line="52" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="112" bodyend="119" declfile="port/include/port_simone.h" declline="52" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="port__simone_8h_1ab570111b9501fac8d037cebd8094d6c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/include/port_simone.h" line="60" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="122" bodyend="125" declfile="port/include/port_simone.h" declline="60" declcolumn="6"/>
+        <location file="port/include/port_simone.h" line="60" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="121" bodyend="124" declfile="port/include/port_simone.h" declline="60" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="port__simone_8h_1aa335548d76b681efd177a32ab4c08aa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/include/port_simone.h" line="67" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="127" bodyend="130" declfile="port/include/port_simone.h" declline="67" declcolumn="6"/>
+        <location file="port/include/port_simone.h" line="67" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="126" bodyend="129" declfile="port/include/port_simone.h" declline="67" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

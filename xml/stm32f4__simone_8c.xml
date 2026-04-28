@@ -114,15 +114,14 @@
 <nonbreakablespace/><nonbreakablespace/><nonbreakablespace/><nonbreakablespace/>💡 To know if the source clock is <computeroutput>APB1</computeroutput> or <computeroutput>APB2</computeroutput>, check the clock tree in the datasheet (<ulink url="https://www.st.com/en/microcontrollers-microprocessors/stm32f446re.html">Figure 3. STM32F446xC/E block diagram</ulink>) <linebreak/>
 ✅ 2. Disable the counter (register <computeroutput>CR1</computeroutput>) and enable the autoreload preaload (bit <computeroutput>ARPE</computeroutput>) <linebreak/>
 ✅ 3. Clean the Update Interrupt flag (register <computeroutput>SR</computeroutput>) <linebreak/>
-✅ 4. Enable the Update Interrupt (register <computeroutput>DIER</computeroutput>) <linebreak/>
-✅ 5. Set the priority and the subpriority of the interrupt <linebreak/>
-✅ 6. Enable the interrupt in the NVIC <linebreak/>
+✅ 4. Set the priority and the subpriority of the interrupt <linebreak/>
+✅ 5. Enable the interrupt in the NVIC <linebreak/>
 </para>
 </blockquote></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/stm32f4/src/stm32f4_simone.c" line="49" column="13" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="49" bodyend="68"/>
+        <location file="port/stm32f4/src/stm32f4_simone.c" line="48" column="13" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="48" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="stm32f4__simone_8c_1aecf94fdc86b9a81d5b71a274e9ba0069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -161,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/stm32f4/src/stm32f4_simone.c" line="71" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="71" bodyend="111"/>
+        <location file="port/stm32f4/src/stm32f4_simone.c" line="70" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="70" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="stm32f4__simone_8c_1af525b52313df726725a11d94f165fd7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -179,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/stm32f4/src/stm32f4_simone.c" line="113" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="113" bodyend="120"/>
+        <location file="port/stm32f4/src/stm32f4_simone.c" line="112" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="112" bodyend="119"/>
       </memberdef>
       <memberdef kind="function" id="stm32f4__simone_8c_1ab570111b9501fac8d037cebd8094d6c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -201,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/stm32f4/src/stm32f4_simone.c" line="122" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="122" bodyend="125"/>
+        <location file="port/stm32f4/src/stm32f4_simone.c" line="121" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="121" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="stm32f4__simone_8c_1aa335548d76b681efd177a32ab4c08aa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -229,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/stm32f4/src/stm32f4_simone.c" line="127" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="127" bodyend="130"/>
+        <location file="port/stm32f4/src/stm32f4_simone.c" line="126" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="126" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="stm32f4__simone_8c_1a9f7a1c285366f8d0121f04e8a69bd1ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -252,7 +251,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="port/stm32f4/src/stm32f4_simone.c" line="132" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="132" bodyend="140"/>
+        <location file="port/stm32f4/src/stm32f4_simone.c" line="131" column="6" bodyfile="port/stm32f4/src/stm32f4_simone.c" bodystart="131" bodyend="139"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -285,98 +284,98 @@
 <codeline lineno="30"><highlight class="normal"><ref refid="structstm32f4__simone__hw__t" kindref="compound">stm32f4_simone_hw_t</ref><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>functions<sp/>----------------------------------------------------------*/</highlight></codeline>
-<codeline lineno="49"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1a7060497e77195bb15215cf7e069deba1" kindref="member">_timer_simone_setup</ref>()</highlight></codeline>
-<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>IMPORTANTE:<sp/>LOS<sp/>REGISTROS<sp/>DE<sp/>32<sp/>BITS<sp/>HAN<sp/>DE<sp/>ESCRIBIRSE<sp/>DE<sp/>32<sp/>EN<sp/>32.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TIMER<sp/>SYMBOL:<sp/>TMR2<sp/>(hay<sp/>que<sp/>tocar<sp/>5<sp/>registros)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>RCC-&gt;APB1ENR<sp/>|=<sp/>RCC_APB1ENR_TIM3EN;<sp/></highlight><highlight class="comment">//<sp/>1)<sp/>Hay<sp/>que<sp/>habilitar<sp/>la<sp/>fuente<sp/>de<sp/>reloj.<sp/>IMPORTANTE<sp/>que<sp/>esté<sp/>lo<sp/>primero</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Por<sp/>defecto<sp/>la<sp/>fuente<sp/>es<sp/>interna<sp/>(bits<sp/>CKD=00<sp/>in<sp/>TIM3-&gt;CR1<sp/>register)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;<sp/></highlight><highlight class="comment">//<sp/>2)<sp/><sp/>Disable<sp/>counter.<sp/>(no<sp/>es<sp/>indispensable).</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>|=<sp/>TIM_CR1_ARPE;<sp/></highlight><highlight class="comment">//<sp/>Autoreload<sp/>preload<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>set<sp/>the<sp/>ARR<sp/>register<sp/>here.<sp/>It<sp/>will<sp/>be<sp/>set<sp/>with<sp/>the<sp/>timeout<sp/>duration.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;SR<sp/>&amp;=<sp/>~TIM_SR_UIF;<sp/></highlight><highlight class="comment">//<sp/>Limpiamos<sp/>interrupciones</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TIM3-&gt;CR1<sp/>|=<sp/>TIM_CR1_CEN;<sp/>//<sp/>Por<sp/>último,<sp/>habilita<sp/>el<sp/>timer<sp/>1<sp/>(si<sp/>es<sp/>necesario)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Elegimos<sp/>prioridad<sp/>de<sp/>interrupciones<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Configure<sp/>interruptions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>NVIC_SetPriority(TIM3_IRQn,<sp/>NVIC_EncodePriority(NVIC_GetPriorityGrouping(),<sp/>3,<sp/>0));<sp/></highlight><highlight class="comment">/*<sp/>Priority<sp/>3,<sp/>sub-priority<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>NVIC_EnableIRQ(TIM3_IRQn);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enable<sp/>interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Public<sp/>functions<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1aecf94fdc86b9a81d5b71a274e9ba0069" kindref="member">port_simone_set_timer_timeout</ref>(uint32_t<sp/>duration_ms)</highlight></codeline>
-<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CNT<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>ARR<sp/>and<sp/>PSC<sp/>to<sp/>match<sp/>the<sp/>duration<sp/>in<sp/>milliseconds.<sp/>Check<sp/>if<sp/>the<sp/>duration<sp/>is<sp/>too<sp/>long<sp/>and<sp/>adapt<sp/>prescaler<sp/>and<sp/>ARR</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ms<sp/>=<sp/>(double)duration_ms;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scc<sp/>=<sp/>(double)<ref refid="stm32f4__system_8c_1aa3cd3e43291e81e795d642b79b6088e6" kindref="member">SystemCoreClock</ref>;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>psc<sp/>=<sp/>round((((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(65535.0<sp/>+<sp/>1.0))<sp/>-<sp/>1.0);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>arr<sp/>=<sp/>round((((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(psc<sp/>+<sp/>1.0))<sp/>-<sp/>1.0);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Adjust<sp/>psc<sp/>and<sp/>arr<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(arr<sp/>&gt;<sp/>0xFFFF)</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psc<sp/>+=<sp/>1.0;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr<sp/>=<sp/>round(((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(psc<sp/>+<sp/>1.0)<sp/>-<sp/>1.0);</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>the<sp/>values</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;ARR<sp/>=<sp/>(uint32_t)(round(arr));</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;PSC<sp/>=<sp/>(uint32_t)(round(psc));</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>PSC<sp/>and<sp/>ARR<sp/>values<sp/>are<sp/>currently<sp/>in<sp/>the<sp/>preload<sp/>registers.<sp/>To<sp/>load<sp/>them<sp/>into<sp/>the<sp/>active<sp/>registers<sp/>we</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>need<sp/>an<sp/>update<sp/>event.<sp/>We<sp/>can<sp/>do<sp/>this<sp/>manually<sp/>as<sp/>follows<sp/>(or<sp/>we<sp/>could<sp/>wait<sp/>for<sp/>the<sp/>timer<sp/>to<sp/>expire).</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;EGR<sp/>|=<sp/>TIM_EGR_UG;<sp/></highlight><highlight class="comment">//<sp/>6)<sp/>Update<sp/>generation:<sp/>Re-inicializa<sp/>el<sp/>contador<sp/>y<sp/>actualiza<sp/>los<sp/>registros.<sp/>IMPORTANTE<sp/>que<sp/>esté<sp/>lo<sp/>último</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>pending<sp/>interrupt<sp/>flag<sp/>generated<sp/>when<sp/>doing<sp/>the<sp/>update<sp/>event</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;SR<sp/>&amp;=<sp/>~TIM_SR_UIF;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>enable<sp/>the<sp/>update<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;DIER<sp/>|=<sp/>TIM_DIER_UIE;<sp/></highlight><highlight class="comment">//<sp/>Habilita<sp/>las<sp/>interrupciones<sp/>en<sp/>el<sp/>registro</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IMPORTANT!<sp/>Reset<sp/>the<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>.<ref refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" kindref="member">flag_timer_timeout</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>|=<sp/>TIM_CR1_CEN;</highlight></codeline>
-<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1af525b52313df726725a11d94f165fd7e" kindref="member">port_simone_stop_timer</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>update<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;DIER<sp/>&amp;=<sp/>~TIM_DIER_UIE;</highlight></codeline>
-<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1ab570111b9501fac8d037cebd8094d6c0" kindref="member">port_simone_get_timeout_status</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>.<ref refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" kindref="member">flag_timer_timeout</ref>;</highlight></codeline>
-<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1aa335548d76b681efd177a32ab4c08aa2" kindref="member">port_simone_set_timeout_status</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
-<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>.<ref refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" kindref="member">flag_timer_timeout</ref><sp/>=<sp/>status;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1a9f7a1c285366f8d0121f04e8a69bd1ca" kindref="member">port_simone_init</ref>()</highlight></codeline>
-<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>alumnos:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>flag<sp/>of<sp/>the<sp/>timer<sp/>timout</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>.<ref refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" kindref="member">flag_timer_timeout</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configure<sp/>the<sp/>timer<sp/>that<sp/>controls<sp/>the<sp/>duration<sp/>of<sp/>the<sp/>different<sp/>aspects<sp/>of<sp/>the<sp/>game</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__simone_8c_1a7060497e77195bb15215cf7e069deba1" kindref="member">_timer_simone_setup</ref>();</highlight></codeline>
-<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1a7060497e77195bb15215cf7e069deba1" kindref="member">_timer_simone_setup</ref>()</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>IMPORTANTE:<sp/>LOS<sp/>REGISTROS<sp/>DE<sp/>32<sp/>BITS<sp/>HAN<sp/>DE<sp/>ESCRIBIRSE<sp/>DE<sp/>32<sp/>EN<sp/>32.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TIMER<sp/>SYMBOL:<sp/>TMR2<sp/>(hay<sp/>que<sp/>tocar<sp/>5<sp/>registros)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>RCC-&gt;APB1ENR<sp/>|=<sp/>RCC_APB1ENR_TIM3EN;<sp/></highlight><highlight class="comment">//<sp/>1)<sp/>Hay<sp/>que<sp/>habilitar<sp/>la<sp/>fuente<sp/>de<sp/>reloj.<sp/>IMPORTANTE<sp/>que<sp/>esté<sp/>lo<sp/>primero</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Por<sp/>defecto<sp/>la<sp/>fuente<sp/>es<sp/>interna<sp/>(bits<sp/>CKD=00<sp/>in<sp/>TIM3-&gt;CR1<sp/>register)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;<sp/></highlight><highlight class="comment">//<sp/>2)<sp/><sp/>Disable<sp/>counter.<sp/>(no<sp/>es<sp/>indispensable).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>|=<sp/>TIM_CR1_ARPE;<sp/></highlight><highlight class="comment">//<sp/>Autoreload<sp/>preload<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>set<sp/>the<sp/>ARR<sp/>register<sp/>here.<sp/>It<sp/>will<sp/>be<sp/>set<sp/>with<sp/>the<sp/>timeout<sp/>duration.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;SR<sp/>&amp;=<sp/>~TIM_SR_UIF;<sp/></highlight><highlight class="comment">//<sp/>Limpiamos<sp/>interrupciones</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TIM3-&gt;CR1<sp/>|=<sp/>TIM_CR1_CEN;<sp/>//<sp/>Por<sp/>último,<sp/>habilita<sp/>el<sp/>timer<sp/>1<sp/>(si<sp/>es<sp/>necesario)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Elegimos<sp/>prioridad<sp/>de<sp/>interrupciones<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Configure<sp/>interruptions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>NVIC_SetPriority(TIM3_IRQn,<sp/>NVIC_EncodePriority(NVIC_GetPriorityGrouping(),<sp/>3,<sp/>0));<sp/></highlight><highlight class="comment">/*<sp/>Priority<sp/>3,<sp/>sub-priority<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>NVIC_EnableIRQ(TIM3_IRQn);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enable<sp/>interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Public<sp/>functions<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1aecf94fdc86b9a81d5b71a274e9ba0069" kindref="member">port_simone_set_timer_timeout</ref>(uint32_t<sp/>duration_ms)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CNT<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>ARR<sp/>and<sp/>PSC<sp/>to<sp/>match<sp/>the<sp/>duration<sp/>in<sp/>milliseconds.<sp/>Check<sp/>if<sp/>the<sp/>duration<sp/>is<sp/>too<sp/>long<sp/>and<sp/>adapt<sp/>prescaler<sp/>and<sp/>ARR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ms<sp/>=<sp/>(double)duration_ms;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scc<sp/>=<sp/>(double)<ref refid="stm32f4__system_8c_1aa3cd3e43291e81e795d642b79b6088e6" kindref="member">SystemCoreClock</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>psc<sp/>=<sp/>round((((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(65535.0<sp/>+<sp/>1.0))<sp/>-<sp/>1.0);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>arr<sp/>=<sp/>round((((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(psc<sp/>+<sp/>1.0))<sp/>-<sp/>1.0);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Adjust<sp/>psc<sp/>and<sp/>arr<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(arr<sp/>&gt;<sp/>0xFFFF)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psc<sp/>+=<sp/>1.0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr<sp/>=<sp/>round(((scc<sp/>/<sp/>1000.0)<sp/>*<sp/>ms)<sp/>/<sp/>(psc<sp/>+<sp/>1.0)<sp/>-<sp/>1.0);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>the<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;ARR<sp/>=<sp/>(uint32_t)(round(arr));</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;PSC<sp/>=<sp/>(uint32_t)(round(psc));</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>PSC<sp/>and<sp/>ARR<sp/>values<sp/>are<sp/>currently<sp/>in<sp/>the<sp/>preload<sp/>registers.<sp/>To<sp/>load<sp/>them<sp/>into<sp/>the<sp/>active<sp/>registers<sp/>we</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>need<sp/>an<sp/>update<sp/>event.<sp/>We<sp/>can<sp/>do<sp/>this<sp/>manually<sp/>as<sp/>follows<sp/>(or<sp/>we<sp/>could<sp/>wait<sp/>for<sp/>the<sp/>timer<sp/>to<sp/>expire).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;EGR<sp/>|=<sp/>TIM_EGR_UG;<sp/></highlight><highlight class="comment">//<sp/>6)<sp/>Update<sp/>generation:<sp/>Re-inicializa<sp/>el<sp/>contador<sp/>y<sp/>actualiza<sp/>los<sp/>registros.<sp/>IMPORTANTE<sp/>que<sp/>esté<sp/>lo<sp/>último</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>pending<sp/>interrupt<sp/>flag<sp/>generated<sp/>when<sp/>doing<sp/>the<sp/>update<sp/>event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;SR<sp/>&amp;=<sp/>~TIM_SR_UIF;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>enable<sp/>the<sp/>update<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;DIER<sp/>|=<sp/>TIM_DIER_UIE;<sp/></highlight><highlight class="comment">//<sp/>Habilita<sp/>las<sp/>interrupciones<sp/>en<sp/>el<sp/>registro</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IMPORTANT!<sp/>Reset<sp/>the<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>.<ref refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" kindref="member">flag_timer_timeout</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>|=<sp/>TIM_CR1_CEN;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1af525b52313df726725a11d94f165fd7e" kindref="member">port_simone_stop_timer</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;CR1<sp/>&amp;=<sp/>~TIM_CR1_CEN;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>the<sp/>update<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>TIM3-&gt;DIER<sp/>&amp;=<sp/>~TIM_DIER_UIE;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1ab570111b9501fac8d037cebd8094d6c0" kindref="member">port_simone_get_timeout_status</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>.<ref refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" kindref="member">flag_timer_timeout</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1aa335548d76b681efd177a32ab4c08aa2" kindref="member">port_simone_set_timeout_status</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>.<ref refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" kindref="member">flag_timer_timeout</ref><sp/>=<sp/>status;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4__simone_8c_1a9f7a1c285366f8d0121f04e8a69bd1ca" kindref="member">port_simone_init</ref>()</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>alumnos:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>flag<sp/>of<sp/>the<sp/>timer<sp/>timout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__simone_8c_1a2a9897e274c0c2fb1ab6c11ae4ce2045" kindref="member">simone_hw</ref>.<ref refid="structstm32f4__simone__hw__t_1a9687dac9a2ec4ee95a8f938627312b35" kindref="member">flag_timer_timeout</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configure<sp/>the<sp/>timer<sp/>that<sp/>controls<sp/>the<sp/>duration<sp/>of<sp/>the<sp/>different<sp/>aspects<sp/>of<sp/>the<sp/>game</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stm32f4__simone_8c_1a7060497e77195bb15215cf7e069deba1" kindref="member">_timer_simone_setup</ref>();</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="port/stm32f4/src/stm32f4_simone.c"/>
   </compounddef>
