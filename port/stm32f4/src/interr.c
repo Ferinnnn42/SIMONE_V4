@@ -129,5 +129,5 @@ void TIM5_IRQHandler(void)
 void TIM3_IRQHandler(void)
 {
     TIM3->SR &= ~TIM_SR_UIF;            // We clean the update flag of TIM3 to avoid that the interruption is generated again immediately after exiting the ISR
-    port_simone_set_timer_status(true); // We update the timeout flag of simone to indicate that a timeout has occurred
+    port_simone_set_timeout_status(true); // We update the timeout flag of simone to indicate that a timeout has occurred
 }

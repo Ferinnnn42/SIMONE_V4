@@ -186,6 +186,7 @@ void fsm_rgb_light_set_color_intensity(fsm_rgb_light_t *p_fsm, rgb_color_t color
     p_fsm->color = color;                   /* Set the new color in the FSM struct */
     p_fsm->intensity_perc = intensity_perc; /* Set the new intensity percentage in the FSM struct */
     p_fsm->new_color = true;                /* Set the new_color flag to true to indicate that a new color has to be set */
+    p_fsm->idle = false;                   /* Clear the idle flag to indicate that the RGB light system is not idle */
 }
 
 bool fsm_rgb_light_get_status(fsm_rgb_light_t *p_fsm)

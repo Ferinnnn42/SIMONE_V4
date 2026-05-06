@@ -1,9 +1,9 @@
 /**
  * @file stm32f4_rgb_light.h
  * @brief Header for stm32f4_rgb_light.c file.
- * @author alumno1
- * @author alumno2
- * @date fecha
+ * @author Fernando Ingelmo Ajejas
+ * @author Paula Rodríguez Hernández
+ * @date 21/04/2026
  */
 #ifndef STM32F4_RGB_LIGHT_SYSTEM_H_
 #define STM32F4_RGB_LIGHT_SYSTEM_H_

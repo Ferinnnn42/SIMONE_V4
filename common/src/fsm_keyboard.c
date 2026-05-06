@@ -147,19 +147,19 @@ bool fsm_keyboard_check_activity(fsm_keyboard_t *p_fsm)
 /* State machine output or action functions */
 
 static fsm_trans_t fsm_trans_keyboard[] = {
-    // 1. First: If there is a key pressed, we will wait for the debounce
+    //First: If there is a key pressed, we will wait for the debounce
     {KEYBOARD_RELEASED_WAIT_ROW, check_keyboard_pressed, KEYBOARD_PRESSED_WAIT, do_store_tick_pressed},
 
-    // 2. Second: If there is no key pressed, we continue scanning rows
+    //Second: If there is no key pressed, we continue scanning rows
     {KEYBOARD_RELEASED_WAIT_ROW, check_row_timeout, KEYBOARD_RELEASED_WAIT_ROW, do_excite_next_row},
 
-    // 3. Debouncing: Wait for the signal to be stable
+    //Third: Debouncing, Wait for the signal to be stable
     {KEYBOARD_PRESSED_WAIT, check_timeout, KEYBOARD_PRESSED, NULL},
 
-    // 4. Wait for the key to be released
+    //Fourth: Wait for the key to be released
     {KEYBOARD_PRESSED, check_keyboard_released, KEYBOARD_RELEASED_WAIT, do_set_key_value},
 
-    // 5. Timeout to allow rescan (Prevents infinite repetitions)
+    //Fifth: Timeout to allow rescan (Prevents infinite repetitions)
     {KEYBOARD_RELEASED_WAIT, check_timeout, KEYBOARD_RELEASED_WAIT_ROW, NULL},
 
     {-1, NULL, -1, NULL}};

@@ -307,20 +307,20 @@ void stm32f4_system_gpio_config_alternate(GPIO_TypeDef *p_port, uint8_t pin, uin
 
 bool stm32f4_system_gpio_read(GPIO_TypeDef *p_port, uint8_t pin)
 {
-  uint32_t mask = BIT_POS_TO_MASK(pin); // Creamos la mascara usando la macro para convertir la pos del pin en una máscara de bits
+  uint32_t mask = BIT_POS_TO_MASK(pin); // Create the mask using the macro to convert the pin position into a bit mask
 
-  uint32_t registro = p_port->IDR;      // Leemos el registro en el que se encuentran todos los pines del puerto
-  uint32_t valor_bit = registro & mask; // hago un AND para poder leer el valor del bit mediante el producto bit a bit
+  uint32_t registro = p_port->IDR;      // Read the register where all the pins of the port are located
+  uint32_t valor_bit = registro & mask; // Perform an AND operation to read the value of the bit
 
-  return (bool)valor_bit; // como el valor solo puede ser 1 o 0, devuelve el valor como true = 1 y false = 0 gracias al casteo de bool
+  return (bool)valor_bit; // Since the value can only be 1 or 0, return the value as true = 1 and false = 0 thanks to the bool cast
 }
 
 void stm32f4_system_gpio_write(GPIO_TypeDef *p_port, uint8_t pin, bool value)
 {
-  uint32_t mask_1 = BIT_POS_TO_MASK(pin);      // Para acceder a la parte baja del registro, la mascara es simplemente la mascara del pin sin desplazamiento
-  uint32_t mask_0 = BIT_POS_TO_MASK(pin + 16); // Para acceder a la parte alta del registro sumamos +16 al índice del pin
+  uint32_t mask_1 = BIT_POS_TO_MASK(pin);      // To access the lower part of the register, the mask is simply the mask of the pin without displacement
+  uint32_t mask_0 = BIT_POS_TO_MASK(pin + 16); // To access the upper part of the register, we add +16 to the pin index
 
-  // Si el valor a escribir es true, escribimos un 1 en la parte baja del registro (BSRR), lo que pone el pin a HIGH. Si fuese false, escribimos un 1 en la parte alta del registro (BSRR), lo que pone el pin a LOW.
+  // If the value to write is true, write a 1 in the lower part of the register (BSRR), which sets the pin to HIGH. If it is false, write a 1 in the upper part of the register (BSRR), which sets the pin to LOW.
   if (value == true)
   {
     p_port->BSRR = mask_1;
@@ -333,8 +333,8 @@ void stm32f4_system_gpio_write(GPIO_TypeDef *p_port, uint8_t pin, bool value)
 
 void stm32f4_system_gpio_toggle(GPIO_TypeDef *p_port, uint8_t pin)
 {
-  bool lectura = stm32f4_system_gpio_read(p_port, pin); // Leemos el estado actual del pin para saber si está en HIGH o LOW
-  stm32f4_system_gpio_write(p_port, pin, !lectura);     // Invierte el valor del pin mediante el operador negación aplicado en nuestra variable "lectura"
+  bool lectura = stm32f4_system_gpio_read(p_port, pin); // Read the current state of the pin to know if it is HIGH or LOW
+  stm32f4_system_gpio_write(p_port, pin, !lectura);     // Invert the value of the pin using the negation operator applied to our "lectura" variable
 }
 
 // ------------------------------------------------------

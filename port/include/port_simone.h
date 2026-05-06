@@ -1,9 +1,9 @@
 /**
  * @file port_simone.h
  * @brief Header for the portable functions os the Simone board game.
- * @author alumno1
- * @author alumno2
- * @date fecha
+ * @author Fernando Ingelmo Ajejas
+ * @author Paula Rodríguez Hernández
+ * @date 21/04/2026
  */
 #ifndef PORT_SIMONE_H_
 #define PORT_SIMONE_H_

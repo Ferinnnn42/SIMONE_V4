@@ -73,8 +73,8 @@ typedef struct
     fsm_keyboard_t *p_fsm_keyboard;
     fsm_rgb_light_t *p_fsm_rgb_light;
     /*Data sequence*/
-    rgb_color_t sequence[SEQUENCE_LENGTH];
-    rgb_color_t seq_intensities[SEQUENCE_LENGTH];
+    rgb_color_t seq_colors[SEQUENCE_LENGTH];
+    uint16_t seq_intensities[SEQUENCE_LENGTH];
     uint8_t level;
     /*Control Indexes*/
     uint8_t seq_idx;      // Index to add new colors to the sequence and to play it back
@@ -86,8 +86,30 @@ typedef struct
     uint32_t on_off_press_time_ms;
 } fsm_simone_t;
 
+/**
+ * @brief Creates a new instance of the Simone FSM.
+ *
+ * @param p_fsm_button
+ * @param on_off_press_time_ms
+ * @param p_fsm_keyboard
+ * @param p_fsm_rgb_light
+ * @param level
+ * @return fsm_simone_t*
+ */
 fsm_simone_t *fsm_simone_new(fsm_button_t *p_fsm_button, uint32_t on_off_press_time_ms, fsm_keyboard_t *p_fsm_keyboard, fsm_rgb_light_t *p_fsm_rgb_light, uint8_t level);
+
+/**
+ * @brief 	Fire the Simone FSM.
+ *
+ * @param p_fsm
+ */
 void fsm_simone_fire(fsm_simone_t *p_fsm);
+
+/**
+ * @brief Destroy the Simone FSM and free the memory.
+ *
+ * @param p_fsm
+ */
 void fsm_simone_destroy(fsm_simone_t *p_fsm);
 
 #endif /* FSM_SIMONE_H_ */

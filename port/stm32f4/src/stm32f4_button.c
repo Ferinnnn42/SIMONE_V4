@@ -35,7 +35,7 @@ stm32f4_button_hw_t buttons_arr[] = {
  */
 stm32f4_button_hw_t *_stm32f4_button_get(uint8_t button_id)
 {
-    if (button_id < sizeof(buttons_arr) / sizeof(buttons_arr[0])) // Returnea el puntero al botón con el ID dado. Si el ID no es válido, retorna NULL.
+    if (button_id < sizeof(buttons_arr) / sizeof(buttons_arr[0])) // Return the pointer to the button with the given ID. If the ID is not valid, return NULL.
     {
         return &buttons_arr[button_id];
     }
@@ -52,18 +52,18 @@ stm32f4_button_hw_t *_stm32f4_button_get(uint8_t button_id)
  */
 void port_button_init(uint8_t button_id)
 {
-    // Obtiene la estructura del botón utilizando la función privada y el ID del botón
+    // Get the button structure using the private function and the button ID
     stm32f4_button_hw_t *p_button = _stm32f4_button_get(button_id);
 
-    // Configura el modo y el pull de la GPIO, que en este caso son MODO ENTRADA y No push No pull.
+    // Configure the GPIO mode and pull, which in this case are INPUT MODE and No push No pull.
     stm32f4_system_gpio_config(p_button->p_port, p_button->pin, STM32F4_GPIO_MODE_IN, STM32F4_GPIO_PUPDR_NOPULL);
 
-    // Configura la interr externa o evento de la GPIO, que se encuentra en IM13.
+    // Configure the external interrupt or event of the GPIO, which is located in IM13.
     stm32f4_system_gpio_config_exti(p_button->p_port, p_button->pin, (STM32F4_TRIGGER_ENABLE_INTERR_REQ | STM32F4_TRIGGER_BOTH_EDGE));
 
     EXTI->PR = (1U << p_button->pin);
 
-    // Habilita las interrupciones de una línea GPIO (pin).
+    // Enable the interrupts of a GPIO line (pin).
     stm32f4_system_gpio_exti_enable(p_button->pin, 1, 0);
 }
 
@@ -76,7 +76,7 @@ void port_button_init(uint8_t button_id)
  */
 bool port_button_get_pressed(uint8_t button_id)
 {
-    // hago un retrive de una estructura button para poder acceder mediante el get a su flag_pressed
+    // Retrieve the button structure using the private function and the button ID
     stm32f4_button_hw_t *p_button = _stm32f4_button_get(button_id);
     return p_button->flag_pressed;
 }

@@ -1,9 +1,9 @@
 /**
  * @file stm32f4_rgb_light.c
  * @brief Portable functions to interact with the RGB light system FSM library. All portable functions must be implemented in this file.
- * @author alumno1
- * @author alumno2
- * @date fecha
+ * @author Fernando Ingelmo Ajejas
+ * @author Paula Rodríguez Hernández
+ * @date 21/04/2026
  */
 
 /* Standard C includes */
@@ -60,13 +60,13 @@ stm32f4_rgb_light_hw_t *_stm32f4_rgb_light_get(uint8_t rgb_light_id)
 void _timer_pwm_config(uint8_t rgb_light_id)
 {
     double Max_ARR = 65535.0;                                                              // maximum ARR value for a 16-bit timer
-    double PSC = (f_clk * PORT_RGB_LIGHT_PWM_TIMEOUT / 1000.0) / Max_ARR - 1.0;            // CCalculation of the PSC value to achieve the desired timeout time with the maximum ARR value
-    double ARR = (f_clk * PORT_RGB_LIGHT_PWM_TIMEOUT / 1000.0) / (round(PSC) + 1.0) - 1.0; // CCalculation of the ARR value with the rounded PSC
+    double PSC = (f_clk * PORT_RGB_LIGHT_PWM_TIMEOUT / 1000.0) / Max_ARR - 1.0;            // Calculation of the PSC value to achieve the desired timeout time with the maximum ARR value
+    double ARR = (f_clk * PORT_RGB_LIGHT_PWM_TIMEOUT / 1000.0) / (round(PSC) + 1.0) - 1.0; // Calculation of the ARR value with the rounded PSC
     double ARR_rounded = round(ARR);                                                       // Round the ARR value to the nearest integer
     if (ARR_rounded > Max_ARR)
-    { // Si el valor de ARR redondeado excede el máximo permitido, ajustarlo al máximo
+    { // If the rounded ARR value exceeds the maximum allowed, adjust it to the maximum
         PSC += 1.0;
-        ARR_rounded = round((f_clk * PORT_RGB_LIGHT_PWM_TIMEOUT / 1000.0) / (round(PSC) + 1.0) - 1.0); // this is to ensure that the PWM timeout time remains as close as possible to the desired one (not exceeding Max_ARR), even if the PSC has been incremented
+        ARR_rounded = round((f_clk * PORT_RGB_LIGHT_PWM_TIMEOUT / 1000.0) / (round(PSC) + 1.0) - 1.0); // This is to ensure that the PWM timeout time remains as close as possible to the desired one (not exceeding Max_ARR), even if the PSC has been incremented
     }
     RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;                               // Configure the timer used for the PWM of the RGB LED
     TIM4->CR1 &= ~TIM_CR1_CEN;                                        // Make sure the timer is stopped before configuring it
