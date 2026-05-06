@@ -46,6 +46,36 @@ void port_system_delay_ms(uint32_t ms);
  * @note This function modifies the value of the variable pointed by t to the number of milliseconds to delay until.
  * @note This function is useful to implement periodic tasks.
  */
+
 void port_system_delay_until_ms(uint32_t *t, uint32_t ms);
+/**
+ * @brief Set the system in stop mode for low power consumption.
+ *
+ */
+void port_system_power_stop(void);
+
+/**
+ * @brief Set the system in sleep mode for low power consumption.
+ *
+ */
+void port_system_power_sleep(void);
+
+/**
+ * @brief Suspend Tick increment.
+ *
+ */
+void port_system_systick_suspend(void);
+
+/**
+ * @brief Resume Tick increment.
+ *
+ */
+void port_system_systick_resume(void);
+
+/**
+ * @brief Enable low power consumption in sleep mode.
+ *
+ */
+void port_system_sleep(void);
 
 #endif /* PORT_SYSTEM_H_ */

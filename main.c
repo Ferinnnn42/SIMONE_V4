@@ -13,7 +13,7 @@
 #include "port_system.h"
 
 /* Defines ------------------------------------------------------------------*/
-
+#define SIMONE_ON_OFF_PRESS_TIME_MS 2000 // Time the button must be pressed to turn ON/OFF the Simone system
 /**
  * @brief  The application entry point.
  * @retval int

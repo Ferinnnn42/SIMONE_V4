@@ -22,7 +22,7 @@ extern void initialise_monitor_handles(void);
 #define TICK_FREQ_1KHZ 1U                            /*!< Frequency in kHz of the System tick */
 #define NVIC_PRIORITY_GROUP_0 ((uint32_t)0x00000007) /*!< 0 bit  for pre-emption priority, \
                                                          4 bits for subpriority */
-#define NVIC_PRIORITY_GROUP_4 ((uint32_t)0x00000003) /*!< 4 bits for pre-emption priority, \
+#define NVIC_PRIORITY_GROUP_5 ((uint32_t)0x00000004) /*!< 4 bits for pre-emption priority, \
                                                          0 bit  for subpriority */
 /* Power */
 #define POWER_REGULATOR_VOLTAGE_SCALE3 0x01 /*!< Scale 3 mode: the maximum value of fHCLK is 120 MHz. */
@@ -136,7 +136,7 @@ uint32_t port_system_init()
   FLASH->ACR |= FLASH_ACR_PRFTEN;
 
   /* Set Interrupt Group Priority */
-  NVIC_SetPriorityGrouping(NVIC_PRIORITY_GROUP_4);
+  NVIC_SetPriorityGrouping(NVIC_PRIORITY_GROUP_5);
 
   /* Use systick as time base source and configure 1ms tick (default clock after Reset is HSI) */
   /* Configure the SysTick IRQ priority. It must be the highest (lower number: 0)*/
@@ -180,14 +180,23 @@ void port_system_delay_until_ms(uint32_t *p_t, uint32_t ms)
 
 uint32_t port_system_get_millis()
 {
-  return 0;
+  return msTicks; /*ms*/
 }
 
 void port_system_set_millis(uint32_t ms)
 {
-
+  msTicks = ms;
 }
 
+void port_system_systick_suspend()
+{
+  SysTick->CTRL &= ~SysTick_CTRL_TICKINT_Msk;
+}
+
+void port_system_systick_resume()
+{
+  SysTick->CTRL |= SysTick_CTRL_TICKINT_Msk;
+}
 // ------------------------------------------------------
 // Implementation of PORT system functions that are called from the platform-dependent code.
 // i.e., the following functions do depend on the platform and are declared in the
@@ -296,6 +305,60 @@ void stm32f4_system_gpio_config_alternate(GPIO_TypeDef *p_port, uint8_t pin, uin
   p_port->AFR[(uint8_t)(pin / 8)] |= (alternate << displacement);
 }
 
+bool stm32f4_system_gpio_read(GPIO_TypeDef *p_port, uint8_t pin)
+{
+  uint32_t mask = BIT_POS_TO_MASK(pin); // Creamos la mascara usando la macro para convertir la pos del pin en una máscara de bits
+
+  uint32_t registro = p_port->IDR;      // Leemos el registro en el que se encuentran todos los pines del puerto
+  uint32_t valor_bit = registro & mask; // hago un AND para poder leer el valor del bit mediante el producto bit a bit
+
+  return (bool)valor_bit; // como el valor solo puede ser 1 o 0, devuelve el valor como true = 1 y false = 0 gracias al casteo de bool
+}
+
+void stm32f4_system_gpio_write(GPIO_TypeDef *p_port, uint8_t pin, bool value)
+{
+  uint32_t mask_1 = BIT_POS_TO_MASK(pin);      // Para acceder a la parte baja del registro, la mascara es simplemente la mascara del pin sin desplazamiento
+  uint32_t mask_0 = BIT_POS_TO_MASK(pin + 16); // Para acceder a la parte alta del registro sumamos +16 al índice del pin
+
+  // Si el valor a escribir es true, escribimos un 1 en la parte baja del registro (BSRR), lo que pone el pin a HIGH. Si fuese false, escribimos un 1 en la parte alta del registro (BSRR), lo que pone el pin a LOW.
+  if (value == true)
+  {
+    p_port->BSRR = mask_1;
+  }
+  else
+  {
+    p_port->BSRR = mask_0;
+  }
+}
+
+void stm32f4_system_gpio_toggle(GPIO_TypeDef *p_port, uint8_t pin)
+{
+  bool lectura = stm32f4_system_gpio_read(p_port, pin); // Leemos el estado actual del pin para saber si está en HIGH o LOW
+  stm32f4_system_gpio_write(p_port, pin, !lectura);     // Invierte el valor del pin mediante el operador negación aplicado en nuestra variable "lectura"
+}
+
 // ------------------------------------------------------
 // POWER RELATED FUNCTIONS
 // ------------------------------------------------------
+void port_system_power_stop()
+{
+  MODIFY_REG(PWR->CR, (PWR_CR_PDDS | PWR_CR_LPDS), PWR_CR_LPDS); // Select the regulator state in Stop mode: Set PDDS and LPDS bits according to PWR_Regulator value
+  SCB->SCR |= ((uint32_t)SCB_SCR_SLEEPDEEP_Msk);                 // Set SLEEPDEEP bit of Cortex System Control Register
+  __WFI();                                                       // Select Stop mode entry : Request Wait For Interrupt
+  SCB->SCR &= ~((uint32_t)SCB_SCR_SLEEPDEEP_Msk);                // Reset SLEEPDEEP bit of Cortex System Control Register
+}
+
+void port_system_power_sleep()
+{
+  MODIFY_REG(PWR->CR, (PWR_CR_PDDS | PWR_CR_LPDS), PWR_CR_LPDS); // Select the regulator state in Stop mode: Set PDDS and LPDS bits according to PWR_Regulator value
+  SCB->SCR &= ~((uint32_t)SCB_SCR_SLEEPDEEP_Msk);                // Reset SLEEPDEEP bit of Cortex System Control Register
+  __WFI();                                                       // Select Sleep mode entry : Request Wait For Interrupt
+}
+
+
+
+void port_system_sleep(void) // Enable low power consumption in sleep mode.
+{
+  port_system_power_sleep();
+  port_system_power_sleep();
+}
