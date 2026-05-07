@@ -269,10 +269,6 @@ static bool check_any_key_pressed(fsm_t *p_this)
     fsm_simone_t *p_fsm_simone = (fsm_simone_t *)p_this;
     char key = p_fsm_simone->p_fsm_keyboard->key_value;
     char inv = p_fsm_simone->p_fsm_keyboard->invalid_key;
-    if (key != inv)
-    {
-        printf("[DEBUG] Simone detecta la tecla: %d (Inválida es: %d)\n", key, inv);
-    }
     return key != inv; // Check if the value of key_value of the keyboard with id keyboard_id is different from the value of invalid_key
 }
 
@@ -350,7 +346,7 @@ static void do_init_game(fsm_t *p_this)
     }
     _add_color(p_fsm_simone);
     fsm_rgb_light_set_status(p_fsm_simone->p_fsm_rgb_light, true); // This function activates the fsm rgb light system status
-    printf("[SIMONE][%ld] Simone game INIT\n", port_system_get_millis());
+    printf("[SIMONE][%ld] Let's play Simone game \n", port_system_get_millis());
 }
 
 /**
@@ -498,7 +494,7 @@ static void do_game_over_timeout(fsm_t *p_this)
     p_fsm_simone->level = LEVEL_EASY;                     // Reset level to the easy level
     p_fsm_simone->on_off_press_time_ms = 0;               // Reset to 0 the on_off_press_time_ms to avoid unintended timeouts
     fsm_keyboard_stop_scan(p_fsm_simone->p_fsm_keyboard); // Stop the keyboard scanning to avoid unintended key presses from the player
-    printf("[SIMONE][%ld]GAME OVER! You took too long to input the sequence, you got %d colors correct \n", port_system_get_millis(), SEQUENCE_LENGTH);
+    printf("[SIMONE][%ld]GAME OVER! You took too long to input the sequence, you got %d colors correct \n", port_system_get_millis(), p_fsm_simone->seq_idx);
 }
 
 /**
@@ -517,7 +513,7 @@ void do_add_color(fsm_t *p_this)
     {
         p_fsm_simone->level++;
         p_fsm_simone->seq_idx = 0; // Reset the sequence index to the beginning of the sequence to start a new level
-        printf("[SIMONE][%ld]LEVEL UP! Level: %d\n", port_system_get_millis(), p_fsm_simone->level);
+        printf("[SIMONE][%ld]LEVEL UP! Level: %c\n", port_system_get_millis(), p_fsm_simone->level);
     }
     _add_color(p_fsm_simone); // Add a new color and intensity to the sequence
     return;
