@@ -4,8 +4,8 @@ Acceso a la documentación y API del proyecto en [este enlace](https://sdg2dieup
 
 ## Authors
 
-* **Alumno 1** - email: [alumno@alumno.es](mailto:alumno@alumno.es)
-* **Alumno 2** - email: [alumno@alumno.es](mailto:alumno@alumno.es)
+* Fernando Ingelmo Ajejas - email: fernando.ingelmo@alumnos.upm.es
+* Paula Rodríguez Hernández - email: paula.rodriguez@alumnos.upm.es
 
 Ponga una breve descripción del proyecto **aquí** en castellano e inglés.
 
