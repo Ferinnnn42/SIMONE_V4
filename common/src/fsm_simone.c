@@ -568,7 +568,7 @@ static void do_game_over_invalid_key(fsm_t *p_this)
     p_fsm_simone->on_off_press_time_ms = 0;               // Reset to 0 the on_off_press_time_ms to avoid unintended timeouts
     port_simone_stop_timer();                             // Stop the timer
     fsm_keyboard_stop_scan(p_fsm_simone->p_fsm_keyboard); // Stop the keyboard scanning to avoid unintended key presses from the player
-    // printf("[SIMONE][%ld]GAME OVER! You pressed %d, and was expected %c, you got %d colors correct \n",port_system_get_millis(),(int)p_fsm_simone->player_key,p_fsm_simone->seq_colors[p_fsm_simone->seq_idx],p_fsm_simone->player_idx);
+    printf("[SIMONE][%ld]GAME OVER! You pressed %c, and was expected %c, you got %d colors correct \n",port_system_get_millis(),p_fsm_simone->player_key,_get_key_from_color(p_fsm_simone->seq_colors[p_fsm_simone->player_idx]),p_fsm_simone->player_idx);
 }
 /**
  * @brief 	Array representing the transitions table of the FSM Simone.
