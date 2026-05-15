@@ -47,9 +47,9 @@ The **RGB light** is integrated to provide visual feedback to the user and displ
 * Manipulation of the *duty cycle* across three different channels to generate various colors (Red, Green, Blue, Yellow, Turquoise, White) by modifying their intensity.
 * State machine that evaluates if the system is active and applies the colors or turns off the LED, allowing compatibility with low-power modes.
 * These three images show the rgb colors:
-![Color RED](simone/images/red.png)
-![Color GREEN](simone/images/green.png)
-![Color BLUE](simone/images/blue.png)
+![Color RED](Entornos/MatrixMCU/projects/simone/images/red.png)
+![Color GREEN](Entornos/MatrixMCU/projects/simone/images/green.png)
+![Color BLUE](Entornos/MatrixMCU/projects/simone/images/blue.png)
 
 
 ## Version 4
