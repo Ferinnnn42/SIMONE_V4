@@ -287,7 +287,7 @@ static bool check_input_valid(fsm_t *p_this)
         return false; // If the input feedback time has not finished, return false
     }
     char expected_key = _get_key_from_color(p_fsm_simone->seq_colors[p_fsm_simone->player_idx]); // Get the expected key from the current color of the sequence that the player has to input
-    printf("[DEBUG] Evaluando valid: Esperaba '%c' (%d), Pulsó '%c' (%d)\n", expected_key, expected_key, p_fsm_simone->player_key, p_fsm_simone->player_key);
+    printf("[SIMONE] GOOD JOB! Expected '%c' (%d), Pressed '%c' (%d). \n", expected_key, expected_key, p_fsm_simone->player_key, p_fsm_simone->player_key);
     return p_fsm_simone->player_key == expected_key; // Check if the key pressed by the player is the expected key for the current color of the sequence that the player has to
 }
 
@@ -486,7 +486,9 @@ static void do_winner(fsm_t *p_this)
 static void do_game_over_timeout(fsm_t *p_this)
 {
     port_simone_stop_timer(); // Stop the timer
+
     fsm_simone_t *p_fsm_simone = (fsm_simone_t *)p_this;
+    printf("[SIMONE][%ld]GAME OVER! You took too long to input the sequence, you got %d colors correct. press the blue button to play again!\n", port_system_get_millis(), p_fsm_simone->player_idx);
     p_fsm_simone->playback_idx = 0; // Reset playback index to the beginning of the sequence
     p_fsm_simone->player_idx = 0;   // Reset player index to the beginning of the sequence
     p_fsm_simone->playback_over = false;
@@ -494,7 +496,6 @@ static void do_game_over_timeout(fsm_t *p_this)
     p_fsm_simone->level = LEVEL_EASY;                     // Reset level to the easy level
     p_fsm_simone->on_off_press_time_ms = 0;               // Reset to 0 the on_off_press_time_ms to avoid unintended timeouts
     fsm_keyboard_stop_scan(p_fsm_simone->p_fsm_keyboard); // Stop the keyboard scanning to avoid unintended key presses from the player
-    printf("[SIMONE][%ld]GAME OVER! You took too long to input the sequence, you got %d colors correct \n", port_system_get_millis(), p_fsm_simone->seq_idx);
 }
 
 /**
@@ -513,7 +514,7 @@ void do_add_color(fsm_t *p_this)
     {
         p_fsm_simone->level++;
         p_fsm_simone->seq_idx = 0; // Reset the sequence index to the beginning of the sequence to start a new level
-        printf("[SIMONE][%ld]LEVEL UP! Level: %c\n", port_system_get_millis(), p_fsm_simone->level);
+        printf("[SIMONE][%ld]LEVEL UP! Level: %d\n", port_system_get_millis(), p_fsm_simone->level);
     }
     _add_color(p_fsm_simone); // Add a new color and intensity to the sequence
     return;
@@ -557,8 +558,9 @@ static void do_valid_key(fsm_t *p_this)
  */
 static void do_game_over_invalid_key(fsm_t *p_this)
 {
-    port_simone_stop_timer(); // Stop the timer
     fsm_simone_t *p_fsm_simone = (fsm_simone_t *)p_this;
+    char expected_key = _get_key_from_color(p_fsm_simone->seq_colors[p_fsm_simone->player_idx]); // Get the expected key from the current color of the sequence that the player has to input
+    printf("[SIMONE] Expected '%c' (%d), Pressed '%c' (%d). You got %d colors correct. If you want to play again, press the blue button!\n", expected_key, expected_key, p_fsm_simone->player_key, p_fsm_simone->player_key, p_fsm_simone->player_idx);
     fsm_rgb_light_set_color_intensity(p_fsm_simone->p_fsm_rgb_light, color_off, 0);
     p_fsm_simone->playback_idx = 0; // Reset playback index to the beginning of the sequence
     p_fsm_simone->player_idx = 0;   // Reset player index to the beginning of the sequence
@@ -568,7 +570,6 @@ static void do_game_over_invalid_key(fsm_t *p_this)
     p_fsm_simone->on_off_press_time_ms = 0;               // Reset to 0 the on_off_press_time_ms to avoid unintended timeouts
     port_simone_stop_timer();                             // Stop the timer
     fsm_keyboard_stop_scan(p_fsm_simone->p_fsm_keyboard); // Stop the keyboard scanning to avoid unintended key presses from the player
-    printf("[SIMONE][%ld]GAME OVER! You pressed %c, and was expected %c, you got %d colors correct \n",port_system_get_millis(),p_fsm_simone->player_key,_get_key_from_color(p_fsm_simone->seq_colors[p_fsm_simone->player_idx]),p_fsm_simone->player_idx);
 }
 /**
  * @brief 	Array representing the transitions table of the FSM Simone.
@@ -637,7 +638,7 @@ static void fsm_simone_init(fsm_simone_t *p_fsm_simone, fsm_button_t *p_fsm_butt
     p_fsm_simone->on_off_press_time_ms = on_off_press_time_ms;
     p_fsm_simone->level = level;
     srand(time(NULL)); // Initialize the random number generator with the current time as seed
-    printf("[SIMONE][%ld] Simone FSM initialized. Press the buttons to play!\n", port_system_get_millis());
+    printf("[SIMONE][%ld] Simone FSM initialized. Press the blue button to play!\n", port_system_get_millis());
 }
 
 fsm_simone_t *fsm_simone_new(fsm_button_t *p_fsm_button, uint32_t on_off_press_time_ms, fsm_keyboard_t *p_fsm_keyboard, fsm_rgb_light_t *p_fsm_rgb_light, uint8_t level)

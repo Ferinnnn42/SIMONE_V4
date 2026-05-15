@@ -21,7 +21,7 @@
 #include "fsm_rgb_light.h"
 #include "fsm_simone.h"
 /* Defines ------------------------------------------------------------------*/
-#define SIMONE_ON_OFF_PRESS_TIME_MS 1500 // Time the button must be pressed to turn ON/OFF the Simone system
+#define SIMONE_ON_OFF_PRESS_TIME_MS 2000 // Time the button must be pressed to turn ON/OFF the Simone system
 #define BUTTON_DEBOUNCE_MS 50
 #define KEYBOARD_DEBOUNCE_MS 150
 #define MY_BUTTON_ID 0

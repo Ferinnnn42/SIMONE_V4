@@ -1,95 +1,69 @@
-# Título del proyecto
+# SIMONE
 
 Acceso a la documentación y API del proyecto en [este enlace](https://sdg2dieupm.github.io/simone/).
 
 ## Authors
 
 * Fernando Ingelmo Ajejas - email: fernando.ingelmo@alumnos.upm.es
-* Paula Rodríguez Hernández - email: paula.rodriguez@alumnos.upm.es
+* Paula Rodríguez Hernández - email: paula.rodriguez.hernandez@alumnos.upm.es
 
-Ponga una breve descripción del proyecto **aquí** en castellano e inglés.
+**Descripción del proyecto / Project Description:**
 
-Puede añadir una imagen de portada **de su propiedad** aquí. Por ejemplo, del montaje final, o una captura de osciloscopio, etc.
+Este proyecto implementa una versión del clásico juego de memoria "Simone" utilizando un microcontrolador STM32F446RE. El sistema cuenta con un botón de control, un teclado matricial 4x4 para las entradas del jugador, y un LED RGB controlado por PWM para mostrar secuencias de colores. El juego genera secuencias aleatorias que el usuario debe repetir, aumentando la dificultad progresivamente e incorporando modos de bajo consumo (Sleep Mode) para optimizar la eficiencia energética.
 
-**Las imágenes se deben guardar en la carpeta `docs/assets/imgs/` y se pueden incluir en el documento de la siguiente manera:**
+*This project implements a version of the classic memory game "Simone" using an STM32F446RE microcontroller. The system features a control button, a 4x4 matrix keypad for player inputs, and a PWM-controlled RGB LED to display color sequences. The game generates random sequences that the user must repeat, progressively increasing the difficulty and incorporating low-power modes (Sleep Mode) to optimize energy efficiency.*
 
-```markdown
-![Texto alternativo](docs/assets/imgs/imagen.png)
-```
+![Montaje final del proyecto Simone](docs/assets/imgs/portada.png)
 
-NOTA: **NO** añada el código ```markdown``` en el fichero `README.md` de su proyecto, sino lo de dentro. Este código es un para mostrar de forma literal cómo se puede añadir una imagen al fichero `README.md`.
+[![Demostración de Simone V5](docs/assets/imgs/portada.png)](https://youtu.be/TU_ENLACE_AQUI "Demostración de Simone en YouTube.")
 
-**Añada un enlace a un vídeo público de su propiedad aquí con la demostración del proyecto explicando lo que haya hecho en la versión V5.**
-
-Para añadir un enlace a un vídeo de Youtube, puede usar el siguiente código:
-
-```markdown
-[![Texto alternativo](docs/assets/imgs/imagen.png)](https://youtu.be/ID_DEL_VIDEO "Texto al pasar el ratón por encima de la imagen.")
-```
-
-NOTA: **NO** añada el código ```markdown``` sino lo de dentro. Este código es un para mostrar de forma literal cómo se puede añadir un enlace a un vídeo de Youtube al fichero `README.md`.
+---
 
 ## Version 1
 
-Breve descripción de la versión 1.
+En esta primera versión se ha desarrollado la librería y la máquina de estados (FSM) para el control del **botón de usuario**. 
 
-* Para poner un texto en negrita se usa el símbolo `**` de manera consecutiva. Por ejemplo: **Texto en negrita**
-* Para poner un texto en cursiva se usa el símbolo `*` de manera consecutiva. Por ejemplo: *Texto en cursiva*
-* Para poner un texto en cursiva y negrita se usa el símbolo `***` de manera consecutiva. Por ejemplo: ***Texto en cursiva y negrita***
+* Implementación del módulo HW (PORT) usando la interrupción externa `EXTI13`.
+* Creación de una FSM (COMMON) independiente del hardware para gestionar las pulsaciones.
+* Integración de un **filtro anti-rebotes por software** mediante tiempos de guarda.
+* Funcionalidad para medir la duración de la pulsación, necesaria para el encendido/apagado del sistema.
 
-Para añadir subsecciones se usa el símbolo `#` de manera consecutiva. Por ejemplo:
-
-### Subsección 1
-
-Breve descripción de la subsección 1.
-
-Para añadir una lista de elementos se usa el símbolo `-` de manera consecutiva. Por ejemplo:
-
-* Elemento 1
-* Elemento 2
-* Elemento 3
-
-Para añadir una lista de elementos numerados se usa el símbolo `1.` de manera consecutiva. Por ejemplo:
-
-1. Elemento 1
-2. Elemento 2
-3. Elemento 3
-
-Para añadir un enlace a una página web se usa el siguiente código:
-
-```markdown
-Enlace a [Google](https://www.google.com).
-```
-
-NOTA: **NO** añada el código ```markdown``` sino lo de dentro. Este código es un para mostrar de forma literal cómo se puede añadir un enlace a una página web al fichero `README.md`.
-
-Puede añadir tablas de la siguiente manera:
-
-| Columna 1 | Columna 2 | Columna 3 |
-| --------- | --------- | --------- |
-| Valor 1   | Valor 2   | Valor 3   |
-| Valor 4   | Valor 5   | Valor 6   |
-
-Para añadir un enlace a un fichero `.c` o `.h` puede usar el siguiente código. Se trata de enlaces a ficheros `.html` que se generan automáticamente con la documentación del código al ejecutar Doxygen y que se encuentran en la carpeta `docs/html/`.
-
-```markdown
 Enlace a la [FSM de Version 1](fsm__button_8c.html).
-```
-
-NOTA: **NO** añada el código ```markdown``` sino lo de dentro. Este código es un para mostrar de forma literal cómo se puede añadir un enlace a un fichero `.c` o `.h` al fichero `README.md`.
 
 ## Version 2
 
-Breve descripción de la versión 2.
+Esta versión incorpora el soporte para la lectura de un **teclado matricial 4x4**.
+
+* Configuración de pines de entrada (columnas con *pull-down*) y salida (filas).
+* Uso del temporizador `TIM5` para realizar una excitación periódica y secuencial de las filas.
+* Gestión de interrupciones combinadas en las columnas para detectar qué botón exacto se ha pulsado.
+* Máquina de estados con autotransición y control **anti-rebotes** para el guardado y validación de la tecla.
+
+Enlace a la [FSM de Version 2](fsm__keyboard_8c.html).
 
 ## Version 3
 
-Breve descripción de la versión 3.
+Se integra el **RGB light** para proporcionar feedback visual al usuario y mostrar las secuencias del juego.
+
+* Uso del temporizador `TIM4` en modo **PWM** para generar la señal de control.
+* Manipulación del ciclo de trabajo (*duty cycle*) en tres canales diferentes para generar diversos colores (Rojo, Verde, Azul, Amarillo, Turquesa, Blanco) modificando su intensidad.
+* Máquina de estados que evalúa si el sistema está activo y aplica los colores o apaga el LED, permitiendo su compatibilidad con modos de bajo consumo.
+
+Enlace a la [FSM de Version 3](fsm__rgb__light_8c.html).
 
 ## Version 4
 
-Breve descripción de la versión 4.
+**Integración final** del sistema y desarrollo de la lógica central del juego *Simone*.
+
+* Creación de la **FSM central de Simone** (con 7 estados) que orquesta las FSM del botón, el teclado y el LED.
+* Gestión de reglas del juego: generación de secuencias aleatorias, 3 niveles de dificultad crecientes, tiempos de *timeout* del jugador y validación de aciertos/errores en tiempo real.
+* Implementación de **modos de bajo consumo** (`Sleep Mode`). Se desactiva el `SysTick` durante la inactividad y la reproducción de colores, despertando el microcontrolador únicamente mediante interrupciones para ahorrar energía.
+
+Enlace a la [FSM de Version 4](fsm__simone_8c.html).
 
 ## Version 5
 
-Breve descripción de la versión 5.
+*(Añade aquí una breve descripción de las características adicionales que hayáis implementado por vuestra cuenta. Por ejemplo: medición real del ahorro de energía, nuevos modos de juego, melodías, etc.)*
+
+* Implementación de funcionalidad extra 1.
+* Implementación de funcionalidad extra 2.
