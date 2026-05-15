@@ -26,7 +26,7 @@ In this first version, the library and state machine (FSM) for controlling the *
 * Integration of a **software debounce filter** using guard times.
 * Functionality to measure the press duration, necessary for turning the system on/off.
 
-Link to the [Version 1 FSM](fsm__button_8c.html).
+
 
 ## Version 2
 
@@ -37,7 +37,7 @@ This version adds support for reading a **4x4 matrix keypad**.
 * Management of combined interrupts in the columns to detect the exact button pressed.
 * State machine with self-transition and **debounce** control for saving and validating the key.
 
-Link to the [Version 2 FSM](fsm__keyboard_8c.html).
+
 
 ## Version 3
 
@@ -46,8 +46,11 @@ The **RGB light** is integrated to provide visual feedback to the user and displ
 * Use of the `TIM4` timer in **PWM** mode to generate the control signal.
 * Manipulation of the *duty cycle* across three different channels to generate various colors (Red, Green, Blue, Yellow, Turquoise, White) by modifying their intensity.
 * State machine that evaluates if the system is active and applies the colors or turns off the LED, allowing compatibility with low-power modes.
+* These three images show the rgb colors:
+![Color RED](simone/images/red.png)
+![Color GREEN](simone/images/green.png)
+![Color BLUE](simone/images/blue.png)
 
-Link to the [Version 3 FSM](fsm__rgb__light_8c.html).
 
 ## Version 4
 
@@ -57,7 +60,7 @@ Link to the [Version 3 FSM](fsm__rgb__light_8c.html).
 * Game rules management: random sequence generation, 3 increasing difficulty levels, player *timeout* periods, and real-time validation of hits/misses.
 * Implementation of **low-power modes** (`Sleep Mode`). The `SysTick` is deactivated during inactivity and color playback, waking up the microcontroller only via interrupts to save energy.
 
-Link to the [Version 4 FSM](fsm__simone_8c.html).
+
 
 ## Version 5
 
