@@ -12,7 +12,8 @@ Access the project documentation and API at [this link](https://sdg2dieupm.githu
 
 This project implements a version of the classic memory game "Simone" using an STM32F446RE microcontroller. The system features a control button, a 4x4 matrix keypad for player inputs, and a PWM-controlled RGB LED to display color sequences. The game generates random sequences that the user must repeat, progressively increasing the difficulty and incorporating low-power modes (Sleep Mode) to optimize energy efficiency.
 
-![Final assembly of the Simone project](docs/assets/imgs/portada.png)
+<img width="2048" height="1170" alt="WhatsApp Image 2026-05-15 at 19 50 49" src="https://github.com/user-attachments/assets/431cc1da-135d-4d6b-b24b-e33fa2f6b854" />
+
 
 [![Simone V5 Demonstration](docs/assets/imgs/portada.png)](https://youtu.be/TU_ENLACE_AQUI "Simone demonstration on YouTube.")
 
