@@ -1,4 +1,4 @@
-<img width="1536" height="2048" alt="green" src="https://github.com/user-attachments/assets/73c57a30-5d6d-4689-bfef-fc2add987cbd" />
+
 # SIMONE
 
 Access the project documentation and API at [this link](https://sdg2dieupm.github.io/simone/).
@@ -47,11 +47,10 @@ The **RGB light** is integrated to provide visual feedback to the user and displ
 * Use of the `TIM4` timer in **PWM** mode to generate the control signal.
 * Manipulation of the *duty cycle* across three different channels to generate various colors (Red, Green, Blue, Yellow, Turquoise, White) by modifying their intensity.
 * State machine that evaluates if the system is active and applies the colors or turns off the LED, allowing compatibility with low-power modes.
-* These three images show the rgb colors:<img width="1536" height="2048" alt="green" src="https://github.com/user-attachments/assets/7df43cf0-10a1-4589-a076-db38b2f60c54" />
-
-<img width="1536" height="2048" alt="red" src="https://github.com/user-attachments/assets/53d27738-4d56-4eb5-9766-0e2c5772af55" />
-<img width="1536" height="2048" alt="green" src="https://github.com/user-attachments/assets/90ac7e7d-f371-42a7-aa0f-0189347b3206" />
-<img width="1536" height="2048" alt="blue" src="https://github.com/user-attachments/assets/7ae61ad2-bf9a-4e97-ba15-acd3363fa635" />
+* These three images show the rgb colors:
+<img width="536" height="1048" alt="red" src="https://github.com/user-attachments/assets/53d27738-4d56-4eb5-9766-0e2c5772af55" />
+<img width="536" height="1048" alt="green" src="https://github.com/user-attachments/assets/90ac7e7d-f371-42a7-aa0f-0189347b3206" />
+<img width="536" height="1048" alt="blue" src="https://github.com/user-attachments/assets/7ae61ad2-bf9a-4e97-ba15-acd3363fa635" />
 
 
 
